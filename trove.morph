@@ -154,7 +154,8 @@ chunks:
   build-depends: []
 - name: lorry-controller
   repo: baserock:baserock/lorry-controller
-  ref: master
+  ref: liw/daemonise
+  unpetrify-ref: master
   build-depends: []
 - name: lighttpd
   repo: upstream:lighttpd

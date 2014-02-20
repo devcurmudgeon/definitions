@@ -25,10 +25,6 @@ chunks:
   repo: upstream:libffi
   ref: baserock/morph
   build-depends: []
-- name: sqlite3
-  repo: upstream:sqlite3
-  ref: baserock/morph
-  build-depends: []
 - name: libusbx
   repo: upstream:libusbx
   ref: baserock/morph

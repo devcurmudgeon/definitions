@@ -12,7 +12,7 @@ chunks:
   repo: upstream:bottle
 - build-depends: []
   name: morph-cache-server
-  ref: baserock/morph
+  ref: master
   repo: codethink:morph-cache-server
 - build-depends: []
   name: distbuild-plugin

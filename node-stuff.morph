@@ -1,0 +1,20 @@
+name: node-stuff 
+kind: stratum
+description: node and various node things 
+build-depends:
+- morph: tools
+chunks:
+- name: node
+  repo: file:///src2/ws-subway/add-subway/upstream:node
+  ref: master
+  build-depends: []
+- name: npm
+  repo: file:///src2/ws-subway/add-subway/upstream:npm
+  ref: master 
+  build-depends: []
+- name: subway
+  repo: file:///src2/ws-subway/add-subway/upstream:subway
+  ref: master
+  build-depends:
+  - npm
+

@@ -1,6 +1,10 @@
 name: distbuild
 kind: stratum
 description: Morph distributed build software
+build-depends:
+- morph: foundation
+- morph: core
+- morph: tools
 chunks:
 - build-depends: []
   name: bottle

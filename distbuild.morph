@@ -1,0 +1,24 @@
+name: distbuild
+kind: stratum
+description: Morph distributed build software
+chunks:
+- build-depends: []
+  name: bottle
+  ref: baserock/morph
+  repo: upstream:bottle
+- build-depends: []
+  name: morph-cache-server
+  ref: baserock/morph
+  repo: codethink:morph-cache-server
+- build-depends: []
+  name: distbuild-plugin
+  ref: master
+  repo: codethink:distbuild-plugin
+- build-depends: []
+  name: distbuild-setup
+  ref: master
+  repo: codethink:distbuild-setup
+- build-depends: []
+  name: flup
+  ref: baserock/morph
+  repo: upstream:flup

@@ -8,13 +8,13 @@ chunks:
   repo: file:///src2/ws-subway/add-subway/upstream:node
   ref: master
   build-depends: []
-- name: npm
-  repo: file:///src2/ws-subway/add-subway/upstream:npm
-  ref: master 
-  build-depends: []
+- name: express
+  repo: file:///src2/ws-subway/add-subway/upstream:express
+  ref: master
+  build-depends:
+  - node
 - name: subway
   repo: file:///src2/ws-subway/add-subway/upstream:subway
   ref: master
   build-depends:
-  - npm
-
+  - node

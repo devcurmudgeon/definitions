@@ -15,20 +15,20 @@ systems:
     hawk10:
       type: nfsboot
       location: ct-mcr-1
-      HOSTNAME: hawk10-distbuild
+      HOSTNAME: hawk10
       DISTBUILD_CONTROLLER: yes
       WORKERS: 172.17.1.45 172.17.1.49
     hawk11:
       type: nfsboot
       location: ct-mcr-1
-      HOSTNAME: hawk11-distbuild
+      HOSTNAME: hawk11
     hawk12:
       type: nfsboot
       location: ct-mcr-1
-      HOSTNAME: hawk12-distbuild
+      HOSTNAME: hawk12
     hawk13:
       type: nfsboot
       location: ct-mcr-1
-      HOSTNAME: hawk13-localbuild
+      HOSTNAME: hawk13
       DISTBUILD_WORKER: no
       DISTBUILD_CONTROLLER: no

@@ -1,0 +1,34 @@
+name: hawk-distbuild-cluster
+kind: cluster
+systems:
+- morph: distbuild-system-armv7lhf-highbank
+  deploy-defaults:
+    TROVE_ID: ct-mcr-1
+    ARTIFACT_CACHE_SERVER: ct-mcr-1
+    CONTROLLERHOST: 172.17.1.41
+    DISTBUILD_CONTROLLER: no
+    DISTBUILD_WORKER: yes
+    VERSION_LABEL: distbuild-v4
+    NFSBOOT_CONFIGURE: yes
+    FSTAB_SRC: LABEL=src /srv/distbuild auto defaults,rw,noatime 0 2
+  deploy:
+    hawk10:
+      type: nfsboot
+      location: ct-mcr-1
+      HOSTNAME: hawk10-distbuild
+      DISTBUILD_CONTROLLER: yes
+      WORKERS: 172.17.1.45 172.17.1.49
+    hawk11:
+      type: nfsboot
+      location: ct-mcr-1
+      HOSTNAME: hawk11-distbuild
+    hawk12:
+      type: nfsboot
+      location: ct-mcr-1
+      HOSTNAME: hawk12-distbuild
+    hawk13:
+      type: nfsboot
+      location: ct-mcr-1
+      HOSTNAME: hawk13-localbuild
+      DISTBUILD_WORKER: no
+      DISTBUILD_CONTROLLER: no

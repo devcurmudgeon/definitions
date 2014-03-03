@@ -1,0 +1,26 @@
+kind: cluster
+name: trove-deploy
+systems:
+- morph: trove-system-x86_64
+  deploy:
+    liw-lc-trove:
+      type: kvm
+      location: kvm+ssh://liw@192.168.122.1/liw-lc-trove/home/liw/UNBACKED/liw-lc-trove.img
+      DISK_SIZE: 4G
+      ATTACH_DISKS: /dev/mavolio/liw-lc-trove-homes
+      HOSTNAME: liw-lc-trove
+      FSTAB_HOMES: LABEL=homes /home auto defaults,rw 0 0
+      VERSION_LABEL: factory
+      INSTALL_FILES: liw-lc-trove/manifest
+      TROVE_ID: liw-lc-trove
+      TROVE_COMPANY: TEST
+      LORRY_SSH_KEY: liw-lc-trove/lorry.key
+      UPSTREAM_TROVE: ct-mcr-1.dyn.ducie.codethink.co.uk
+      UPSTREAM_TROVE_USER: liw-lc-trove
+      UPSTREAM_TROVE_EMAIL: lars.wirzenius@codethink.co.uk
+      TROVE_ADMIN_USER: liw
+      TROVE_ADMIN_EMAIL: lars.wirzenius@codethink.co.uk
+      TROVE_ADMIN_NAME: Lars Wirzenius
+      TROVE_ADMIN_SSH_PUBKEY: liw-lc-trove/liw.pub
+      WORKER_SSH_PUBKEY: liw-lc-trove/worker.key.pub
+      MASON_SSH_PUBKEY: liw-lc-trove/mason.key.pub

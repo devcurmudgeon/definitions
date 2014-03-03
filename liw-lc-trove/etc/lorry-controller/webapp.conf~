@@ -1,0 +1,10 @@
+[config]
+log = syslog
+log-level = debug
+statedb = /home/lorry/webapp.db
+configuration-directory = /home/lorry/confgit
+status-html = /home/lorry/status.html
+wsgi = False
+debug-port = 12765
+templates = /usr/share/lorry-controller/templates
+static-files = /usr/share/lorry-controller/templates

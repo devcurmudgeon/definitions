@@ -1,0 +1,23 @@
+name: release
+kind: cluster
+description: |
+  Cluster morphology for the core Baserock infrastructure hosted at
+  baserock.org.
+systems:
+- morph: trove-system-x86_64
+  deploy:
+    release:
+      type: rawdisk
+      location: trove-2014-03-03.img
+      DISK_SIZE: 10G
+      VERSION_LABEL: 2014-03-03
+      TROVE_ID: trove-baserock-org
+      TROVE_COMPANY: Baserock
+      TROVE_ADMIN_USER: trove
+      TROVE_ADMIN_EMAIL: trove@trove-instance
+      TROVE_ADMIN_NAME: Trove Instance Administrator
+      TROVE_ADMIN_SSH_PUBKEY: ssh_keys/trove.key.pub
+      LORRY_SSH_KEY: ssh_keys/lorry.key
+      WORKER_SSH_PUBKEY: ssh_keys/dummy.key.pub
+      MASON_SSH_PUBKEY: ssh_keys/dummy.key.pub
+      INSTALL_FILES: trove-files/manifest

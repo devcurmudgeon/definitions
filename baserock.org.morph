@@ -3,6 +3,14 @@ kind: cluster
 description: |
   Cluster morphology for the core Baserock infrastructure hosted at
   baserock.org.
+
+  So far this has been used to deploy an *upgrade* to the existing
+  trove.baserock.org, by replacing the root disk with a newly-built one but
+  keeping the old /home. The trove.baserock.org system is actually
+  non-standard: it has TROVE_ID=trove-baserock-org but TROVE_PREFIX=baserock.
+  That's not something the current trove.configure extension allows, so this
+  cluster morph does not quite reflect reality. There are many keys missing
+  from this morph, too.
 systems:
 - morph: trove-system-x86_64
   deploy:

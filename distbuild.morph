@@ -6,23 +6,28 @@ build-depends:
 - morph: core
 - morph: tools
 chunks:
-- build-depends: []
-  name: bottle
-  ref: baserock/morph
+- name: bottle
   repo: upstream:bottle
-- build-depends: []
-  name: morph-cache-server
-  ref: master
+  ref: 5238c615b3ec198fedebb0fcaad4458e3d68d70f
+  unpetrify-ref: baserock/morph
+  build-depends: []
+- name: morph-cache-server
   repo: codethink:morph-cache-server
-- build-depends: []
-  name: distbuild-plugin
-  ref: master
+  ref: 9188d63dfce3d3b75b2fc021a79aaa1d04f20bae
+  unpetrify-ref: master
+  build-depends: []
+- name: distbuild-plugin
   repo: codethink:distbuild-plugin
-- build-depends: []
-  name: distbuild-setup
-  ref: master
+  ref: 7f61f8c4e70725519d0c92e112bf90595d399e04
+  unpetrify-ref: master
+  build-depends: []
+- name: distbuild-setup
   repo: codethink:distbuild-setup
-- build-depends: []
-  name: flup
-  ref: baserock/morph
+  ref: 2ef77a8e6bdb62e1c9c7c553708fcac6114855ba
+  unpetrify-ref: master
+  build-depends: []
+- name: flup
   repo: upstream:flup
+  ref: 0f97c5e0ab7d9827506120efc22af3a9c21d1d70
+  unpetrify-ref: baserock/morph
+  build-depends: []

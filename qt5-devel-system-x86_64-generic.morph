@@ -14,7 +14,7 @@ strata:
 - morph: core
 - morph: foundation
 - morph: audio-bluetooth
-- morph: multimedia-gstreamer-0.10
+- morph: multimedia
 - morph: bsp-x86_64-generic
 - morph: tools
 - morph: x-common

@@ -6,32 +6,32 @@ build-depends:
 chunks:
 - name: armv7lhf-cross-binutils
   repo: upstream:binutils-redhat
-  ref: baserock/richardmaw/S10442/cross-toolchain
-  unpetrify-ref: baserock/build-essential
+  ref: d0ae7a63224d1d229a9fd2bc3e88a3a556c292ce
+  unpetrify-ref: baserock/richardmaw/S10442/cross-toolchain
   build-depends: []
 - name: armv7lhf-cross-linux-api-headers
   repo: upstream:linux
-  ref: baserock/richardmaw/S10442/cross-toolchain
-  unpetrify-ref: baserock/build-essential
+  ref: 69eec66bf6a51070739bd83617ebdff6f26e88c0
+  unpetrify-ref: baserock/richardmaw/S10442/cross-toolchain
   build-depends: []
 - name: armv7lhf-cross-gcc-nolibc
   repo: upstream:gcc-tarball
-  ref: baserock/richardmaw/S10442/cross-toolchain
-  unpetrify-ref: baserock/build-essential
+  ref: cb626ffe7ee1c81329ea2d1d8b104e100251222f
+  unpetrify-ref: baserock/richardmaw/S10442/cross-toolchain
   build-depends:
   - armv7lhf-cross-binutils
 - name: armv7lhf-cross-eglibc
   repo: upstream:eglibc2
-  ref: baserock/richardmaw/S10442/cross-toolchain
-  unpetrify-ref: baserock/2.15-build-essential
+  ref: 1e200dfca196e462696c5e844a9c956b1e2b5111
+  unpetrify-ref: baserock/richardmaw/S10442/cross-toolchain
   build-depends:
   - armv7lhf-cross-binutils
   - armv7lhf-cross-gcc-nolibc
   - armv7lhf-cross-linux-api-headers
 - name: armv7lhf-cross-gcc
   repo: upstream:gcc-tarball
-  ref: baserock/richardmaw/S10442/cross-toolchain
-  unpetrify-ref: baserock/build-essential
+  ref: cb626ffe7ee1c81329ea2d1d8b104e100251222f
+  unpetrify-ref: baserock/richardmaw/S10442/cross-toolchain
   build-depends:
   - armv7lhf-cross-binutils
   - armv7lhf-cross-eglibc

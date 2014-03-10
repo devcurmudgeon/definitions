@@ -15,6 +15,8 @@ strata:
 - morph: foundation
 - morph: genivi-foundation
 - morph: bsp-x86_64-generic
+  artifacts: 
+   - bsp-x86_64-generic-runtime
 - morph: connectivity
 - morph: audio-bluetooth
 - morph: x-common

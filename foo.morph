@@ -1,0 +1,11 @@
+name: foo
+kind: cluster
+systems:
+- morph: devel-system-x86_64-generic
+  repo: baserock:baserock/definitions
+  ref: master
+  deploy:
+      my-raw-disk-image:
+          type: rawdisk
+          location: /src/tmp/testdev.img
+          DISK_SIZE: 4G

@@ -178,8 +178,8 @@ chunks:
   - hg-fast-export
 - name: trove-setup
   repo: baserock:baserock/trove-setup
-  ref: 8072351c428ce0508868f5733aaad36be13e2b26
-  unpetrify-ref: master
+  ref: liw/daemonise
+  unpetrify-ref: 8072351c428ce0508868f5733aaad36be13e2b26
   build-depends: []
 - name: lorry-controller
   repo: baserock:baserock/lorry-controller

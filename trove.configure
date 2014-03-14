@@ -148,7 +148,7 @@ fi
 
 echo "Create Lorry Controller config"
 install -d "$ROOT/etc/lorry-controller"
-cat <<EOF
+cat <<EOF > "$ROOT/etc/lorry-controller/webapp.conf"
 [config]
 log = syslog
 log-level = debug

@@ -29,6 +29,7 @@
 #   * TROVE_ADMIN_EMAIL
 #   * TROVE_ADMIN_NAME
 #   * TROVE_ADMIN_SSH_PUBKEY
+#   * LORRY_CONTROLLER_MINIONS (optional, defaults to 4)
 #
 # The configuration of a Trove is slightly tricky: part of it has to
 # be run on the configured system after it has booted. We accomplish
@@ -147,6 +148,15 @@ fi
 
 echo "Create Lorry Controller config"
 echo "confgit-url = $TROVEID" >> "$ROOT/etc/lorry-controller/webapp.conf"
+
+echo "Set up Lorry Controller MINIONs"
+UNITS="$ROOT/usr/lib/systemd/system"
+seq "${LORRY_CONTROLLER_MINION:-4}" |
+while read i
+do
+    ln -s "../lorry-controller-minion@.service" \
+        "$UNITS/multi-user.target.wants/lorry-controller-minion@$i.service"
+done
 
 ##########################################################################
 

@@ -145,6 +145,11 @@ fi
 
 ##########################################################################
 
+echo "Create Lorry Controller config"
+echo "confgit-url = $TROVEID" >> "$ROOT/etc/lorry-controller/webapp.conf"
+
+##########################################################################
+
 echo "Create trove-early-setup unit file"
 cat <<EOF > "$ROOT/etc/systemd/system/trove-early-setup.service"
 [Unit]

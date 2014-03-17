@@ -1,0 +1,10 @@
+[Unit]
+Description=Morph cache server
+Requires=network.target
+After=network.target
+ConditionPathExists=/etc/morph-cache-server.conf
+ConditionPathIsDirectory=/srv/distbuild/artifacts
+
+[Service]
+ExecStart=/usr/bin/morph-cache-server
+Restart=always

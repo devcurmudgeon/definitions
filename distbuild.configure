@@ -37,7 +37,7 @@
 #
 #    * WORKERS: hostnames or IP address of worker nodes, comma-separated.
 
-set -eu
+set -e
 
 
 # If ARTIFACT_CACHE_SERVER isn't set, default to $TROVE_ID.
@@ -45,6 +45,8 @@ if [ "x$ARTIFACT_CACHE_SERVER" = x ]
 then
     ARTIFACT_CACHE_SERVER="$TROVE_ID"
 fi
+
+set -u
 
 
 # Create the mount point for extra disk space.

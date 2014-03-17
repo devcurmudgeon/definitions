@@ -1,5 +1,5 @@
 #!/bin/sh
-# Copyright (C) 2013  Codethink Limited
+# Copyright (C) 2013-2014  Codethink Limited
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -13,6 +13,28 @@
 # You should have received a copy of the GNU General Public License along
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+#
+# This is a "morph deploy" configure extension to configure a Baserock
+# build node, as part of a distributed building cluster. It uses the
+# following variables from the environment:
+#
+#    * DISTBUILD_CONTROLLER: if 'yes', machine is set up as the controller.
+#    * DISTBUILD_WORKER: if 'yes', machine is set up as a worker.
+#    * TROVE_ID: hostname and Trove prefix of the server to pull source
+#          from and push built artifacts to.
+#
+# The following variable is optional:
+#
+#    * ARTIFACT_CACHE_SERVER: by default artifacts are pushed to the same
+#          Trove that served the source, but you can use a different one.
+#
+# The following variable is required for worker nodes only:
+#
+#    * CONTROLLERHOST: hostname or IP address of distbuild controller machine.
+#
+# The following variable is required for the controller node only:
+#
+#    * WORKERS: hostnames or IP address of worker nodes, comma-separated.
 
 set -eu
 

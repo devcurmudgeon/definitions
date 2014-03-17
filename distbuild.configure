@@ -31,6 +31,7 @@
 # The following variable is required for worker nodes only:
 #
 #    * CONTROLLERHOST: hostname or IP address of distbuild controller machine.
+#    * WORKER_SSH_KEY: identity used to authenticate with Trove
 #
 # The following variable is required for the controller node only:
 #
@@ -148,5 +149,10 @@ artifact-dir = /srv/distbuild/artifacts
 direct-mode = True
 fcgi-server = False
 EOF
+
+echo "Copy distbuild worker SSH key to system"
+mkdir "$1/root/.ssh"
+install -m 0600 "$WORKER_SSH_KEY" "$1/root/.ssh/id_rsa"
+install -m 0644 "${WORKER_SSH_KEY}.pub" "$1/root/.ssh/id_rsa.pub"
 
 fi

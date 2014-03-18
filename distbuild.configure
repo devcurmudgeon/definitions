@@ -76,12 +76,6 @@ cachedir-min-space = 0
 build-ref-prefix = $TROVE_ID
 artifact-cache-server = http://${ARTIFACT_CACHE_SERVER}:8080/
 git-resolve-cache-server = http://${TROVE_ID}:8080/
-repo-alias = freedesktop=git://anongit.freedesktop.org/#ssh://git.freedesktop.org/, 
-           github=git://github.com/%s#ssh://git@github.com/%s, 
-           baserock=git://git.baserock.org/baserock/%s#ssh://git@git.baserock.org/baserock/%s, 
-           gnome=git://git.gnome.org/%s#ssh://git.gnome.org/git/%s, 
-           upstream=git://git.baserock.org/delta/%s#ssh://git@git.baserock.org/delta/%s,
-           codethink=ssh://git@git.codethink.co.uk/ct098/%s#ssh://git@git.codethink.co.uk/ct098/%s
 EOF
 
 

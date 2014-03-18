@@ -1,8 +1,8 @@
 [Unit]
 Description=Morph distributed build worker
-Requires=network.target
+Requires=local-fs.target network.target
 Wants=srv-distbuild-ccache.mount
-After=network.target srv-distbuild-ccache.mount
+After=local-fs.target network.target srv-distbuild-ccache.mount
 ConditionPathExists=/etc/morph-worker.conf
 
 [Service]

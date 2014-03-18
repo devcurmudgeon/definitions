@@ -1,7 +1,7 @@
 [Unit]
 Description=Morph distributed build controller
-Requires=network.target
-After=network.target
+Requires=local-fs.target network.target
+After=local-fs.target network.target
 ConditionPathExists=/etc/morph-controller.conf
 
 [Service]

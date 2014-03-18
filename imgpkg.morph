@@ -1,0 +1,12 @@
+name: imgpkg
+kind: cluster
+description: |
+  Packaged system and script for installing it, for deferred instansiation.
+systems:
+- morph: base-system-x86_32-generic
+  deploy:
+    imgpkg:
+      type: imgpkg
+      location: imgpkg.tar
+      BOOTLOADER_BLOBS: "/usr/share/syslinux/mbr.bin"
+      INCLUDE_SCRIPTS: "imgpkg/make-disk-image.sh.in:imgpkg/disk-install.sh.in:imgpkg/common.sh.in"

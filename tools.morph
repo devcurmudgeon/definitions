@@ -92,8 +92,7 @@ chunks:
   - six
 - name: morph
   repo: baserock:baserock/morph
-  ref: 80f5d15cb5a5722418120dba7397970769560a7d
-  unpetrify-ref: baserock/richardipsum/distbuild2
+  ref: baserock/richardipsum/distbuild5
   build-depends:
   - cliapp
   - cmdtest

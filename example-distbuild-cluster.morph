@@ -19,7 +19,7 @@ systems:
     FSTAB_SRC: LABEL=src /srv/distbuild auto defaults,rw,noatime 0 2
     INSTALL_FILES: distbuild/manifest
     NFSBOOT_CONFIGURE: yes
-    WORKER_SSH_PUBKEY: ssh-keys/worker.key
+    WORKER_SSH_KEY: ssh-keys/worker.key
   deploy:
     build-controller:
       type: nfsboot

@@ -70,6 +70,7 @@ s/##TROVE_COMPANY##/$TROVE_COMPANY/g
 s/##TROVE_LOG_PREFIX##/$TROVE_ID/g
 s/##ESC_PERSONAL_PREFIX##/people/g
 s/##PREFIX##/$TROVE_ID/g
+s/##UPSTREAM_TROVE##/$UPSTRAM_TROVE/g
 ## The same prefix as above, only lua-pattern-escaped
 s/##ESC_PREFIX##/$(lua_escape "$TROVE_ID")/g
 EOF

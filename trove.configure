@@ -159,7 +159,6 @@ status-html = /home/lorry/lc-status.html
 wsgi = yes
 debug-port = 12765
 templates = /usr/share/lorry-controller/templates
-static-files = /usr/share/lorry-controller/static
 confgit-url = ssh://git@localhost/$TROVE_ID/local-config/lorries
 EOF
 

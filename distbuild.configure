@@ -152,7 +152,7 @@ fcgi-server = False
 EOF
 
 echo "Copy distbuild worker SSH key to system"
-mkdir "$1/root/.ssh"
+mkdir -p "$1/root/.ssh"
 install -m 0600 "$WORKER_SSH_KEY" "$1/root/.ssh/id_rsa"
 install -m 0644 "${WORKER_SSH_KEY}.pub" "$1/root/.ssh/id_rsa.pub"
 

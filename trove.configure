@@ -167,7 +167,7 @@ EOF
 
 echo "Set up Lorry Controller MINIONs"
 UNITS="$ROOT/usr/lib/systemd/system"
-seq "${LORRY_CONTROLLER_MINION:-4}" |
+seq "${LORRY_CONTROLLER_MINIONS:-4}" |
 while read i
 do
     ln -s "../lorry-controller-minion@.service" \

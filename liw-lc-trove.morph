@@ -7,7 +7,7 @@ systems:
       type: kvm
       location: kvm+ssh://liw@192.168.122.1/liw-lc-trove/home/liw/UNBACKED/liw-lc-trove.img
       DISK_SIZE: 4G
-      RAM_SIZE: 2G
+      RAM_SIZE: 3G
       ATTACH_DISKS: /dev/mavolio/liw-lc-trove-homes
       HOSTNAME: liw-lc-trove
       FSTAB_HOMES: LABEL=homes /home auto defaults,rw 0 0

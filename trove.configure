@@ -151,7 +151,7 @@ echo "Create Lorry Controller config"
 install -d "$ROOT/etc/lorry-controller"
 cat <<EOF > "$ROOT/etc/lorry-controller/webapp.conf"
 [config]
-log = /var/log/lorry-controller-webapp.log
+log = /home/lorry/webapp.log
 log-max = 100M
 log-keep = 10
 log-level = debug

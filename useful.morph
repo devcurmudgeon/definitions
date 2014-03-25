@@ -1,0 +1,51 @@
+name: useful
+kind: stratum
+description: pip, node, ruby, rubygems, bundler
+build-depends:
+- morph: tools
+chunks:
+- name: pip
+  repo: git@github.com:pypa/pip.git
+  ref: d4b691b743a91500cf49119d28a805db8313f129
+  unpetrify-ref: master
+  build-depends: []
+- name: node
+  repo: git@github.com:joyent/node.git
+  ref: 7d6b8db40f32e817ff145b7cfe6b3aec3179fba7
+  unpetrify-ref: v0.11.12
+  build-depends: []
+- name: ruby-1.8
+  repo: upstream:ruby
+  ref: 7a24f1710028d568ad61d0aa49d5178260178d77
+  unpetrify-ref: baserock/morph/ruby_1_8_7
+  build-depends: []
+- name: ruby-1.9
+  repo: upstream:ruby
+  ref: cb3ea602294b5038b5f7ac21d3875a2b52342956
+  unpetrify-ref: baserock/morph/ruby_1_9_3
+  build-depends:
+  - ruby-1.8
+- name: ruby-2
+  repo: upstream:ruby
+  ref: a161f1243550930a38028d58ed6d5f2ae9b6a38b
+  unpetrify-ref: master
+  build-depends:
+  - ruby-1.8
+- name: libyaml
+  repo: baserock:baserock/libyaml-hg
+  ref: 0577078d6625a7bf06e6bc7fb26a43e27400b17e
+  unpetrify-ref: master
+  build-depends: []
+- name: psych
+  repo: baserock:baserock/psych
+  ref: foo
+  unpetrify-ref: master
+  build-depends: []
+- name: rubygems
+  repo: git@github.com:rubygems/rubygems.git
+  ref: b71f51885b22e01d3b695276077f73a94c8b32fc
+  unpetrify-ref: master
+  build-depends:
+  - ruby-1.9
+  - libyaml
+  - psych

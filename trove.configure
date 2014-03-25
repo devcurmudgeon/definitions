@@ -80,7 +80,9 @@ sed -f "$ROOT"/etc/trove-setup.sed -i \
     "$ROOT"/etc/lorry.conf \
     "$ROOT"/usr/share/gitano/skel/gitano-admin/*/*.lace \
     "$ROOT"/usr/share/gitano/skel/gitano-admin/*/*.lua \
-    "$ROOT"/usr/share/gitano/skel/gitano-admin/users/*/user.conf
+    "$ROOT"/usr/share/gitano/skel/gitano-admin/users/*/user.conf \
+    "$ROOT"/usr/share/trove/releases-repo-migration.sh \
+    "$ROOT"/usr/lib/systemd/system/releases-repo-migration.service
 
 ##########################################################################
 

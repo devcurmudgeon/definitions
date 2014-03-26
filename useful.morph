@@ -25,27 +25,8 @@ chunks:
   unpetrify-ref: baserock/morph/ruby_1_9_3
   build-depends:
   - ruby-1.8
-- name: ruby-2
-  repo: upstream:ruby
-  ref: a161f1243550930a38028d58ed6d5f2ae9b6a38b
-  unpetrify-ref: master
-  build-depends:
-  - ruby-1.8
 - name: libyaml
   repo: baserock:baserock/libyaml-hg
   ref: 0577078d6625a7bf06e6bc7fb26a43e27400b17e
   unpetrify-ref: master
   build-depends: []
-- name: psych
-  repo: baserock:baserock/psych
-  ref: foo
-  unpetrify-ref: master
-  build-depends: []
-- name: rubygems
-  repo: git@github.com:rubygems/rubygems.git
-  ref: b71f51885b22e01d3b695276077f73a94c8b32fc
-  unpetrify-ref: master
-  build-depends:
-  - ruby-1.9
-  - libyaml
-  - psych

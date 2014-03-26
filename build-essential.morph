@@ -31,6 +31,11 @@ description: |
   stage2-fhs-dirs.morph for details. Basically, /bin is a symlink to
   /tools/bin during stage 2 but in stage 3 it becomes a real directory
   again.
+products:
+- artifact: build-essential-minimal
+  include:
+  - fhs-dirs-.*
+  - busybox-.*
 chunks:
 - name: stage1-binutils
   repo: upstream:binutils-redhat
@@ -165,7 +170,8 @@ chunks:
   prefix: /usr
 - name: eglibc
   repo: upstream:eglibc2
-  ref: baserock/2.15-build-essential
+  ref: baserock/richardmaw/S10786-finer-splitting
+  unpetrify-ref: baserock/2.15-build-essential
   build-depends:
   - stage2-binutils
   - stage2-busybox
@@ -178,10 +184,15 @@ chunks:
   - stage2-reset-specs
   - linux-api-headers
   build-mode: staging
+  artifacts:
+    eglibc-gconv: build-essential-runtime
+    eglibc-libs: build-essential-minimal
+    eglibc-nss: build-essential-runtime
   prefix: /usr
 - name: zlib
   repo: upstream:zlib
-  ref: baserock/build-essential
+  ref: baserock/richardmaw/S10786-finer-splitting
+  unpetrify-ref: baserock/build-essential
   build-depends:
   - stage2-binutils
   - stage2-busybox
@@ -194,6 +205,8 @@ chunks:
   - stage2-reset-specs
   - eglibc
   build-mode: staging
+  artifacts:
+    zlib-libs: build-essential-minimal
   prefix: /usr
 - name: binutils
   repo: upstream:binutils-redhat
@@ -246,7 +259,8 @@ chunks:
   prefix: /usr
 - name: gcc
   repo: upstream:gcc-tarball
-  ref: baserock/build-essential
+  ref: baserock/richardmaw/S10786-finer-splitting
+  unpetrify-ref: baserock/build-essential
   build-depends:
   - stage2-binutils
   - stage2-busybox
@@ -260,6 +274,8 @@ chunks:
   - eglibc
   - zlib
   build-mode: staging
+  artifacts:
+    gcc-libs: build-essential-minimal
   prefix: /usr
 - name: make
   repo: upstream:make

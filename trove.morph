@@ -136,7 +136,8 @@ chunks:
   build-depends: []
 - name: lorry
   repo: baserock:baserock/lorry
-  ref: master
+  ref: baserock/adamcoldrick/add-binary-build
+  unpetrify-ref: master
   build-depends:
   - bzr-tarball
   - python-fastimport

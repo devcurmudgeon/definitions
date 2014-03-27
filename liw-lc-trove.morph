@@ -5,13 +5,14 @@ systems:
   deploy:
     liw-lc-trove:
       type: kvm
-      location: kvm+ssh://liw@192.168.122.1/liw-lc-trove/home/liw/UNBACKED/liw-lc-trove.img
+      location: kvm+ssh://larswirzenius@br-dogfood-1.dyn.ducie.codethink.co.uk/liw-lc-trove/home/larswirzenius/vm-images/liw-lc-trove.img
+      AUTOSTART: yes
       DISK_SIZE: 4G
-      RAM_SIZE: 3G
-      LORRY_CONTROLLER_MINIONS: 3
-      ATTACH_DISKS: /dev/mavolio/liw-lc-trove-homes
+      RAM_SIZE: 6G
+      LORRY_CONTROLLER_MINIONS: 6
+      ATTACH_DISKS: /dev/br-dogfood-1/liw-lc-trove-homes
       HOSTNAME: liw-lc-trove
-      FSTAB_HOMES: LABEL=homes /home auto defaults,rw 0 0
+      FSTAB_HOMES: LABEL=liw-lc-trove-hom /home auto defaults,rw 0 0
       VERSION_LABEL: factory
       INSTALL_FILES: liw-lc-trove/manifest
       TROVE_ID: liw-lc-trove

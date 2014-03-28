@@ -67,11 +67,18 @@ chunks:
   - autoconf
   - perl
   - texinfo-tarball
+- name: readline
+  repo: upstream:readline
+  ref: baserock/morph
+  unpetrify-ref: baserock/morph
+  build-depends:
+    - ncurses
 - name: bash
   repo: upstream:bash
   ref: 783c677f45354b0d6df70e552217ecad8481804f
   unpetrify-ref: baserock/morph
-  build-depends: []
+  build-depends:
+    - readline
 - name: error-perl-tarball
   repo: upstream:error-perl-tarball
   ref: 661707e7bd4282aeab5a2f6a8f02ca5731fd813f
@@ -102,6 +109,7 @@ chunks:
   build-depends:
   - openssl-new
   - bzip2
+  - readline
 - name: libtool
   repo: upstream:libtool
   ref: d388b7f2dc628b22006025d01179bc09b8aabe81

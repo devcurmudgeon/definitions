@@ -163,8 +163,8 @@ chunks:
   build-depends: []
 - name: lorry
   repo: baserock:baserock/lorry
-  ref: 5afef32028fbcacb7acc3d0318407169dd2353de
-  unpetrify-ref: master
+  ref: liw/daemonise
+  unpetrify-ref: 5afef32028fbcacb7acc3d0318407169dd2353de
   build-depends:
   - bzr-tarball
   - python-fastimport

@@ -156,4 +156,6 @@ mkdir -p "$1/root/.ssh"
 install -m 0600 "$WORKER_SSH_KEY" "$1/root/.ssh/id_rsa"
 install -m 0644 "${WORKER_SSH_KEY}.pub" "$1/root/.ssh/id_rsa.pub"
 
+# Add trove's host key
+ssh-keyscan -t dsa,ecdsa,rsa "$TROVE_ID" >> "$1/root/.ssh/known_hosts"
 fi

@@ -4,6 +4,10 @@ description: pip, node, ruby, rubygems, bundler
 build-depends:
 - morph: tools
 chunks:
+- name: tar
+  repo: upstream:tar
+  ref: baserock/morph 
+  build-depends: []
 - name: pip
   repo: git@github.com:pypa/pip.git
   ref: d4b691b743a91500cf49119d28a805db8313f129
@@ -11,8 +15,7 @@ chunks:
   build-depends: []
 - name: node
   repo: git@github.com:joyent/node.git
-  ref: 7d6b8db40f32e817ff145b7cfe6b3aec3179fba7
-  unpetrify-ref: v0.11.12
+  ref: v0.10.26 
   build-depends: []
 - name: ruby-1.8
   repo: upstream:ruby

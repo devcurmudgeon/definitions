@@ -1,0 +1,14 @@
+name: vboxdeploy
+kind: cluster
+systems:
+- morph: web-system 
+  repo: baserock:baserock/definitions
+  ref: proto-web 
+  deploy:
+    my-toy:
+      type: virtualbox-ssh
+      location: vbox+ssh://paulsherwood@192.168.56.1/web-system/Users/paulsherwood/web-system.vdi
+      DISK_SIZE: 2G
+      HOST_IPADDR: 192.168.56.1
+      NETMASK: 255.255.255.0
+      NETWORK_CONFIG: lo:loopback;eth0:static,address=192.168.56.96,netmask=255.255.255.0;eth1:dhcp,hostname=$(hostname)

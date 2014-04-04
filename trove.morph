@@ -21,7 +21,7 @@ chunks:
   build-depends: []
 - name: lace
   repo: upstream:gitano/lace
-  ref: d1b540b6d361d6a1f51e53cdaab69f053340efbb
+  ref: a5addaea045879350a99531f9044bf0a6be76853
   unpetrify-ref: baserock/morph
   build-depends:
   - lua
@@ -65,7 +65,7 @@ chunks:
   - lua
 - name: gitano
   repo: upstream:gitano/gitano
-  ref: 77266b3ec2efec51f0a3246cbad70a4f15835958
+  ref: a1eca9a94e34407073605614b56d13c3738cbfa9
   unpetrify-ref: baserock/morph
   build-depends:
   - lua

@@ -1,0 +1,14 @@
+name: xfce/xfce4-appfinder.morph
+kind: chunk
+repo: upstream:xfce/xfce4-appfinder
+ref: 5c069f13fde648913a59f022957b2c83b5764f39
+configure-commands:
+- ./autogen.sh --prefix=${PREFIX}
+build-commands:
+- make
+install-commands:
+- make install
+build_depends:
+- xfce/exo.morph
+- xfce/libxfce4ui.morph
+- xfce/garcon.morph

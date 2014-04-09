@@ -1,0 +1,11 @@
+name: foundation/patch.morph
+kind: chunk
+repo: upstream:patch
+ref: 9a16dcb97aac1a26af4372d95bd62b84f3f1264a
+configure-commands:
+- bash bootstrap --skip-po
+- ./configure --prefix=/usr --bindir=/bin --libexecdir=/usr/sbin --disable-nls
+build-commands:
+- make
+install-commands:
+- make DESTDIR="$DESTDIR" install

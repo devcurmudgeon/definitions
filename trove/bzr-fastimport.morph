@@ -1,0 +1,8 @@
+name: trove/bzr-fastimport.morph
+kind: chunk
+repo: upstream:bzr-fastimport
+ref: b3cda9967f857127bd4dab5eb72223a95916f5ea
+build-system: python-distutils
+build_depends:
+- trove/bzr-tarball.morph
+- trove/python-fastimport.morph

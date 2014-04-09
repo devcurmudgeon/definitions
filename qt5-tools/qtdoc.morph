@@ -1,0 +1,12 @@
+name: qt5-tools/qtdoc.morph
+kind: chunk
+repo: upstream:qt5/qtdoc
+ref: 674abef4f06bdde57a272d69750e2a4ac5027ea9
+configure-commands:
+- qmake
+build-commands:
+- make
+install-commands:
+- make install INSTALL_ROOT=$DESTDIR
+build_depends:
+- qt5-tools/qtbase.morph

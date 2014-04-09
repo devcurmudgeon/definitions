@@ -1,0 +1,7 @@
+name: x-common/xorg-proto-xcmiscproto.morph
+kind: chunk
+repo: upstream:xorg-proto-xcmiscproto
+ref: 83549077a3c2140b9862709004cd873f1c55e395
+build-system: autotools
+build_depends:
+- x-common/xorg-util-macros.morph

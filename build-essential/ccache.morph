@@ -1,0 +1,26 @@
+name: build-essential/ccache.morph
+kind: chunk
+repo: upstream:ccache
+ref: 567631456f0899cdf0c382f898d38aadc8901d32
+build-system: autotools
+configure-commands:
+- ./configure --prefix="$PREFIX"
+install-commands:
+- make DESTDIR="$DESTDIR" install
+- mkdir -p "$DESTDIR/$PREFIX/lib/ccache"
+- for cc in gcc cc g++ c++; do ln -sf "$PREFIX/bin/ccache" "$DESTDIR/$PREFIX/lib/ccache/$cc";
+  done
+- for cc in gcc cc g++ c++; do ln -sf "$PREFIX/bin/ccache" "$DESTDIR/$PREFIX/lib/ccache/$TARGET-$cc";
+  done
+build_depends:
+- build-essential/stage2-binutils.morph
+- build-essential/stage2-busybox.morph
+- build-essential/stage2-eglibc.morph
+- build-essential/stage2-fhs-dirs.morph
+- build-essential/stage2-gawk.morph
+- build-essential/stage2-gcc.morph
+- build-essential/stage2-linux-api-headers.morph
+- build-essential/stage2-make.morph
+- build-essential/stage2-reset-specs.morph
+- build-essential/eglibc.morph
+- build-essential/zlib.morph

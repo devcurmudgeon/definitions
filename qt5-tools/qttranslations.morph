@@ -1,0 +1,13 @@
+name: qt5-tools/qttranslations.morph
+kind: chunk
+repo: upstream:qt5/qttranslations
+ref: e91af8e6363a4538f08992b6af51d17b91453080
+configure-commands:
+- qmake
+build-commands:
+- make
+install-commands:
+- make install INSTALL_ROOT=$DESTDIR
+build_depends:
+- qt5-tools/qtbase.morph
+- qt5-tools/qttools.morph

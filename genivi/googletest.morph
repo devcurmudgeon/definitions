@@ -1,0 +1,9 @@
+name: genivi/googletest.morph
+kind: chunk
+repo: upstream:googletest
+ref: 5e3f7d3db4c16e2ba8b42b0bf4689f7d2abbcb08
+build-system: autotools
+install-commands:
+- make DESTDIR="$DESTDIR" install
+- mkdir -p $DESTDIR/usr/share/gtest/m4
+- install -m 644 m4/acx_pthread.m4 $DESTDIR/usr/share/gtest/m4

@@ -1,0 +1,8 @@
+name: trove/cvs-tarball.morph
+kind: chunk
+repo: upstream:cvs-tarball
+ref: ca4cd317a75ef4349563b5a9a734561beb4a4f98
+build-system: autotools
+configure-commands:
+- YACC='bison -y' ./configure --prefix "$PREFIX" --with-external-zlib --without-gssapi
+  --without-krb4 --disable-dependency-tracking --disable-nls --disable-rpath

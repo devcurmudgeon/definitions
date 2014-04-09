@@ -1,0 +1,7 @@
+name: x-common/xorg-proto-dri2proto.morph
+kind: chunk
+repo: upstream:xorg-proto-dri2proto
+ref: ead89ad84877551cc15d26b95cb19a3e205df71f
+build-system: autotools
+build_depends:
+- x-common/xorg-util-macros.morph

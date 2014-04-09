@@ -1,0 +1,13 @@
+name: xfce/xfconf.morph
+kind: chunk
+repo: upstream:xfce/xfconf
+ref: ed6ed2f7656a0d5d8cb453cb643061c9a157f2ae
+configure-commands:
+- ./autogen.sh --prefix=${PREFIX}
+build-commands:
+- make
+install-commands:
+- make install
+build_depends:
+- xfce/xfce-dev-tools.morph
+- xfce/libxfce4util.morph

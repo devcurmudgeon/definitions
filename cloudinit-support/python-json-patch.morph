@@ -1,0 +1,5 @@
+name: cloudinit-support/python-json-patch.morph
+kind: chunk
+repo: upstream:python-json-patch
+ref: 27c7032de25923593fa17cc14f535fb7abd52448
+build-system: python-distutils

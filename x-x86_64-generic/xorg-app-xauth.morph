@@ -1,0 +1,7 @@
+name: x-x86_64-generic/xorg-app-xauth.morph
+kind: chunk
+repo: upstream:xorg-app-xauth
+ref: 6dda11c17f2fdc47d43f269dccee98ec66cc8c4b
+build-system: autotools
+build_depends:
+- x-x86_64-generic/xorg-lib-libXmu.morph

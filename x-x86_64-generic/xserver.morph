@@ -1,0 +1,19 @@
+name: x-x86_64-generic/xserver.morph
+kind: chunk
+repo: upstream:xserver
+ref: b7cbfa882778cf8857577e0da77aa9295f072db3
+build-system: autotools
+configure-commands:
+- ./autogen.sh --prefix="$PREFIX" --with-sha1=libsha1
+build_depends:
+- x-x86_64-generic/libsha1.morph
+- x-x86_64-generic/mesa-x.morph
+- x-x86_64-generic/pixman.morph
+- x-x86_64-generic/xorg-font-util.morph
+- x-x86_64-generic/xorg-lib-libXaw.morph
+- x-x86_64-generic/xorg-lib-libXfont.morph
+- x-x86_64-generic/xorg-lib-libXmu.morph
+- x-x86_64-generic/xorg-lib-libXpm.morph
+- x-x86_64-generic/xorg-lib-libXt.morph
+- x-x86_64-generic/xorg-lib-libfontenc.morph
+- x-x86_64-generic/xorg-lib-libxkbfile.morph

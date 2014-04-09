@@ -1,0 +1,7 @@
+name: trove/perl-dbd-sqlite-tarball.morph
+kind: chunk
+repo: upstream:perl-dbd-sqlite-tarball
+ref: 485b97be9f2f2abf5a40923b5fd85f75714a8c02
+build-system: cpan
+build_depends:
+- trove/perl-dbi-tarball.morph

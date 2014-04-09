@@ -1,0 +1,13 @@
+name: x-common/xorg-lib-libXrandr.morph
+kind: chunk
+repo: upstream:xorg-lib-libXrandr
+ref: 99a63d10cbbab7d69a52d25d78795a3278506ea9
+build-system: autotools
+build_depends:
+- x-common/xorg-lib-libX11.morph
+- x-common/xorg-lib-libXext.morph
+- x-common/xorg-lib-libXrender.morph
+- x-common/xorg-proto-randrproto.morph
+- x-common/xorg-proto-renderproto.morph
+- x-common/xorg-proto-xextproto.morph
+- x-common/xorg-util-macros.morph

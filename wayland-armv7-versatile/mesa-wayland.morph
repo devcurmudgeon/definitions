@@ -1,0 +1,10 @@
+name: wayland-armv7-versatile/mesa-wayland.morph
+kind: chunk
+repo: upstream:mesa
+ref: e96f3daac78e3971e4500a31e72c0a7e5845c3d1
+build-system: autotools
+configure-commands:
+- ./autogen.sh --prefix="$PREFIX" --enable-gles2 --disable-gallium-egl --with-egl-platforms=wayland,drm
+  --enable-gbm --enable-shared-glapi --with-gallium-drivers=swrast --with-dri-drivers=swrast
+build_depends:
+- wayland-armv7-versatile/wayland.morph

@@ -1,0 +1,15 @@
+name: build-essential/stage2-gawk.morph
+kind: chunk
+repo: upstream:gawk
+ref: 6a0eb04c3d2ac24d80d505b42a8f67799487d133
+build-system: autotools
+configure-commands:
+- STAGE2_SYSROOT="$(dirname $(pwd))" CPPFLAGS="--sysroot=$STAGE2_SYSROOT" CXX=false
+  LDFLAGS="-Wl,--sysroot=$STAGE2_SYSROOT" ./configure --prefix="$PREFIX" --disable-nls
+  --build=$(sh config.guess)  --host=$TARGET_STAGE1
+build-commands:
+- STAGE2_SYSROOT="$(dirname $(pwd))" make
+build_depends:
+- build-essential/stage1-binutils.morph
+- build-essential/stage1-gcc.morph
+- build-essential/stage2-eglibc.morph

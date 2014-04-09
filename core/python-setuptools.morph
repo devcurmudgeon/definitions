@@ -1,0 +1,10 @@
+name: core/python-setuptools.morph
+kind: chunk
+repo: upstream:python-setuptools
+ref: 05b07a427a1eae2a51d527f7ac5135a8fd215d77
+build-commands:
+- python setup.py build
+install-commands:
+- python setup.py install --prefix=/usr --root "$DESTDIR"
+build_depends:
+- core/cpython.morph

@@ -1,0 +1,17 @@
+name: gtk2/librsvg.morph
+kind: chunk
+repo: upstream:librsvg
+ref: 61171ca59d02b58b7da1697ca1d924bff93e66cb
+build-system: autotools
+configure-commands:
+- NOCONFIGURE=1 ./autogen.sh
+- ./configure --prefix="$PREFIX" --disable-gtk-theme
+install-commands:
+- make DESTDIR="$DESTDIR" install
+build_depends:
+- gtk2/cairo.morph
+- gtk2/gdk-pixbuf.morph
+- gtk2/gnome-common.morph
+- gtk2/gtk+.morph
+- gtk2/libcroco.morph
+- gtk2/pango.morph

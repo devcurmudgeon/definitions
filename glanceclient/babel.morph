@@ -1,0 +1,7 @@
+name: glanceclient/babel.morph
+kind: chunk
+repo: upstream:babel
+ref: d764b35bc3910b8f67ff811752df615afa7667f6
+build-system: python-distutils
+build_depends:
+- glanceclient/pytz.morph

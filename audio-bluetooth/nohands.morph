@@ -1,0 +1,10 @@
+name: audio-bluetooth/nohands.morph
+kind: chunk
+repo: upstream:nohands
+ref: 20ec5cc245fd5e74d9a0fc21497d1ba4164f2a3a
+build-system: autotools
+build-commands:
+- make CXXFLAGS="-fpermissive -lpthread"
+build_depends:
+- audio-bluetooth/bluez.morph
+- audio-bluetooth/speex.morph

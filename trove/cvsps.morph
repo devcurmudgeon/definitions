@@ -1,0 +1,9 @@
+name: trove/cvsps.morph
+kind: chunk
+repo: upstream:cvsps
+ref: 71c6d1f5668f405a7b259a0aac0d423f6c9b4d49
+build-system: manual
+build-commands:
+- make
+install-commands:
+- make install prefix="$DESTDIR$PREFIX"

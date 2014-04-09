@@ -1,0 +1,5 @@
+name: gtk2/libtiff.morph
+kind: chunk
+repo: upstream:libtiff
+ref: 2f83c385ff3d5493602308b62ca6d7707725b4fd
+build-system: autotools

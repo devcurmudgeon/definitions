@@ -1,0 +1,7 @@
+name: x-x86_64-generic/xorg-driver-xf86-video-fbdev.morph
+kind: chunk
+repo: upstream:xorg-driver-xf86-video-fbdev
+ref: ac293412a01d87f87eb61f4adb9db7486a75d3fc
+build-system: autotools
+build_depends:
+- x-x86_64-generic/xserver.morph

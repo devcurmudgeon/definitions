@@ -1,0 +1,18 @@
+name: nfs/nfs-utils.morph
+kind: chunk
+repo: upstream:nfs-utils
+ref: 08baf3bc2f66a1ca6401191e19380028d2fc2c6d
+build-system: autotools
+configure-commands:
+- NOCONFIGURE=1 ./autogen.sh
+- ./configure --prefix="$PREFIX" --disable-nfsv4 --disable-nfsv41 --disable-gss --with-rpcgen=internal
+install-commands:
+- make DESTDIR="$DESTDIR" install
+- mkdir -p "$DESTDIR"/lib/systemd/system
+- install -m644 proc-fs-nfsd.mount "$DESTDIR"/lib/systemd/system
+- install -m644 nfs-mountd.service "$DESTDIR"/lib/systemd/system
+- install -m644 nfs-server.service "$DESTDIR"/lib/systemd/system
+build_depends:
+- nfs/libevent.morph
+- nfs/tcp-wrappers.morph
+- nfs/ti-rpc.morph

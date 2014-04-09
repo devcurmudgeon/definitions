@@ -1,0 +1,10 @@
+name: core/pyyaml.morph
+kind: chunk
+repo: upstream:pyyaml
+ref: d9fbcceaed39d955f6871b07c61dc42f824285c1
+build-commands:
+- python setup.py --without-libyaml build
+install-commands:
+- python setup.py --without-libyaml install --prefix="$PREFIX" --root "$DESTDIR"
+build_depends:
+- core/python-setuptools.morph

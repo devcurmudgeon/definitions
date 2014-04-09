@@ -1,0 +1,5 @@
+name: wayland-armv7-versatile/xorg-lib-libxkbfile.morph
+kind: chunk
+repo: upstream:xorg-lib-libxkbfile
+ref: 7381c2f9013ef7784c78091fa671e652a62ca706
+build-system: autotools

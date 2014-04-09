@@ -1,0 +1,7 @@
+name: foundation/tbdiff.morph
+kind: chunk
+repo: baserock:baserock/tbdiff
+ref: 485e76fea076b2a5f0efeab3ac7f98037f4e00c0
+build-system: autotools
+build_depends:
+- foundation/attr.morph

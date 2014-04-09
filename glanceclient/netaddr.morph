@@ -1,0 +1,5 @@
+name: glanceclient/netaddr.morph
+kind: chunk
+repo: upstream:netaddr
+ref: f64ae19e533ffa5522dcba1fc833975cb2ee88a5
+build-system: python-distutils

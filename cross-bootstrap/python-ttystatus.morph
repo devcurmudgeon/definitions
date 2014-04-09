@@ -1,0 +1,8 @@
+name: cross-bootstrap/python-ttystatus.morph
+kind: chunk
+repo: upstream:python-ttystatus
+ref: 47d871216cea6ce3b9d6efd70e9a0f38ab8604f0
+build-commands:
+- python setup.py build
+install-commands:
+- python setup.py install --prefix=/usr --root "$DESTDIR"

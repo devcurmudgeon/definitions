@@ -1,0 +1,5 @@
+name: ceph-service/libunwind.morph
+kind: chunk
+repo: upstream:libunwind
+ref: 4b8404d153c58b95cb4420fc7603fdae62489a31
+build-system: autotools

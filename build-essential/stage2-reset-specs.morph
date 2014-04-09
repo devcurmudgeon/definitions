@@ -1,0 +1,16 @@
+name: build-essential/stage2-reset-specs.morph
+kind: chunk
+repo: upstream:eglibc2
+ref: 43ee5d250ad47d2bee8ec17954efb7f22d2b804c
+install-commands:
+- |
+  STAGE2_SYSROOT="$(dirname "$(pwd)")"
+  specs_dir="$(dirname $($TARGET_STAGE1-gcc -print-libgcc-file-name))"
+  target_specs_dir="$DESTDIR/${specs_dir#$STAGE2_SYSROOT}"
+  mkdir -p "$target_specs_dir"
+  ln -s "temporary specs removed by baserock bootstrap" "$target_specs_dir/specs"
+build_depends:
+- build-essential/stage1-binutils.morph
+- build-essential/stage1-gcc.morph
+- build-essential/stage2-linux-api-headers.morph
+- build-essential/stage2-eglibc.morph

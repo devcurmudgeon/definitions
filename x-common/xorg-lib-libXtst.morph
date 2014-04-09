@@ -1,0 +1,13 @@
+name: x-common/xorg-lib-libXtst.morph
+kind: chunk
+repo: upstream:xorg-lib-libXtst
+ref: 2aafac9474a0a0a0c39797862f823255918cf368
+build-system: autotools
+build_depends:
+- x-common/xorg-lib-libX11.morph
+- x-common/xorg-lib-libXext.morph
+- x-common/xorg-lib-libXi.morph
+- x-common/xorg-proto-inputproto.morph
+- x-common/xorg-proto-recordproto.morph
+- x-common/xorg-proto-xextproto.morph
+- x-common/xorg-util-macros.morph

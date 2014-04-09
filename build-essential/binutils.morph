@@ -1,0 +1,21 @@
+name: build-essential/binutils.morph
+kind: chunk
+repo: upstream:binutils-redhat
+ref: 987eb543a034cddc4eeb103f08f566f24a5f964a
+build-system: autotools
+configure-commands:
+- |
+  ./configure --prefix="$PREFIX" --disable-nls --disable-werror \
+    --with-system-zlib
+build_depends:
+- build-essential/stage2-binutils.morph
+- build-essential/stage2-busybox.morph
+- build-essential/stage2-eglibc.morph
+- build-essential/stage2-fhs-dirs.morph
+- build-essential/stage2-gawk.morph
+- build-essential/stage2-gcc.morph
+- build-essential/stage2-linux-api-headers.morph
+- build-essential/stage2-make.morph
+- build-essential/stage2-reset-specs.morph
+- build-essential/eglibc.morph
+- build-essential/zlib.morph

@@ -1,0 +1,8 @@
+name: genivi-foundation/fuse.morph
+kind: chunk
+repo: upstream:fuse
+ref: 13ee8f62d4aa3360adb6956fb30da0c858928fa2
+build-system: autotools
+configure-commands:
+- ./makeconf.sh
+- ./configure --prefix="$PREFIX"

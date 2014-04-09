@@ -1,0 +1,8 @@
+name: x-x86_64-generic/xorg-lib-libXfont.morph
+kind: chunk
+repo: upstream:xorg-lib-libXfont
+ref: b8dd42dce868f9c16a59790ce51f0542b59cb79d
+build-system: autotools
+build_depends:
+- x-x86_64-generic/freetype2.morph
+- x-x86_64-generic/xorg-lib-libfontenc.morph

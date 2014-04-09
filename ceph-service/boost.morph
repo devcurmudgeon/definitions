@@ -1,0 +1,10 @@
+name: ceph-service/boost.morph
+kind: chunk
+repo: upstream:boost-tarball
+ref: 026fc3d84a27e84a61d0f4c26f011a68271a0d6e
+configure-commands:
+- ./bootstrap.sh
+build-commands:
+- ./b2 || true
+install-commands:
+- ./b2 install --prefix=$DESTDIR$PREFIX || true

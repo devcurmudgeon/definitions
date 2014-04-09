@@ -1,0 +1,5 @@
+name: connectivity/libnl.morph
+kind: chunk
+repo: upstream:libnl
+ref: a2c4bd8f094a7247903578860a9c42049991860b
+build-system: autotools

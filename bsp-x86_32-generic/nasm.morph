@@ -1,0 +1,7 @@
+name: bsp-x86_32-generic/nasm.morph
+kind: chunk
+repo: upstream:nasm
+ref: 78bdad3d14fb875d5f2062957e326ba2a9e4ccb0
+build-system: autotools
+install-commands:
+- make INSTALLROOT="$DESTDIR" install

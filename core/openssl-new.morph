@@ -1,0 +1,19 @@
+name: core/openssl-new.morph
+kind: chunk
+repo: upstream:openssl-new
+ref: 2bee25a915c2ba40e58229788aabc97765426016
+max-jobs: 1
+configure-commands:
+- sed -i -e 's,^LIBNAMES=\\(.*\\) padlock \\(.*\\),LIBNAMES=\\1 \\2,g' engines/Makefile
+- |
+  if [ "$(uname -m)" = "ppc64" ]; then
+      sh ./Configure linux-ppc64 --openssldir=/etc/ssl --prefix="${PREFIX-/usr}" --libdir=lib shared
+  else
+      ./config --openssldir=/etc/ssl --prefix="${PREFIX-/usr}" --libdir=lib shared
+  fi
+build-commands:
+- make
+install-commands:
+- make INSTALL_PREFIX="$DESTDIR" install_sw
+build_depends:
+- core/perl.morph

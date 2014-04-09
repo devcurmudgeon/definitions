@@ -1,0 +1,5 @@
+name: x-common/xorg-util-macros.morph
+kind: chunk
+repo: upstream:xorg-util-macros
+ref: c98b41de5596c675c603ef43ae9570133f1a9921
+build-system: autotools

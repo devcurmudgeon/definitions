@@ -1,0 +1,16 @@
+name: core/curl.morph
+kind: chunk
+repo: upstream:curl
+ref: 3c835adc9fe20f7b34df3f0abd4db6ff8b75bc3b
+configure-commands:
+- ./buildconf
+- ./configure --disable-manual --prefix="$PREFIX"
+build-commands:
+- make
+install-commands:
+- make  DESTDIR="$DESTDIR" install
+build_depends:
+- core/autoconf.morph
+- core/automake.morph
+- core/libtool.morph
+- core/openssl-new.morph

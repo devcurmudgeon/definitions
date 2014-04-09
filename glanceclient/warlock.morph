@@ -1,0 +1,9 @@
+name: glanceclient/warlock.morph
+kind: chunk
+repo: upstream:warlock
+ref: 1a0de8a67df8282c42f71014cc871684e8d7c0cf
+build-system: python-distutils
+build_depends:
+- glanceclient/jsonschema.morph
+- glanceclient/python-json-pointer.morph
+- glanceclient/python-json-patch.morph

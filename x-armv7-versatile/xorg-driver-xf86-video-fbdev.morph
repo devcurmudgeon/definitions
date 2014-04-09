@@ -1,0 +1,7 @@
+name: x-armv7-versatile/xorg-driver-xf86-video-fbdev.morph
+kind: chunk
+repo: upstream:xorg-driver-xf86-video-fbdev
+ref: ac293412a01d87f87eb61f4adb9db7486a75d3fc
+build-system: autotools
+build_depends:
+- x-armv7-versatile/xserver.morph

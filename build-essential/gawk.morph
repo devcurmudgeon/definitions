@@ -1,0 +1,18 @@
+name: build-essential/gawk.morph
+kind: chunk
+repo: upstream:gawk
+ref: 6a0eb04c3d2ac24d80d505b42a8f67799487d133
+build-system: autotools
+configure-commands:
+- ./configure --prefix="$PREFIX" --disable-nls
+build_depends:
+- build-essential/stage2-binutils.morph
+- build-essential/stage2-busybox.morph
+- build-essential/stage2-eglibc.morph
+- build-essential/stage2-fhs-dirs.morph
+- build-essential/stage2-gawk.morph
+- build-essential/stage2-gcc.morph
+- build-essential/stage2-linux-api-headers.morph
+- build-essential/stage2-make.morph
+- build-essential/stage2-reset-specs.morph
+- build-essential/eglibc.morph

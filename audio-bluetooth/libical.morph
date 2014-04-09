@@ -1,0 +1,8 @@
+name: audio-bluetooth/libical.morph
+kind: chunk
+repo: upstream:libical
+ref: 52568782ae136e1ec4ddf3eb6da7b0f3fbd3f1b3
+build-system: autotools
+configure-commands:
+- autoreconf -ivf
+- ./configure --prefix="$PREFIX"

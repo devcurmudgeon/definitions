@@ -1,0 +1,15 @@
+name: qt5-tools/qtscript.morph
+kind: chunk
+repo: upstream:qt5/qtscript
+ref: d20e99b3bdbcf77b69a92a2ba1b3ca1f1379e7c8
+configure-commands:
+- qmake
+build-commands:
+- make
+- make html_docs
+install-commands:
+- make install INSTALL_ROOT=$DESTDIR
+- make install_html_docs INSTALL_ROOT=$DESTDIR
+build_depends:
+- qt5-tools/qtbase.morph
+- qt5-tools/qtjsbackend.morph

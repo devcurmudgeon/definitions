@@ -1,0 +1,12 @@
+name: trove/luxio.morph
+kind: chunk
+description: Lua Unix IO (and related stuff).
+repo: upstream:luxio
+ref: be9d125080b9ff2376273e21b75669b65dc88d46
+build-system: manual
+build-commands:
+- make lua-5.1
+install-commands:
+- make DESTDIR="$DESTDIR" lua-5.1-install
+build_depends:
+- trove/lua.morph

@@ -1,0 +1,10 @@
+name: tools/morph.morph
+kind: chunk
+repo: baserock:baserock/morph
+ref: c04760ffe1d385134e5092a22db5e5f78c205038
+build-system: python-distutils
+build_depends:
+- tools/cliapp.morph
+- tools/cmdtest.morph
+- tools/python-coverage-test-runner.morph
+- tools/pyfilesystem.morph

@@ -1,0 +1,7 @@
+name: x-ppc64-generic/xorg-lib-libXmu.morph
+kind: chunk
+repo: upstream:xorg-lib-libXmu
+ref: 474d22468c90f99104873b4c5fd7b0f0d2cbf823
+build-system: autotools
+build_depends:
+- x-ppc64-generic/xorg-lib-libXt.morph

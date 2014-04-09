@@ -1,0 +1,11 @@
+name: wayland-x86_64-generic/wayland.morph
+kind: chunk
+description: Wayland server
+repo: upstream:wayland
+ref: cbd8ab5ba7f3f0dba6c9b04176b3a2da965cd21c
+build-system: autotools
+configure-commands:
+- autoreconf -ivf
+- ./configure --prefix="$PREFIX" --disable-documentation
+build_depends:
+- wayland-x86_64-generic/libxkbcommon.morph

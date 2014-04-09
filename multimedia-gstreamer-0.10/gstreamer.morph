@@ -1,0 +1,7 @@
+name: multimedia-gstreamer-0.10/gstreamer.morph
+kind: chunk
+repo: upstream:gstreamer
+ref: c7e4a97d26396882960fd399b1a5e298e40d2a35
+build-system: autotools
+build_depends:
+- multimedia-gstreamer-0.10/orc.morph

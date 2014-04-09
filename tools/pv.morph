@@ -1,0 +1,5 @@
+name: tools/pv.morph
+kind: chunk
+repo: upstream:pv
+ref: d6ce7cfec684fa72d7a919d7b1aa817a0ca6102a
+build-system: autotools

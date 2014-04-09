@@ -1,0 +1,12 @@
+name: foundation/btrfs-progs.morph
+kind: chunk
+repo: upstream:btrfs-progs
+ref: 304f215abb836811e6d78e0a3da53d48aa0e7ca7
+configure-commands: []
+build-commands:
+- make
+install-commands:
+- make DESTDIR="$DESTDIR" prefix="$PREFIX" install
+build_depends:
+- foundation/attr.morph
+- foundation/lzo.morph

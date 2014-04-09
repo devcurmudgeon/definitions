@@ -1,0 +1,10 @@
+name: core/libxml2.morph
+kind: chunk
+repo: upstream:libxml2
+ref: ee8f1d4cda8dc1a6f2c515fe234f7bc89cdc9f80
+build-system: autotools
+build_depends:
+- core/autoconf.morph
+- core/automake.morph
+- core/cpython.morph
+- core/libtool.morph

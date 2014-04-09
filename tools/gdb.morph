@@ -1,0 +1,5 @@
+name: tools/gdb.morph
+kind: chunk
+repo: upstream:gdb
+ref: c4bf5268b1a32ec475b61d2fe90e9218780c03c8
+build-system: autotools

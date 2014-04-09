@@ -1,0 +1,5 @@
+name: glanceclient/pyiso8601.morph
+kind: chunk
+repo: upstream:pyiso8601
+ref: ac5470ec9e68332ebc499c4f9f21e7e3cb31ecb6
+build-system: python-distutils

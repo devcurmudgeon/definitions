@@ -1,0 +1,16 @@
+name: xfce/thunar.morph
+kind: chunk
+repo: upstream:xfce/thunar
+ref: 8289f48c200b91cc1e9932e13defb8e6a4765054
+configure-commands:
+- gdk-pixbuf-query-loaders > loader.cache
+- ./autogen.sh --prefix="$PREFIX" --enable-debug=yes
+build-commands:
+- GDK_PIXBUF_MODULE_FILE="$(pwd)/loader.cache" make
+install-commands:
+- GDK_PIXBUF_MODULE_FILE="$(pwd)/loader.cache" make install
+build_depends:
+- xfce/libxfce4ui.morph
+- xfce/exo.morph
+- xfce/garcon.morph
+- xfce/libwnck.morph

@@ -1,0 +1,10 @@
+name: x-common/xcb-libxcb.morph
+kind: chunk
+repo: upstream:xcb-libxcb
+ref: 0dd8f8d26a758bc385e79d9239bf6ef2e3d7bf13
+build-system: autotools
+build_depends:
+- x-common/xcb-proto.morph
+- x-common/xcb-pthread-stubs.morph
+- x-common/xorg-lib-libXau.morph
+- x-common/xorg-util-macros.morph

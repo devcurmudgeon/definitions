@@ -1,0 +1,11 @@
+name: x-x86_64-generic/util-keysyms.morph
+kind: chunk
+repo: upstream:util-keysyms
+ref: 0be179eff4eadb99ee303891d1c29c4e4dd6fbab
+configure-commands:
+- git submodule update --init
+- ./autogen.sh --prefix=/usr
+build-commands:
+- make
+install-commands:
+- make DESTDIR="$DESTDIR" install

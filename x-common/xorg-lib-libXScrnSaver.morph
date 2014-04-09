@@ -1,0 +1,10 @@
+name: x-common/xorg-lib-libXScrnSaver.morph
+kind: chunk
+repo: upstream:xorg-lib-libXScrnSaver
+ref: f388a2ff259ee1c1c6058762e900bb29550e8246
+build-system: autotools
+build_depends:
+- x-common/xorg-proto-scrnsaverproto.morph
+- x-common/xorg-proto-xextproto.morph
+- x-common/xorg-lib-libXext.morph
+- x-common/xorg-lib-libX11.morph

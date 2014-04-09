@@ -1,0 +1,12 @@
+name: xfce/garcon.morph
+kind: chunk
+repo: upstream:xfce/garcon
+ref: febd4136365714556f6afbccf4302e8f4550e5d1
+configure-commands:
+- ./autogen.sh --prefix="$PREFIX" --enable-debug=yes
+build-commands:
+- make
+install-commands:
+- make install
+build_depends:
+- xfce/libxfce4util.morph

@@ -1,0 +1,10 @@
+name: cxmanage/cxmanage.morph
+kind: chunk
+repo: upstream:cxmanage
+ref: 54116d3c486ed7aa49f284e4cad9e6e7c293bea6
+build-system: python-distutils
+build_depends:
+- cxmanage/ipmitool.morph
+- cxmanage/pexpect.morph
+- cxmanage/pyipmi.morph
+- cxmanage/tftpy.morph

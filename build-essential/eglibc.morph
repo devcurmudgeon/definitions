@@ -1,0 +1,34 @@
+name: build-essential/eglibc.morph
+kind: chunk
+repo: upstream:eglibc2
+ref: 43ee5d250ad47d2bee8ec17954efb7f22d2b804c
+configure-commands:
+- mkdir o
+- cd libc && ln -s ../ports ports
+- |
+  export CFLAGS="-O2 $CFLAGS"; cd o &&
+  ../libc/configure \
+    $(../morph-arch-config) \
+    --prefix="$PREFIX" \
+    --disable-profile \
+    --enable-kernel=2.6.25 \
+    --enable-add-ons=nptl,ports \
+    --without-cvs \
+    --without-selinux
+build-commands:
+- cd o && make localtime=UTC
+install-commands:
+- cd o && make install_root="$DESTDIR" localtime=UTC install
+- mkdir -p "$DESTDIR/etc"
+- install -m 644 -o root -g root nsswitch.conf "$DESTDIR/etc/nsswitch.conf"
+build_depends:
+- build-essential/stage2-binutils.morph
+- build-essential/stage2-busybox.morph
+- build-essential/stage2-eglibc.morph
+- build-essential/stage2-fhs-dirs.morph
+- build-essential/stage2-gawk.morph
+- build-essential/stage2-gcc.morph
+- build-essential/stage2-linux-api-headers.morph
+- build-essential/stage2-make.morph
+- build-essential/stage2-reset-specs.morph
+- build-essential/linux-api-headers.morph

@@ -1,0 +1,7 @@
+name: x-common/xcb-pthread-stubs.morph
+kind: chunk
+repo: upstream:xcb-pthread-stubs
+ref: 431d2c0be218d878b9dd3862e4232243c599df4b
+build-system: autotools
+build_depends:
+- x-common/xorg-util-macros.morph

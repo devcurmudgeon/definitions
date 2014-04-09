@@ -1,0 +1,8 @@
+name: x-common/xorg-util-makedepend.morph
+kind: chunk
+repo: upstream:xorg-util-makedepend
+ref: 87fd28cd5a5acfe6e91c97c4af0a469e1e86cbd5
+build-system: autotools
+build_depends:
+- x-common/xorg-proto-x11proto.morph
+- x-common/xorg-util-macros.morph

@@ -1,0 +1,5 @@
+name: tools/linux-user-chroot.morph
+kind: chunk
+repo: upstream:linux-user-chroot
+ref: d25cc110f69e6e71a95b4ac532dcfc5423d4a16b
+build-system: autotools

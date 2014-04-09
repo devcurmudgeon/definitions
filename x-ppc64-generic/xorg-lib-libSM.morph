@@ -1,0 +1,7 @@
+name: x-ppc64-generic/xorg-lib-libSM.morph
+kind: chunk
+repo: upstream:xorg-lib-libSM
+ref: 77ddd273239a629eeed7bd1d5b4509b1bd6d4e37
+build-system: autotools
+build_depends:
+- x-ppc64-generic/xorg-lib-libICE.morph

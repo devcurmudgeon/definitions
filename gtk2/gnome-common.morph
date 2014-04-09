@@ -1,0 +1,5 @@
+name: gtk2/gnome-common.morph
+kind: chunk
+repo: upstream:gnome-common
+ref: 66d54b57313f0f6206cff32972d2b83d683628b2
+build-system: autotools

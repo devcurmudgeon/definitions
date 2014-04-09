@@ -1,0 +1,5 @@
+name: glanceclient/jsonschema.morph
+kind: chunk
+repo: upstream:jsonschema
+ref: 292a256b918af1e567982bb801c427cf4ca5b9fe
+build-system: python-distutils

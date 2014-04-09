@@ -1,0 +1,7 @@
+name: x-armv7-versatile/fontconfig.morph
+kind: chunk
+repo: upstream:fontconfig
+ref: 72b0480a21958f0f8c115d8e0a5bfbd8d358b5c3
+build-system: autotools
+build_depends:
+- x-armv7-versatile/freetype2.morph

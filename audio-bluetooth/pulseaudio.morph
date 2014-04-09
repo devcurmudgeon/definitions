@@ -1,0 +1,22 @@
+name: audio-bluetooth/pulseaudio.morph
+kind: chunk
+description: PulseAudio System
+repo: upstream:pulseaudio
+ref: e1b44688c0db505f70761fe76b4fed2ca6924a09
+build-system: autotools
+configure-commands:
+- ./autogen.sh
+- ./configure --prefix="$PREFIX" --localstatedir=/var --sysconfdir=/etc --with-database=simple
+install-commands:
+- make DESTDIR="$DESTDIR" install
+- mkdir -p "$DESTDIR/lib/systemd/system"
+- install -m755 pulseaudio.service "$DESTDIR/lib/systemd/system"
+- mkdir -p "$DESTDIR/etc/systemd/system/multi-user.target.wants"
+- ln -s /lib/systemd/system/pulseaudio.service "$DESTDIR/etc/systemd/system/multi-user.target.wants/pulseaudio.service"
+build_depends:
+- audio-bluetooth/libsndfile.morph
+- audio-bluetooth/libatomic_ops.morph
+- audio-bluetooth/speex.morph
+- audio-bluetooth/json-c.morph
+- audio-bluetooth/alsa-lib.morph
+- audio-bluetooth/bluez.morph

@@ -1,0 +1,5 @@
+name: x-common/libpng.morph
+kind: chunk
+repo: upstream:libpng
+ref: 981560ae6094f0b0557e82c33d7ae5f7d81ca0ea
+build-system: autotools

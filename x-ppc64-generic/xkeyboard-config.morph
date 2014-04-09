@@ -1,0 +1,7 @@
+name: x-ppc64-generic/xkeyboard-config.morph
+kind: chunk
+repo: upstream:xkeyboard-config
+ref: b4be67b48fb11989f1824dd0b1c8c399430162b0
+build-system: autotools
+build_depends:
+- x-ppc64-generic/xorg-app-xkbcomp.morph

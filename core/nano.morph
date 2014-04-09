@@ -1,0 +1,7 @@
+name: core/nano.morph
+kind: chunk
+repo: upstream:nano-tarball
+ref: 8b74abeb02c01ddc768c465a826360cf33cec063
+build-system: autotools
+build_depends:
+- core/ncurses.morph

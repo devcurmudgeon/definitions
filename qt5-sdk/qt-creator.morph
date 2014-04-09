@@ -1,0 +1,11 @@
+name: qt5-sdk/qt-creator.morph
+kind: chunk
+repo: upstream:qt-creator
+ref: d5a6b10634c1a3271012e9578e016772ef077d59
+configure-commands:
+- qmake
+build-commands:
+- make
+install-commands:
+- make install INSTALL_ROOT=$DESTDIR
+- ./qhelpgenerator.sh

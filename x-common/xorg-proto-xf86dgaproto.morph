@@ -1,0 +1,7 @@
+name: x-common/xorg-proto-xf86dgaproto.morph
+kind: chunk
+repo: upstream:xorg-proto-xf86dgaproto
+ref: c52b205c3175309be7952774668c87dd2d5ce30e
+build-system: autotools
+build_depends:
+- x-common/xorg-util-macros.morph

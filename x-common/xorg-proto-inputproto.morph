@@ -1,0 +1,7 @@
+name: x-common/xorg-proto-inputproto.morph
+kind: chunk
+repo: upstream:xorg-proto-inputproto
+ref: f8428123019e7357891bbfc0aef21dbb4d0db10f
+build-system: autotools
+build_depends:
+- x-common/xorg-util-macros.morph

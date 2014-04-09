@@ -1,0 +1,10 @@
+name: trove/lighttpd.morph
+kind: chunk
+repo: upstream:lighttpd
+ref: 12e4e21763da770034267ff0a7b660876930f789
+build-system: autotools
+configure-commands:
+- ./autogen.sh
+- ./configure --prefix="$PREFIX" --with-openssl --with-openssl-libs=/usr/lib
+build_depends:
+- trove/pcre.morph

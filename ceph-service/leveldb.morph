@@ -1,0 +1,11 @@
+name: ceph-service/leveldb.morph
+kind: chunk
+repo: upstream:leveldb
+ref: 0f0ed46e70967365c851243663689e156fe1b7b5
+build-commands:
+- make
+install-commands:
+- ./install.sh
+build_depends:
+- ceph-service/snappy.morph
+- ceph-service/gperftools.morph

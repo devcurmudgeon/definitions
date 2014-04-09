@@ -1,0 +1,5 @@
+name: x-ppc64-generic/freetype2.morph
+kind: chunk
+repo: upstream:freetype2
+ref: 2ba18ba1ce730ed79672801b20f986f10a628c95
+build-system: autotools

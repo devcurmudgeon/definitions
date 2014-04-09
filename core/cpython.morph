@@ -1,0 +1,12 @@
+name: core/cpython.morph
+kind: chunk
+repo: upstream:cpython
+ref: fa86445bfd4fb8e5441d685d92bf8a8ee237f022
+build-system: autotools
+configure-commands:
+- ./configure --prefix="$PREFIX" --enable-shared
+post-install-commands:
+- ln -s python2.7 "$DESTDIR"/"$PREFIX"/bin/python2
+build_depends:
+- core/openssl-new.morph
+- core/bzip2.morph

@@ -1,0 +1,5 @@
+name: xfce/perl-uri.morph
+kind: chunk
+repo: upstream:libwww-perl/uri
+ref: 3dd72ded7f043a4f6973781fe594722e2e95f491
+build-system: cpan

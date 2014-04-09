@@ -1,0 +1,9 @@
+name: trove/mercurial-tarball.morph
+kind: chunk
+repo: upstream:mercurial-tarball
+ref: 4b0aa73b8c69bd5b7521337809f7bc4714209a5a
+build-system: manual
+build-commands:
+- make build PREFIX="$PREFIX"
+install-commands:
+- make install-bin PREFIX="$PREFIX" DESTDIR="$DESTDIR"

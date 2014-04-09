@@ -1,0 +1,8 @@
+name: tools/kexec-tools.morph
+kind: chunk
+repo: upstream:kexec-tools
+ref: 9359b61ca44980d33c0bee42b9bb2e36e72835dd
+build-system: autotools
+configure-commands:
+- ./bootstrap
+- ./configure --prefix="$PREFIX"

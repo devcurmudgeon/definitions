@@ -1,0 +1,19 @@
+name: xfce/xfwm4.morph
+kind: chunk
+repo: upstream:xfce/xfwm4
+ref: 523ef8a6861af772be3468cd700ad14172c86768
+configure-commands:
+- gdk-pixbuf-query-loaders > loader.cache
+- ./autogen.sh --prefix="$PREFIX" --enable-debug=yes
+build-commands:
+- GDK_PIXBUF_MODULE_FILE="$(pwd)/loader.cache" make
+install-commands:
+- GDK_PIXBUF_MODULE_FILE="$(pwd)/loader.cache" make install
+- install -m 0644 index.theme $DESTDIR/usr/share/icons/hicolor
+- gtk-update-icon-cache $DESTDIR/usr/share/icons/hicolor
+build_depends:
+- xfce/exo.morph
+- xfce/libxfce4util.morph
+- xfce/libxfce4ui.morph
+- xfce/xfconf.morph
+- xfce/libwnck.morph

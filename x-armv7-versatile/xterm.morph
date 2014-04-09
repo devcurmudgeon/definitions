@@ -1,0 +1,8 @@
+name: x-armv7-versatile/xterm.morph
+kind: chunk
+repo: upstream:xterm
+ref: 7fc0a9529babac61d9a0b30e6ddb3c79e44af0e5
+build-system: autotools
+build_depends:
+- x-armv7-versatile/xorg-lib-libXaw.morph
+- x-armv7-versatile/xorg-lib-libxkbfile.morph

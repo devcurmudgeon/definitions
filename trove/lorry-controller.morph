@@ -1,0 +1,5 @@
+name: trove/lorry-controller.morph
+kind: chunk
+repo: baserock:baserock/lorry-controller
+ref: 627c50633977804e6a10bafad81e72ae376b1cf6
+build-system: python-distutils

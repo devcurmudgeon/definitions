@@ -1,0 +1,10 @@
+name: genivi-x-x86_64-generic/layer_management.morph
+kind: chunk
+repo: upstream:layer_management
+ref: 206d6709d0a3b3932a02b30ccacaa02b3eab8493
+configure-commands:
+- mkdir -p build && cd build && cmake .. -DWITH_GLESv2_LIB=ON
+build-commands:
+- make -C build
+install-commands:
+- make -C build install

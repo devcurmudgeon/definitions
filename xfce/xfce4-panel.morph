@@ -1,0 +1,15 @@
+name: xfce/xfce4-panel.morph
+kind: chunk
+repo: upstream:xfce/xfce4-panel
+ref: 6ac8bfcb481781e8e23b101f5c5fdd70cf6d083b
+configure-commands:
+- ./autogen.sh --prefix="$PREFIX" --enable-debug=yes
+build-commands:
+- make
+install-commands:
+- make install
+build_depends:
+- xfce/libxfce4ui.morph
+- xfce/garcon.morph
+- xfce/exo.morph
+- xfce/libwnck.morph

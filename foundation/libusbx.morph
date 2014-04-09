@@ -1,0 +1,5 @@
+name: foundation/libusbx.morph
+kind: chunk
+repo: upstream:libusbx
+ref: 7ec94a45ed8155e7a1d4d5d75575099b09c78834
+build-system: autotools

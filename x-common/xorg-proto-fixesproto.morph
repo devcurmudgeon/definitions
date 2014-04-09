@@ -1,0 +1,7 @@
+name: x-common/xorg-proto-fixesproto.morph
+kind: chunk
+repo: upstream:xorg-proto-fixesproto
+ref: b6c6bc2aa4b83f8763c75c90e6671052272a2af2
+build-system: autotools
+build_depends:
+- x-common/xorg-util-macros.morph

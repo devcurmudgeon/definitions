@@ -1,0 +1,5 @@
+name: x-common/libjpeg.morph
+kind: chunk
+repo: upstream:libjpeg
+ref: f57ac58ac664ede6bc6e8cd9d88e0edaa366e21a
+build-system: autotools

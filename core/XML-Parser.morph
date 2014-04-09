@@ -1,0 +1,9 @@
+name: core/XML-Parser.morph
+kind: chunk
+repo: upstream:XML-Parser
+ref: e1a3ec157140a699e3020836475a0df622f70f1b
+build-system: cpan
+build_depends:
+- core/libexpat.morph
+- core/libxml2.morph
+- core/perl.morph

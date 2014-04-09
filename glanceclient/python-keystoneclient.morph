@@ -1,0 +1,13 @@
+name: glanceclient/python-keystoneclient.morph
+kind: chunk
+repo: upstream:python-keystoneclient
+ref: 21cc66a850c5ea1d2ffffb655da0c452b919ed3b
+build-system: python-distutils
+build_depends:
+- glanceclient/pbr.morph
+- glanceclient/pyiso8601.morph
+- glanceclient/python-prettytable.morph
+- glanceclient/python-requests.morph
+- glanceclient/simplejson.morph
+- glanceclient/netaddr.morph
+- glanceclient/babel.morph

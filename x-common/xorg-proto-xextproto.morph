@@ -1,0 +1,7 @@
+name: x-common/xorg-proto-xextproto.morph
+kind: chunk
+repo: upstream:xorg-proto-xextproto
+ref: f27fcc99d1cf935cc289933326f7d3baacd5107a
+build-system: autotools
+build_depends:
+- x-common/xorg-util-macros.morph

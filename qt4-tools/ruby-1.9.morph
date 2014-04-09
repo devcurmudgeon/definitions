@@ -1,0 +1,13 @@
+name: qt4-tools/ruby-1.9.morph
+kind: chunk
+repo: upstream:ruby
+ref: cb3ea602294b5038b5f7ac21d3875a2b52342956
+configure-commands:
+- autoconf
+- ./configure --prefix=/usr --enable-shared --with-baseruby=/usr/bin/ruby-1.8
+build-commands:
+- make
+install-commands:
+- make DESTDIR="$DESTDIR" install
+build_depends:
+- qt4-tools/ruby-1.8.morph

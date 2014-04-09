@@ -1,0 +1,5 @@
+name: gtk2/colm.morph
+kind: chunk
+repo: upstream:colm
+ref: fc633086748169632e93b945259197ba46f27695
+build-system: autotools

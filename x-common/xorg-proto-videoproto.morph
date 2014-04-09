@@ -1,0 +1,7 @@
+name: x-common/xorg-proto-videoproto.morph
+kind: chunk
+repo: upstream:xorg-proto-videoproto
+ref: e42cf822e230cff5c6550ca2c050dfa27d2c9611
+build-system: autotools
+build_depends:
+- x-common/xorg-util-macros.morph

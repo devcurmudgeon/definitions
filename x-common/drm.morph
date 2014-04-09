@@ -1,0 +1,8 @@
+name: x-common/drm.morph
+kind: chunk
+repo: upstream:drm
+ref: 20c5607b57da113ca1a29caaa5a52eaf83808dff
+build-system: autotools
+build_depends:
+- x-common/xcb-pthread-stubs.morph
+- x-common/xorg-lib-libpciaccess.morph

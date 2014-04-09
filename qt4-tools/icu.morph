@@ -1,0 +1,10 @@
+name: qt4-tools/icu.morph
+kind: chunk
+repo: upstream:icu
+ref: ba023548a3bff7277cbea4acade3042ce9d8949e
+configure-commands:
+- cd source; ./runConfigureICU Linux --prefix=/usr
+build-commands:
+- cd source; unset TARGET ; make
+install-commands:
+- cd source; unset TARGET ; make DESTDIR="$DESTDIR" install

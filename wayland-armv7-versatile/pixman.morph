@@ -1,0 +1,5 @@
+name: wayland-armv7-versatile/pixman.morph
+kind: chunk
+repo: upstream:pixman
+ref: 958bd334b3c17f529c80f2eeef4224f45c62f292
+build-system: autotools

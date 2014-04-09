@@ -1,0 +1,7 @@
+name: x-common/xorg-proto-dmxproto.morph
+kind: chunk
+repo: upstream:xorg-proto-dmxproto
+ref: 395f6fcc0a5635907b5e45829e86b29431316184
+build-system: autotools
+build_depends:
+- x-common/xorg-util-macros.morph

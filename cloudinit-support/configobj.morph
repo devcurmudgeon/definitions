@@ -1,0 +1,5 @@
+name: cloudinit-support/configobj.morph
+kind: chunk
+repo: upstream:configobj
+ref: 935a78736e4eb43b9fafae87f5e9902328673f63
+build-system: python-distutils

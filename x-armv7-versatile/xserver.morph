@@ -1,0 +1,19 @@
+name: x-armv7-versatile/xserver.morph
+kind: chunk
+repo: upstream:xserver
+ref: b7cbfa882778cf8857577e0da77aa9295f072db3
+build-system: autotools
+configure-commands:
+- ./autogen.sh --prefix="$PREFIX" --with-sha1=libsha1
+build_depends:
+- x-armv7-versatile/libsha1.morph
+- x-armv7-versatile/mesa-x.morph
+- x-armv7-versatile/pixman.morph
+- x-armv7-versatile/xorg-font-util.morph
+- x-armv7-versatile/xorg-lib-libXaw.morph
+- x-armv7-versatile/xorg-lib-libXfont.morph
+- x-armv7-versatile/xorg-lib-libXmu.morph
+- x-armv7-versatile/xorg-lib-libXpm.morph
+- x-armv7-versatile/xorg-lib-libXt.morph
+- x-armv7-versatile/xorg-lib-libfontenc.morph
+- x-armv7-versatile/xorg-lib-libxkbfile.morph

@@ -1,0 +1,7 @@
+name: x-x86_64-generic/util-image.morph
+kind: chunk
+repo: upstream:util-image
+ref: 66b0caa72eb5011d89d0346424ea40b9e8e93816
+build-system: autotools
+build_depends:
+- x-x86_64-generic/xcb-util.morph

@@ -1,0 +1,10 @@
+name: ceph-service/keyutils.morph
+kind: chunk
+repo: upstream:keyutils
+ref: 116417bce1e1df06a918de5e9e63f6ba88e2f4f5
+configure-commands: []
+build-commands:
+- make clean
+- make
+install-commands:
+- make DESTDIR="$DESTDIR" LIBDIR="$PREFIX/lib" USRLIBDIR="$PREFIX/lib" install

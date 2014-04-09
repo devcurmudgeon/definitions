@@ -1,0 +1,7 @@
+name: x-armv7-versatile/xorg-app-xkbcomp.morph
+kind: chunk
+repo: upstream:xorg-app-xkbcomp
+ref: 705b9bbb426410f9510601c7010da51184919b36
+build-system: autotools
+build_depends:
+- x-armv7-versatile/xorg-lib-libxkbfile.morph

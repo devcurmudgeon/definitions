@@ -1,0 +1,19 @@
+name: core/bison.morph
+kind: chunk
+repo: upstream:bison
+ref: 6729ad1c314b179225325dcc1bc684077a71f859
+configure-commands:
+- bash bootstrap --skip-po
+- ./configure --prefix=/usr --disable-nls
+build-commands:
+- make
+install-commands:
+- make DESTDIR="$DESTDIR" install
+build_depends:
+- core/autoconf.morph
+- core/automake.morph
+- core/bash.morph
+- core/flex.morph
+- core/gettext.morph
+- core/git.morph
+- core/mini-utils.morph

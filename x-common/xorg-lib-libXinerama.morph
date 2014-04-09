@@ -1,0 +1,11 @@
+name: x-common/xorg-lib-libXinerama.morph
+kind: chunk
+repo: upstream:xorg-lib-libXinerama
+ref: 470b9356af961ff7d3968b164aa73872b49a5dcc
+build-system: autotools
+build_depends:
+- x-common/xorg-lib-libX11.morph
+- x-common/xorg-lib-libXext.morph
+- x-common/xorg-proto-xextproto.morph
+- x-common/xorg-proto-xineramaproto.morph
+- x-common/xorg-util-macros.morph

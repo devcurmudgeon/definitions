@@ -1,0 +1,8 @@
+name: x-x86_64-generic/xterm.morph
+kind: chunk
+repo: upstream:xterm
+ref: 7fc0a9529babac61d9a0b30e6ddb3c79e44af0e5
+build-system: autotools
+build_depends:
+- x-x86_64-generic/xorg-lib-libXaw.morph
+- x-x86_64-generic/xorg-lib-libxkbfile.morph

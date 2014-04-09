@@ -1,0 +1,19 @@
+name: build-essential/linux-api-headers.morph
+kind: chunk
+repo: upstream:linux
+ref: eff825d6e284eb0fb04b434429a3e3b2e10cabf8
+install-commands:
+- make mrproper
+- ARCH=$(./morph-arch) make INSTALL_HDR_PATH=dest headers_install
+- install -d "$DESTDIR${PREFIX-/usr}/include"
+- cp -r dest/include/* "$DESTDIR/${PREFIX-/usr}/include"
+build_depends:
+- build-essential/stage2-binutils.morph
+- build-essential/stage2-busybox.morph
+- build-essential/stage2-eglibc.morph
+- build-essential/stage2-fhs-dirs.morph
+- build-essential/stage2-gawk.morph
+- build-essential/stage2-gcc.morph
+- build-essential/stage2-linux-api-headers.morph
+- build-essential/stage2-make.morph
+- build-essential/stage2-reset-specs.morph

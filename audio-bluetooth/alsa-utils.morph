@@ -1,0 +1,11 @@
+name: audio-bluetooth/alsa-utils.morph
+kind: chunk
+description: ALSA utilities
+repo: upstream:alsa-utils
+ref: f12208425051a7abf5ffc87ac2b9d2bd9e096fe1
+build-system: autotools
+configure-commands:
+- autoreconf -ifv
+- ./configure --prefix="$PREFIX" --disable-xmlto
+build_depends:
+- audio-bluetooth/alsa-lib.morph

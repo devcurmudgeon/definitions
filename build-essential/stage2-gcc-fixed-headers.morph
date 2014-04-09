@@ -1,0 +1,16 @@
+name: build-essential/stage2-gcc-fixed-headers.morph
+kind: chunk
+repo: upstream:gcc-tarball
+ref: dd78b627480ed8d3c135271cd627096ae76fa5fc
+install-commands:
+- |
+  libgcc_dir=$(dirname $($TARGET_STAGE1-gcc -print-libgcc-file-name))
+  sysroot="$(dirname "$(pwd)")"
+  target_libgcc_dir="${libgcc_dir#$sysroot}"
+  mkdir -p "$DESTDIR/$target_libgcc_dir/include-fixed"
+  cat "gcc/limitx.h" "gcc/glimits.h" "gcc/limity.h" \
+      >"$DESTDIR/$target_libgcc_dir/include-fixed/limits.h"
+build_depends:
+- build-essential/stage1-binutils.morph
+- build-essential/stage1-gcc.morph
+- build-essential/stage2-eglibc.morph

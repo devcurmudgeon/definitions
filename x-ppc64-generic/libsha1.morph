@@ -1,0 +1,5 @@
+name: x-ppc64-generic/libsha1.morph
+kind: chunk
+repo: upstream:libsha1
+ref: 17173732b9f1b2d4142de27913250b4563db2436
+build-system: autotools

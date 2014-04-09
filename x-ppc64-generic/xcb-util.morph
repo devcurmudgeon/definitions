@@ -1,0 +1,5 @@
+name: x-ppc64-generic/xcb-util.morph
+kind: chunk
+repo: upstream:xcb-util
+ref: 45215e6f56bf57efdf5469567c00eba7a991d3a3
+build-system: autotools

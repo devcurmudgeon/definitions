@@ -1,0 +1,5 @@
+name: wayland-armv7-versatile/libevdev.morph
+kind: chunk
+repo: upstream:libevdev
+ref: b23649e1ba9fd5c72fa9318e417b4f17f5f6f528
+build-system: autotools

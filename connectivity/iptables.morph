@@ -1,0 +1,5 @@
+name: connectivity/iptables.morph
+kind: chunk
+repo: upstream:iptables
+ref: 3e6fa55d5e28c93f417afeae7a7d4f349ddffcf4
+build-system: autotools

@@ -1,0 +1,14 @@
+name: qt5-tools/qtxmlpatterns.morph
+kind: chunk
+repo: upstream:qt5/qtxmlpatterns
+ref: ed713a904ee55f1c345d2d6c35e77892be96977e
+configure-commands:
+- qmake
+build-commands:
+- make
+- make html_docs
+install-commands:
+- make install INSTALL_ROOT=$DESTDIR
+- make install_html_docs INSTALL_ROOT=$DESTDIR
+build_depends:
+- qt5-tools/qtbase.morph

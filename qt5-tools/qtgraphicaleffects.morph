@@ -1,0 +1,14 @@
+name: qt5-tools/qtgraphicaleffects.morph
+kind: chunk
+repo: upstream:qt5/qtgraphicaleffects
+ref: e41d08f95d74d7309fc976cb62141b78239de975
+configure-commands:
+- qmake
+build-commands:
+- make
+install-commands:
+- make install INSTALL_ROOT=$DESTDIR
+build_depends:
+- qt5-tools/qtbase.morph
+- qt5-tools/qtjsbackend.morph
+- qt5-tools/qtdeclarative.morph

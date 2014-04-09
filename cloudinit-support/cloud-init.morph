@@ -1,0 +1,25 @@
+name: cloudinit-support/cloud-init.morph
+kind: chunk
+repo: upstream:cloud-init
+ref: eeb4923b3528ebf4d93d8297b2d489738c3ea7c3
+build-system: python-distutils
+post-install-commands:
+- mkdir -p "$DESTDIR"/lib/systemd/system
+- cp systemd/* "$DESTDIR"/lib/systemd/system/
+- mkdir -p "$DESTDIR"/etc/systemd/system/
+- |
+  for S in $(cd systemd; ls *.service); do
+     ln -s /lib/systemd/system/$S "$DESTDIR"/etc/systemd/system/$S;
+  done
+- mkdir -p "$DESTDIR"/lib/systemd/system/multi-user.target.wants/
+- |
+  for S in $(cd systemd; ls *.service); do
+     ln -s /lib/systemd/system/$S "$DESTDIR"/lib/systemd/system/multi-user.target.wants/$S;
+  done
+build_depends:
+- cloudinit-support/boto.morph
+- cloudinit-support/configobj.morph
+- cloudinit-support/python-requests.morph
+- cloudinit-support/python-prettytable.morph
+- cloudinit-support/python-json-pointer.morph
+- cloudinit-support/python-cheetah.morph

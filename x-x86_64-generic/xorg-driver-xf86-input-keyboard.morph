@@ -1,0 +1,7 @@
+name: x-x86_64-generic/xorg-driver-xf86-input-keyboard.morph
+kind: chunk
+repo: upstream:xorg-driver-xf86-input-keyboard
+ref: 4a954bc6a8fbc4aa50dfcabec011274252713204
+build-system: autotools
+build_depends:
+- x-x86_64-generic/xserver.morph

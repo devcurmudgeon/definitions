@@ -1,0 +1,5 @@
+name: foundation/libxslt.morph
+kind: chunk
+repo: upstream:libxslt
+ref: 8785a2ffd0d146df0395ab71ce4734d0a8ba0f7e
+build-system: autotools

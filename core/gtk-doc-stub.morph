@@ -1,0 +1,9 @@
+name: core/gtk-doc-stub.morph
+kind: chunk
+repo: upstream:gtk-doc-stub
+ref: 58ec0d8593541ef7ae522ce42ebec6f98536c4e0
+build-system: autotools
+build_depends:
+- core/autoconf.morph
+- core/automake.morph
+- core/libtool.morph

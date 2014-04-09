@@ -1,0 +1,5 @@
+name: x-ppc64-generic/util-wm.morph
+kind: chunk
+repo: upstream:util-wm
+ref: 18bde07dc7cb44617c0d159ccd9ef640804296e3
+build-system: autotools

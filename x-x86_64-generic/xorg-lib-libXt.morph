@@ -1,0 +1,7 @@
+name: x-x86_64-generic/xorg-lib-libXt.morph
+kind: chunk
+repo: upstream:xorg-lib-libXt
+ref: ead50a9a274aa96bef94e57c4625be8e9288af4e
+build-system: autotools
+build_depends:
+- x-x86_64-generic/xorg-lib-libSM.morph

@@ -1,0 +1,5 @@
+name: trove/bottle.morph
+kind: chunk
+repo: upstream:bottle
+ref: 5238c615b3ec198fedebb0fcaad4458e3d68d70f
+build-system: python-distutils

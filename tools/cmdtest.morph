@@ -1,0 +1,12 @@
+name: tools/cmdtest.morph
+kind: chunk
+repo: upstream:cmdtest
+ref: 62fa7e08f76a5b6bb8410add49c40656b3e73acd
+build-commands:
+- python setup.py build
+install-commands:
+- python setup.py install --prefix=/usr --root "$DESTDIR"
+build_depends:
+- tools/cliapp.morph
+- tools/python-ttystatus.morph
+- tools/python-markdown.morph

@@ -1,0 +1,10 @@
+name: core/xz.morph
+kind: chunk
+repo: upstream:xz
+ref: 581deedf9d1eadcd84c4fcd23b9fdfe2dde18cc2
+build-system: autotools
+build_depends:
+- core/autoconf.morph
+- core/automake.morph
+- core/gettext.morph
+- core/libtool.morph

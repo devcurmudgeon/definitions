@@ -1,0 +1,14 @@
+name: enlightenment/imlib2.morph
+kind: chunk
+repo: upstream:enlightenment/imlib2
+ref: 6d02661a4c57771888304960ce62d4fdf587be8f
+configure-commands:
+- ./autogen.sh --prefix=/usr
+build-commands:
+- make
+install-commands:
+- make DESTDIR="$DESTDIR" install
+build_depends:
+- enlightenment/efl.morph
+- enlightenment/elementary.morph
+- enlightenment/enlightenment.morph

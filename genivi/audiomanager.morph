@@ -1,0 +1,11 @@
+name: genivi/audiomanager.morph
+kind: chunk
+repo: upstream:audiomanager
+ref: f005d28c3bfa2f46128619dddbce954b9d7b928a
+build-system: cmake
+build_depends:
+- genivi/DLT-daemon.morph
+- genivi/googletest.morph
+- genivi/googlemock.morph
+- genivi/genivi-common-api-runtime.morph
+- genivi/genivi-common-api-dbus-runtime.morph

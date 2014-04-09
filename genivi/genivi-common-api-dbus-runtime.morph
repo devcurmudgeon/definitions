@@ -1,0 +1,7 @@
+name: genivi/genivi-common-api-dbus-runtime.morph
+kind: chunk
+repo: upstream:genivi-common-api-dbus-runtime
+ref: 16a259c8b78f254ee9157346880ccf19ed8905a7
+build-system: autotools
+build_depends:
+- genivi/genivi-common-api-runtime.morph

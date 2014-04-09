@@ -1,0 +1,5 @@
+name: genivi/DLT-daemon.morph
+kind: chunk
+repo: upstream:DLT-daemon
+ref: 6ab10c022d4464628fc2b848b5a56bf1eaafe857
+build-system: cmake

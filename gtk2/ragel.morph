@@ -1,0 +1,16 @@
+name: gtk2/ragel.morph
+kind: chunk
+repo: upstream:ragel
+ref: 5d4102ffe43a15608e0e864fc7e7f5c6c3b49aac
+max-jobs: 1
+build-system: autotools
+configure-commands:
+- ./autogen.sh --disable-manual --prefix="$PREFIX"
+- ./configure --disable-manual --prefix="$PREFIX"
+build-commands:
+- make -C src version.h
+- make
+install-commands:
+- make install
+build_depends:
+- gtk2/colm.morph

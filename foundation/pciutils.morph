@@ -1,0 +1,14 @@
+name: foundation/pciutils.morph
+kind: chunk
+repo: upstream:pciutils
+ref: bae04bd0473c68a2f21b7712a627abb08fd84b29
+build-system: manual
+configure-commands:
+- make ZLIB=no lib/config.mk
+- echo PREFIX=$PREFIX >>lib/config.mk
+- echo MANDIR=$PREFIX/share/man >>lib/config.mk
+build-commands:
+- make
+install-commands:
+- make DESTDIR="$DESTDIR" install
+- make DESTDIR="$DESTDIR" install-lib

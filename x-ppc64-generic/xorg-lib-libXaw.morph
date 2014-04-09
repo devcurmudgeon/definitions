@@ -1,0 +1,9 @@
+name: x-ppc64-generic/xorg-lib-libXaw.morph
+kind: chunk
+repo: upstream:xorg-lib-libXaw
+ref: a5630e166921b5b5322b30fb152df01bb6536e42
+build-system: autotools
+build_depends:
+- x-ppc64-generic/xorg-lib-libXmu.morph
+- x-ppc64-generic/xorg-lib-libXpm.morph
+- x-ppc64-generic/xorg-lib-libXt.morph

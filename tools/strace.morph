@@ -1,0 +1,5 @@
+name: tools/strace.morph
+kind: chunk
+repo: upstream:strace
+ref: ad232c6aa0c2a07830d61dc4b9912478634b23b5
+build-system: autotools

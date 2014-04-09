@@ -1,0 +1,10 @@
+name: core/autoconf.morph
+kind: chunk
+repo: upstream:autoconf
+ref: cffdb90be331111ce3fbe4a32320181ec2b92652
+build-system: autotools
+configure-commands:
+- ./configure --prefix="$PREFIX"
+build_depends:
+- core/m4.morph
+- core/perl.morph

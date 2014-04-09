@@ -1,0 +1,14 @@
+name: qt5-tools/qtsensors.morph
+kind: chunk
+repo: upstream:qt5/qtsensors
+ref: cd22d77e07af6046be24d0322187a86c9a3c4d1d
+configure-commands:
+- qmake
+build-commands:
+- make
+- make html_docs
+install-commands:
+- make install INSTALL_ROOT=$DESTDIR
+- make install_html_docs INSTALL_ROOT=$DESTDIR
+build_depends:
+- qt5-tools/qtbase.morph

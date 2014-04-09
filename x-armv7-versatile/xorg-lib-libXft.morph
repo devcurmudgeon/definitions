@@ -1,0 +1,8 @@
+name: x-armv7-versatile/xorg-lib-libXft.morph
+kind: chunk
+repo: upstream:xorg-lib-libXft
+ref: c5e760a239afc62a1c75e0509868e35957c8df52
+build-system: autotools
+build_depends:
+- x-armv7-versatile/fontconfig.morph
+- x-armv7-versatile/freetype2.morph

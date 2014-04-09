@@ -1,0 +1,9 @@
+name: glanceclient/pytz.morph
+kind: chunk
+repo: upstream:pytz
+ref: 384207f01fd5b8bf1eb20cb64c17679084731944
+build-system: manual
+build-commands:
+- cd src && python setup.py build
+install-commands:
+- cd src && python setup.py install --prefix "$PREFIX" --root "$DESTDIR"

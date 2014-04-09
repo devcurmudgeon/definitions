@@ -1,0 +1,8 @@
+name: cross-bootstrap/python-coveragepy.morph
+kind: chunk
+repo: upstream:python-coveragepy
+ref: 77d2e3bfd8fb325092aaed37ba1378054d182d19
+build-commands:
+- python setup.py build
+install-commands:
+- python setup.py install --prefix=/usr --root "$DESTDIR"

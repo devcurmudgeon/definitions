@@ -1,0 +1,7 @@
+name: x-x86_64-generic/xorg-driver-xf86-video-cirrus.morph
+kind: chunk
+repo: upstream:xorg-driver-xf86-video-cirrus
+ref: 6504929481eab616f064b5d661a057de74b8b488
+build-system: autotools
+build_depends:
+- x-x86_64-generic/xserver.morph

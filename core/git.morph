@@ -1,0 +1,16 @@
+name: core/git.morph
+kind: chunk
+repo: upstream:git
+ref: 43efcf42382e87de4aa423e5e1607958ad1717d0
+build-commands:
+- make prefix=${PREFIX-/usr} all PYTHON_PATH=${PREFIX-/usr}/bin/python NO_TCLTK=YesPlease
+install-commands:
+- make prefix=${PREFIX-/usr} install
+build_depends:
+- core/autoconf.morph
+- core/cpython.morph
+- core/curl.morph
+- core/error-perl-tarball.morph
+- core/gettext.morph
+- core/libexpat.morph
+- core/openssl-new.morph

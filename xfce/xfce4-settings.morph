@@ -1,0 +1,16 @@
+name: xfce/xfce4-settings.morph
+kind: chunk
+repo: upstream:xfce/xfce4-settings
+ref: 697ce5cd4bf4860a0a20c27b557be296c9adf469
+configure-commands:
+- ./autogen.sh --prefix="$PREFIX" --enable-debug=yes
+build-commands:
+- make
+install-commands:
+- make install
+build_depends:
+- xfce/xfce-dev-tools.morph
+- xfce/xfconf.morph
+- xfce/exo.morph
+- xfce/libxfce4ui.morph
+- xfce/garcon.morph

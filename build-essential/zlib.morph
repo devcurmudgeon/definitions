@@ -1,0 +1,22 @@
+name: build-essential/zlib.morph
+kind: chunk
+repo: upstream:zlib
+ref: db3aed6856d7a23186844fdf93105cad2fcf2f2f
+max-jobs: '1'
+configure-commands:
+- ./configure --prefix="$PREFIX"
+build-commands:
+- make
+install-commands:
+- make DESTDIR="$DESTDIR" install
+build_depends:
+- build-essential/stage2-binutils.morph
+- build-essential/stage2-busybox.morph
+- build-essential/stage2-eglibc.morph
+- build-essential/stage2-fhs-dirs.morph
+- build-essential/stage2-gawk.morph
+- build-essential/stage2-gcc.morph
+- build-essential/stage2-linux-api-headers.morph
+- build-essential/stage2-make.morph
+- build-essential/stage2-reset-specs.morph
+- build-essential/eglibc.morph

@@ -1,0 +1,10 @@
+name: wayland-x86_64-generic/libinput.morph
+kind: chunk
+repo: upstream:libinput
+ref: f0fd32db8f3df558e1d763dfa2db76cdca260323
+build-system: autotools
+build_depends:
+- wayland-x86_64-generic/libxkbcommon.morph
+- wayland-x86_64-generic/mtdev.morph
+- wayland-x86_64-generic/libevdev.morph
+- wayland-x86_64-generic/linux-api-headers.morph

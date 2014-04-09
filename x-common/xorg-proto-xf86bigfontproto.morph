@@ -1,0 +1,7 @@
+name: x-common/xorg-proto-xf86bigfontproto.morph
+kind: chunk
+repo: upstream:xorg-proto-xf86bigfontproto
+ref: f805b328b2195de384c0fb6b82ef5f88c179b2c0
+build-system: autotools
+build_depends:
+- x-common/xorg-util-macros.morph

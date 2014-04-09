@@ -1,0 +1,9 @@
+name: x-armv7-versatile/xorg-lib-libXaw.morph
+kind: chunk
+repo: upstream:xorg-lib-libXaw
+ref: a5630e166921b5b5322b30fb152df01bb6536e42
+build-system: autotools
+build_depends:
+- x-armv7-versatile/xorg-lib-libXmu.morph
+- x-armv7-versatile/xorg-lib-libXpm.morph
+- x-armv7-versatile/xorg-lib-libXt.morph

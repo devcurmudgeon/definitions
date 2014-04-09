@@ -1,0 +1,5 @@
+name: glanceclient/pbr.morph
+kind: chunk
+repo: upstream:pbr
+ref: 510ee9e9dcb94c5884c215fa3535a1f77f3d2a51
+build-system: python-distutils

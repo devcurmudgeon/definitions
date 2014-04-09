@@ -1,0 +1,26 @@
+name: bsp-armv7-versatile/linux.morph
+kind: chunk
+repo: upstream:linux
+ref: 5a9b14cc3d6bc4060cc55ed6e1d2b5565b201ad5
+configure-commands:
+- make ARCH=arm vexpress_defconfig
+- scripts/config -e BTRFS_FS
+- scripts/config -e BTRFS_FS_POSIX_ACL
+- scripts/config -d BTRFS_FS_CHECK_INTEGRITY
+- scripts/config -e DEVTMPFS
+- scripts/config -e DEVTMPFS_MOUNT
+- scripts/config -e CGROUPS
+- scripts/config -e AUTOFS4_FS
+- scripts/config -e BLK_DEV_LOOP
+- scripts/config --set-str UEVENT_HELPER_PATH ''
+- scripts/config -e IKCONFIG
+- scripts/config -e IKCONFIG_PROC
+- scripts/config -e SECCOMP
+- scripts/config -d DEBUG_STACK_TRACE
+- scripts/config -e FB_VESA
+- yes '' | make oldconfig
+build-commands:
+- make ARCH=arm zImage $MAKEFLAGS
+install-commands:
+- mkdir -p "$DESTDIR"/boot
+- cp arch/arm/boot/zImage "$DESTDIR"/boot/zImage

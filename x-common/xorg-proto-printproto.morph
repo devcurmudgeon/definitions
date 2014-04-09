@@ -1,0 +1,7 @@
+name: x-common/xorg-proto-printproto.morph
+kind: chunk
+repo: upstream:xorg-proto-printproto
+ref: cca2ca69d2a6b4b133dba69d5330499fbfe88257
+build-system: autotools
+build_depends:
+- x-common/xorg-util-macros.morph

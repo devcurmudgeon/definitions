@@ -1,0 +1,7 @@
+name: x-ppc64-generic/xorg-driver-xf86-input-evdev.morph
+kind: chunk
+repo: upstream:xorg-driver-xf86-input-evdev
+ref: 2b8b0df62ec554952784f2820fb4143c495232b0
+build-system: autotools
+build_depends:
+- x-ppc64-generic/xserver.morph

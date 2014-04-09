@@ -1,0 +1,10 @@
+name: connectivity/connman.morph
+kind: chunk
+repo: upstream:connman
+ref: f16e43ebc34a32937a67c56655586d2dc1518fbb
+build-system: autotools
+configure-commands:
+- ./bootstrap
+- ./configure --prefix="$PREFIX" --disable-wispr --disable-client LIBS=-lncurses
+build_depends:
+- connectivity/iptables.morph

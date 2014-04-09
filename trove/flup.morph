@@ -1,0 +1,5 @@
+name: trove/flup.morph
+kind: chunk
+repo: upstream:flup
+ref: 0f97c5e0ab7d9827506120efc22af3a9c21d1d70
+build-system: python-distutils

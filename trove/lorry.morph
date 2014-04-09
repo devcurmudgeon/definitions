@@ -1,0 +1,16 @@
+name: trove/lorry.morph
+kind: chunk
+repo: baserock:baserock/lorry
+ref: 5afef32028fbcacb7acc3d0318407169dd2353de
+build-system: python-distutils
+build_depends:
+- trove/bzr-tarball.morph
+- trove/python-fastimport.morph
+- trove/bzr-fastimport.morph
+- trove/perl-dbi-tarball.morph
+- trove/perl-dbd-sqlite-tarball.morph
+- trove/cvs-tarball.morph
+- trove/cvsps.morph
+- trove/subversion-tarball.morph
+- trove/mercurial-tarball.morph
+- trove/hg-fast-export.morph

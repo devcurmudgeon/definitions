@@ -1,0 +1,5 @@
+name: x-ppc64-generic/xorg-app-xinit.morph
+kind: chunk
+repo: upstream:xorg-app-xinit
+ref: 4e85bce64acef1fa0ddff04d59737444e942ff12
+build-system: autotools

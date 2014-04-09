@@ -1,0 +1,9 @@
+name: foundation/gobject-introspection.morph
+kind: chunk
+repo: upstream:gobject-introspection
+ref: 8a2a9f9db169eaaf2a7eede18e0ceba0af44345f
+build-system: autotools
+configure-commands:
+- sh autogen.sh --prefix="$PREFIX" --disable-tests
+build_depends:
+- foundation/glib.morph

@@ -1,0 +1,7 @@
+name: x-common/xorg-proto-bigreqsproto.morph
+kind: chunk
+repo: upstream:xorg-proto-bigreqsproto
+ref: d6ed3e927a756900ad4c9fd7235f8f7f34f376db
+build-system: autotools
+build_depends:
+- x-common/xorg-util-macros.morph

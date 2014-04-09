@@ -1,0 +1,7 @@
+name: x-common/xorg-proto-kbproto.morph
+kind: chunk
+repo: upstream:xorg-proto-kbproto
+ref: f7022f5775350dce3348b7151845a32390e98791
+build-system: autotools
+build_depends:
+- x-common/xorg-util-macros.morph

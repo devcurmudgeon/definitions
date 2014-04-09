@@ -1,0 +1,12 @@
+name: glanceclient/python-glanceclient.morph
+kind: chunk
+repo: upstream:python-glanceclient
+ref: 721660612df4454726b723daf902abd23ba0109c
+build-system: python-distutils
+build_depends:
+- glanceclient/python-prettytable.morph
+- glanceclient/pbr.morph
+- glanceclient/argparse.morph
+- glanceclient/pyopenssl.morph
+- glanceclient/python-keystoneclient.morph
+- glanceclient/warlock.morph

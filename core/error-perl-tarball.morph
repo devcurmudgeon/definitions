@@ -1,0 +1,7 @@
+name: core/error-perl-tarball.morph
+kind: chunk
+repo: upstream:error-perl-tarball
+ref: 661707e7bd4282aeab5a2f6a8f02ca5731fd813f
+build-system: cpan
+build_depends:
+- core/perl.morph

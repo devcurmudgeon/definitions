@@ -1,0 +1,5 @@
+name: tools/e2fsprogs.morph
+kind: chunk
+repo: upstream:e2fsprogs
+ref: 1ab0ea88057e922a89c6b8feebeb62c57e40f8de
+build-system: autotools

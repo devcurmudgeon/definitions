@@ -1,0 +1,14 @@
+name: xfce/exo.morph
+kind: chunk
+repo: upstream:xfce/exo
+ref: b985c4b5c72ef116d55bbf746c16a05f26afc045
+configure-commands:
+- ./autogen.sh --prefix="$PREFIX" --enable-debug=yes
+build-commands:
+- make
+install-commands:
+- make install
+build_depends:
+- xfce/libxfce4util.morph
+- xfce/libxfce4ui.morph
+- xfce/perl-uri.morph

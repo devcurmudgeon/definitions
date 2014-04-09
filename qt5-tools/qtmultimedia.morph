@@ -1,0 +1,14 @@
+name: qt5-tools/qtmultimedia.morph
+kind: chunk
+repo: upstream:qt5/qtmultimedia
+ref: 8b73d090f87f88ee3ae4efc437ac866d05df76be
+configure-commands:
+- qmake
+build-commands:
+- make
+- make install_html_docs
+install-commands:
+- make install INSTALL_ROOT=$DESTDIR
+- make install_html_docs INSTALL_ROOT=$DESTDIR
+build_depends:
+- qt5-tools/qtbase.morph

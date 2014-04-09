@@ -1,0 +1,7 @@
+name: cross-bootstrap/cliapp.morph
+kind: chunk
+repo: upstream:cliapp
+ref: cec20cedd062a3aef1b04f997e77b45090c07806
+build-system: python-distutils
+build_depends:
+- cross-bootstrap/python-coverage-test-runner.morph

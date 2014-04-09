@@ -1,0 +1,5 @@
+name: cross-bootstrap/six.morph
+kind: chunk
+repo: upstream:six
+ref: e0841d716953710ab9bca9d1715a710df9c61ca0
+build-system: python-distutils

@@ -1,0 +1,12 @@
+name: x-common/xorg-lib-libXcursor.morph
+kind: chunk
+repo: upstream:xorg-lib-libXcursor
+ref: 1b98fd6a2e8c00a563187849a585e68c7344468b
+build-system: autotools
+build_depends:
+- x-common/xorg-util-macros.morph
+- x-common/xorg-lib-libXrender.morph
+- x-common/xorg-lib-libXfixes.morph
+- x-common/xorg-proto-fixesproto.morph
+- x-common/xorg-lib-libXau.morph
+- x-common/xorg-lib-libX11.morph

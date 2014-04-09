@@ -1,0 +1,11 @@
+name: x-common/xorg-lib-libdmx.morph
+kind: chunk
+repo: upstream:xorg-lib-libdmx
+ref: 9f470c92bc2d194c8abb9154f42864e6c82f43ef
+build-system: autotools
+build_depends:
+- x-common/xorg-lib-libX11.morph
+- x-common/xorg-lib-libXext.morph
+- x-common/xorg-proto-dmxproto.morph
+- x-common/xorg-proto-xextproto.morph
+- x-common/xorg-util-macros.morph

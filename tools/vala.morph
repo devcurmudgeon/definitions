@@ -1,0 +1,7 @@
+name: tools/vala.morph
+kind: chunk
+repo: upstream:vala
+ref: 4e4a02c03445336237b36723b23a91670ef7621b
+build-system: autotools
+configure-commands:
+- ./configure --prefix="$PREFIX"

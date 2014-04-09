@@ -1,0 +1,11 @@
+name: wayland-armv7-versatile/cairo.morph
+kind: chunk
+repo: upstream:cairo
+ref: 86fd783959c537b8c0fd49fd979881178ca9a24e
+build-system: autotools
+configure-commands:
+- ./autogen.sh --prefix="$PREFIX" --enable-glesv2
+build_depends:
+- wayland-armv7-versatile/wayland.morph
+- wayland-armv7-versatile/mesa-wayland.morph
+- wayland-armv7-versatile/pixman.morph

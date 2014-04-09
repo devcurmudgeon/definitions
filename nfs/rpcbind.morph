@@ -1,0 +1,16 @@
+name: nfs/rpcbind.morph
+kind: chunk
+repo: upstream:rpcbind
+ref: aa3ac0d86c258d3e355ae59df31a96da795ecdfa
+build-system: autotools
+configure-commands:
+- NOCONFIGURE=1 ./autogen.sh
+- ./configure --prefix="$PREFIX" --enable-libwrap --with-rpcuser=nobody --enable-warmstarts
+install-commands:
+- make DESTDIR="$DESTDIR" install
+- mkdir -p "$DESTDIR"/lib/systemd/system
+- install -m644 rpcbind.service "$DESTDIR"/lib/systemd/system
+- install -m644 rpcbind.socket "$DESTDIR"/lib/systemd/system
+build_depends:
+- nfs/ti-rpc.morph
+- nfs/tcp-wrappers.morph

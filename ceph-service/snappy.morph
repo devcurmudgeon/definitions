@@ -1,0 +1,5 @@
+name: ceph-service/snappy.morph
+kind: chunk
+repo: upstream:snappy
+ref: 760c6ffc67836027c5f1d307e5c6cb012dfbdf72
+build-system: autotools

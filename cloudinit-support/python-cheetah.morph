@@ -1,0 +1,5 @@
+name: cloudinit-support/python-cheetah.morph
+kind: chunk
+repo: upstream:python-cheetah
+ref: 831aa6b99d9b4fb012ee644d8e80e0bc0eb6d6ed
+build-system: python-distutils

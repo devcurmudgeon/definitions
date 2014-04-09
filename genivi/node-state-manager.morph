@@ -1,0 +1,8 @@
+name: genivi/node-state-manager.morph
+kind: chunk
+repo: upstream:node-state-manager
+ref: dd4a86b9459537d2e85489b36abf80f34d12f098
+build-system: autotools
+build_depends:
+- genivi/DLT-daemon.morph
+- genivi/persistence-client-library.morph

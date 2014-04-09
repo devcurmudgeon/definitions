@@ -1,0 +1,12 @@
+name: enlightenment/efl.morph
+kind: chunk
+repo: upstream:enlightenment/efl
+ref: 8f9b565e79552f09a39507ce802786b1fe773d2d
+configure-commands:
+- ./autogen.sh --prefix=/usr --with-tests=none --disable-fribidi --disable-image-loader-gif
+  --disable-image-loader-tiff  --disable-pulseaudio --disable-gstreamer --disable-audio
+  --disable-physics
+build-commands:
+- make VPATH=/usr/lib64
+install-commands:
+- make DESTDIR="$DESTDIR" VPATH=/usr/lib64 install

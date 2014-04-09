@@ -1,0 +1,7 @@
+name: x-common/xorg-proto-xf86driproto.morph
+kind: chunk
+repo: upstream:xorg-proto-xf86driproto
+ref: cb03b8d49bf063860859c1ed8bcecd055551e93a
+build-system: autotools
+build_depends:
+- x-common/xorg-util-macros.morph

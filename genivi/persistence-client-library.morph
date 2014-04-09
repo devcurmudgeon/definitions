@@ -1,0 +1,8 @@
+name: genivi/persistence-client-library.morph
+kind: chunk
+repo: upstream:genivi/persistence-client-library
+ref: 0934ba263e69be8453cc3150f997dad28489f0c7
+build-system: autotools
+build_depends:
+- genivi/DLT-daemon.morph
+- genivi/itzam-tarball.morph

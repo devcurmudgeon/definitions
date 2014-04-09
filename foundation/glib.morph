@@ -1,0 +1,7 @@
+name: foundation/glib.morph
+kind: chunk
+repo: upstream:glib
+ref: 980156c4cb4a8c29335de83bbf1ac05a9a1f01a9
+build-system: autotools
+build_depends:
+- foundation/libffi.morph

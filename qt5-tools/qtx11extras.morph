@@ -1,0 +1,14 @@
+name: qt5-tools/qtx11extras.morph
+kind: chunk
+repo: upstream:qt5/qtx11extras
+ref: 3b33afd2814c88002e2efc4955e5b1851aff0c58
+configure-commands:
+- qmake
+build-commands:
+- make
+- make html_docs
+install-commands:
+- make install INSTALL_ROOT=$DESTDIR
+- make install_html_docs INSTALL_ROOT=$DESTDIR
+build_depends:
+- qt5-tools/qtbase.morph

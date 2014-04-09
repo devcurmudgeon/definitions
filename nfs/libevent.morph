@@ -1,0 +1,5 @@
+name: nfs/libevent.morph
+kind: chunk
+repo: upstream:libevent
+ref: 1c41f68f2246e9144ca20c76b833004480f9d58a
+build-system: autotools

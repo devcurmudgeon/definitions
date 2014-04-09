@@ -1,0 +1,16 @@
+name: audio-bluetooth/ofono.morph
+kind: chunk
+description: ofono Open Source Telephony
+repo: upstream:ofono
+ref: a53228f6b1b32d0405c0c3c8e0861d6202ffbba2
+build-system: autotools
+configure-commands:
+- autoreconf -ivf
+- ./configure --prefix="$PREFIX" --sysconfdir=/etc --localstatedir=/var
+install-commands:
+- make install
+- mkdir -p "$DESTDIR/etc/systemd/system/multi-user.target.wants"
+- ln -s /lib/systemd/system/ofono.service "$DESTDIR/etc/systemd/system/multi-user.target.wants/ofono.service"
+build_depends:
+- audio-bluetooth/mobile-broadband-provider-info.morph
+- audio-bluetooth/bluez.morph

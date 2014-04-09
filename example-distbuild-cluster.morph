@@ -17,7 +17,7 @@ systems:
     DISTBUILD_CONTROLLER: no
     DISTBUILD_WORKER: yes
     FSTAB_SRC: LABEL=src /srv/distbuild auto defaults,rw,noatime 0 2
-    INSTALL_FILES: distbuild/manifest
+    INSTALL_FILES: distbuild-system/manifest
     NFSBOOT_CONFIGURE: yes
     WORKER_SSH_KEY: ssh-keys/worker.key
   deploy:

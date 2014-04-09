@@ -1,4 +1,4 @@
-name: upgrade-devel
+name: upgrade-devel.morph
 kind: cluster
 description: |
   This is a cluster morphology that can be used to deploy systems to a
@@ -36,7 +36,7 @@ description: |
   On a base system, use 'diff -r' instead of 'git diff --no-index'. It will
   not be as colourful.
 systems:
-- morph: devel-system-x86_64-generic
+- morph: devel-system-x86_64-generic.morph
   deploy:
     upgrade-devel:
       type: ssh-rsync

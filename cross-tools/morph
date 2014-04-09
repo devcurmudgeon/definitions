@@ -1,10 +1,10 @@
-name: cross-tools
+name: cross-tools/morph
 kind: stratum
 description: Tools used together with cross compilers
 build-depends:
-- morph: core
+- morph: core/morph
 chunks:
-- name: patchelf
+- name: cross-tools/patchelf.morph
   repo: upstream:patchelf
   ref: 21a85cc1c63cf3ef060ece59cdd82455e2884703
   unpetrify-ref: baserock/morph

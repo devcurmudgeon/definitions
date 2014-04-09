@@ -1,11 +1,11 @@
-name: bsp-imx53
+name: bsp-imx53/morph
 kind: stratum
 description: The platform dependent components required to boot an i.MX 53 ARM development
   board.
 build-depends:
-- morph: core
+- morph: core/morph
 chunks:
-- name: linux
+- name: bsp-imx53/linux.morph
   repo: upstream:linux
   ref: 316df4c3eb667636eadf4b663f4087f1f9cc3cfe
   unpetrify-ref: baserock/morph

@@ -1,4 +1,21 @@
+name: genivi-baseline-system-armv7-versatile.morph
+kind: system
+description: A GENIVI baseline system for an ARMv7 system.
 arch: armv7l
+strata:
+- morph: build-essential/morph
+- morph: core/morph
+- morph: foundation/morph
+- morph: genivi-foundation/morph
+- morph: bsp-armv7-versatile/morph
+- morph: connectivity/morph
+- morph: audio-bluetooth/morph
+- morph: x-common/morph
+- morph: x-armv7-versatile/morph
+- morph: multimedia/morph
+- morph: genivi/morph
+- morph: genivi-x-armv7-versatile/morph
+- morph: wayland-armv7-versatile/morph
 configuration-extensions:
 - set-hostname
 - add-config-files
@@ -7,20 +24,3 @@ configuration-extensions:
 - install-files
 - strip-gplv3
 - fstab
-description: A GENIVI baseline system for an ARMv7 system.
-kind: system
-name: genivi-baseline-system-armv7-versatile
-strata:
-- morph: build-essential
-- morph: core
-- morph: foundation
-- morph: genivi-foundation
-- morph: bsp-armv7-versatile
-- morph: connectivity
-- morph: audio-bluetooth
-- morph: x-common
-- morph: x-armv7-versatile
-- morph: multimedia
-- morph: genivi
-- morph: genivi-x-armv7-versatile
-- morph: wayland-armv7-versatile

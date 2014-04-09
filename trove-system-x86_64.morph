@@ -1,18 +1,18 @@
+name: trove-system-x86_64.morph
+kind: system
+description: Trove server
 arch: x86_64
+strata:
+- morph: build-essential/morph
+- morph: bsp-x86_64-generic/morph
+- morph: foundation/morph
+- morph: core/morph
+- morph: tools/morph
+- morph: trove/morph
+- morph: nfs/morph
 configuration-extensions:
 - trove
 - nfsboot-server
 - trove-backup
 - fstab
 - simple-network
-description: Trove server
-kind: system
-name: trove-system-x86_64
-strata:
-- morph: build-essential
-- morph: bsp-x86_64-generic
-- morph: foundation
-- morph: core
-- morph: tools
-- morph: trove
-- morph: nfs

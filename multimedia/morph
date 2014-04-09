@@ -1,17 +1,17 @@
-name: multimedia
+name: multimedia/morph
 kind: stratum
 description: Codecs
 build-depends:
-- morph: audio-bluetooth
+- morph: audio-bluetooth/morph
 chunks:
-- name: orc
+- name: multimedia/orc.morph
   repo: upstream:orc
   ref: b4f7fcaf99a4d952e59f2a9fa9286d24cc4b3a5a
   unpetrify-ref: baserock/morph
   build-depends: []
-- name: gstreamer
+- name: multimedia/gstreamer.morph
   repo: upstream:gstreamer
   ref: 5a5083f292e676e1548f6351ad27d0ccb18f68bc
   unpetrify-ref: baserock/genivi/baseline
   build-depends:
-  - orc
+  - multimedia/orc.morph

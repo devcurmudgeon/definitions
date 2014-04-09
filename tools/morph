@@ -1,150 +1,150 @@
-name: tools
+name: tools/morph
 kind: stratum
 description: Extra development tools included in the devel system
 build-depends:
-- morph: foundation
+- morph: foundation/morph
 chunks:
-- name: six
+- name: tools/six.morph
   repo: upstream:six
   ref: e0841d716953710ab9bca9d1715a710df9c61ca0
   unpetrify-ref: baserock/morph
   build-depends: []
-- name: python-ttystatus
+- name: tools/python-ttystatus.morph
   repo: upstream:python-ttystatus
   ref: 47d871216cea6ce3b9d6efd70e9a0f38ab8604f0
   unpetrify-ref: baserock/morph
   build-depends: []
-- name: python-coveragepy
+- name: tools/python-coveragepy.morph
   repo: upstream:python-coveragepy
   ref: 77d2e3bfd8fb325092aaed37ba1378054d182d19
   unpetrify-ref: baserock/morph
   build-depends: []
-- name: python-coverage-test-runner
+- name: tools/python-coverage-test-runner.morph
   repo: upstream:python-coverage-test-runner
   ref: 8ea9421ac3384b2e88e0c36f2cfa52586c4798b7
   unpetrify-ref: baserock/morph
   build-depends:
-  - python-coveragepy
-- name: cliapp
+  - tools/python-coveragepy.morph
+- name: tools/cliapp.morph
   repo: upstream:cliapp
   ref: cec20cedd062a3aef1b04f997e77b45090c07806
   unpetrify-ref: baserock/morph
   build-depends:
-  - python-coverage-test-runner
-- name: python-markdown
+  - tools/python-coverage-test-runner.morph
+- name: tools/python-markdown.morph
   repo: upstream:python-markdown
   ref: a9ca97325e9039de90eae29fb3d8879bc9f367f6
   unpetrify-ref: baserock/morph
   build-depends: []
-- name: cmdtest
+- name: tools/cmdtest.morph
   repo: upstream:cmdtest
   ref: 62fa7e08f76a5b6bb8410add49c40656b3e73acd
   unpetrify-ref: baserock/morph
   build-depends:
-  - cliapp
-  - python-ttystatus
-  - python-markdown
-- name: coreutils
+  - tools/cliapp.morph
+  - tools/python-ttystatus.morph
+  - tools/python-markdown.morph
+- name: tools/coreutils.morph
   repo: upstream:coreutils
   ref: 66282c0d87c933218205b5e20ce46708182ac36e
   unpetrify-ref: baserock/morph
   build-depends: []
-- name: distcc
+- name: tools/distcc.morph
   repo: upstream:distcc
   ref: 2f422c03925e82bf88b05da823813073a985b0e5
   unpetrify-ref: baserock/morph
   build-depends: []
-- name: e2fsprogs
+- name: tools/e2fsprogs.morph
   repo: upstream:e2fsprogs
   ref: 1ab0ea88057e922a89c6b8feebeb62c57e40f8de
   unpetrify-ref: baserock/morph
   build-depends: []
-- name: file
+- name: tools/file.morph
   repo: upstream:file
   ref: 3b49db406667ee7189b9ea69b9d9e0bdcc43c5b7
   unpetrify-ref: baserock/morph
   build-depends: []
-- name: gdb
+- name: tools/gdb.morph
   repo: upstream:gdb
   ref: c4bf5268b1a32ec475b61d2fe90e9218780c03c8
   unpetrify-ref: baserock/morph
   build-depends: []
-- name: less
+- name: tools/less.morph
   repo: upstream:less
   ref: 09a405d8f652b56944c93ebf5c673cdfe5319b04
   unpetrify-ref: baserock/morph
   build-depends: []
-- name: linux-user-chroot
+- name: tools/linux-user-chroot.morph
   repo: upstream:linux-user-chroot
   ref: d25cc110f69e6e71a95b4ac532dcfc5423d4a16b
   unpetrify-ref: baserock/morph
   build-depends: []
-- name: lsof
+- name: tools/lsof.morph
   repo: upstream:lsof
   ref: fffb8558208586338587027c265fd0eca44466be
   unpetrify-ref: baserock/morph
   build-depends: []
-- name: pyfilesystem
+- name: tools/pyfilesystem.morph
   repo: upstream:pyfilesystem
   ref: 821f7db1ce3a3e1ac53fa514ddacbc2871eac0f6
   unpetrify-ref: baserock/morph
   build-depends:
-  - six
-- name: morph
+  - tools/six.morph
+- name: tools/morph.morph
   repo: baserock:baserock/morph
   ref: c04760ffe1d385134e5092a22db5e5f78c205038
   unpetrify-ref: master
   build-depends:
-  - cliapp
-  - cmdtest
-  - python-coverage-test-runner
-  - pyfilesystem
-- name: git-fat
+  - tools/cliapp.morph
+  - tools/cmdtest.morph
+  - tools/python-coverage-test-runner.morph
+  - tools/pyfilesystem.morph
+- name: tools/git-fat.morph
   repo: upstream:git-fat
   ref: 208f88d0f0ef04c25e8a231979eb0083f57b1610
   unpetrify-ref: baserock/morph
   build-depends: []
-- name: pv
+- name: tools/pv.morph
   repo: upstream:pv
   ref: d6ce7cfec684fa72d7a919d7b1aa817a0ca6102a
   unpetrify-ref: baserock/morph
   build-depends: []
-- name: rsync
+- name: tools/rsync.morph
   repo: upstream:rsync
   ref: 9faf8e0ccff2755cd019ff64d8322226a214b013
   unpetrify-ref: baserock/morph
   build-depends: []
-- name: strace
+- name: tools/strace.morph
   repo: upstream:strace
   ref: ad232c6aa0c2a07830d61dc4b9912478634b23b5
   unpetrify-ref: baserock/morph
   build-depends: []
-- name: vala
+- name: tools/vala.morph
   repo: upstream:vala
   ref: 4e4a02c03445336237b36723b23a91670ef7621b
   unpetrify-ref: baserock/bootstrap
   build-depends: []
-- name: vim
+- name: tools/vim.morph
   repo: upstream:vim
   ref: 592b8c975bf83b4dcf608769bc664a80cb1daf9e
   unpetrify-ref: baserock/morph
   build-depends: []
-- name: screen
+- name: tools/screen.morph
   repo: upstream:screen
   ref: 7dd4a9e5f385c96a77e8ee5c977a1dde4c0ff467
   unpetrify-ref: baserock/morph
   build-depends: []
-- name: u-boot
+- name: tools/u-boot.morph
   repo: upstream:u-boot
   ref: fe57382d04b46c37f34cf8d3b3ad876554fd12bf
   unpetrify-ref: baserock/morph
   build-depends: []
-- name: kexec-tools
+- name: tools/kexec-tools.morph
   repo: upstream:kexec-tools
   ref: 9359b61ca44980d33c0bee42b9bb2e36e72835dd
   unpetrify-ref: baserock/morph
   build-depends: []
-- name: device-tree-compiler
+- name: tools/device-tree-compiler.morph
   repo: upstream:device-tree-compiler
   ref: c92f284c3cf76d471eb27a271de3a51cb45ed058
   unpetrify-ref: baserock/morph

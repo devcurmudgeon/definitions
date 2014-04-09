@@ -1,235 +1,235 @@
-name: core
+name: core/morph
 kind: stratum
 description: Core components of a Baserock base system that are build tools required
   for the BSP and Foundation strata, but a step above build-essential
 build-depends:
-- morph: build-essential
+- morph: build-essential/morph
 chunks:
-- name: cmake
+- name: core/cmake.morph
   repo: upstream:cmake
   ref: 7f9a761e761046a479fda38ee13f5dacd94ceeea
   unpetrify-ref: baserock/morph
   build-depends: []
-- name: gdbm
+- name: core/gdbm.morph
   repo: upstream:gdbm
   ref: 51871d08a48ff781186f7a7b22ec69a1db38eb4c
   unpetrify-ref: baserock/build-essential
   build-depends: []
-- name: gettext
+- name: core/gettext.morph
   repo: upstream:gettext
   ref: 3898e324f07c05404b63d71f0e519f352fb1e072
   unpetrify-ref: baserock/build-essential
   build-depends: []
-- name: m4
+- name: core/m4.morph
   repo: upstream:m4
   ref: d533342af991401d865de9b037ac03cdc9bd852e
   unpetrify-ref: baserock/build-essential
   build-depends: []
-- name: mini-utils
+- name: core/mini-utils.morph
   repo: baserock:baserock/mini-utils
   ref: 5293265b29bbf468ab9d7f3302b19dbc81d0f8b8
   unpetrify-ref: master
   build-depends: []
-- name: ncurses
+- name: core/ncurses.morph
   repo: upstream:ncurses
   ref: 0fe89dc66ec061b839bea3ab451207e2dee757b9
   unpetrify-ref: baserock/morph
   build-depends: []
-- name: perl
+- name: core/perl.morph
   repo: upstream:perl
   ref: 78f9a3c880f11578fb9ff9c7d5f7e34b602d2ad1
   unpetrify-ref: baserock/morph
   build-depends:
-  - gdbm
-- name: pkg-config
+  - core/gdbm.morph
+- name: core/pkg-config.morph
   repo: upstream:pkg-config
   ref: 67a702a15cf88e270539484929ffa1f42b90c728
   unpetrify-ref: baserock/build-essential
   build-depends: []
-- name: texinfo-tarball
+- name: core/texinfo-tarball.morph
   repo: upstream:texinfo-tarball
   ref: 4843a7f5ff14ac802a56f1cdd49960b25c15702b
   unpetrify-ref: baserock/morph
   build-depends:
-  - ncurses
-- name: autoconf
+  - core/ncurses.morph
+- name: core/autoconf.morph
   repo: upstream:autoconf
   ref: cffdb90be331111ce3fbe4a32320181ec2b92652
   unpetrify-ref: baserock/build-essential
   build-depends:
-  - m4
-  - perl
-- name: automake
+  - core/m4.morph
+  - core/perl.morph
+- name: core/automake.morph
   repo: upstream:automake
   ref: 5ac84ae6760252fc60b144a7b4deb41694f95fe7
   unpetrify-ref: baserock/morph
   build-depends:
-  - autoconf
-  - perl
-  - texinfo-tarball
-- name: bash
+  - core/autoconf.morph
+  - core/perl.morph
+  - core/texinfo-tarball.morph
+- name: core/bash.morph
   repo: upstream:bash
   ref: 783c677f45354b0d6df70e552217ecad8481804f
   unpetrify-ref: baserock/morph
   build-depends: []
-- name: error-perl-tarball
+- name: core/error-perl-tarball.morph
   repo: upstream:error-perl-tarball
   ref: 661707e7bd4282aeab5a2f6a8f02ca5731fd813f
   unpetrify-ref: baserock/morph
   build-depends:
-  - perl
-- name: flex
+  - core/perl.morph
+- name: core/flex.morph
   repo: upstream:flex
   ref: de10f98e8a2dc2a021796811490d0f30c3cd90bf
   unpetrify-ref: baserock/build-essential
   build-depends:
-  - m4
-- name: openssl-new
+  - core/m4.morph
+- name: core/openssl-new.morph
   repo: upstream:openssl-new
   ref: 2bee25a915c2ba40e58229788aabc97765426016
   unpetrify-ref: baserock/morph
   build-depends:
-  - perl
-- name: bzip2
+  - core/perl.morph
+- name: core/bzip2.morph
   repo: upstream:bzip2
   ref: 8deafa68e52b230018c0318dc7959ff9af3ad2a5
   unpetrify-ref: baserock/morph
   build-depends: []
-- name: cpython
+- name: core/cpython.morph
   repo: upstream:cpython
   ref: fa86445bfd4fb8e5441d685d92bf8a8ee237f022
   unpetrify-ref: baserock/morph-2.7
   build-depends:
-  - openssl-new
-  - bzip2
-- name: libtool
+  - core/openssl-new.morph
+  - core/bzip2.morph
+- name: core/libtool.morph
   repo: upstream:libtool
   ref: d388b7f2dc628b22006025d01179bc09b8aabe81
   unpetrify-ref: baserock/build-essential
   build-depends:
-  - bash
-- name: gtk-doc-stub
+  - core/bash.morph
+- name: core/gtk-doc-stub.morph
   repo: upstream:gtk-doc-stub
   ref: 58ec0d8593541ef7ae522ce42ebec6f98536c4e0
   unpetrify-ref: baserock/morph
   build-depends:
-  - autoconf
-  - automake
-  - libtool
-- name: libxml2
+  - core/autoconf.morph
+  - core/automake.morph
+  - core/libtool.morph
+- name: core/libxml2.morph
   repo: upstream:libxml2
   ref: ee8f1d4cda8dc1a6f2c515fe234f7bc89cdc9f80
   unpetrify-ref: baserock/morph
   build-depends:
-  - autoconf
-  - automake
-  - cpython
-  - libtool
-- name: curl
+  - core/autoconf.morph
+  - core/automake.morph
+  - core/cpython.morph
+  - core/libtool.morph
+- name: core/curl.morph
   repo: upstream:curl
   ref: 3c835adc9fe20f7b34df3f0abd4db6ff8b75bc3b
   unpetrify-ref: baserock/morph
   build-depends:
-  - autoconf
-  - automake
-  - libtool
-  - openssl-new
-- name: libexpat
+  - core/autoconf.morph
+  - core/automake.morph
+  - core/libtool.morph
+  - core/openssl-new.morph
+- name: core/libexpat.morph
   repo: upstream:libexpat
   ref: 97678ab13f6d29878997256b6ae1ded679ae5c5c
   unpetrify-ref: baserock/morph
   build-depends:
-  - autoconf
-  - automake
-  - libtool
-- name: XML-Parser
+  - core/autoconf.morph
+  - core/automake.morph
+  - core/libtool.morph
+- name: core/XML-Parser.morph
   repo: upstream:XML-Parser
   ref: e1a3ec157140a699e3020836475a0df622f70f1b
   unpetrify-ref: baserock/morph
   build-depends:
-  - libexpat
-  - libxml2
-  - perl
-- name: git
+  - core/libexpat.morph
+  - core/libxml2.morph
+  - core/perl.morph
+- name: core/git.morph
   repo: upstream:git
   ref: 43efcf42382e87de4aa423e5e1607958ad1717d0
   unpetrify-ref: baserock/morph
   build-depends:
-  - autoconf
-  - cpython
-  - curl
-  - error-perl-tarball
-  - gettext
-  - libexpat
-  - openssl-new
-- name: bison
+  - core/autoconf.morph
+  - core/cpython.morph
+  - core/curl.morph
+  - core/error-perl-tarball.morph
+  - core/gettext.morph
+  - core/libexpat.morph
+  - core/openssl-new.morph
+- name: core/bison.morph
   repo: upstream:bison
   ref: 6729ad1c314b179225325dcc1bc684077a71f859
   unpetrify-ref: baserock/morph
   build-depends:
-  - autoconf
-  - automake
-  - bash
-  - flex
-  - gettext
-  - git
-  - mini-utils
-- name: gperf
+  - core/autoconf.morph
+  - core/automake.morph
+  - core/bash.morph
+  - core/flex.morph
+  - core/gettext.morph
+  - core/git.morph
+  - core/mini-utils.morph
+- name: core/gperf.morph
   repo: upstream:gperf
   ref: 5094e4a539adf845111013f82c2c4fcaec637983
   unpetrify-ref: baserock/morph
   build-depends: []
-- name: intltool
+- name: core/intltool.morph
   repo: upstream:intltool
   ref: 12f04c88be9ff8a578d8fd6990ee2448c66dc5f4
   unpetrify-ref: baserock/morph
   build-depends:
-  - XML-Parser
-  - autoconf
-  - automake
-  - perl
-- name: util-linux
+  - core/XML-Parser.morph
+  - core/autoconf.morph
+  - core/automake.morph
+  - core/perl.morph
+- name: core/util-linux.morph
   repo: upstream:util-linux
   ref: 462008f79be9e195670b202cb43827b8aeb1e60b
   unpetrify-ref: baserock/morph
   build-depends:
-  - autoconf
-  - automake
-  - gettext
-  - git
-  - libtool
-  - pkg-config
-- name: xz
+  - core/autoconf.morph
+  - core/automake.morph
+  - core/gettext.morph
+  - core/git.morph
+  - core/libtool.morph
+  - core/pkg-config.morph
+- name: core/xz.morph
   repo: upstream:xz
   ref: 581deedf9d1eadcd84c4fcd23b9fdfe2dde18cc2
   unpetrify-ref: baserock/morph
   build-depends:
-  - autoconf
-  - automake
-  - gettext
-  - libtool
-- name: nano
+  - core/autoconf.morph
+  - core/automake.morph
+  - core/gettext.morph
+  - core/libtool.morph
+- name: core/nano.morph
   repo: upstream:nano-tarball
   ref: 8b74abeb02c01ddc768c465a826360cf33cec063
   unpetrify-ref: baserock/morph
   build-depends:
-  - ncurses
-- name: bc
+  - core/ncurses.morph
+- name: core/bc.morph
   repo: upstream:bc-tarball
   ref: 0956d119432ff6a2e85bae1fa336df799cad70b0
   unpetrify-ref: baserock/morph
   build-depends:
-  - flex
-  - texinfo-tarball
-- name: python-setuptools
+  - core/flex.morph
+  - core/texinfo-tarball.morph
+- name: core/python-setuptools.morph
   repo: upstream:python-setuptools
   ref: 05b07a427a1eae2a51d527f7ac5135a8fd215d77
   unpetrify-ref: baserock/morph
   build-depends:
-  - cpython
-- name: pyyaml
+  - core/cpython.morph
+- name: core/pyyaml.morph
   repo: upstream:pyyaml
   ref: d9fbcceaed39d955f6871b07c61dc42f824285c1
   unpetrify-ref: baserock/morph
   build-depends:
-  - python-setuptools
+  - core/python-setuptools.morph

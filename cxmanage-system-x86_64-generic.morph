@@ -1,14 +1,14 @@
-name: cxmanage-system-x86_64-generic
-description: A baserock development system with calxeda management tools added
+name: cxmanage-system-x86_64-generic.morph
 kind: system
+description: A baserock development system with calxeda management tools added
 arch: x86_64
 strata:
-- morph: build-essential
-- morph: core
-- morph: foundation
-- morph: bsp-x86_64-generic
-- morph: tools
-- morph: cxmanage
+- morph: build-essential/morph
+- morph: core/morph
+- morph: foundation/morph
+- morph: bsp-x86_64-generic/morph
+- morph: tools/morph
+- morph: cxmanage/morph
 configuration-extensions:
 - set-hostname
 - add-config-files

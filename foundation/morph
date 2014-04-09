@@ -1,128 +1,128 @@
-name: foundation
+name: foundation/morph
 kind: stratum
 description: Basic userland runtime system
 build-depends:
-- morph: core
+- morph: core/morph
 chunks:
-- name: attr
+- name: foundation/attr.morph
   repo: upstream:attr
   ref: be4a3c1d50981d2cbbe2cfb55498cac51909c37f
   unpetrify-ref: baserock/morph
   build-depends: []
-- name: groff
+- name: foundation/groff.morph
   repo: upstream:groff
   ref: c7017a099f954bb6de60e79c876935b1bf438b9a
   unpetrify-ref: baserock/morph
   build-depends: []
-- name: kmod
+- name: foundation/kmod.morph
   repo: upstream:kmod
   ref: 7f3b215d4e848afa74aea20a4c64f0cc1ef30eb4
   unpetrify-ref: baserock/morph
   build-depends: []
-- name: libcap2
+- name: foundation/libcap2.morph
   repo: upstream:libcap2
   ref: 4f7cca1bc9c2a274edb39d351b65747010d3ba7b
   unpetrify-ref: baserock/morph
   build-depends:
-  - attr
-- name: libffi
+  - foundation/attr.morph
+- name: foundation/libffi.morph
   repo: upstream:libffi
   ref: 77d4586cc47e8f4c02278afbc220145bba0d442b
   unpetrify-ref: baserock/morph
   build-depends: []
-- name: sqlite3
+- name: foundation/sqlite3.morph
   repo: upstream:sqlite3
   ref: f6c2a9fe49d20654c2c41844d056033692a223b7
   unpetrify-ref: baserock/morph
   build-depends: []
-- name: libusbx
+- name: foundation/libusbx.morph
   repo: upstream:libusbx
   ref: 7ec94a45ed8155e7a1d4d5d75575099b09c78834
   unpetrify-ref: baserock/morph
   build-depends: []
-- name: pciutils
+- name: foundation/pciutils.morph
   repo: upstream:pciutils
   ref: bae04bd0473c68a2f21b7712a627abb08fd84b29
   unpetrify-ref: baserock/morph
   build-depends: []
-- name: usbutils
+- name: foundation/usbutils.morph
   repo: upstream:usbutils
   ref: 410f1474af0ddb391bc6ec391777f116eee31569
   unpetrify-ref: baserock/morph
   build-depends:
-  - libusbx
-- name: glib
+  - foundation/libusbx.morph
+- name: foundation/glib.morph
   repo: upstream:glib
   ref: 980156c4cb4a8c29335de83bbf1ac05a9a1f01a9
   unpetrify-ref: baserock/morph
   build-depends:
-  - libffi
-- name: gobject-introspection
+  - foundation/libffi.morph
+- name: foundation/gobject-introspection.morph
   repo: upstream:gobject-introspection
   ref: 8a2a9f9db169eaaf2a7eede18e0ceba0af44345f
   unpetrify-ref: baserock/morph
   build-depends:
-  - glib
-- name: dbus-pre
+  - foundation/glib.morph
+- name: foundation/dbus-pre.morph
   repo: upstream:dbus
   ref: f2e4718bf42f507684949ebf484aa94df42abbbe
   unpetrify-ref: baserock/v1.8.0
   build-depends:
-  - glib
-- name: systemd
+  - foundation/glib.morph
+- name: foundation/systemd.morph
   repo: upstream:systemd
   ref: dc8ee9a30e2df2568f2b37e3fb61e4b0bb601b13
   unpetrify-ref: baserock/morph
   build-depends:
-  - dbus-pre
-  - gobject-introspection
-  - kmod
-  - libcap2
-  - pciutils
-  - usbutils
-- name: lzo
+  - foundation/dbus-pre.morph
+  - foundation/gobject-introspection.morph
+  - foundation/kmod.morph
+  - foundation/libcap2.morph
+  - foundation/pciutils.morph
+  - foundation/usbutils.morph
+- name: foundation/lzo.morph
   repo: upstream:lzo
   ref: 2cdfe9375f1145603d002c12be950062ae54da21
   unpetrify-ref: baserock/morph
   build-depends: []
-- name: btrfs-progs
+- name: foundation/btrfs-progs.morph
   repo: upstream:btrfs-progs
   ref: 304f215abb836811e6d78e0a3da53d48aa0e7ca7
   unpetrify-ref: baserock/morph
   build-depends:
-  - attr
-  - lzo
-- name: dbus
+  - foundation/attr.morph
+  - foundation/lzo.morph
+- name: foundation/dbus.morph
   repo: upstream:dbus
   ref: f2e4718bf42f507684949ebf484aa94df42abbbe
   unpetrify-ref: baserock/v1.8.0
   build-depends:
-  - glib
-  - systemd
-- name: help2man
+  - foundation/glib.morph
+  - foundation/systemd.morph
+- name: foundation/help2man.morph
   repo: upstream:help2man
   ref: 0191a5f61525f8deea2ae8bdfea88190d85b6a71
   unpetrify-ref: baserock/morph
   build-depends: []
-- name: libxslt
+- name: foundation/libxslt.morph
   repo: upstream:libxslt
   ref: 8785a2ffd0d146df0395ab71ce4734d0a8ba0f7e
   unpetrify-ref: baserock/morph
   build-depends: []
-- name: openssh
+- name: foundation/openssh.morph
   repo: upstream:openssh
   ref: 233514106dcde5ac61a70f1043de563122e2f1c9
   unpetrify-ref: baserock/morph
   build-depends:
-  - groff
-- name: patch
+  - foundation/groff.morph
+- name: foundation/patch.morph
   repo: upstream:patch
   ref: 9a16dcb97aac1a26af4372d95bd62b84f3f1264a
   unpetrify-ref: baserock/morph
   build-depends: []
-- name: tbdiff
+- name: foundation/tbdiff.morph
   repo: baserock:baserock/tbdiff
   ref: 485e76fea076b2a5f0efeab3ac7f98037f4e00c0
   unpetrify-ref: master
   build-depends:
-  - attr
+  - foundation/attr.morph

@@ -1,8 +1,8 @@
-arch: ppc64
-description: A system that produces the minimum needed to build a devel system
+name: cross-bootstrap-system-ppc64-generic.morph
 kind: system
-name: cross-bootstrap-system-ppc64-generic
+description: A system that produces the minimum needed to build a devel system
+arch: ppc64
 strata:
-- morph: build-essential
-- morph: core
-- morph: cross-bootstrap
+- morph: build-essential/morph
+- morph: core/morph
+- morph: cross-bootstrap/morph

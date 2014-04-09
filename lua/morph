@@ -1,10 +1,10 @@
-name: lua
+name: lua/morph
 kind: stratum
 description: Interpreter for the lua scripting language.
 build-depends:
-- morph: tools
+- morph: tools/morph
 chunks:
-- name: lua
+- name: lua/lua.morph
   repo: upstream:lua
   ref: bedbdc0f03bca4fe97200ddf9c3d6cb210b45888
   unpetrify-ref: baserock/5.1-morph

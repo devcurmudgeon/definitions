@@ -1,4 +1,4 @@
-name: sdk
+name: sdk-example-cluster.morph
 kind: cluster
 description: |
   An example of creating a cross-compile SDK for an embedded Baserock system.
@@ -31,7 +31,7 @@ description: |
 
   See the documentation of the sdk.write extension for more information.
 systems:
-- morph: armv7lhf-cross-toolchain-system-x86_32-generic
+- morph: armv7lhf-cross-toolchain-system-x86_32-generic.morph
   deploy:
     sdk:
       type: sdk

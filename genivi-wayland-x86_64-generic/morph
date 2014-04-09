@@ -1,14 +1,14 @@
-name: genivi-wayland-x86_64-generic
+name: genivi-wayland-x86_64-generic/morph
 kind: stratum
 description: Software components designed by genivi, for genivi.
 build-depends:
-- morph: core
-- morph: foundation
-- morph: genivi-foundation
-- morph: genivi
-- morph: wayland-x86_64-generic
+- morph: core/morph
+- morph: foundation/morph
+- morph: genivi-foundation/morph
+- morph: genivi/morph
+- morph: wayland-x86_64-generic/morph
 chunks:
-- name: layer_management-wayland
+- name: genivi-wayland-x86_64-generic/layer_management-wayland.morph
   repo: upstream:layer_management
   ref: 206d6709d0a3b3932a02b30ccacaa02b3eab8493
   unpetrify-ref: baserock/genivi/baseline

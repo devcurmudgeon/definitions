@@ -1,10 +1,10 @@
-name: qt4-sdk
+name: qt4-sdk/morph
 kind: stratum
 description: Qt4 Desktop Environment, IDE and Example Apps
 build-depends:
-- morph: qt4-tools
+- morph: qt4-tools/morph
 chunks:
-- name: qt-creator
+- name: qt4-sdk/qt-creator.morph
   repo: upstream:qt-creator
   ref: d5a6b10634c1a3271012e9578e016772ef077d59
   unpetrify-ref: baserock/morph/2.7

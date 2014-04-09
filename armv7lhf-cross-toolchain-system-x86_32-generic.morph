@@ -1,11 +1,12 @@
-name: armv7lhf-cross-toolchain-system-x86_32-generic
+name: armv7lhf-cross-toolchain-system-x86_32-generic.morph
 kind: system
+description: A system that contains an ARM cross compiler, intended to be used as
+  a sysroot.
 arch: x86_32
-description: A system that contains an ARM cross compiler, intended to be used as a sysroot.
 strata:
-- morph: build-essential
-- morph: armv7lhf-cross-toolchain
-- morph: cross-tools
+- morph: build-essential/morph
+- morph: armv7lhf-cross-toolchain/morph
+- morph: cross-tools/morph
 configuration-extensions:
 - set-hostname
 - add-config-files

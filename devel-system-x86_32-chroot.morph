@@ -1,17 +1,17 @@
+name: devel-system-x86_32-chroot.morph
+kind: system
+description: A system that is able to build other systems based on the 32-bit x86
+  architecture.
 arch: x86_32
+strata:
+- morph: build-essential/morph
+- morph: core/morph
+- morph: foundation/morph
+- morph: tools/morph
+- morph: glanceclient/morph
 configuration-extensions:
 - set-hostname
 - add-config-files
 - simple-network
 - nfsboot
 - install-files
-description: A system that is able to build other systems based on the 32-bit x86
-  architecture.
-kind: system
-name: devel-system-x86_32-chroot
-strata:
-- morph: build-essential
-- morph: core
-- morph: foundation
-- morph: tools
-- morph: glanceclient

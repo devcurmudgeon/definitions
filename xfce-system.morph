@@ -1,26 +1,26 @@
+name: xfce-system.morph
+kind: system
+description: A GENIVI devel with XFCE
 arch: x86_64
+strata:
+- morph: build-essential/morph
+- morph: core/morph
+- morph: foundation/morph
+- morph: genivi-foundation/morph
+- morph: bsp-x86_64-generic/morph
+- morph: connectivity/morph
+- morph: audio-bluetooth/morph
+- morph: x-common/morph
+- morph: x-x86_64-generic/morph
+- morph: multimedia/morph
+- morph: genivi/morph
+- morph: genivi-x-x86_64-generic/morph
+- morph: gtk2/morph
+- morph: tools/morph
+- morph: xfce/morph
 configuration-extensions:
 - set-hostname
 - add-config-files
 - simple-network
 - nfsboot
 - install-files
-description: A GENIVI devel with XFCE
-kind: system
-name: xfce-system
-strata:
-- morph: build-essential
-- morph: core
-- morph: foundation
-- morph: genivi-foundation
-- morph: bsp-x86_64-generic
-- morph: connectivity
-- morph: audio-bluetooth
-- morph: x-common
-- morph: x-x86_64-generic
-- morph: multimedia
-- morph: genivi
-- morph: genivi-x-x86_64-generic
-- morph: gtk2
-- morph: tools
-- morph: xfce

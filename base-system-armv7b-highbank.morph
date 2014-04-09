@@ -1,16 +1,16 @@
+name: base-system-armv7b-highbank.morph
+kind: system
+description: The set of strata required to have a minimal system for an ARM highbank
+  system.
 arch: armv7b
+strata:
+- morph: build-essential/morph
+- morph: core/morph
+- morph: foundation/morph
+- morph: bsp-armv7b-highbank/morph
 configuration-extensions:
 - set-hostname
 - add-config-files
 - simple-network
 - nfsboot
 - install-files
-description: The set of strata required to have a minimal system for an ARM highbank
-  system.
-kind: system
-name: base-system-armv7b-highbank
-strata:
-- morph: build-essential
-- morph: core
-- morph: foundation
-- morph: bsp-armv7b-highbank

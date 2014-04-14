@@ -1,0 +1,13 @@
+name: qtwebkit
+kind: chunk
+repo: upstream:qt5/qtwebkit
+ref: 15a558c03ea7a35f97dfc0b16024d026d20920be
+max-jobs: '1'
+configure-commands:
+- QMAKEPATH=/qtwebkit.build/Tools/qmake/mkspecs qmake WebKit.pro
+build-commands:
+- make
+- make html_docs
+install-commands:
+- make install INSTALL_ROOT=$DESTDIR
+- make install_html_docs INSTALL_ROOT=$DESTDIR

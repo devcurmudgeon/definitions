@@ -1,0 +1,5 @@
+name: virt-manager
+kind: chunk
+repo: upstream:virt-manager
+ref: 8b7ebd4538ffbd2d246fdeee4f1bb1c452585575
+build-system: python-distutils

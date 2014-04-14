@@ -1,0 +1,11 @@
+name: ncurses
+kind: chunk
+repo: upstream:ncurses
+ref: 0fe89dc66ec061b839bea3ab451207e2dee757b9
+configure-commands:
+- LDCONFIG=true ./configure --with-shared --without-debug --enable-widec
+build-commands:
+- make
+install-commands:
+- make  DESTDIR="$DESTDIR" install
+- sh ncurses-morph-postinstall.sh

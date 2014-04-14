@@ -1,0 +1,5 @@
+name: xorg-lib-libXinerama
+kind: chunk
+repo: upstream:xorg-lib-libXinerama
+ref: 470b9356af961ff7d3968b164aa73872b49a5dcc
+build-system: autotools

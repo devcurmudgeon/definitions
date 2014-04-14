@@ -1,0 +1,10 @@
+name: libffi
+kind: chunk
+repo: upstream:libffi
+ref: 77d4586cc47e8f4c02278afbc220145bba0d442b
+build-system: autotools
+install-commands:
+- make DESTDIR="$DESTDIR"/ install
+- mkdir -p "$DESTDIR"/usr/include
+- cp "$TARGET"/include/ffi.h "$DESTDIR"/usr/include/
+- cp "$TARGET"/include/ffitarget.h "$DESTDIR"/usr/include/

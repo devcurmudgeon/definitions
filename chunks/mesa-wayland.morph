@@ -1,0 +1,8 @@
+name: mesa-wayland
+kind: chunk
+repo: upstream:mesa
+ref: f64dd91f4f2a2591e66b38fdfdfa83077f8221ab
+build-system: autotools
+configure-commands:
+- ./autogen.sh --prefix="$PREFIX" --enable-gles2 --disable-gallium-egl --with-egl-platforms=wayland,drm
+  --enable-gbm --enable-shared-glapi --with-gallium-drivers=swrast --with-dri-drivers=intel,i915,i965,swrast

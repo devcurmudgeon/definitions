@@ -1,0 +1,5 @@
+name: xorg-font-util
+kind: chunk
+repo: upstream:xorg-font-util
+ref: 5f01ea79f1cb2328bfc4130b1e693f71be916b87
+build-system: autotools

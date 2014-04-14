@@ -1,0 +1,20 @@
+name: ceph
+kind: chunk
+repo: upstream:ceph
+ref: 8fdf1df512b73bad0eb695cdf9cbf2d09f0327d4
+build-system: autotools
+configure-commands:
+- NOCONFIGURE=1 ./autogen.sh
+- ./configure --with-nss --prefix="$PREFIX" --sysconfdir=/etc --without-fuse --without-libatomic-ops
+install-commands:
+- make install
+- install -D -m 755 src/init-ceph $DESTDIR/etc/init.d/ceph
+- install -d $DESTDIR/etc/ceph
+- install -D -d $DESTDIR/var/lib/ceph
+- install -d $DESTDIR/var/lib/ceph/mon
+- install -d $DESTDIR/var/lib/ceph/osd
+- install -d $DESTDIR/var/lib/ceph/mds
+- install -d $DESTDIR/var/lib/ceph/tmp
+- install -d $DESTDIR/var/lib/ceph/bootstrap-mds
+- install -d $DESTDIR/var/lib/ceph/bootstrap-osd
+- install -D -d $DESTDIR/var/log/ceph

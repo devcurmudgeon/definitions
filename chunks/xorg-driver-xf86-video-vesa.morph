@@ -1,0 +1,5 @@
+name: xorg-driver-xf86-video-vesa
+kind: chunk
+repo: upstream:xorg-driver-xf86-video-vesa
+ref: 29a149544e2120a582043738d5b09dd80e896345
+build-system: autotools

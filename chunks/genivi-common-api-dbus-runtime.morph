@@ -1,0 +1,5 @@
+name: genivi-common-api-dbus-runtime
+kind: chunk
+repo: upstream:genivi-common-api-dbus-runtime
+ref: 16a259c8b78f254ee9157346880ccf19ed8905a7
+build-system: autotools

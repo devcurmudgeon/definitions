@@ -1,0 +1,10 @@
+name: tumbler
+kind: chunk
+repo: upstream:xfce/tumbler
+ref: f8191f286227a045fbdabd7684c9da81ade518c8
+configure-commands:
+- ./autogen.sh --prefix="$PREFIX" --enable-debug=yes
+build-commands:
+- make
+install-commands:
+- make install

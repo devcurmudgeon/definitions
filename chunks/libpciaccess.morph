@@ -1,0 +1,5 @@
+name: libpciaccess
+kind: chunk
+repo: upstream:libpciaccess
+ref: b9c068896914b4132a24839c9ef7f9fcd6282d88
+build-system: autotools

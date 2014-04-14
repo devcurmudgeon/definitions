@@ -1,0 +1,5 @@
+name: python-lxml
+kind: chunk
+repo: upstream:python-lxml
+ref: 8fc99f8ef3e2f12e74fb407ae62c5db50cfe7b92
+build-system: python-distutils

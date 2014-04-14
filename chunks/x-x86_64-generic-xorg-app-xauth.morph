@@ -1,0 +1,5 @@
+name: xorg-app-xauth
+kind: chunk
+repo: upstream:xorg-app-xauth
+ref: 6dda11c17f2fdc47d43f269dccee98ec66cc8c4b
+build-system: autotools

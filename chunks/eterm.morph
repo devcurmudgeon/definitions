@@ -1,0 +1,10 @@
+name: eterm
+kind: chunk
+repo: upstream:enlightenment/eterm
+ref: 097234f1f27709ff2444e303350764ea3b80b3ad
+configure-commands:
+- ./autogen.sh --prefix=/usr
+build-commands:
+- make
+install-commands:
+- make DESTDIR="$DESTDIR" install

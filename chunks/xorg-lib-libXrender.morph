@@ -1,0 +1,5 @@
+name: xorg-lib-libXrender
+kind: chunk
+repo: upstream:xorg-lib-libXrender
+ref: 1af52cb334377611233d7dc156bc1e6f7923756d
+build-system: autotools

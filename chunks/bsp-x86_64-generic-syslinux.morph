@@ -1,0 +1,11 @@
+name: syslinux
+kind: chunk
+repo: upstream:syslinux
+ref: 8821237240c5374d83298b2da5ad88fa1e3c1ef7
+configure-commands: []
+build-commands:
+- make clean
+- make
+- make installer
+install-commands:
+- make INSTALLROOT="$DESTDIR" install

@@ -1,0 +1,5 @@
+name: bzr-tarball
+kind: chunk
+repo: upstream:bzr-tarball
+ref: e61c7edb4789abcd0f73c30fe719fa6fea478a52
+build-system: python-distutils

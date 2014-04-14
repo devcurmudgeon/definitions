@@ -1,0 +1,5 @@
+name: ipmitool
+kind: chunk
+repo: upstream:ipmitool
+ref: 830d5a3787b265e5dde154d2f0e08b10ae9a7bcd
+build-system: autotools

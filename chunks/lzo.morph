@@ -1,0 +1,7 @@
+name: lzo
+kind: chunk
+repo: upstream:lzo
+ref: 2cdfe9375f1145603d002c12be950062ae54da21
+build-system: autotools
+configure-commands:
+- ./configure --enable-shared=yes --prefix="$PREFIX"

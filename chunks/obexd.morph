@@ -1,0 +1,5 @@
+name: obexd
+kind: chunk
+repo: upstream:obexd
+ref: 4225280022c206762c91beee47c62d05e1baeacc
+build-system: autotools

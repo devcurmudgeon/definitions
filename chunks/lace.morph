@@ -1,0 +1,10 @@
+name: lace
+kind: chunk
+description: Lua Access Control Engine.
+repo: upstream:gitano/lace
+ref: d1b540b6d361d6a1f51e53cdaab69f053340efbb
+build-system: manual
+build-commands:
+- make
+install-commands:
+- make INST_BASE="$PREFIX" DESTDIR="$DESTDIR" install

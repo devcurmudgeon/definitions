@@ -1,0 +1,17 @@
+name: qtbase
+kind: chunk
+repo: upstream:qt5/qtbase
+ref: 79be8352ced650e98ab0afe89e91cffee4f6a04a
+configure-commands:
+- ./configure -v -prefix /usr -opensource -confirm-license
+build-commands:
+- make
+- touch /qtbase.build/src/corelib/corelib.pro
+- ./bin/qmake -set QDOC /qtbase.build/bin/qdoc
+- make html_docs
+- ./bin/qmake -unset QDOC
+install-commands:
+- make install INSTALL_ROOT=$DESTDIR
+- ./bin/qmake -set QDOC /qtbase.build/bin/qdoc
+- make install_html_docs INSTALL_ROOT=$DESTDIR
+- ./bin/qmake -unset QDOC

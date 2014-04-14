@@ -1,0 +1,5 @@
+name: cmake
+kind: chunk
+repo: upstream:cmake
+ref: 7f9a761e761046a479fda38ee13f5dacd94ceeea
+build-system: autotools

@@ -1,0 +1,11 @@
+name: zlib
+kind: chunk
+repo: upstream:zlib
+ref: db333af7e9b90a23fd7f9cd8dc128123b34bf698
+max-jobs: '1'
+configure-commands:
+- ./configure --prefix="$PREFIX"
+build-commands:
+- make
+install-commands:
+- make DESTDIR="$DESTDIR" install

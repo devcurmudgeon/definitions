@@ -1,0 +1,6 @@
+name: shared-mime-info
+kind: chunk
+repo: upstream:shared-mime-info
+ref: 0d440d85a126ff8d535d4f70f2203a76a21d5f71
+max-jobs: '1'
+build-system: autotools

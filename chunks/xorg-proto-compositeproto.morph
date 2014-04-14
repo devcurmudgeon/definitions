@@ -1,0 +1,5 @@
+name: xorg-proto-compositeproto
+kind: chunk
+repo: upstream:xorg-proto-compositeproto
+ref: 39738dbe9438dc80fc6b9e221d9ed26a6d42da6b
+build-system: autotools

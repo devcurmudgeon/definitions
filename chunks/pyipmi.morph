@@ -1,0 +1,5 @@
+name: pyipmi
+kind: chunk
+repo: upstream:pyipmi
+ref: bb7dba84578c05ba87db3c4186a2989c89e4e519
+build-system: python-distutils

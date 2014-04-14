@@ -1,0 +1,5 @@
+name: xorg-proto-xineramaproto
+kind: chunk
+repo: upstream:xorg-proto-xineramaproto
+ref: 4e77b45e0d6b42a448dab2ec316eeb5c490ecfed
+build-system: autotools

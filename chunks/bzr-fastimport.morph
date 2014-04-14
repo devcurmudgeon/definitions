@@ -1,0 +1,5 @@
+name: bzr-fastimport
+kind: chunk
+repo: upstream:bzr-fastimport
+ref: b3cda9967f857127bd4dab5eb72223a95916f5ea
+build-system: python-distutils

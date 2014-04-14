@@ -1,0 +1,11 @@
+name: stage2-linux-api-headers
+kind: chunk
+repo: upstream:linux
+ref: eff825d6e284eb0fb04b434429a3e3b2e10cabf8
+install-commands:
+- make mrproper
+- |
+  export ARCH=$(./morph-arch)
+  make INSTALL_HDR_PATH=dest headers_install
+- install -d "$DESTDIR${PREFIX-/usr}/include"
+- cp -r dest/include/* "$DESTDIR/${PREFIX-/usr}/include"

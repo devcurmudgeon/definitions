@@ -1,0 +1,5 @@
+name: xorg-lib-libXtst
+kind: chunk
+repo: upstream:xorg-lib-libXtst
+ref: 2aafac9474a0a0a0c39797862f823255918cf368
+build-system: autotools

@@ -1,0 +1,14 @@
+name: subversion-tarball
+kind: chunk
+repo: upstream:subversion-tarball
+ref: 351e074672d9aa6446d5829938b697a3d6b23266
+build-system: autotools
+configure-commands:
+- python gen-make.py build.conf
+- ./configure --prefix="$PREFIX" --without-berkeley-db
+build-commands:
+- make
+install-commands:
+- make install DESTDIR="$DESTDIR"
+- make swig-pl
+- make install-swig-pl DESTDIR="$DESTDIR"

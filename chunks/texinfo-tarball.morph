@@ -1,0 +1,11 @@
+name: texinfo-tarball
+kind: chunk
+repo: upstream:texinfo-tarball
+ref: 4843a7f5ff14ac802a56f1cdd49960b25c15702b
+configure-commands:
+- ./configure --prefix="$PREFIX"
+build-commands:
+- make
+install-commands:
+- make DESTDIR="$DESTDIR" install
+- make DESTDIR="$DESTDIR" TEXMF="$PREFIX/share/texmf" install-tex

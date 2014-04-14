@@ -1,0 +1,5 @@
+name: xorg-proto-renderproto
+kind: chunk
+repo: upstream:xorg-proto-renderproto
+ref: 935f5ec95a3718c184ff685f5b79b467483b7844
+build-system: autotools

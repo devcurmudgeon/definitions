@@ -1,0 +1,5 @@
+name: xcb-libxcb
+kind: chunk
+repo: upstream:xcb-libxcb
+ref: 0dd8f8d26a758bc385e79d9239bf6ef2e3d7bf13
+build-system: autotools

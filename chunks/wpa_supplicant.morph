@@ -1,0 +1,10 @@
+name: wpa_supplicant
+kind: chunk
+repo: upstream:hostap
+ref: 1cdfb99c3a04235697dc6979b9eb5418861e42f8
+configure-commands:
+- sed -i 's/^CONFIG_READLINE=y$//' wpa_supplicant/.config
+build-commands:
+- make -C wpa_supplicant
+install-commands:
+- make -C wpa_supplicant DESTDIR="$DESTDIR" install

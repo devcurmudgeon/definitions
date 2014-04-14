@@ -1,0 +1,5 @@
+name: xorg-lib-libXau
+kind: chunk
+repo: upstream:xorg-lib-libXau
+ref: 1a8a1b2c68967b48c07b56142799b1020f017027
+build-system: autotools

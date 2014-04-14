@@ -1,0 +1,10 @@
+name: evas_generic_loaders
+kind: chunk
+repo: upstream:enlightenment/evas_generic_loaders
+ref: ddbdaa35201f4ef64f1a3f3b067a99e84c14565a
+configure-commands:
+- ./autogen.sh --prefix=/usr
+build-commands:
+- make
+install-commands:
+- make DESTDIR="$DESTDIR" install

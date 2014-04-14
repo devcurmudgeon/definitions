@@ -1,0 +1,12 @@
+name: qtdeclarative
+kind: chunk
+repo: upstream:qt5/qtdeclarative
+ref: 774d0310883a9526210c4530bbb9d0af26d88699
+configure-commands:
+- qmake
+build-commands:
+- make
+- make html_docs
+install-commands:
+- make install INSTALL_ROOT=$DESTDIR
+- make install_html_docs INSTALL_ROOT=$DESTDIR

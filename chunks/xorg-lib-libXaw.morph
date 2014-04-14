@@ -1,0 +1,5 @@
+name: xorg-lib-libXaw
+kind: chunk
+repo: upstream:xorg-lib-libXaw
+ref: a5630e166921b5b5322b30fb152df01bb6536e42
+build-system: autotools

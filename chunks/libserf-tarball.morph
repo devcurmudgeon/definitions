@@ -1,0 +1,5 @@
+name: libserf-tarball
+kind: chunk
+repo: upstream:libserf-tarball
+ref: 6f61a1acd01dc2ad1d2f5c1f7458702c77c69f9c
+build-system: autotools

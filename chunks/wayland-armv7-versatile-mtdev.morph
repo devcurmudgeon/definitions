@@ -1,0 +1,5 @@
+name: mtdev
+kind: chunk
+repo: upstream:mtdev-git
+ref: 4381b78fea54de0e775bf54952b2f95e5a06c57d
+build-system: autotools

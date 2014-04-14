@@ -1,0 +1,5 @@
+name: pcre
+kind: chunk
+repo: upstream:pcre
+ref: 2720152c58e13e7cc7403642ec33127101b9971b
+build-system: autotools

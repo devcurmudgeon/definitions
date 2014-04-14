@@ -1,0 +1,5 @@
+name: gperftools
+kind: chunk
+repo: upstream:gperftools
+ref: 2a2d6596f8c3d62b7ec444761f4edf0c85d10d92
+build-system: autotools

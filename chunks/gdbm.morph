@@ -1,0 +1,10 @@
+name: gdbm
+kind: chunk
+repo: upstream:gdbm
+ref: 51871d08a48ff781186f7a7b22ec69a1db38eb4c
+configure-commands:
+- ./configure --prefix="$PREFIX" --enable-libgdbm-compat --disable-nls
+build-commands:
+- make MANS= INFO_DEPS=
+install-commands:
+- make MANS= INFO_DEPS= DESTDIR="$DESTDIR" install

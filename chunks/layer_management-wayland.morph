@@ -1,0 +1,5 @@
+name: layer_management-wayland
+kind: chunk
+repo: upstream:layer_management
+ref: 206d6709d0a3b3932a02b30ccacaa02b3eab8493
+build-system: cmake

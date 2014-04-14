@@ -1,0 +1,9 @@
+name: cgit
+kind: chunk
+repo: upstream:cgit
+ref: acbf4a15e260c711094455dbef7c024f2553fd32
+build-system: manual
+build-commands:
+- make prefix="$PREFIX"
+install-commands:
+- make prefix="$PREFIX" DESTDIR="$DESTDIR" install

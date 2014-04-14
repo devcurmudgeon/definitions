@@ -1,0 +1,12 @@
+name: qtserialport
+kind: chunk
+repo: upstream:qt5/qtserialport
+ref: b1abca2eee45e7b8ecf71cb5cd1e77a2821fcac2
+configure-commands:
+- qmake
+build-commands:
+- make
+- make html_docs
+install-commands:
+- make install INSTALL_ROOT=$DESTDIR
+- make install_html_docs INSTALL_ROOT=$DESTDIR

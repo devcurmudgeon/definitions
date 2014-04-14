@@ -1,0 +1,7 @@
+name: pygobject
+kind: chunk
+repo: upstream:pygobject
+ref: 276341d7ddab180020c31e6837bd28fd25784de0
+build-system: autotools
+configure-commands:
+- ./autogen.sh --prefix="$PREFIX" --disable-cairo

@@ -1,0 +1,7 @@
+name: gobject-introspection
+kind: chunk
+repo: upstream:gobject-introspection
+ref: 4f14c7dd0906608d4c9b741e0d0ba858e5c530f0
+build-system: autotools
+configure-commands:
+- sh autogen.sh --prefix="$PREFIX" --disable-gtk-doc

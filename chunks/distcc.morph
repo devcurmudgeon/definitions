@@ -1,0 +1,5 @@
+name: distcc
+kind: chunk
+repo: upstream:distcc
+ref: 2f422c03925e82bf88b05da823813073a985b0e5
+build-system: autotools

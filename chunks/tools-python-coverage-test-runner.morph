@@ -1,0 +1,5 @@
+name: python-coverage-test-runner
+kind: chunk
+repo: upstream:python-coverage-test-runner
+ref: 8ea9421ac3384b2e88e0c36f2cfa52586c4798b7
+build-system: python-distutils

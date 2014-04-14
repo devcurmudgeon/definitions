@@ -1,0 +1,5 @@
+name: xorg-lib-libXft
+kind: chunk
+repo: upstream:xorg-lib-libXft
+ref: c5e760a239afc62a1c75e0509868e35957c8df52
+build-system: autotools

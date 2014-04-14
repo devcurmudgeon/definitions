@@ -1,0 +1,5 @@
+name: argparse
+kind: chunk
+repo: upstream:argparse
+ref: c9b3f9b32949cb7dd798e7d1aedbeeef064aa4b1
+build-system: python-distutils

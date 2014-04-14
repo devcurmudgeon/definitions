@@ -1,0 +1,5 @@
+name: xfce-dev-tools
+kind: chunk
+repo: upstream:xfce/xfce4-dev-tools
+ref: 9244250ac0c15ba160688758c5dccf97f3f160ef
+build-system: autotools

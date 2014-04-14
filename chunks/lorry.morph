@@ -1,0 +1,5 @@
+name: lorry
+kind: chunk
+repo: baserock:baserock/lorry
+ref: 5afef32028fbcacb7acc3d0318407169dd2353de
+build-system: python-distutils

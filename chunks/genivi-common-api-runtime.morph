@@ -1,0 +1,5 @@
+name: genivi-common-api-runtime
+kind: chunk
+repo: upstream:genivi-common-api-runtime
+ref: 54e7a90c76bdd0aaf6fa2fecc7628b5aa2c8d56d
+build-system: autotools

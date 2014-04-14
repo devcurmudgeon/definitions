@@ -1,0 +1,5 @@
+name: python-fastimport
+kind: chunk
+repo: upstream:python-fastimport
+ref: 6500a5e7d82651ade9002d44e3ecc71a50302616
+build-system: python-distutils

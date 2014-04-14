@@ -1,0 +1,5 @@
+name: readline
+kind: chunk
+repo: upstream:readline
+ref: 518937ab89be812ccd45e9b8c1ce4ad721d35ef6
+build-system: autotools

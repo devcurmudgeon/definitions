@@ -1,0 +1,5 @@
+name: libapr-tarball
+kind: chunk
+repo: upstream:libapr-tarball
+ref: dea1efeb7f60fc6848e1e72b3fc973d0057565db
+build-system: autotools

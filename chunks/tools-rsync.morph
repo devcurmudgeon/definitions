@@ -1,0 +1,8 @@
+name: rsync
+kind: chunk
+repo: upstream:rsync
+ref: 9faf8e0ccff2755cd019ff64d8322226a214b013
+build-system: autotools
+build-commands:
+- make proto
+- make

@@ -1,0 +1,7 @@
+name: xserver
+kind: chunk
+repo: upstream:xserver
+ref: b7cbfa882778cf8857577e0da77aa9295f072db3
+build-system: autotools
+configure-commands:
+- ./autogen.sh --prefix="$PREFIX" --with-sha1=libsha1

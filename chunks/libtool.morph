@@ -1,0 +1,8 @@
+name: libtool
+kind: chunk
+repo: upstream:libtool
+ref: d388b7f2dc628b22006025d01179bc09b8aabe81
+max-jobs: 1
+build-system: autotools
+configure-commands:
+- ./configure --prefix="$PREFIX"

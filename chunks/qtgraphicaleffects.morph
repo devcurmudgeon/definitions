@@ -1,0 +1,10 @@
+name: qtgraphicaleffects
+kind: chunk
+repo: upstream:qt5/qtgraphicaleffects
+ref: e41d08f95d74d7309fc976cb62141b78239de975
+configure-commands:
+- qmake
+build-commands:
+- make
+install-commands:
+- make install INSTALL_ROOT=$DESTDIR

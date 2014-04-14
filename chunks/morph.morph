@@ -1,0 +1,5 @@
+name: morph
+kind: chunk
+repo: baserock:baserock/morph
+ref: 170d81eba0568856401f57ce655ad9881b802d21
+build-system: python-distutils

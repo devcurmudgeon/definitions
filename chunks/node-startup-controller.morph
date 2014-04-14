@@ -1,0 +1,11 @@
+name: node-startup-controller
+kind: chunk
+repo: upstream:node-startup-controller
+ref: c78fddaddc24a2c49f5ef18896c93403575295ae
+configure-commands:
+- sh autogen.sh
+- ./configure --prefix="$PREFIX" --sysconfdir=/etc
+build-commands:
+- make
+install-commands:
+- make DESTDIR="$DESTDIR" install

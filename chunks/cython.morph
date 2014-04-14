@@ -1,0 +1,5 @@
+name: cython
+kind: chunk
+repo: upstream:cython
+ref: 005d38d5921a603d5f4d413aae72f98a6d33192f
+build-system: python-distutils

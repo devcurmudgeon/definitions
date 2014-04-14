@@ -1,0 +1,10 @@
+name: pango
+kind: chunk
+repo: upstream:pango
+ref: c05f6e5205711e97727885a86a57661c7e9cdc75
+build-system: autotools
+install-commands:
+- make DESTDIR=$DESTDIR install
+- mkdir -p $DESTDIR/$PREFIX/etc/pango
+- LD_LIBRARY_PATH=$DESTDIR/usr/lib PANGO_LIBDIR=$DESTDIR/$PREFIX/lib $DESTDIR/usr/bin/pango-querymodules
+  | sed "s:$DESTDIR/$PREFIX:$PREFIX:g" > $DESTDIR/$PREFIX/lib/pango/1.8.0/modules.cache

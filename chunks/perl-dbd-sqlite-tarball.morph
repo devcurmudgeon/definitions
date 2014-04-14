@@ -1,0 +1,5 @@
+name: perl-dbd-sqlite-tarball
+kind: chunk
+repo: upstream:perl-dbd-sqlite-tarball
+ref: 485b97be9f2f2abf5a40923b5fd85f75714a8c02
+build-system: cpan

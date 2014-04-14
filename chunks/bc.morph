@@ -1,0 +1,5 @@
+name: bc
+kind: chunk
+repo: upstream:bc-tarball
+ref: 0956d119432ff6a2e85bae1fa336df799cad70b0
+build-system: autotools

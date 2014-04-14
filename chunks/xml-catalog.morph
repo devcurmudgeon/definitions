@@ -1,0 +1,8 @@
+name: xml-catalog
+kind: chunk
+repo: baserock:baserock/xml-catalog
+ref: 1d4a2abc875c4dda1b5eadc0a097a48a8d2ec82b
+install-commands:
+- make DESTDIR="$DESTDIR" install
+post-install-commands:
+- ./post-install.sh

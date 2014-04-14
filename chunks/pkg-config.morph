@@ -1,0 +1,7 @@
+name: pkg-config
+kind: chunk
+repo: upstream:pkg-config
+ref: 67a702a15cf88e270539484929ffa1f42b90c728
+build-system: autotools
+configure-commands:
+- ./configure --prefix="$PREFIX" --with-internal-glib

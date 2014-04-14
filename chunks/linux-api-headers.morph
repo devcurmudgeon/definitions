@@ -1,0 +1,11 @@
+name: linux-api-headers
+kind: chunk
+repo: upstream:linux
+ref: 316df4c3eb667636eadf4b663f4087f1f9cc3cfe
+build-commands:
+- make mrproper
+- make headers_check
+install-commands:
+- make INSTALL_HDR_PATH=dest headers_install
+- install -d "$DESTDIR${PREFIX-/usr}/include"
+- cp -r dest/include/* "$DESTDIR/${PREFIX-/usr}/include"

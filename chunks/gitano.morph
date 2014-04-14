@@ -1,0 +1,8 @@
+name: gitano
+kind: chunk
+repo: upstream:gitano/gitano
+ref: 77266b3ec2efec51f0a3246cbad70a4f15835958
+build-system: manual
+install-commands:
+- make install INST_ROOT="$PREFIX" DESTDIR="$DESTDIR"
+- cp scripts/htpasswd "$DESTDIR/$PREFIX/bin"

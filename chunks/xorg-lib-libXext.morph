@@ -1,0 +1,5 @@
+name: xorg-lib-libXext
+kind: chunk
+repo: upstream:xorg-lib-libXext
+ref: 8eee1236041d46a21faba32e0d27c26985267d89
+build-system: autotools

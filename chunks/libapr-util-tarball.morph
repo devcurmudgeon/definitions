@@ -1,0 +1,7 @@
+name: libapr-util-tarball
+kind: chunk
+repo: upstream:libapr-util-tarball
+ref: daba269ee5a262cc23621b3ee37ed368d2a2b69b
+build-system: autotools
+configure-commands:
+- ./configure --prefix "$PREFIX" --with-apr=/usr/bin/apr-1-config

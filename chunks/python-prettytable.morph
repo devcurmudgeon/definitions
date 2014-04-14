@@ -1,0 +1,9 @@
+name: python-prettytable
+kind: chunk
+repo: upstream:python-prettytable
+ref: 941133673e5a0003cd5ce1b6db2a51cf3307d9c1
+build-system: manual
+build-commands:
+- cd src && python setup.py build
+install-commands:
+- cd src && python setup.py install --prefix "$PREFIX" --root "$DESTDIR"

@@ -1,0 +1,5 @@
+name: libcroco
+kind: chunk
+repo: upstream:libcroco
+ref: 611f624a6e15065792b41eb5ce14811293f3fb0a
+build-system: autotools

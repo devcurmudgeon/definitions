@@ -1,0 +1,11 @@
+name: help2man
+kind: chunk
+repo: upstream:help2man
+ref: 0191a5f61525f8deea2ae8bdfea88190d85b6a71
+configure-commands:
+- autoreconf -i
+- ./configure --prefix=/usr
+build-commands:
+- make
+install-commands:
+- make  DESTDIR="$DESTDIR" install

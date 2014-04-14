@@ -1,0 +1,5 @@
+name: atk
+kind: chunk
+repo: upstream:atk
+ref: e35410e06337afa3d66fcdde9b16422648de4e04
+build-system: autotools

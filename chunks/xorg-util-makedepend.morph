@@ -1,0 +1,5 @@
+name: xorg-util-makedepend
+kind: chunk
+repo: upstream:xorg-util-makedepend
+ref: 87fd28cd5a5acfe6e91c97c4af0a469e1e86cbd5
+build-system: autotools

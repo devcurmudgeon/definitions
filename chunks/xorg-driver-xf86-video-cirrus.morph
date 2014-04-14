@@ -1,0 +1,5 @@
+name: xorg-driver-xf86-video-cirrus
+kind: chunk
+repo: upstream:xorg-driver-xf86-video-cirrus
+ref: 6504929481eab616f064b5d661a057de74b8b488
+build-system: autotools

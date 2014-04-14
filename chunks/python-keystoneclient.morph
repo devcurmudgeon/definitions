@@ -1,0 +1,5 @@
+name: python-keystoneclient
+kind: chunk
+repo: upstream:python-keystoneclient
+ref: 21cc66a850c5ea1d2ffffb655da0c452b919ed3b
+build-system: python-distutils

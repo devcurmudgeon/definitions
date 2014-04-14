@@ -1,0 +1,10 @@
+name: clod
+kind: chunk
+description: Configuration Language Organised (by) Dots.
+repo: upstream:gitano/clod
+ref: da15894f42f48d15db997c4355d6b672371a4163
+build-system: manual
+build-commands:
+- make
+install-commands:
+- make INST_BASE="$PREFIX" DESTDIR="$DESTDIR" install

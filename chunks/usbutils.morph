@@ -1,0 +1,5 @@
+name: usbutils
+kind: chunk
+repo: upstream:usbutils
+ref: 410f1474af0ddb391bc6ec391777f116eee31569
+build-system: autotools

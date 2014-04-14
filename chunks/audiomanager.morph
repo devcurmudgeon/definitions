@@ -1,0 +1,5 @@
+name: audiomanager
+kind: chunk
+repo: upstream:audiomanager
+ref: f005d28c3bfa2f46128619dddbce954b9d7b928a
+build-system: cmake

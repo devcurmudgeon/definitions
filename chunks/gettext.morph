@@ -1,0 +1,11 @@
+name: gettext
+kind: chunk
+repo: upstream:gettext
+ref: 3898e324f07c05404b63d71f0e519f352fb1e072
+max-jobs: 1
+configure-commands:
+- ./configure --prefix=/usr
+build-commands:
+- make EXAMPLESPOFILES=
+install-commands:
+- make EXAMPLESPOFILES= DESTDIR="$DESTDIR" install

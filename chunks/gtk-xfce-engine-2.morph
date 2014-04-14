@@ -1,0 +1,10 @@
+name: gtk-xfce-engine-2
+kind: chunk
+repo: upstream:xfce/gtk-xfce-engine
+ref: ed44a71f1a4d76ae850483ece41638bb9a3e7781
+configure-commands:
+- ./autogen.sh --prefix="$PREFIX" --enable-debug=yes
+build-commands:
+- make
+install-commands:
+- make install

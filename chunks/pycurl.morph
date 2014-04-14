@@ -1,0 +1,5 @@
+name: pycurl
+kind: chunk
+repo: upstream:pycurl
+ref: 5ca370827d88817eeca3c56cbb37e4ddccc16c6e
+build-system: python-distutils

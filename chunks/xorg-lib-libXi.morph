@@ -1,0 +1,5 @@
+name: xorg-lib-libXi
+kind: chunk
+repo: upstream:xorg-lib-libXi
+ref: 9b26b81477cf3486e5aa0ef8d81af68a0f04df1b
+build-system: autotools

@@ -1,0 +1,8 @@
+name: at-spi2-atk
+kind: chunk
+repo: upstream:at-spi2-atk
+ref: 363953fff4e3e12152ce2498b58a471884b497f5
+build-system: autotools
+configure-commands:
+- sed -i -e 's/automake-1.11/automake-1.11a automake-1.11/g' autogen.sh
+- ./autogen.sh --prefix="$PREFIX"

@@ -1,0 +1,5 @@
+name: xorg-lib-libxtrans
+kind: chunk
+repo: upstream:xorg-lib-libxtrans
+ref: bd53f4c8543faf910a7a151241ee07661b4d57ad
+build-system: autotools

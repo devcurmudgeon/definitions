@@ -1,0 +1,9 @@
+name: mini-utils
+kind: chunk
+repo: baserock:baserock/mini-utils
+ref: 5293265b29bbf468ab9d7f3302b19dbc81d0f8b8
+unpetrify-ref: master
+build-system: autotools
+configure-commands: ''
+install-commands:
+- make PREFIX="$PREFIX" DESTDIR="$DESTDIR" install

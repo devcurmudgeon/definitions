@@ -1,0 +1,6 @@
+name: warlock
+kind: chunk
+repo: upstream:warlock
+ref: 1a0de8a67df8282c42f71014cc871684e8d7c0cf
+unpetrify-ref: baserock/morph
+build-system: python-distutils

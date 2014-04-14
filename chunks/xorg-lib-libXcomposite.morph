@@ -1,0 +1,6 @@
+name: xorg-lib-libXcomposite
+kind: chunk
+repo: upstream:xorg-lib-libXcomposite
+ref: eda48b1bedaa344ada8e13930c9ab3058b836190
+unpetrify-ref: baserock/morph
+build-system: autotools

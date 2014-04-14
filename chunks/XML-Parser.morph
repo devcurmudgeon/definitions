@@ -1,0 +1,6 @@
+name: XML-Parser
+kind: chunk
+repo: upstream:XML-Parser
+ref: e1a3ec157140a699e3020836475a0df622f70f1b
+unpetrify-ref: baserock/morph
+build-system: cpan

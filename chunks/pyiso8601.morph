@@ -1,0 +1,6 @@
+name: pyiso8601
+kind: chunk
+repo: upstream:pyiso8601
+ref: ac5470ec9e68332ebc499c4f9f21e7e3cb31ecb6
+unpetrify-ref: baserock/morph
+build-system: python-distutils

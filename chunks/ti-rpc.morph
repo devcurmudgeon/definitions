@@ -1,0 +1,9 @@
+name: ti-rpc
+kind: chunk
+repo: upstream:ti-rpc
+ref: c5a7a19070e74115fc9c26aa6f3dfec1da220c1f
+unpetrify-ref: baserock/master
+build-system: autotools
+configure-commands:
+- NOCONFIGURE=1 ./autogen.sh
+- ./configure --prefix="$PREFIX" --sysconfdir=/etc

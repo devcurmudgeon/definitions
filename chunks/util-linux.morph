@@ -1,0 +1,16 @@
+name: util-linux
+kind: chunk
+repo: upstream:util-linux
+ref: 462008f79be9e195670b202cb43827b8aeb1e60b
+unpetrify-ref: baserock/morph
+build-system: autotools
+configure-commands:
+- ./autogen.sh
+- ./configure --prefix="$PREFIX" --disable-use-tty-group
+install-commands:
+- make DESTDIR="$(pwd)/util-linux-tmpdir" install
+- for prog in blkid blockdev cal chrt dmesg fdisk findfs flock fsck hexdump hwclock
+  ipcrm ipcs logger mkswap more mount mountpoint pivot_root readprofile renice script
+  setsid swapoff swapon switch_root umount; do find "$(pwd)/util-linux-tmpdir" -name
+  "$prog" -delete; done
+- cp -a "$(pwd)"/util-linux-tmpdir/* "$DESTDIR"

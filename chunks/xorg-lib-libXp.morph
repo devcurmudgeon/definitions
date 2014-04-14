@@ -1,0 +1,6 @@
+name: xorg-lib-libXp
+kind: chunk
+repo: upstream:xorg-lib-libXp
+ref: 41aab7d289aba2aaf3839e96d0c9e2f15ede4bd1
+unpetrify-ref: baserock/morph
+build-system: autotools

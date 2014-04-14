@@ -1,0 +1,6 @@
+name: gnome-common
+kind: chunk
+repo: upstream:gnome-common
+ref: 66d54b57313f0f6206cff32972d2b83d683628b2
+unpetrify-ref: 3.7.4
+build-system: autotools

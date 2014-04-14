@@ -1,0 +1,8 @@
+name: lua-scrypt
+kind: chunk
+repo: upstream:lua-scrypt
+ref: 0d7f74cd3eab7d54fbb13294194de7ea70ac34a5
+unpetrify-ref: baserock/morph
+build-system: manual
+install-commands:
+- make lua-5.1-install DESTDIR="$DESTDIR"

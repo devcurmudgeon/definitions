@@ -1,0 +1,6 @@
+name: xorg-proto-damageproto
+kind: chunk
+repo: upstream:xorg-proto-damageproto
+ref: 015b980e5091492dbe681af59569768ba89fbfe0
+unpetrify-ref: baserock/morph
+build-system: autotools

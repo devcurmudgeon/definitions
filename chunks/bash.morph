@@ -1,0 +1,11 @@
+name: bash
+kind: chunk
+repo: upstream:bash
+ref: 783c677f45354b0d6df70e552217ecad8481804f
+unpetrify-ref: baserock/morph
+configure-commands:
+- ./configure --prefix=/usr --bindir=/bin --without-bash-malloc --with-installed-readline
+build-commands:
+- make
+install-commands:
+- make  DESTDIR="$DESTDIR" install

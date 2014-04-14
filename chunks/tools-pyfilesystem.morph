@@ -1,0 +1,9 @@
+name: pyfilesystem
+kind: chunk
+repo: upstream:pyfilesystem
+ref: 821f7db1ce3a3e1ac53fa514ddacbc2871eac0f6
+unpetrify-ref: baserock/morph
+build-commands:
+- python setup.py build
+install-commands:
+- python setup.py install --prefix="$PREFIX" --root "$DESTDIR"

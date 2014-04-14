@@ -1,0 +1,6 @@
+name: cxmanage
+kind: chunk
+repo: upstream:cxmanage
+ref: 54116d3c486ed7aa49f284e4cad9e6e7c293bea6
+unpetrify-ref: baserock/morph
+build-system: python-distutils

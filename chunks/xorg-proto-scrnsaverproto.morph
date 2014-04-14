@@ -1,0 +1,6 @@
+name: xorg-proto-scrnsaverproto
+kind: chunk
+repo: upstream:xorg-proto-scrnsaverproto
+ref: 614532026e8ec7496216316fb584d6f2af6a7f7b
+unpetrify-ref: baserock/morph
+build-system: autotools

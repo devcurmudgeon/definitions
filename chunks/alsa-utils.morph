@@ -1,0 +1,10 @@
+name: alsa-utils
+kind: chunk
+description: ALSA utilities
+repo: upstream:alsa-utils
+ref: f12208425051a7abf5ffc87ac2b9d2bd9e096fe1
+unpetrify-ref: baserock/morph
+build-system: autotools
+configure-commands:
+- autoreconf -ifv
+- ./configure --prefix="$PREFIX" --disable-xmlto

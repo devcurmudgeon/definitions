@@ -1,0 +1,6 @@
+name: urlgrabber
+kind: chunk
+repo: upstream:urlgrabber
+ref: bf0a0be71373dec515bbb54e0613a3b9b0c00b04
+unpetrify-ref: master
+build-system: python-distutils

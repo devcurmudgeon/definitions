@@ -1,0 +1,6 @@
+name: xorg-lib-libpciaccess
+kind: chunk
+repo: upstream:xorg-lib-libpciaccess
+ref: 3e17f069682a226c14bb29c802e776c6e39f7e8f
+unpetrify-ref: baserock/morph
+build-system: autotools

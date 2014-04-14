@@ -1,0 +1,6 @@
+name: error-perl-tarball
+kind: chunk
+repo: upstream:error-perl-tarball
+ref: 661707e7bd4282aeab5a2f6a8f02ca5731fd813f
+unpetrify-ref: baserock/morph
+build-system: cpan

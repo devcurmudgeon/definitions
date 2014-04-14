@@ -1,0 +1,14 @@
+name: weston
+kind: chunk
+description: weston compositor
+repo: upstream:weston
+ref: e2136e1f2494c2c1732f0afeba9a7050bdd48e42
+unpetrify-ref: baserock/genivi/baseline
+build-system: autotools
+configure-commands:
+- autoreconf -ivf
+- |
+  ./configure --prefix=/usr --with-cairo-glesv2 --disable-xwayland \
+  --disable-drm-compositor --disable-x11-compositor \
+  --disable-android-compositor --disable-wayland-compositor \
+  --disable-weston-launch

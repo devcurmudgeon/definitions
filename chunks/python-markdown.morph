@@ -1,0 +1,6 @@
+name: python-markdown
+kind: chunk
+repo: upstream:python-markdown
+ref: a9ca97325e9039de90eae29fb3d8879bc9f367f6
+unpetrify-ref: baserock/morph
+build-system: python-distutils

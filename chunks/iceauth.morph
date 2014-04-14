@@ -1,0 +1,6 @@
+name: iceauth
+kind: chunk
+repo: upstream:iceauth
+ref: c07d443d43e53cfe21b53a9a0eafcd6189432867
+unpetrify-ref: baserock/morph
+build-system: autotools

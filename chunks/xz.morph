@@ -1,0 +1,6 @@
+name: xz
+kind: chunk
+repo: upstream:xz
+ref: 581deedf9d1eadcd84c4fcd23b9fdfe2dde18cc2
+unpetrify-ref: baserock/morph
+build-system: autotools

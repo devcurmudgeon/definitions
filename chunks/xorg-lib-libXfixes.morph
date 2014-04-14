@@ -1,0 +1,6 @@
+name: xorg-lib-libXfixes
+kind: chunk
+repo: upstream:xorg-lib-libXfixes
+ref: 73a0fbb479f5b7806a3dd0741be55c9abda76220
+unpetrify-ref: baserock/morph
+build-system: autotools

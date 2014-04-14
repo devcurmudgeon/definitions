@@ -1,0 +1,6 @@
+name: libjpeg
+kind: chunk
+repo: upstream:libjpeg
+ref: f57ac58ac664ede6bc6e8cd9d88e0edaa366e21a
+unpetrify-ref: baserock/morph
+build-system: autotools

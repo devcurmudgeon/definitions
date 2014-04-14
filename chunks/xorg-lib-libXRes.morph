@@ -1,0 +1,6 @@
+name: xorg-lib-libXRes
+kind: chunk
+repo: upstream:xorg-lib-libXRes
+ref: 83e7693515369d57dcd11c2bb1f03563f51bc500
+unpetrify-ref: baserock/morph
+build-system: autotools

@@ -1,0 +1,6 @@
+name: cliapp
+kind: chunk
+repo: upstream:cliapp
+ref: cec20cedd062a3aef1b04f997e77b45090c07806
+unpetrify-ref: baserock/morph
+build-system: python-distutils

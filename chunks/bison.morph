@@ -1,0 +1,12 @@
+name: bison
+kind: chunk
+repo: upstream:bison
+ref: 6729ad1c314b179225325dcc1bc684077a71f859
+unpetrify-ref: baserock/morph
+configure-commands:
+- bash bootstrap --skip-po
+- ./configure --prefix=/usr --disable-nls
+build-commands:
+- make
+install-commands:
+- make DESTDIR="$DESTDIR" install

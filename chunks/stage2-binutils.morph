@@ -1,0 +1,22 @@
+name: stage2-binutils
+kind: chunk
+repo: upstream:binutils-redhat
+ref: 987eb543a034cddc4eeb103f08f566f24a5f964a
+unpetrify-ref: baserock/build-essential
+build-system: autotools
+configure-commands:
+- |
+  export STAGE2_SYSROOT="$(dirname $(pwd))"
+  export CPPFLAGS="--sysroot=$STAGE2_SYSROOT"
+  export CXX=false
+  export LDFLAGS="-Wl,--sysroot=$STAGE2_SYSROOT"
+  ./configure --prefix="$PREFIX" --disable-nls --disable-werror \
+    --build=$(sh config.guess) \
+    --host=$TARGET_STAGE1 \
+    --target=$TARGET_STAGE1
+build-commands:
+- |
+  export STAGE2_SYSROOT="$(dirname $(pwd))"
+  export CPPFLAGS="--sysroot=$STAGE2_SYSROOT"
+  export LDFLAGS="-Wl,--sysroot=$STAGE2_SYSROOT"
+  make

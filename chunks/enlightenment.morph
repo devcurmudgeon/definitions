@@ -1,0 +1,11 @@
+name: enlightenment
+kind: chunk
+repo: upstream:enlightenment/enlightenment
+ref: 041b8d14a22f9e4c7f34abe8b0f9a3a1f5933146
+unpetrify-ref: baserock/morph
+configure-commands:
+- ./autogen.sh --prefix=/usr
+build-commands:
+- make
+install-commands:
+- make DESTDIR="$DESTDIR" install

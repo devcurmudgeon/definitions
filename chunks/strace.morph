@@ -1,0 +1,6 @@
+name: strace
+kind: chunk
+repo: upstream:strace
+ref: ad232c6aa0c2a07830d61dc4b9912478634b23b5
+unpetrify-ref: baserock/morph
+build-system: autotools

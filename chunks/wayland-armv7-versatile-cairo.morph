@@ -1,0 +1,8 @@
+name: cairo
+kind: chunk
+repo: upstream:cairo
+ref: 86fd783959c537b8c0fd49fd979881178ca9a24e
+unpetrify-ref: baserock/genivi/baseline
+build-system: autotools
+configure-commands:
+- ./autogen.sh --prefix="$PREFIX" --enable-glesv2

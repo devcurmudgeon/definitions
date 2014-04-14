@@ -1,0 +1,6 @@
+name: xorg-driver-xf86-video-fbdev
+kind: chunk
+repo: upstream:xorg-driver-xf86-video-fbdev
+ref: ac293412a01d87f87eb61f4adb9db7486a75d3fc
+unpetrify-ref: baserock/morph
+build-system: autotools

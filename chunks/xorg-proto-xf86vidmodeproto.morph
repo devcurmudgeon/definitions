@@ -1,0 +1,6 @@
+name: xorg-proto-xf86vidmodeproto
+kind: chunk
+repo: upstream:xorg-proto-xf86vidmodeproto
+ref: 15c05b263eb6cc0eaa7ab49c39fe489613d6d796
+unpetrify-ref: baserock/morph
+build-system: autotools

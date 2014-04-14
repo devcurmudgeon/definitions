@@ -1,0 +1,6 @@
+name: gstreamer
+kind: chunk
+repo: upstream:gstreamer
+ref: 5a5083f292e676e1548f6351ad27d0ccb18f68bc
+unpetrify-ref: baserock/genivi/baseline
+build-system: autotools

@@ -1,0 +1,11 @@
+name: yajl
+kind: chunk
+repo: upstream:yajl
+ref: 52fc681857228c65c1cb439782da485554875481
+unpetrify-ref: baserock/morph
+configure-commands:
+- ./configure -p "$PREFIX"
+build-commands:
+- make distro
+install-commands:
+- make install DESTDIR="$DESTDIR"

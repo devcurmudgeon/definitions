@@ -1,0 +1,6 @@
+name: morph-cache-server
+kind: chunk
+repo: baserock:baserock/morph-cache-server
+ref: cc5f95fa563c4817cdcffc428da18e263bd02ae2
+unpetrify-ref: master
+build-system: python-distutils

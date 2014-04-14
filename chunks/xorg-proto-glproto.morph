@@ -1,0 +1,6 @@
+name: xorg-proto-glproto
+kind: chunk
+repo: upstream:xorg-proto-glproto
+ref: 8e3407e02980d088e20041e79bdcdd3737e7827e
+unpetrify-ref: baserock/morph
+build-system: autotools

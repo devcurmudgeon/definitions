@@ -1,0 +1,6 @@
+name: perl-uri
+kind: chunk
+repo: upstream:libwww-perl/uri
+ref: 3dd72ded7f043a4f6973781fe594722e2e95f491
+unpetrify-ref: baserock/morph
+build-system: cpan

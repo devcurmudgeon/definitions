@@ -1,0 +1,6 @@
+name: xorg-driver-xf86-input-evdev
+kind: chunk
+repo: upstream:xorg-driver-xf86-input-evdev
+ref: 2b8b0df62ec554952784f2820fb4143c495232b0
+unpetrify-ref: baserock/morph
+build-system: autotools

@@ -1,0 +1,6 @@
+name: drm
+kind: chunk
+repo: upstream:drm
+ref: 20c5607b57da113ca1a29caaa5a52eaf83808dff
+unpetrify-ref: baserock/morph
+build-system: autotools

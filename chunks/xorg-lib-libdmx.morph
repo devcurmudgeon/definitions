@@ -1,0 +1,6 @@
+name: xorg-lib-libdmx
+kind: chunk
+repo: upstream:xorg-lib-libdmx
+ref: 9f470c92bc2d194c8abb9154f42864e6c82f43ef
+unpetrify-ref: baserock/morph
+build-system: autotools

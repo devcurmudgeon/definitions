@@ -1,0 +1,6 @@
+name: libunwind
+kind: chunk
+repo: upstream:libunwind
+ref: 4b8404d153c58b95cb4420fc7603fdae62489a31
+unpetrify-ref: v0.99
+build-system: autotools

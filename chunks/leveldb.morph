@@ -1,0 +1,9 @@
+name: leveldb
+kind: chunk
+repo: upstream:leveldb
+ref: 0f0ed46e70967365c851243663689e156fe1b7b5
+unpetrify-ref: baserock/morph
+build-commands:
+- make
+install-commands:
+- ./install.sh

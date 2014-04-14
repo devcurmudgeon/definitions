@@ -1,0 +1,6 @@
+name: libxkbcommon
+kind: chunk
+repo: upstream:xorg-lib-libxkbcommon
+ref: b721254769212d671a4729f1c88b059979b80efc
+unpetrify-ref: baserock/genivi/baseline
+build-system: autotools

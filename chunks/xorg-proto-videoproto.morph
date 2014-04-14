@@ -1,0 +1,6 @@
+name: xorg-proto-videoproto
+kind: chunk
+repo: upstream:xorg-proto-videoproto
+ref: e42cf822e230cff5c6550ca2c050dfa27d2c9611
+unpetrify-ref: baserock/morph
+build-system: autotools

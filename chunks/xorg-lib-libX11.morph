@@ -1,0 +1,6 @@
+name: xorg-lib-libX11
+kind: chunk
+repo: upstream:xorg-lib-libX11
+ref: f57fd760cba92ad846917f21e94e73e9c846185f
+unpetrify-ref: baserock/morph
+build-system: autotools

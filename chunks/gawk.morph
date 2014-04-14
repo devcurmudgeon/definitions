@@ -1,0 +1,8 @@
+name: gawk
+kind: chunk
+repo: upstream:gawk
+ref: 6a0eb04c3d2ac24d80d505b42a8f67799487d133
+unpetrify-ref: baserock/build-essential
+build-system: autotools
+configure-commands:
+- ./configure --prefix="$PREFIX" --disable-nls

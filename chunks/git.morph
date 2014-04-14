@@ -1,0 +1,9 @@
+name: git
+kind: chunk
+repo: upstream:git
+ref: 43efcf42382e87de4aa423e5e1607958ad1717d0
+unpetrify-ref: baserock/morph
+build-commands:
+- make prefix=${PREFIX-/usr} all PYTHON_PATH=${PREFIX-/usr}/bin/python NO_TCLTK=YesPlease
+install-commands:
+- make prefix=${PREFIX-/usr} install

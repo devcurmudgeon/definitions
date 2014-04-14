@@ -1,0 +1,6 @@
+name: tftpy
+kind: chunk
+repo: upstream:tftpy
+ref: f3d2fc4c62c1e64dd49adfaf8e65097eb8ea307b
+unpetrify-ref: baserock/morph
+build-system: python-distutils

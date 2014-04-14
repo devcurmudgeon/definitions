@@ -1,0 +1,6 @@
+name: gstreamer
+kind: chunk
+repo: upstream:gstreamer
+ref: c7e4a97d26396882960fd399b1a5e298e40d2a35
+unpetrify-ref: baserock/morph/0.10
+build-system: autotools

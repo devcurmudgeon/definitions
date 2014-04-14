@@ -1,0 +1,6 @@
+name: tbdiff
+kind: chunk
+repo: baserock:baserock/tbdiff
+ref: 485e76fea076b2a5f0efeab3ac7f98037f4e00c0
+unpetrify-ref: master
+build-system: autotools

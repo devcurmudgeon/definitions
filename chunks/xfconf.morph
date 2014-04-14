@@ -1,0 +1,11 @@
+name: xfconf
+kind: chunk
+repo: upstream:xfce/xfconf
+ref: ed6ed2f7656a0d5d8cb453cb643061c9a157f2ae
+unpetrify-ref: baserock/morph
+configure-commands:
+- ./autogen.sh --prefix=${PREFIX}
+build-commands:
+- make
+install-commands:
+- make install

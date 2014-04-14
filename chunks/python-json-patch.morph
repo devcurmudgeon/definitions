@@ -1,0 +1,6 @@
+name: python-json-patch
+kind: chunk
+repo: upstream:python-json-patch
+ref: 27c7032de25923593fa17cc14f535fb7abd52448
+unpetrify-ref: baserock/morph
+build-system: python-distutils

@@ -1,0 +1,9 @@
+name: device-tree-compiler
+kind: chunk
+repo: upstream:device-tree-compiler
+ref: c92f284c3cf76d471eb27a271de3a51cb45ed058
+unpetrify-ref: baserock/morph
+build-commands:
+- make all
+install-commands:
+- make install DESTDIR="$DESTDIR" PREFIX="$PREFIX"

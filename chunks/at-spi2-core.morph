@@ -1,0 +1,6 @@
+name: at-spi2-core
+kind: chunk
+repo: upstream:at-spi2-core
+ref: 9bfebf07e866acadb5d2123568fd0119a7e0575b
+unpetrify-ref: AT_SPI2_CORE_2_9_5
+build-system: autotools

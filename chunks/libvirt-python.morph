@@ -1,0 +1,6 @@
+name: libvirt-python
+kind: chunk
+repo: upstream:libvirt-python
+ref: 4382fc518cbd11d9af5727fb403e175818c25db5
+unpetrify-ref: v1.2.2
+build-system: python-distutils

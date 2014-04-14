@@ -1,0 +1,9 @@
+name: dnsmasq
+kind: chunk
+repo: upstream:dnsmasq
+ref: 8471cd938ca41fbe4fee8ae3f657625c92cfb954
+unpetrify-ref: baserock/morph
+build-system: autotools
+configure-commands: []
+install-commands:
+- make install PREFIX="$PREFIX" DESTDIR="$DESTDIR"

@@ -1,0 +1,10 @@
+name: cpython
+kind: chunk
+repo: upstream:cpython
+ref: fa86445bfd4fb8e5441d685d92bf8a8ee237f022
+unpetrify-ref: baserock/morph-2.7
+build-system: autotools
+configure-commands:
+- ./configure --prefix="$PREFIX" --enable-shared
+post-install-commands:
+- ln -s python2.7 "$DESTDIR"/"$PREFIX"/bin/python2

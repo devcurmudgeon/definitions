@@ -1,0 +1,6 @@
+name: file
+kind: chunk
+repo: upstream:file
+ref: 3b49db406667ee7189b9ea69b9d9e0bdcc43c5b7
+unpetrify-ref: baserock/morph
+build-system: autotools

@@ -1,0 +1,8 @@
+name: qemu
+kind: chunk
+repo: upstream:qemu
+ref: 5e4eac434b4ff85af2a8821cce8a4ef2b12d8e5e
+unpetrify-ref: baserock/morph
+build-system: autotools
+configure-commands:
+- ./configure --prefix="$PREFIX"

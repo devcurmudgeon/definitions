@@ -1,0 +1,11 @@
+name: libast
+kind: chunk
+repo: upstream:enlightenment/libast
+ref: 0dbc0a5df55474bf61ca166be40e8de2d9e3a031
+unpetrify-ref: baserock/morph
+configure-commands:
+- ./autogen.sh --prefix=/usr
+build-commands:
+- make
+install-commands:
+- make DESTDIR="$DESTDIR" install

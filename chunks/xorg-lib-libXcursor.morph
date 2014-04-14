@@ -1,0 +1,6 @@
+name: xorg-lib-libXcursor
+kind: chunk
+repo: upstream:xorg-lib-libXcursor
+ref: 1b98fd6a2e8c00a563187849a585e68c7344468b
+unpetrify-ref: baserock/morph
+build-system: autotools

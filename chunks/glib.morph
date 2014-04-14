@@ -1,0 +1,6 @@
+name: glib
+kind: chunk
+repo: upstream:glib
+ref: 980156c4cb4a8c29335de83bbf1ac05a9a1f01a9
+unpetrify-ref: baserock/morph
+build-system: autotools

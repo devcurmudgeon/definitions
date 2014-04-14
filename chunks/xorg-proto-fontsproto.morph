@@ -1,0 +1,6 @@
+name: xorg-proto-fontsproto
+kind: chunk
+repo: upstream:xorg-proto-fontsproto
+ref: 81e4d4ec53f1f3848ff269fe476c3a1d35d93aef
+unpetrify-ref: baserock/morph
+build-system: autotools

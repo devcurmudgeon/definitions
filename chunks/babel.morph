@@ -1,0 +1,6 @@
+name: babel
+kind: chunk
+repo: upstream:babel
+ref: d764b35bc3910b8f67ff811752df615afa7667f6
+unpetrify-ref: baserock/morph
+build-system: python-distutils

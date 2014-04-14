@@ -1,0 +1,6 @@
+name: simplejson
+kind: chunk
+repo: upstream:simplejson
+ref: 35816bfe2d0ddeb5ddcc68239683cbb35b7e3ff2
+unpetrify-ref: baserock/morph
+build-system: python-distutils

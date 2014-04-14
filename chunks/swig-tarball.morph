@@ -1,0 +1,8 @@
+name: swig-tarball
+kind: chunk
+repo: upstream:swig-tarball
+ref: 1f6cb46b6a4b3ebf9352fa10198b0b286f84138b
+unpetrify-ref: baserock/morph
+build-system: autotools
+configure-commands:
+- ./configure --prefix="$PREFIX" --disable-ccache

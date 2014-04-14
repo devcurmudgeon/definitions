@@ -1,0 +1,9 @@
+name: libsoup
+kind: chunk
+repo: upstream:libsoup
+ref: ce764489e358bad6b49418f5c8bc7b25a4b1815e
+unpetrify-ref: baserock/morph
+build-system: autotools
+configure-commands:
+- NOCONFIGURE=1 ./autogen.sh
+- ./configure --prefix="$PREFIX" --disable-tls-check

@@ -1,0 +1,6 @@
+name: xorg-proto-randrproto
+kind: chunk
+repo: upstream:xorg-proto-randrproto
+ref: ca7cc541c2e43e6c784df19b4583ac35829d2f72
+unpetrify-ref: baserock/morph
+build-system: autotools

@@ -1,0 +1,6 @@
+name: xcb-pthread-stubs
+kind: chunk
+repo: upstream:xcb-pthread-stubs
+ref: 431d2c0be218d878b9dd3862e4232243c599df4b
+unpetrify-ref: baserock/morph
+build-system: autotools

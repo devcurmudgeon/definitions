@@ -1,0 +1,11 @@
+name: elementary
+kind: chunk
+repo: upstream:enlightenment/elementary
+ref: e4c97ddffea9c91a291e1a6a7c6ebd1bbf47629a
+unpetrify-ref: baserock/morph
+configure-commands:
+- ./autogen.sh --prefix=/usr
+build-commands:
+- make
+install-commands:
+- make DESTDIR="$DESTDIR" install

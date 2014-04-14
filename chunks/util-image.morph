@@ -1,0 +1,6 @@
+name: util-image
+kind: chunk
+repo: upstream:util-image
+ref: 66b0caa72eb5011d89d0346424ea40b9e8e93816
+unpetrify-ref: baserock/morph
+build-system: autotools

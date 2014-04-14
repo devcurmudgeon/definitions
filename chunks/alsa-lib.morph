@@ -1,0 +1,7 @@
+name: alsa-lib
+kind: chunk
+description: ALSA library
+repo: upstream:alsa-lib
+ref: ab715503853be8d8f365fd157c3cb97ef7a89f7b
+unpetrify-ref: baserock/morph
+build-system: autotools

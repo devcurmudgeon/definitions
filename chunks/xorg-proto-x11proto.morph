@@ -1,0 +1,6 @@
+name: xorg-proto-x11proto
+kind: chunk
+repo: upstream:xorg-proto-x11proto
+ref: f8c43d587e43fee2c22bd7b5f35a9d4dc8bdb580
+unpetrify-ref: baserock/morph
+build-system: autotools

@@ -1,0 +1,6 @@
+name: atk
+kind: chunk
+repo: upstream:atk
+ref: e35410e06337afa3d66fcdde9b16422648de4e04
+unpetrify-ref: ATK_2_9_3
+build-system: autotools

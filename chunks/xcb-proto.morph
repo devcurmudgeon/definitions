@@ -1,0 +1,6 @@
+name: xcb-proto
+kind: chunk
+repo: upstream:xcb-proto
+ref: ca30e6d5d7a0c7618d988f9051026d250f5e124e
+unpetrify-ref: baserock/morph
+build-system: autotools

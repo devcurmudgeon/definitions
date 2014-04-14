@@ -1,0 +1,6 @@
+name: sqlite3
+kind: chunk
+repo: upstream:sqlite3
+ref: f6c2a9fe49d20654c2c41844d056033692a223b7
+unpetrify-ref: baserock/morph
+build-system: autotools

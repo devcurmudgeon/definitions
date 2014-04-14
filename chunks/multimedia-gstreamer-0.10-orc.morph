@@ -1,0 +1,6 @@
+name: orc
+kind: chunk
+repo: upstream:orc
+ref: b4f7fcaf99a4d952e59f2a9fa9286d24cc4b3a5a
+unpetrify-ref: baserock/morph
+build-system: autotools

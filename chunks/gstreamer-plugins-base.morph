@@ -1,0 +1,6 @@
+name: gstreamer-plugins-base
+kind: chunk
+repo: upstream:gstreamer-plugins-base
+ref: 960c596309dbb983a1d733259adccc45c47006a2
+unpetrify-ref: baserock/morph/0.10
+build-system: autotools

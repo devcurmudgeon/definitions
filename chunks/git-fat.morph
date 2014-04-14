@@ -1,0 +1,7 @@
+name: git-fat
+kind: chunk
+repo: upstream:git-fat
+ref: 208f88d0f0ef04c25e8a231979eb0083f57b1610
+unpetrify-ref: baserock/morph
+install-commands:
+- install -D -m 755 git-fat "$DESTDIR/usr/bin/git-fat"

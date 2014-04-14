@@ -1,0 +1,6 @@
+name: libinput
+kind: chunk
+repo: upstream:libinput
+ref: f0fd32db8f3df558e1d763dfa2db76cdca260323
+unpetrify-ref: baserock/genivi/baseline
+build-system: autotools

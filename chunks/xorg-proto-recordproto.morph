@@ -1,0 +1,6 @@
+name: xorg-proto-recordproto
+kind: chunk
+repo: upstream:xorg-proto-recordproto
+ref: 0fd4f8e57c1e637b2aaaaa0f539ddbac8cc50575
+unpetrify-ref: baserock/morph
+build-system: autotools

@@ -1,0 +1,6 @@
+name: xorg-lib-libXpm
+kind: chunk
+repo: upstream:xorg-lib-libXpm
+ref: 81608285e11f2455800001a965dfece878861162
+unpetrify-ref: baserock/morph
+build-system: autotools

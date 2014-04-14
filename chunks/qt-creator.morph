@@ -1,0 +1,12 @@
+name: qt-creator
+kind: chunk
+repo: upstream:qt-creator
+ref: d5a6b10634c1a3271012e9578e016772ef077d59
+unpetrify-ref: baserock/morph/2.7
+configure-commands:
+- qmake
+build-commands:
+- make
+install-commands:
+- make install INSTALL_ROOT=$DESTDIR
+- ./qhelpgenerator.sh

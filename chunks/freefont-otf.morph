@@ -1,0 +1,10 @@
+name: freefont-otf
+kind: chunk
+repo: upstream:freefont-otf
+ref: 0ca3ccce74e81f7feb6e922edd988be0e1a43f05
+unpetrify-ref: baserock/morph
+configure-commands: []
+build-commands: []
+install-commands:
+- mkdir -p $DESTDIR/usr/share/fonts/opentype/freefont
+- install -p *.otf $DESTDIR/usr/share/fonts/opentype/freefont

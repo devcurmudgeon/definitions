@@ -1,0 +1,13 @@
+name: vim
+kind: chunk
+repo: upstream:vim
+ref: 592b8c975bf83b4dcf608769bc664a80cb1daf9e
+unpetrify-ref: baserock/morph
+build-system: autotools
+configure-commands:
+- echo '#define SYS_VIMRC_FILE "/etc/vimrc"' >>src/feature.h
+- ./configure --prefix="$PREFIX" --enable-multibyte
+install-commands:
+- make DESTDIR="$DESTDIR" install
+- mkdir -p "$DESTDIR"/etc
+- install -m 644 runtime/vimrc_example.vim "$DESTDIR"/etc/vimrc

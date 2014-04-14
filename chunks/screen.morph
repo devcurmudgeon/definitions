@@ -1,0 +1,14 @@
+name: screen
+kind: chunk
+description: A terminal multiplexer and sanity tool for many
+repo: upstream:screen
+ref: 7dd4a9e5f385c96a77e8ee5c977a1dde4c0ff467
+unpetrify-ref: baserock/morph
+max-jobs: '1'
+configure-commands:
+- cd ./src && sh autogen.sh
+- cd ./src && ./configure --prefix="$PREFIX"
+build-commands:
+- cd ./src && make
+install-commands:
+- cd ./src && make DESTDIR="$DESTDIR" install

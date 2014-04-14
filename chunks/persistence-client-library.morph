@@ -1,0 +1,6 @@
+name: persistence-client-library
+kind: chunk
+repo: upstream:genivi/persistence-client-library
+ref: 0934ba263e69be8453cc3150f997dad28489f0c7
+unpetrify-ref: baserock/genivi/baseline
+build-system: autotools

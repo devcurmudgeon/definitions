@@ -1,0 +1,13 @@
+name: hg-fast-export
+kind: chunk
+repo: upstream:hg-fast-export
+ref: 09a472aa58da0417a11a22bae172785f7cb2e80f
+unpetrify-ref: baserock/morph
+install-commands:
+- install -d "$DESTDIR/$PREFIX/bin"
+- install -m 0755 hg-fast-export.py "$DESTDIR/$PREFIX/bin/"
+- install -m 0755 hg-reset.py "$DESTDIR/$PREFIX/bin/"
+- install -m 0755 hg-fast-export.sh "$DESTDIR/$PREFIX/bin/hg-fast-export"
+- install -m 0755 hg-reset.sh "$DESTDIR/$PREFIX/bin/hg-reset"
+- install -d "$DESTDIR/$PREFIX/lib/python2.7/site-packages"
+- install -m 0644 hg2git.py "$DESTDIR/$PREFIX/lib/python2.7/site-packages/"

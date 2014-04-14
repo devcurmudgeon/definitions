@@ -1,0 +1,11 @@
+name: qtwebkit-examples
+kind: chunk
+repo: upstream:qt5/qtwebkit-examples
+ref: fdaa2bb5e47d6ca1d3e8c681f88eae0b9d4ae351
+unpetrify-ref: baserock/morph
+configure-commands:
+- qmake
+build-commands:
+- make
+install-commands:
+- make install INSTALL_ROOT=$DESTDIR

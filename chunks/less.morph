@@ -1,0 +1,6 @@
+name: less
+kind: chunk
+repo: upstream:less
+ref: 09a405d8f652b56944c93ebf5c673cdfe5319b04
+unpetrify-ref: baserock/morph
+build-system: autotools

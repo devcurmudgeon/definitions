@@ -1,0 +1,8 @@
+name: perl-dbi-tarball
+kind: chunk
+repo: upstream:perl-dbi-tarball
+ref: 09e269cff811f0c1881ea0d6b7571173bab8377b
+unpetrify-ref: baserock/morph
+build-system: cpan
+build-commands:
+- make -j1

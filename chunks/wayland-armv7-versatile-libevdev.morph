@@ -1,0 +1,6 @@
+name: libevdev
+kind: chunk
+repo: upstream:libevdev
+ref: b23649e1ba9fd5c72fa9318e417b4f17f5f6f528
+unpetrify-ref: baserock/genivi/baseline
+build-system: autotools

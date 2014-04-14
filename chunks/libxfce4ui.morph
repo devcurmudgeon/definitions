@@ -1,0 +1,11 @@
+name: libxfce4ui
+kind: chunk
+repo: upstream:xfce/libxfce4ui
+ref: a9c2a379709915dfda255d3ca9181fac3f8484d8
+unpetrify-ref: baserock/morph
+configure-commands:
+- ./autogen.sh --prefix=${PREFIX}
+build-commands:
+- make
+install-commands:
+- make install

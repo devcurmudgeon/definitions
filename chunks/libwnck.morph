@@ -1,0 +1,14 @@
+name: libwnck
+kind: chunk
+repo: upstream:libwnck
+ref: 6792abcdf27aceba1012406d51606e84b065a526
+unpetrify-ref: baserock/xfce-build
+build-system: autotools
+configure-commands:
+- gdk-pixbuf-query-loaders > loader.cache
+- NOCONFIGURE=1 ./autogen.sh
+- ./configure --prefix="$PREFIX"
+build-commands:
+- GDK_PIXBUF_MODULE_FILE="$(pwd)/loader.cache" make
+install-commands:
+- GDK_PIXBUF_MODULE_FILE="$(pwd)/loader.cache" make install DESTDIR="$DESTDIR"

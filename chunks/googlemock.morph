@@ -1,0 +1,11 @@
+name: googlemock
+kind: chunk
+repo: upstream:googlemock
+ref: 0e9998c140079046c396a0e7033bb465abae79cd
+unpetrify-ref: baserock/morph
+build-system: autotools
+configure-commands:
+- mkdir -p gtest/m4
+- ln -s /usr/share/gtest/m4/acx_pthread.m4 gtest/m4/acx_pthread.m4
+- autoreconf -ivf
+- ./configure --prefix="$PREFIX"

@@ -1,0 +1,8 @@
+name: trove-setup
+kind: chunk
+repo: baserock:baserock/trove-setup
+ref: 56b4fc537662d8d42f366b5cb5be0eada79d8d56
+unpetrify-ref: master
+build-system: manual
+install-commands:
+- make install DESTDIR="$DESTDIR"

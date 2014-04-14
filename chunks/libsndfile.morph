@@ -1,0 +1,8 @@
+name: libsndfile
+kind: chunk
+repo: upstream:libsndfile
+ref: 6c05c615c95ffef7a8a5a707cde0bb52bdd74244
+unpetrify-ref: baserock/morph
+build-system: autotools
+configure-commands:
+- ./configure --prefix="$PREFIX" --disable-external-libs

@@ -1,0 +1,6 @@
+name: xorg-lib-libXScrnSaver
+kind: chunk
+repo: upstream:xorg-lib-libXScrnSaver
+ref: f388a2ff259ee1c1c6058762e900bb29550e8246
+unpetrify-ref: baserock/morph
+build-system: autotools

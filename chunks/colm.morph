@@ -1,0 +1,6 @@
+name: colm
+kind: chunk
+repo: upstream:colm
+ref: fc633086748169632e93b945259197ba46f27695
+unpetrify-ref: master
+build-system: autotools

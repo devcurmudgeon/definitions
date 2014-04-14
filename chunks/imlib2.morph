@@ -1,0 +1,11 @@
+name: imlib2
+kind: chunk
+repo: upstream:enlightenment/imlib2
+ref: 6d02661a4c57771888304960ce62d4fdf587be8f
+unpetrify-ref: baserock/morph
+configure-commands:
+- ./autogen.sh --prefix=/usr
+build-commands:
+- make
+install-commands:
+- make DESTDIR="$DESTDIR" install

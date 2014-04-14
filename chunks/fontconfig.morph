@@ -1,0 +1,6 @@
+name: fontconfig
+kind: chunk
+repo: upstream:fontconfig
+ref: 72b0480a21958f0f8c115d8e0a5bfbd8d358b5c3
+unpetrify-ref: baserock/morph
+build-system: autotools

@@ -1,0 +1,8 @@
+name: autoconf
+kind: chunk
+repo: upstream:autoconf
+ref: cffdb90be331111ce3fbe4a32320181ec2b92652
+unpetrify-ref: baserock/build-essential
+build-system: autotools
+configure-commands:
+- ./configure --prefix="$PREFIX"

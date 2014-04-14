@@ -1,0 +1,6 @@
+name: python-glanceclient
+kind: chunk
+repo: upstream:python-glanceclient
+ref: 721660612df4454726b723daf902abd23ba0109c
+unpetrify-ref: baserock/morph
+build-system: python-distutils

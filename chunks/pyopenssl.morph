@@ -1,0 +1,6 @@
+name: pyopenssl
+kind: chunk
+repo: upstream:pyopenssl
+ref: 6bbf44a00b35fb28df1f66aa194b2fe95eab1ab2
+unpetrify-ref: baserock/morph
+build-system: python-distutils

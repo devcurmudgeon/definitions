@@ -1,0 +1,6 @@
+name: xorg-lib-libXrandr
+kind: chunk
+repo: upstream:xorg-lib-libXrandr
+ref: 99a63d10cbbab7d69a52d25d78795a3278506ea9
+unpetrify-ref: baserock/morph
+build-system: autotools

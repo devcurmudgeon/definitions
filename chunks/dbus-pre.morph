@@ -1,0 +1,13 @@
+name: dbus-pre
+kind: chunk
+repo: upstream:dbus
+ref: f2e4718bf42f507684949ebf484aa94df42abbbe
+unpetrify-ref: baserock/v1.8.0
+build-system: autotools
+configure-commands:
+- sh autogen.sh --no-configure
+- ./configure --prefix="$PREFIX" --localstatedir=/var --sysconfdir=/etc --disable-systemd
+build-commands:
+- make XMLTO_OUTPUT=
+install-commands:
+- make XMLTO_OUTPUT= DESTDIR="$DESTDIR" install

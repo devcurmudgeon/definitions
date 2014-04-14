@@ -1,0 +1,11 @@
+name: xfce4-panel
+kind: chunk
+repo: upstream:xfce/xfce4-panel
+ref: 6ac8bfcb481781e8e23b101f5c5fdd70cf6d083b
+unpetrify-ref: baserock/morph
+configure-commands:
+- ./autogen.sh --prefix="$PREFIX" --enable-debug=yes
+build-commands:
+- make
+install-commands:
+- make install

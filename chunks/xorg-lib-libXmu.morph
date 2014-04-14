@@ -1,0 +1,6 @@
+name: xorg-lib-libXmu
+kind: chunk
+repo: upstream:xorg-lib-libXmu
+ref: 474d22468c90f99104873b4c5fd7b0f0d2cbf823
+unpetrify-ref: baserock/morph
+build-system: autotools

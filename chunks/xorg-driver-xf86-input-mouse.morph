@@ -1,0 +1,6 @@
+name: xorg-driver-xf86-input-mouse
+kind: chunk
+repo: upstream:xorg-driver-xf86-input-mouse
+ref: 585f4030d77accf2a4ba115729ca08da82217863
+unpetrify-ref: baserock/morph
+build-system: autotools

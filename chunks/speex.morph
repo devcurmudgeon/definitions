@@ -1,0 +1,6 @@
+name: speex
+kind: chunk
+repo: upstream:speex
+ref: e5dc987a403426ee3d0d81768afffa0fe74e20fa
+unpetrify-ref: baserock/morph
+build-system: autotools

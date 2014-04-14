@@ -1,0 +1,15 @@
+name: flex
+kind: chunk
+repo: upstream:flex
+ref: de10f98e8a2dc2a021796811490d0f30c3cd90bf
+unpetrify-ref: baserock/build-essential
+configure-commands:
+- ./configure --prefix="$PREFIX"
+build-commands:
+- make dist_doc_DATA=
+install-commands:
+- make dist_doc_DATA= DESTDIR="$DESTDIR" install
+- ln -s libfl.a "$DESTDIR$PREFIX/lib/libl.a"
+- echo "#!$PREFIX/bin/sh" >"$DESTDIR$PREFIX/bin/lex"
+- echo 'exec '"$PREFIX"'/bin/flex -l "$@"' >>"$DESTDIR$PREFIX/bin/lex"
+- chmod 755 "$DESTDIR$PREFIX/bin/lex"

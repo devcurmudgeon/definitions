@@ -1,0 +1,8 @@
+name: nohands
+kind: chunk
+repo: upstream:nohands
+ref: 20ec5cc245fd5e74d9a0fc21497d1ba4164f2a3a
+unpetrify-ref: baserock/morph
+build-system: autotools
+build-commands:
+- make CXXFLAGS="-fpermissive -lpthread"

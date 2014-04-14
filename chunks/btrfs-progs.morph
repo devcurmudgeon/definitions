@@ -1,0 +1,10 @@
+name: btrfs-progs
+kind: chunk
+repo: upstream:btrfs-progs
+ref: 304f215abb836811e6d78e0a3da53d48aa0e7ca7
+unpetrify-ref: baserock/morph
+configure-commands: []
+build-commands:
+- make
+install-commands:
+- make DESTDIR="$DESTDIR" prefix="$PREFIX" install

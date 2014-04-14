@@ -1,0 +1,8 @@
+name: m4
+kind: chunk
+repo: upstream:m4
+ref: d533342af991401d865de9b037ac03cdc9bd852e
+unpetrify-ref: baserock/build-essential
+build-system: autotools
+configure-commands:
+- ./configure --prefix="$PREFIX" --disable-nls

@@ -1,0 +1,6 @@
+name: intltool
+kind: chunk
+repo: upstream:intltool
+ref: 12f04c88be9ff8a578d8fd6990ee2448c66dc5f4
+unpetrify-ref: baserock/morph
+build-system: autotools

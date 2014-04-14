@@ -1,0 +1,6 @@
+name: xorg-proto-inputproto
+kind: chunk
+repo: upstream:xorg-proto-inputproto
+ref: f8428123019e7357891bbfc0aef21dbb4d0db10f
+unpetrify-ref: baserock/morph
+build-system: autotools

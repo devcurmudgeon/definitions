@@ -1,0 +1,12 @@
+name: libexpat
+kind: chunk
+repo: upstream:libexpat
+ref: 97678ab13f6d29878997256b6ae1ded679ae5c5c
+unpetrify-ref: baserock/morph
+configure-commands:
+- autoreconf -i
+- ./configure --prefix="${PREFIX-/usr}"
+build-commands:
+- make
+install-commands:
+- make DESTDIR="$DESTDIR" install

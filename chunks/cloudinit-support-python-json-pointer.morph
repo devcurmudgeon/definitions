@@ -1,0 +1,6 @@
+name: python-json-pointer
+kind: chunk
+repo: upstream:python-json-pointer
+ref: 48dce313141ba5bf0d2f3dd2e590042c05755e53
+unpetrify-ref: baserock/morph
+build-system: python-distutils

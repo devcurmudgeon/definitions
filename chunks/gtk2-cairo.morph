@@ -1,0 +1,6 @@
+name: cairo
+kind: chunk
+repo: upstream:cairo
+ref: 25ef4d21f1616ddd9a6550cf7a129b2634b6caad
+unpetrify-ref: 1.12.14
+build-system: autotools

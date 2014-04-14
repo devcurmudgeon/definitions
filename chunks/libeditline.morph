@@ -1,0 +1,6 @@
+name: libeditline
+kind: chunk
+repo: upstream:libeditline-tarball
+ref: 7503ff5f8610734521f40e276b59b3b6291830e7
+unpetrify-ref: baserock/morph
+build-system: autotools

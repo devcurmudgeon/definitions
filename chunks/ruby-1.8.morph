@@ -1,0 +1,12 @@
+name: ruby-1.8
+kind: chunk
+repo: upstream:ruby
+ref: 7a24f1710028d568ad61d0aa49d5178260178d77
+unpetrify-ref: baserock/morph/ruby_1_8_7
+configure-commands:
+- autoconf
+- ./configure --prefix=/usr --program-suffix=-1.8
+build-commands:
+- make
+install-commands:
+- make DESTDIR="$DESTDIR" install

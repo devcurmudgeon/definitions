@@ -1,0 +1,6 @@
+name: xorg-lib-libfontenc
+kind: chunk
+repo: upstream:xorg-lib-libfontenc
+ref: f5d1208172e965fdd7fae8927bd3e29b3cc3a975
+unpetrify-ref: baserock/morph
+build-system: autotools

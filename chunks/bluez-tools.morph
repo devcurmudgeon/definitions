@@ -1,0 +1,13 @@
+name: bluez-tools
+kind: chunk
+description: A set of tools to manage Bluetooth devices for Linux
+repo: upstream:bluez-tools
+ref: 7350787e96a6ecf2cc5d4afddb3321ccad9fa461
+unpetrify-ref: baserock/morph
+build-system: autotools
+configure-commands:
+- sed -i -e 's/-lreadline/-lreadline -lncurses/g' configure.ac
+- ./autogen.sh
+- ./configure --prefix="$PREFIX" --disable-obex
+build-commands:
+- LDFLAGS="$LDFLAGS -lncurses" make

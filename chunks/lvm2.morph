@@ -1,0 +1,9 @@
+name: lvm2
+kind: chunk
+repo: upstream:lvm2
+ref: 8c5b90b50bdf9f1a7ae1d3c4cf58ce4b0d7c2768
+unpetrify-ref: baserock/morph
+build-system: autotools
+configure-commands:
+- ./configure --prefix="$PREFIX" --enable-applib --enable-cmdlib --enable-pkgconfig
+  --enable-dmeventd --enable-udev_sync

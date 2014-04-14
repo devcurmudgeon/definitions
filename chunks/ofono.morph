@@ -1,0 +1,14 @@
+name: ofono
+kind: chunk
+description: ofono Open Source Telephony
+repo: upstream:ofono
+ref: a53228f6b1b32d0405c0c3c8e0861d6202ffbba2
+unpetrify-ref: baserock/morph
+build-system: autotools
+configure-commands:
+- autoreconf -ivf
+- ./configure --prefix="$PREFIX" --sysconfdir=/etc --localstatedir=/var
+install-commands:
+- make install
+- mkdir -p "$DESTDIR/etc/systemd/system/multi-user.target.wants"
+- ln -s /lib/systemd/system/ofono.service "$DESTDIR/etc/systemd/system/multi-user.target.wants/ofono.service"

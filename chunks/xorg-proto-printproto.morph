@@ -1,0 +1,6 @@
+name: xorg-proto-printproto
+kind: chunk
+repo: upstream:xorg-proto-printproto
+ref: cca2ca69d2a6b4b133dba69d5330499fbfe88257
+unpetrify-ref: baserock/morph
+build-system: autotools

@@ -1,0 +1,6 @@
+name: freetype2
+kind: chunk
+repo: upstream:freetype2
+ref: 2ba18ba1ce730ed79672801b20f986f10a628c95
+unpetrify-ref: baserock/morph
+build-system: autotools

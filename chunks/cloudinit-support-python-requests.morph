@@ -1,0 +1,6 @@
+name: python-requests
+kind: chunk
+repo: upstream:python-requests
+ref: b891877ee6d76b0a3f8cbf2e7cd34cc4cbc40b6b
+unpetrify-ref: baserock/morph
+build-system: python-distutils

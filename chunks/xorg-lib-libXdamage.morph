@@ -1,0 +1,6 @@
+name: xorg-lib-libXdamage
+kind: chunk
+repo: upstream:xorg-lib-libXdamage
+ref: 0d35761dc39409b70e04dd0786aef6537f92976a
+unpetrify-ref: baserock/morph
+build-system: autotools

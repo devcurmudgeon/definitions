@@ -1,0 +1,13 @@
+name: cross-tools
+kind: stratum
+description: Tools used together with cross compilers
+build-depends:
+- name: core
+  morph: strata/core.morph
+chunks:
+- name: patchelf
+  morph: chunks/patchelf.morph
+  repo: upstream:patchelf
+  ref: 21a85cc1c63cf3ef060ece59cdd82455e2884703
+  unpetrify-ref: baserock/morph
+  build-depends: []

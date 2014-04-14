@@ -1,0 +1,29 @@
+name: distbuild
+kind: stratum
+description: Morph distributed build software
+build-depends:
+- name: foundation
+  morph: strata/foundation.morph
+- name: core
+  morph: strata/core.morph
+- name: tools
+  morph: strata/tools.morph
+chunks:
+- name: bottle
+  morph: chunks/bottle.morph
+  repo: upstream:bottle
+  ref: 5238c615b3ec198fedebb0fcaad4458e3d68d70f
+  unpetrify-ref: baserock/morph
+  build-depends: []
+- name: morph-cache-server
+  morph: chunks/morph-cache-server.morph
+  repo: baserock:baserock/morph-cache-server
+  ref: cc5f95fa563c4817cdcffc428da18e263bd02ae2
+  unpetrify-ref: master
+  build-depends: []
+- name: flup
+  morph: chunks/flup.morph
+  repo: upstream:flup
+  ref: 0f97c5e0ab7d9827506120efc22af3a9c21d1d70
+  unpetrify-ref: baserock/morph
+  build-depends: []

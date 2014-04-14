@@ -1,0 +1,13 @@
+name: bsp-ppc64-generic
+kind: stratum
+description: The platform dependent components required to boot a ppc64 board.
+build-depends:
+- name: core
+  morph: strata/core.morph
+chunks:
+- name: linux
+  morph: chunks/bsp-ppc64-generic-linux.morph
+  repo: upstream:linux
+  ref: 7758cbb7fe9277c8486d87791f0e5f1398d0fb22
+  unpetrify-ref: baserock/powerpc/ppc64
+  build-depends: []

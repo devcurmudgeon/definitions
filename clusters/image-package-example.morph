@@ -3,7 +3,7 @@ kind: cluster
 description: |
   Packaged system and script for installing it, for deferred instantiation.
 systems:
-- morph: base-system-x86_32-generic.morph
+- morph: systems/base-system-x86_32-generic.morph
   deploy:
     imgpkg:
       type: image-package

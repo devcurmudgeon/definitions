@@ -36,7 +36,7 @@ description: |
   On a base system, use 'diff -r' instead of 'git diff --no-index'. It will
   not be as colourful.
 systems:
-- morph: devel-system-x86_64-generic.morph
+- morph: systems/devel-system-x86_64-generic.morph
   deploy:
     upgrade-devel:
       type: ssh-rsync

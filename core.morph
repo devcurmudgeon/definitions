@@ -72,7 +72,8 @@ chunks:
   - m4
 - name: openssl-new
   repo: upstream:openssl-new
-  ref: baserock/morph
+  ref: baserock/ps/proto-web-system
+  unpetrify-ref: baserock/morph
   build-depends:
   - perl
 - name: bzip2

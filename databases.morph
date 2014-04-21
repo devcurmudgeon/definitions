@@ -3,6 +3,7 @@ kind: stratum
 description: some popular databases
 build-depends:
 - morph: tools
+- morph: nfs
 chunks:
 - name: readline
   repo: upstream:readline
@@ -17,5 +18,9 @@ chunks:
   - readline
 - name: redis
   repo: baserock:baserock/redis
-  ref: 5b468ace3a39fa4aa0ce696128cc277abb42cd6b 
+  ref: 5b468ace3a39fa4aa0ce696128cc277abb42cd6b
+  build-depends: []
+- name: memcached
+  repo: git://github.com/memcached/memcached.git
+  ref: master
   build-depends: []

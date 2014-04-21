@@ -1,12 +1,16 @@
 name: useful
 kind: stratum
-description: pip, node, ruby, rubygems, bundler
+description: pip, node, ruby - can use their package managers from here...
 build-depends:
 - morph: tools
 chunks:
+- name: libgit2
+  repo: git@github.com:libgit2/libgit2.git
+  ref: master
+  build-depends: []
 - name: tar
   repo: upstream:tar
-  ref: baserock/morph 
+  ref: baserock/morph
   build-depends: []
 - name: pip
   repo: git@github.com:pypa/pip.git
@@ -15,21 +19,22 @@ chunks:
   build-depends: []
 - name: node
   repo: git@github.com:joyent/node.git
-  ref: v0.10.26 
+  ref: v0.10.26
   build-depends: []
 - name: ruby-1.8
   repo: upstream:ruby
   ref: 7a24f1710028d568ad61d0aa49d5178260178d77
   unpetrify-ref: baserock/morph/ruby_1_8_7
   build-depends: []
-- name: ruby-1.9
-  repo: upstream:ruby
-  ref: cb3ea602294b5038b5f7ac21d3875a2b52342956
-  unpetrify-ref: baserock/morph/ruby_1_9_3
-  build-depends:
-  - ruby-1.8
 - name: libyaml
   repo: baserock:baserock/libyaml-hg
   ref: 0577078d6625a7bf06e6bc7fb26a43e27400b17e
   unpetrify-ref: master
   build-depends: []
+- name: ruby-1.9
+  repo: upstream:ruby
+  ref: baserock/ps/proto-web-system
+  unpetrify-ref: cb3ea602294b5038b5f7ac21d3875a2b52342956
+  build-depends:
+  - ruby-1.8
+  - libyaml

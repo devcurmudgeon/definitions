@@ -7,7 +7,8 @@ build-depends:
 chunks:
 - name: linux
   repo: upstream:linux
-  ref: baserock/morph
+  ref: baserock/ps/proto-web-system
+  unpetrify-ref: baserock/morph
   build-depends: []
 - name: nasm
   repo: upstream:nasm

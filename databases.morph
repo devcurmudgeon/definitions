@@ -17,10 +17,11 @@ chunks:
   build-depends:
   - readline
 - name: redis
-  repo: baserock:baserock/redis
-  ref: 5b468ace3a39fa4aa0ce696128cc277abb42cd6b
+  repo: upstream:redis
+  ref: baserock/ps/proto-web-system
+  unpetrify-ref: 08174e730fc9d687f200bca7ff11da95512981a5
   build-depends: []
 - name: memcached
-  repo: git://github.com/memcached/memcached.git
+  repo: upstream:memcached
   ref: master
   build-depends: []

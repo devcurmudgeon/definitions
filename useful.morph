@@ -4,6 +4,10 @@ description: pip, node, ruby - can use their package managers from here...
 build-depends:
 - morph: tools
 chunks:
+- name: icu
+  repo: upstream:icu
+  ref: baserock/morph
+  build-depends: []
 - name: libgit2
   repo: git@github.com:libgit2/libgit2.git
   ref: master
@@ -13,12 +17,12 @@ chunks:
   ref: baserock/morph
   build-depends: []
 - name: pip
-  repo: git@github.com:pypa/pip.git
+  repo: upstream:pip.git
   ref: d4b691b743a91500cf49119d28a805db8313f129
   unpetrify-ref: master
   build-depends: []
 - name: node
-  repo: git@github.com:joyent/node.git
+  repo: upstream:node.git
   ref: v0.10.26
   build-depends: []
 - name: ruby-1.8

@@ -9,7 +9,7 @@ chunks:
   ref: baserock/morph
   build-depends: []
 - name: libgit2
-  repo: git@github.com:libgit2/libgit2.git
+  repo: upstream:libgit2
   ref: master
   build-depends: []
 - name: tar

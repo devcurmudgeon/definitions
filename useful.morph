@@ -46,3 +46,14 @@ chunks:
   build-depends:
   - ruby-1.8
   - libyaml
+- name: pcre
+  repo: upstream:pcre
+  ref: 2720152c58e13e7cc7403642ec33127101b9971b
+  unpetrify-ref: baserock/morph
+  build-depends: []
+- name: nginx
+  repo: upstream:nginx 
+  ref: 7a8cd938c2c573a382568055e17e2a397c508b68
+  unpetrify-ref: master
+  build-depends:
+  - pcre

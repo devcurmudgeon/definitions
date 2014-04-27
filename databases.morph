@@ -18,10 +18,11 @@ chunks:
   - readline
 - name: redis
   repo: upstream:redis
-  ref: baserock/ps/proto-web-system
-  unpetrify-ref: 08174e730fc9d687f200bca7ff11da95512981a5
+  ref: 0682f8698e8ac815ca06a81e448d5f8785d5aaea
+  unpetrify-ref: baserock/ps/proto-web-system
   build-depends: []
 - name: memcached
   repo: upstream:memcached
-  ref: master
+  ref: d8b1047620a54443f6bdca7f0dc5ee3b4d99378e
+  unpetrify-ref: master
   build-depends: []

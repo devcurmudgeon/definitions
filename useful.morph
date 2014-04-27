@@ -6,15 +6,18 @@ build-depends:
 chunks:
 - name: icu
   repo: upstream:icu
-  ref: baserock/morph
+  ref: ba023548a3bff7277cbea4acade3042ce9d8949e
+  unpetrify-ref: baserock/morph
   build-depends: []
 - name: libgit2
   repo: upstream:libgit2
-  ref: master
+  ref: 4b0a36e881506a02b43a4ae3c19c93c919b36eeb
+  unpetrify-ref: master
   build-depends: []
 - name: tar
   repo: upstream:tar
-  ref: baserock/morph
+  ref: 0492b656656ca7973b126b8c117804d80952de48
+  unpetrify-ref: baserock/morph
   build-depends: []
 - name: pip
   repo: upstream:pip.git
@@ -23,7 +26,8 @@ chunks:
   build-depends: []
 - name: node
   repo: upstream:node.git
-  ref: v0.10.26
+  ref: cc56c62ed879ad4f93b1fdab3235c43e60f48b7e
+  unpetrify-ref: v0.10.26
   build-depends: []
 - name: ruby-1.8
   repo: upstream:ruby
@@ -31,14 +35,14 @@ chunks:
   unpetrify-ref: baserock/morph/ruby_1_8_7
   build-depends: []
 - name: libyaml
-  repo: baserock:baserock/libyaml-hg
+  repo: upstream:libyaml-hg
   ref: 0577078d6625a7bf06e6bc7fb26a43e27400b17e
   unpetrify-ref: master
   build-depends: []
 - name: ruby-1.9
   repo: upstream:ruby
-  ref: baserock/ps/proto-web-system
-  unpetrify-ref: cb3ea602294b5038b5f7ac21d3875a2b52342956
+  ref: 6ecf40e1fa1b2c55f63d0ccb46bce2fca73b40ad
+  unpetrify-ref: baserock/ps/proto-web-system
   build-depends:
   - ruby-1.8
   - libyaml

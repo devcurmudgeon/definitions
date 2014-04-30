@@ -168,8 +168,8 @@ chunks:
   - perl
 - name: git
   repo: upstream:git
-  ref: 43efcf42382e87de4aa423e5e1607958ad1717d0
-  unpetrify-ref: baserock/morph
+  ref: 0bc85abb7aa9b24b093253018801a0fb43d01122
+  unpetrify-ref: v1.9.2
   build-depends:
   - autoconf
   - cpython

@@ -1,0 +1,17 @@
+name: erlang-things
+kind: stratum
+description: erlang/otp and things
+build-depends:
+- morph: tools
+chunks:
+- name: erlang
+  repo: upstream:erlang
+  ref: 63ba4f02614a7938f686484b872da246f0a0b5c6
+  unpetrify-ref: baserock/morph
+  build-depends: []
+- name: rabbitmq-server
+  repo: file:///src2/ws-sunday/baserock/ps/proto-web-system/upstream/rabbitmq-server
+  ref: b200726e16673d20c8dbdffac85c897431378017 
+  unpetrify-ref: baserock/morph 
+  build-depends:
+  - erlang

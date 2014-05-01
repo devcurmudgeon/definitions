@@ -17,3 +17,4 @@ strata:
 - morph: nfs
 - morph: databases
 - morph: useful
+- morph: erlang-things

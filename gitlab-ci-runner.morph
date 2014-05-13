@@ -26,5 +26,6 @@ strata:
 - morph: virtualization
 - morph: glanceclient
 - morph: databases
-- morph: useful
+- morph: webtools
+- morph: ruby
 - morph: nfs

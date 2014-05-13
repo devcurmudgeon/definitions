@@ -1,0 +1,21 @@
+#!/bin/sh
+
+set -e
+
+gem install bundler
+
+git config --global http.sslVerify false
+git config --global user.name 'GitLab CI Runner'
+git config --global user.email 'ci_runner@localhost'
+git config --global core.autocrlf input
+
+git clone https://gitlab.com/gitlab-org/gitlab-ci-runner.git
+cd gitlab-ci-runner
+
+bundle install --deployment
+bundle exec ./bin/setup
+nohup bundle exec ./bin/runner &
+
+cd /etc/systemd/system
+tar -xf ci-runner-units.tar
+systemctl enable gitlab-ci-runner.service

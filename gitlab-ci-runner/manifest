@@ -5,4 +5,4 @@
 0040755 0 0 /usr
 0040755 0 0 /usr/share
 0040755 0 0 /usr/share/gitlab-install
-0100755 0 0 /usr/share/gitlab-install/install-gitlab
+0100755 0 0 /usr/share/gitlab-install/install-runner

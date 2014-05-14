@@ -80,7 +80,7 @@ addgroup nobody
 mkdir -p /var/log/nginx
 cp /usr/share/gitlab-install/gitlab/lib/support/nginx/gitlab /home/git/gitlab/lib/support/nginx/
 cp /usr/share/gitlab-install/gitlab-ci/lib/support/nginx/gitlab_ci /home/gitlab_ci/gitlab-ci/lib/support/nginx/
-cp /usr/share/gitlab-install/nginx.conf /usr/conf/nginx.conf
+cp /usr/share/gitlab-install/nginx.conf /etc/nginx/nginx.conf
 
 # make systemd units to start gitlab and required stuff on boot
 cd /etc/systemd/system

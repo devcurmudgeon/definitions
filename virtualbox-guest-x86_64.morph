@@ -1,0 +1,21 @@
+name: virtualbox-guest-x86_64
+kind: stratum
+description: |
+  VirtualBox Guest Additions for x86_64
+build-depends:
+- morph: tools
+- morph: bsp-x86_64-generic
+- morph: x-common
+- morph: x-x86_64-generic
+chunks:
+- name: yasm
+  repo: upstream:yasm
+  ref: fefefe262eb29081f0bcb4d48f2d476ce5730562
+  unpetrify-ref: baserock/morph
+  build-depends: []
+- name: vboxguest
+  repo: upstream:VirtualBox
+  ref: a723d8f3a61cb38f72626314f930280c8e2f9cb5
+  unpetrify-ref: baserock/morph
+  build-depends:
+  - yasm

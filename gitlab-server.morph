@@ -2,11 +2,14 @@ arch: x86_64
 configuration-extensions:
 - set-hostname
 - add-config-files
+- fstab
 - simple-network
-- nfsboot
+- nfsboot-server
 - install-files
 - gitlab
-description: system which hosts a gitlab server
+- trove
+- trove-backup
+description: system which hosts a gitlab server on a trove
 kind: system
 name: gitlab-server
 strata:
@@ -15,7 +18,9 @@ strata:
 - morph: foundation
 - morph: core
 - morph: tools
+- morph: trove
 - morph: nfs
 - morph: databases
 - morph: webtools
 - morph: ruby
+- morph:  gitlab

@@ -1,0 +1,21 @@
+name: gitlab
+kind: stratum
+description: gitlab components for server, ci etc
+build-depends:
+- morph: ruby
+chunks:
+- name: gitlab-ce
+  repo: upstream:gitlab/gitlab-ce
+  ref: baserock/morph
+  unpetrify-ref: master
+  build-depends: []
+- name: gitlab-ci
+  repo: upstream:gitlab/gitlab-ci
+  ref: baserock/morph
+  unpetrify-ref: master
+  build-depends: []
+- name: gitlab-shell
+  repo: upstream:gitlab/gitlab-shell
+  ref: baserock/morph
+  unpetrify-ref: master
+  build-depends: []

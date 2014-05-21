@@ -6,9 +6,9 @@ configuration-extensions:
 - simple-network
 - nfsboot-server
 - install-files
-- gitlab
 - trove
 - trove-backup
+- gitlab
 description: system which hosts a gitlab server on a trove
 kind: system
 name: gitlab-server

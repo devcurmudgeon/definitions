@@ -210,7 +210,7 @@ production: &base
     path: /home/git/gitlab-shell/
 
     # REPOS_PATH MUST NOT BE A SYMLINK!!!
-    repos_path: /home/git/repositories/
+    repos_path: /home/git/repos/
     hooks_path: /home/git/gitlab-shell/hooks/
 
     # Git over HTTP

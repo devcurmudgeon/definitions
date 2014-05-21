@@ -4,26 +4,26 @@ systems:
 - morph: gitlab-server
   deploy-defaults:
       AUTOSTART: no
-      DISK_SIZE: 10G
-      RAM_SIZE: 4G
       VCPUS: 2
       VERSION_LABEL: factory
   deploy:
     gitlab:
       type: virtualbox-ssh
-      location: vbox+ssh://paulsherwood@192.168.56.1/tg-system/Users/paulsherwood/tg-system.vdi
+      location: vbox+ssh://paulsherwood@192.168.56.1/tgfoo/Users/paulsherwood/tgfoo.vdi
       HOST_IPADDR: 192.168.56.1
       NETMASK: 255.255.255.0
       NETWORK_CONFIG: lo:loopback;eth0:static,address=192.168.56.96,netmask=255.255.255.0;eth1:dhcp,hostname=$(hostname)
       HOSTNAME: ct-ps-4
-      GITLAB_HOSTNAME: 192.168.56.96
+      GITLAB_HOSTNAME: ct-ps-4
       GITLAB_PORT: 3000
       GITLAB_EMAIL: paul.sherwood@codethink.co.uk
-      UNICORN_PORT: 8080
+      UNICORN_PORT: 9090
       CI_PORT: 81
-      UNICORN_CI_PORT: 8081
+      UNICORN_CI_PORT: 9091
       INSTALL_FILES: gitlab-server/manifest
       TROVE_ID: ct-ps-4
+      DISK_SIZE: 6G
+      RAM_SIZE: 4G
       TROVE_COMPANY: Codethink
       LORRY_SSH_KEY: ssh_keys/lorry.key
       UPSTREAM_TROVE: git.baserock.org

@@ -66,12 +66,20 @@ chunks:
   - perl
 - name: automake
   repo: upstream:automake
-  ref: 5ac84ae6760252fc60b144a7b4deb41694f95fe7
-  unpetrify-ref: baserock/morph
+  ref: baserock/mikedrake/automake/v1.13.4
+  unpetrify-ref: 5ac84ae6760252fc60b144a7b4deb41694f95fe7
   build-depends:
   - autoconf
   - perl
   - texinfo-tarball
+- name: help2man
+  repo: upstream:help2man
+  ref: 0191a5f61525f8deea2ae8bdfea88190d85b6a71
+  unpetrify-ref: baserock/morph
+  build-depends:
+  - perl
+  - autoconf
+  - automake
 - name: bash
   repo: upstream:bash
   ref: 783c677f45354b0d6df70e552217ecad8481804f
@@ -143,8 +151,8 @@ chunks:
   - xz
 - name: curl
   repo: upstream:curl
-  ref: 3c835adc9fe20f7b34df3f0abd4db6ff8b75bc3b
-  unpetrify-ref: baserock/morph
+  ref: baserock/mikedrake/curl/curl-7_37_0
+  unpetrify-ref: 3c835adc9fe20f7b34df3f0abd4db6ff8b75bc3b
   build-depends:
   - autoconf
   - automake
@@ -190,6 +198,7 @@ chunks:
   - gettext
   - git
   - mini-utils
+  - help2man
 - name: gperf
   repo: upstream:gperf
   ref: 5094e4a539adf845111013f82c2c4fcaec637983

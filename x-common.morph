@@ -10,8 +10,8 @@ chunks:
   build-depends: []
 - name: libpng
   repo: upstream:libpng
-  ref: 981560ae6094f0b0557e82c33d7ae5f7d81ca0ea
-  unpetrify-ref: baserock/morph
+  ref: baserock/mikedrake/update-chunks
+  unpetrify-ref: 981560ae6094f0b0557e82c33d7ae5f7d81ca0ea
   build-depends: []
 - name: libjpeg
   repo: upstream:libjpeg
@@ -203,8 +203,8 @@ chunks:
   - xorg-util-macros
 - name: xorg-lib-libX11
   repo: upstream:xorg-lib-libX11
-  ref: f57fd760cba92ad846917f21e94e73e9c846185f
-  unpetrify-ref: baserock/morph
+  ref: baserock/mikedrake/update-chunks
+  unpetrify-ref: f57fd760cba92ad846917f21e94e73e9c846185f
   build-depends:
   - xcb-libxcb
   - xorg-lib-libXau

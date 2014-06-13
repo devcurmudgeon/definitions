@@ -32,8 +32,8 @@ chunks:
   build-depends: []
 - name: xorg-util-macros
   repo: upstream:xorg-util-macros
-  ref: c98b41de5596c675c603ef43ae9570133f1a9921
-  unpetrify-ref: baserock/morph
+  ref: hawkdevtrove/sam/jetson
+  unpetrify-ref: c98b41de5596c675c603ef43ae9570133f1a9921
   build-depends: []
 - name: libpciaccess
   repo: upstream:libpciaccess

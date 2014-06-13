@@ -14,7 +14,7 @@ chunks:
   unpetrify-ref: baserock/1.4.0
   build-depends:
   - libxkbcommon
-- name: mesa-wayland
+- name: mesa
   repo: upstream:mesa
   ref: baserock/james/mesa
   build-depends:
@@ -48,7 +48,7 @@ chunks:
   - fontconfig
   - freetype2
   - wayland
-  - mesa-wayland
+  - mesa
   - pixman
 - name: mtdev
   repo: upstream:mtdev-git
@@ -116,7 +116,7 @@ chunks:
   - pixman
   - libxkbcommon
   - wayland
-  - mesa-wayland
+  - mesa
   - libinput
   - cairo
 - name: wayland-ivi-extension

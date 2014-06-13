@@ -32,7 +32,7 @@ chunks:
   build-depends: []
 - name: xorg-util-macros
   repo: upstream:xorg-util-macros
-  ref: hawkdevtrove/sam/jetson
+  ref: master
   unpetrify-ref: c98b41de5596c675c603ef43ae9570133f1a9921
   build-depends: []
 - name: libpciaccess

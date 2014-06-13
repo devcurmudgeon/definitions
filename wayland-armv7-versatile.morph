@@ -16,8 +16,8 @@ chunks:
   - libxkbcommon
 - name: mesa-wayland
   repo: upstream:mesa
-  ref: hawkdevtrove/sam/jetson
-  unpetrify-ref: e51e5d4f9875e9a970d7560c6ac0bfed933facc5
+  ref: e51e5d4f9875e9a970d7560c6ac0bfed933facc5
+  unpetrify-ref: baserock/arm/10.0.4-gallium
   build-depends:
   - wayland
 - name: pixman

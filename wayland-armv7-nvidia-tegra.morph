@@ -126,3 +126,7 @@ chunks:
   build-depends:
   - wayland
   - weston
+- name: kmscube
+  repo: upstream:kmscube
+  ref: master
+  build-depends: []

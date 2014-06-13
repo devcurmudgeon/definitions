@@ -1,0 +1,17 @@
+name: bsp-jetson
+kind: stratum
+description: The platform dependent components required to boot an NVIDIA Jetson TK1 board.
+build-depends:
+- morph: core
+chunks:
+- name: u-boot
+  repo: upstream:u-boot
+  ref: fe57382d04b46c37f34cf8d3b3ad876554fd12bf
+  unpetrify-ref: baserock/morph
+  build-depends: []
+- name: linux
+  repo: upstream:linux
+  ref: baserock/james/linux-tegra-3.15
+  unpetrify-ref: baserock/morph
+  build-depends:
+  - u-boot

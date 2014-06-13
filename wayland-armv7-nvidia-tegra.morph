@@ -16,7 +16,7 @@ chunks:
   - libxkbcommon
 - name: mesa-wayland
   repo: upstream:mesa
-  ref: hawkdevtrove/sam/jetson
+  ref: baserock/james/mesa
   unpetrify-ref: e51e5d4f9875e9a970d7560c6ac0bfed933facc5
   build-depends:
   - wayland
@@ -110,8 +110,7 @@ chunks:
   - freefont-otf
 - name: weston
   repo: upstream:weston
-  ref: 721c0f13ab80eb209983c1d73e168df4ffb70ddc
-  unpetrify-ref: baserock/genivi/weston-ivi-shell-patches
+  ref: baserock/genivi/weston-ivi-tegra
   build-depends:
   - pango
   - pixman

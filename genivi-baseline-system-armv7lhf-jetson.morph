@@ -15,7 +15,7 @@ strata:
 - morph: core
 - morph: foundation
 - morph: genivi-foundation
-- morph: bsp-armv7-versatile
+- morph: bsp-jetson
 - morph: connectivity
 - morph: audio-bluetooth
 - morph: x-common

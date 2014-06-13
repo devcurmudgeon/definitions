@@ -1,6 +1,7 @@
 name: bsp-jetson
 kind: stratum
-description: The platform dependent components required to boot an NVIDIA Jetson TK1 board.
+description: The platform dependent components required to boot an NVIDIA Jetson TK1
+  board.
 build-depends:
 - morph: core
 chunks:
@@ -11,7 +12,7 @@ chunks:
   build-depends: []
 - name: linux
   repo: upstream:linux
-  ref: baserock/james/linux-tegra-3.15
-  unpetrify-ref: baserock/morph
+  ref: 926d8f06c189727d2fd2c1402d192d4ad35597a3
+  unpetrify-ref: baserock/james/linux-tegra-3.15
   build-depends:
   - u-boot

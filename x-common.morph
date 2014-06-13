@@ -15,7 +15,8 @@ chunks:
   build-depends: []
 - name: xorg-util-macros
   repo: upstream:xorg-util-macros
-  ref: master
+  ref: 9a54b858601bd305de2737b06e609084a2a114c2
+  unpetrify-ref: master
   build-depends: []
 - name: xorg-proto-bigreqsproto
   repo: upstream:xorg-proto-bigreqsproto
@@ -73,7 +74,8 @@ chunks:
   - xorg-util-macros
 - name: xorg-proto-presentproto
   repo: upstream:xorg-proto-presentproto
-  ref: master
+  ref: ef84007fc4a23d3897b4776906139de9d0698c2a
+  unpetrify-ref: master
   build-depends:
   - xorg-util-macros
 - name: xorg-proto-xineramaproto
@@ -174,7 +176,8 @@ chunks:
   - xorg-util-macros
 - name: xcb-proto
   repo: upstream:xcb-proto
-  ref: baserock/james/xcb-proto
+  ref: 84bfd909bc3774a459b11614cfebeaa584a1eb38
+  unpetrify-ref: baserock/james/xcb-proto
   build-depends:
   - xorg-util-macros
 - name: xorg-lib-libXau
@@ -186,7 +189,8 @@ chunks:
   - xorg-util-macros
 - name: xcb-libxcb
   repo: upstream:xcb-libxcb
-  ref: baserock/james/libxcb
+  ref: 72e45969ff71204cee2dde3502841736cfd41c8a
+  unpetrify-ref: baserock/james/libxcb
   build-depends:
   - xcb-proto
   - xcb-pthread-stubs
@@ -222,8 +226,8 @@ chunks:
   - xorg-util-macros
 - name: drm
   repo: upstream:drm
-  ref: baserock/james/drm
-  unpetrify-ref: 7ddc98f92f92560e2b52287ae8cf816ca4a057de
+  ref: 85d83977b53221b86d7a946c3228d45cb673e681
+  unpetrify-ref: baserock/james/drm
   build-depends:
   - xcb-pthread-stubs
   - xorg-lib-libpciaccess

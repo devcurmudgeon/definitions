@@ -17,7 +17,6 @@ chunks:
 - name: mesa-wayland
   repo: upstream:mesa
   ref: baserock/james/mesa
-  unpetrify-ref: e51e5d4f9875e9a970d7560c6ac0bfed933facc5
   build-depends:
   - wayland
 - name: pixman
@@ -110,7 +109,8 @@ chunks:
   - freefont-otf
 - name: weston
   repo: upstream:weston
-  ref: baserock/genivi/weston-ivi-tegra
+  ref: 5febf7558caebca9813a72ecd3b48f5412d68870
+  unpetrify-ref: baserock/genivi/weston-ivi-tegra
   build-depends:
   - pango
   - pixman
@@ -128,5 +128,6 @@ chunks:
   - weston
 - name: kmscube
   repo: upstream:kmscube
-  ref: master
+  ref: b4d79d5c4e27b6d37234a137bdefc6ff517d6ea4
+  unpetrify-ref: master
   build-depends: []

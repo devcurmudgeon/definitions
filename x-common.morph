@@ -3,11 +3,6 @@ kind: stratum
 build-depends:
 - morph: genivi-foundation
 chunks:
-- name: llvm
-  repo: upstream:llvm
-  ref: 60aa15443579a9542a1e8818f3c5dd901edb03d9
-  unpetrify-ref: baserock/morph
-  build-depends: []
 - name: libpng
   repo: upstream:libpng
   ref: 981560ae6094f0b0557e82c33d7ae5f7d81ca0ea
@@ -20,8 +15,8 @@ chunks:
   build-depends: []
 - name: xorg-util-macros
   repo: upstream:xorg-util-macros
-  ref: c98b41de5596c675c603ef43ae9570133f1a9921
-  unpetrify-ref: baserock/morph
+  ref: hawkdevtrove/sam/jetson
+  unpetrify-ref: c98b41de5596c675c603ef43ae9570133f1a9921
   build-depends: []
 - name: xorg-proto-bigreqsproto
   repo: upstream:xorg-proto-bigreqsproto
@@ -175,8 +170,8 @@ chunks:
   - xorg-util-macros
 - name: xcb-proto
   repo: upstream:xcb-proto
-  ref: ca30e6d5d7a0c7618d988f9051026d250f5e124e
-  unpetrify-ref: baserock/morph
+  ref: hawkdevtrove/sam/jetson
+  unpetrify-ref: ca30e6d5d7a0c7618d988f9051026d250f5e124e
   build-depends:
   - xorg-util-macros
 - name: xorg-lib-libXau
@@ -188,8 +183,8 @@ chunks:
   - xorg-util-macros
 - name: xcb-libxcb
   repo: upstream:xcb-libxcb
-  ref: 0dd8f8d26a758bc385e79d9239bf6ef2e3d7bf13
-  unpetrify-ref: baserock/morph
+  ref: hawkdevtrove/sam/jetson
+  unpetrify-ref: 0dd8f8d26a758bc385e79d9239bf6ef2e3d7bf13
   build-depends:
   - xcb-proto
   - xcb-pthread-stubs
@@ -225,8 +220,8 @@ chunks:
   - xorg-util-macros
 - name: drm
   repo: upstream:drm
-  ref: 7ddc98f92f92560e2b52287ae8cf816ca4a057de
-  unpetrify-ref: baserock/libdrm-2.4.49
+  ref: hawkdevtrove/sam/jetson
+  unpetrify-ref: 7ddc98f92f92560e2b52287ae8cf816ca4a057de
   build-depends:
   - xcb-pthread-stubs
   - xorg-lib-libpciaccess

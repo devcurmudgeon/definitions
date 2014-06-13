@@ -1,4 +1,4 @@
-name: wayland-x86_64-generic
+name: wayland-armv7-nvidia-tegra
 kind: stratum
 build-depends:
 - morph: x-common
@@ -17,7 +17,7 @@ chunks:
 - name: mesa-wayland
   repo: upstream:mesa
   ref: hawkdevtrove/sam/jetson
-  unpetrify-ref: a77b370b4ba1045e2612650503cf45827af94a12
+  unpetrify-ref: e51e5d4f9875e9a970d7560c6ac0bfed933facc5
   build-depends:
   - wayland
 - name: pixman
@@ -114,12 +114,12 @@ chunks:
   unpetrify-ref: baserock/genivi/weston-ivi-shell-patches
   build-depends:
   - pango
+  - pixman
+  - libxkbcommon
   - wayland
   - mesa-wayland
   - libinput
   - cairo
-  - pixman
-  - libxkbcommon
 - name: wayland-ivi-extension
   repo: upstream:genivi/wayland-ivi-extension
   ref: 167029fad4d2896491093ee313a663f2f057217e

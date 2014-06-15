@@ -6,10 +6,9 @@ build-depends:
 - morph: strata/core.morph
 chunks:
 - name: linux-x86-64-generic
-  morph: strata/bsp-x86_64-generic/linux-x86-64-generic.morph
   repo: upstream:linux
-  ref: d67a0e110187abd560a1de63fa172894a52839d5
-  unpetrify-ref: baserock/morph
+  ref: baserock/ps/add-go-docker
+  unpetrify-ref: 9341b8374cc22fcefece1aa3e120268239936a3f
   build-depends: []
 - name: nasm
   morph: strata/bsp-x86_64-generic/nasm.morph

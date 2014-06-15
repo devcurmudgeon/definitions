@@ -1,0 +1,19 @@
+name: go-docker
+kind: stratum
+build-depends:
+- morph: tools
+chunks:
+- name: go
+  repo: upstream:go
+  ref: baserock/go1.2.2
+  build-depends: []
+- name: docker
+  repo: upstream:docker
+  ref: baserock/ps/add-go-docker
+  build-depends:
+  - go
+- name: iptables
+  repo: upstream:iptables
+  ref: 3e6fa55d5e28c93f417afeae7a7d4f349ddffcf4
+  unpetrify-ref: baserock/morph
+  build-depends: []

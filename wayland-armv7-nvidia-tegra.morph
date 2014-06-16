@@ -130,4 +130,5 @@ chunks:
   repo: upstream:kmscube
   ref: b4d79d5c4e27b6d37234a137bdefc6ff517d6ea4
   unpetrify-ref: master
-  build-depends: []
+  build-depends:
+  - mesa

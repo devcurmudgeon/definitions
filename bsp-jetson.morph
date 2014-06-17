@@ -12,7 +12,7 @@ chunks:
   build-depends: []
 - name: linux
   repo: upstream:linux
-  ref: 926d8f06c189727d2fd2c1402d192d4ad35597a3
+  ref: 6390f8ab6a4bb3b9949363b43cbe1852567e7a59
   unpetrify-ref: baserock/james/linux-tegra-3.15
   build-depends:
   - u-boot

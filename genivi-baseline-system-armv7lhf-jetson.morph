@@ -22,3 +22,4 @@ strata:
 - morph: multimedia
 - morph: genivi
 - morph: wayland-armv7-nvidia-tegra
+- morph: qt5-tools-jetson

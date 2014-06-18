@@ -1,6 +1,6 @@
-name: qt5-tools
+name: qt5-tools-jetson
 kind: stratum
-description: Qt5 Development Libraries and Tools
+description: Qt5 Development Libraries and Tools for nvidia Jetson tk1
 build-depends:
 - morph: tools
 - morph: wayland-armv7-nvidia-tegra

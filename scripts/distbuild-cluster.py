@@ -13,6 +13,8 @@
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
+from __future__ import print_function
+
 import os
 import subprocess
 import sys
@@ -70,7 +72,12 @@ class Build(object):
 
 
 if __name__ == '__main__':
-    cluster_name = morphlib.util.strip_morph_extension(sys.argv[1])
+    if len(sys.argv) != 2:
+        print ('usage: %s cluster_morph' % sys.argv[0], file=sys.stderr)
+        sys.exit(1)
+
+    cluster_morph = sys.argv[1]
+    cluster_name = morphlib.util.strip_morph_extension(cluster_morph)
 
     cluster = read_morph(cluster_name, kind='cluster')
     system_list = [system['morph'] for system in cluster['systems']]

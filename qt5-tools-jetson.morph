@@ -80,6 +80,11 @@ chunks:
   - icu
   - ruby-1.9
   - qtdeclarative
+- name: qtxmlpatterns
+  repo: upstream:qt5/qtxmlpatterns
+  ref: baserock/v5.3.0
+  build-depends:
+  - qtbase
 - name: qtwebkit-examples
   repo: upstream:qt5/qtwebkit-examples
   ref: baserock/v5.3.0
@@ -87,11 +92,7 @@ chunks:
   - qtbase
   - qtdeclarative
   - qtwebkit
-- name: qtxmlpatterns
-  repo: upstream:qt5/qtxmlpatterns
-  ref: baserock/v5.3.0
-  build-depends:
-  - qtbase
+  - qtxmlpatterns
 - name: qtdoc
   repo: upstream:qt5/qtdoc
   ref: baserock/v5.3.0

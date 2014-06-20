@@ -1,7 +1,7 @@
 name: initramfs-test
 kind: cluster
 systems:
-- morph: base-system-x86_64-generic
+- morph: systems/base-system-x86_64-generic
   deploy:
     system:
       type: rawdisk
@@ -10,7 +10,7 @@ systems:
       HOSTNAME: initramfs-system
       INITRAMFS_PATH: boot/initramfs.gz
   subsystems:
-  - morph: initramfs-x86_64
+  - morph: systems/initramfs-x86_64
     deploy:
       initramfs:
         type: initramfs

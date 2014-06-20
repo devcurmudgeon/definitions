@@ -1,0 +1,27 @@
+arch: x86_64
+configuration-extensions:
+- set-hostname
+- trove
+- nfsboot-server
+- trove-backup
+- fstab
+- simple-network
+- install-files
+description: Trove server
+kind: system
+name: trove-system-x86_64
+strata:
+- name: build-essential
+  morph: strata/build-essential
+- name: bsp-x86_64-generic
+  morph: strata/bsp-x86_64-generic
+- name: foundation
+  morph: strata/foundation
+- name: core
+  morph: strata/core
+- name: tools
+  morph: strata/tools
+- name: trove
+  morph: strata/trove
+- name: nfs
+  morph: strata/nfs

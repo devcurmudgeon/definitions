@@ -1,0 +1,23 @@
+arch: x86_32
+configuration-extensions:
+- set-hostname
+- add-config-files
+- simple-network
+- nfsboot
+- install-files
+- vdaboot
+description: The set of strata required to have a minimal system for a 32-bit x86
+  system suitable in OpenStack.
+kind: system
+name: openstack-client-base-system-x86_32-generic
+strata:
+- name: build-essential
+  morph: strata/build-essential
+- name: core
+  morph: strata/core
+- name: foundation
+  morph: strata/foundation
+- name: bsp-x86_32-generic
+  morph: strata/bsp-x86_32-generic
+- name: cloudinit-support
+  morph: strata/cloudinit-support

@@ -1,0 +1,40 @@
+arch: x86_64
+configuration-extensions:
+- set-hostname
+- add-config-files
+- simple-network
+- nfsboot
+- install-files
+description: A system that is able to build other systems based on the 64-bit x86
+  architecture.
+kind: system
+name: qt4-devel-system-x86_64-generic
+strata:
+- name: build-essential
+  morph: strata/build-essential
+- name: core
+  morph: strata/core
+- name: foundation
+  morph: strata/foundation
+- name: audio-bluetooth
+  morph: strata/audio-bluetooth
+- name: multimedia-gstreamer-0.10
+  morph: strata/multimedia-gstreamer-0.10
+- name: bsp-x86_64-generic
+  morph: strata/bsp-x86_64-generic
+- name: tools
+  morph: strata/tools
+- name: x-common
+  morph: strata/x-common
+- name: x-x86_64-generic
+  morph: strata/x-x86_64-generic
+- name: qt4-tools
+  morph: strata/qt4-tools
+- name: qt4-sdk
+  morph: strata/qt4-sdk
+- name: lua
+  morph: strata/lua
+- name: connectivity
+  morph: strata/connectivity
+- name: enlightenment
+  morph: strata/enlightenment

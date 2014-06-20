@@ -1,0 +1,34 @@
+arch: x86_64
+configuration-extensions:
+- set-hostname
+- add-config-files
+- simple-network
+- nfsboot
+- install-files
+- strip-gplv3
+description: A GENIVI baseline system for a 64-bit x86 system.
+kind: system
+name: genivi-baseline-system-x86_64-generic
+strata:
+- name: build-essential
+  morph: strata/build-essential
+- name: core
+  morph: strata/core
+- name: foundation
+  morph: strata/foundation
+- name: genivi-foundation
+  morph: strata/genivi-foundation
+- name: bsp-x86_64-generic
+  morph: strata/bsp-x86_64-generic
+- name: connectivity
+  morph: strata/connectivity
+- name: audio-bluetooth
+  morph: strata/audio-bluetooth
+- name: x-common
+  morph: strata/x-common
+- name: multimedia
+  morph: strata/multimedia
+- name: genivi
+  morph: strata/genivi
+- name: wayland-x86_64-generic
+  morph: strata/wayland-x86_64-generic

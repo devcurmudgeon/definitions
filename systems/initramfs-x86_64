@@ -1,0 +1,12 @@
+name: initramfs-x86_64
+description: Initramfs for x86_64
+kind: system
+arch: x86_64
+configuration-extensions: []
+strata:
+- name: build-essential
+  morph: strata/build-essential
+  artifacts:
+  - build-essential-minimal
+- name: initramfs-utils
+  morph: strata/initramfs-utils

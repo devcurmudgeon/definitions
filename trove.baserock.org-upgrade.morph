@@ -10,7 +10,7 @@ description: |
   Replace the value of gbo.VERSION_LABEL above with the current date.
   You can add letters if you need to upgrade multiple times in a day.
 systems:
-- morph: trove-system-x86_64
+- morph: systems/trove-system-x86_64
   deploy:
     gbo:
       type: ssh-rsync

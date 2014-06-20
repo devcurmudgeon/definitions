@@ -1,0 +1,33 @@
+arch: x86_64
+configuration-extensions:
+- set-hostname
+- add-config-files
+- simple-network
+- nfsboot
+- install-files
+description: system with web tools
+kind: system
+name: web-system-x86_64-generic
+strata:
+- name: build-essential
+  morph: strata/build-essential
+- name: bsp-x86_64-generic
+  morph: strata/bsp-x86_64-generic
+- name: foundation
+  morph: strata/foundation
+- name: core
+  morph: strata/core
+- name: tools
+  morph: strata/tools
+- name: nfs
+  morph: strata/nfs
+- name: databases
+  morph: strata/databases
+- name: webtools
+  morph: strata/webtools
+- name: erlang
+  morph: strata/erlang
+- name: ruby
+  morph: strata/ruby
+- name: nodejs
+  morph: strata/nodejs

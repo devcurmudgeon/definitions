@@ -1,0 +1,24 @@
+arch: armv7l
+configuration-extensions:
+- set-hostname
+- add-config-files
+- simple-network
+- nfsboot
+- install-files
+description: A system that is able to build other systems based on the ARM highbank
+  architecture.
+kind: system
+name: devel-system-armv7-highbank
+strata:
+- name: build-essential
+  morph: strata/build-essential
+- name: core
+  morph: strata/core
+- name: foundation
+  morph: strata/foundation
+- name: bsp-armv7-highbank
+  morph: strata/bsp-armv7-highbank
+- name: tools
+  morph: strata/tools
+- name: openstack-clients
+  morph: strata/openstack-clients

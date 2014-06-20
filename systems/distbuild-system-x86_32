@@ -1,0 +1,27 @@
+arch: x86_32
+configuration-extensions:
+- set-hostname
+- add-config-files
+- simple-network
+- nfsboot
+- install-files
+- distbuild
+- fstab
+description: Morph distributed build node for x86_32
+kind: system
+name: distbuild-system-x86_32
+strata:
+- name: build-essential
+  morph: strata/build-essential
+- name: core
+  morph: strata/core
+- name: foundation
+  morph: strata/foundation
+- name: bsp-x86_32-generic
+  morph: strata/bsp-x86_32-generic
+- name: tools
+  morph: strata/tools
+- name: nfs
+  morph: strata/nfs
+- name: distbuild
+  morph: strata/distbuild

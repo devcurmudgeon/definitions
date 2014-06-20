@@ -1,0 +1,20 @@
+arch: armv7l
+configuration-extensions:
+- set-hostname
+- add-config-files
+- simple-network
+- nfsboot
+- install-files
+description: The set of strata required to have a minimal system for an ARM versatile
+  system.
+kind: system
+name: base-system-armv7-versatile
+strata:
+- name: build-essential
+  morph: strata/build-essential
+- name: core
+  morph: strata/core
+- name: foundation
+  morph: strata/foundation
+- name: bsp-armv7-versatile
+  morph: strata/bsp-armv7-versatile

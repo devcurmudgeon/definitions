@@ -31,7 +31,7 @@ description: |
 
   See the documentation of the sdk.write extension for more information.
 systems:
-- morph: armv7lhf-cross-toolchain-system-x86_32-generic
+- morph: systems/armv7lhf-cross-toolchain-system-x86_32-generic
   deploy:
     sdk:
       type: sdk
@@ -39,7 +39,7 @@ systems:
       PREFIX: /usr
       TARGET: armv7lhf-baserock-linux-gnueabi
   subsystems:
-  - morph: devel-system-armv7lhf-highbank
+  - morph: systems/devel-system-armv7lhf-highbank
     deploy:
       sysroot:
         type: sysroot

@@ -3,7 +3,7 @@ kind: cluster
 description: |
   Deploy a minimal system to a system running KVM
 systems:
-- morph: minimal-system-x86_32-generic
+- morph: systems/minimal-system-x86_32-generic
   deploy:
     vm:
       type: kvm

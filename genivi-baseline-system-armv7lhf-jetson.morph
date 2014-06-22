@@ -20,6 +20,7 @@ strata:
 - morph: audio-bluetooth
 - morph: x-common
 - morph: multimedia
+- morph: multimedia-gstreamer-0.10
 - morph: genivi
 - morph: wayland-armv7-nvidia-tegra
 - morph: qt5-tools-jetson

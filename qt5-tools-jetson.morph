@@ -43,6 +43,12 @@ chunks:
   build-depends:
   - qtbase
   - qtscript
+- name: qtmultimedia
+  repo: upstream:qt5/qtmultimedia
+  ref: baserock/v5.3.0
+  build-depends:
+  - qtbase
+  - qtdeclarative
 - name: qtquick1
   repo: upstream:qt5/qtquick1
   ref: baserock/v5.3.0

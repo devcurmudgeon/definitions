@@ -1,0 +1,15 @@
+name: tegra-deploy
+kind: cluster
+systems:
+- morph: genivi-baseline-system-armv7lhf-jetson 
+  deploy:
+      jetson-rootfs:
+         type: tar
+         location: /src/jetson-genivi-rootfs.tar
+         HOSTNAME: baserock
+- morph: devel-system-armv7lhf-jetson
+  deploy:
+      jetson-devel-rootfs:
+      type: tar
+      location: /src/jetson-devel-rootfs.tar
+      HOSTNAME: baserock 

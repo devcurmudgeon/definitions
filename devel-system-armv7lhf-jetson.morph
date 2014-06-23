@@ -14,4 +14,4 @@ strata:
 - morph: foundation
 - morph: tools
 - morph: openstack-clients
-- morph: bsp-jetson
+- morph: bsp-jetson-devel

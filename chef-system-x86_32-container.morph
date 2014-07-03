@@ -1,0 +1,16 @@
+name: chef-system-x86_32-container
+kind: system
+arch: x86_32
+description: Minimal chef system suitable for running in a container
+configuration-extensions:
+- set-hostname
+- simple-network
+- nfsboot
+- install-files
+- busybox-init
+- install-chef
+strata:
+- morph: build-essential
+  artifacts:
+  - build-essential-minimal
+- morph: ruby

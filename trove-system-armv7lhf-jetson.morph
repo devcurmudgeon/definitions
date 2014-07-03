@@ -1,0 +1,20 @@
+arch: armv7lhf
+configuration-extensions:
+- set-hostname
+- trove
+- nfsboot-server
+- trove-backup
+- fstab
+- simple-network
+- install-files
+description: Trove server
+kind: system
+name: trove-system-armv7lhf-jetson
+strata:
+- morph: build-essential
+- morph: bsp-jetson-devel
+- morph: foundation
+- morph: core
+- morph: tools
+- morph: trove
+- morph: nfs

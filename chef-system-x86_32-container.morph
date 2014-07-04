@@ -8,6 +8,7 @@ configuration-extensions:
 - nfsboot
 - install-files
 - busybox-init
+- remove-gcc
 strata:
 - morph: build-essential
   artifacts:

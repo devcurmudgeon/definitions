@@ -1,0 +1,12 @@
+name: chef
+kind: stratum
+description:
+  Chef stratum with all Gems committed to a Git repo and installed at
+  build time using 'gem install'.
+build-depends:
+  - morph: ruby
+chunks:
+  - name: chef-hack-1
+    repo: file:///src/chef-hack-1
+    ref: master
+    build-depends: []

@@ -8,9 +8,9 @@ configuration-extensions:
 - nfsboot
 - install-files
 - busybox-init
-- install-chef
 strata:
 - morph: build-essential
   artifacts:
   - build-essential-minimal
 - morph: ruby
+- morph: chef

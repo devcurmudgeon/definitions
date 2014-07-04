@@ -16,4 +16,8 @@ strata:
   artifacts:
   - core-openssl
 - morph: ruby
+  artifacts:
+  - ruby-runtime
 - morph: chef
+  artifacts:
+  - chef-runtime

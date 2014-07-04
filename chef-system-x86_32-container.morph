@@ -14,6 +14,6 @@ strata:
   - build-essential-minimal
 - morph: core
   artifacts:
-  - core-runtime
+  - core-openssl
 - morph: ruby
 - morph: chef

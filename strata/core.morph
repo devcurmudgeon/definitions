@@ -6,6 +6,7 @@ build-depends:
 - morph: strata/build-essential.morph
 products:
 - artifact: core-runtime
+- artifact: core-openssl
   include:
   - openssl-new-libs
 chunks:

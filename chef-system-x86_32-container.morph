@@ -12,5 +12,8 @@ strata:
 - morph: build-essential
   artifacts:
   - build-essential-minimal
+- morph: core
+  artifacts:
+  - core-runtime
 - morph: ruby
 - morph: chef

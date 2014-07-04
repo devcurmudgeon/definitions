@@ -1,0 +1,13 @@
+name: chef-demo
+kind: cluster
+description: |
+  Deploy a demo Chef system.
+systems:
+- morph: chef-system-x86_32-container
+  deploy:
+    chef-demo:
+      type: tar
+      location: chef-demo.tar
+      # If you put 'yes' without the quotes yaml converts it to True. Thanks yaml.
+      REMOVE_GCC: "yes"
+      INIT_SYSTEM: busybox

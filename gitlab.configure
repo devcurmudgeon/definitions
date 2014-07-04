@@ -25,6 +25,12 @@
 #   * UNICORN_PORT
 #   * CI_PORT
 #   * UNICORN_CI_PORT
+#   * MAIL_SEND_TYPE
+#   * SMTP_ADDR
+#   * SMTP_PORT
+#   * SMTP_USER
+#   * SMTP_PASS
+#   * SMTP_DOMAIN
 
 set -e
 
@@ -82,3 +88,27 @@ EOF
 
 ln -s "/etc/systemd/system/gitlab-setup.service" \
     "$ROOT/etc/systemd/system/multi-user.target.wants/gitlab-setup.service"
+
+##########################################################################
+
+cat <<EOF > "$ROOT"/etc/gitlab-smtp-setup.sed
+s/"email.server.com"/"$SMTP_ADDR"/g
+s/"456"/"$SMTP_PORT"/g
+s/"smtp"/"$SMTP_USER"/g
+s/"123456"/"$SMTP_PASS"/g
+s/"gitlab.company.com"/"$SMTP_DOMAIN"/g
+EOF
+
+if [ "$MAIL_SEND_TYPE" = "smtp" ]; then
+
+    echo "Setting up SMPT for sending e-mail"
+
+    CONFIG_PATH="/usr/share/gitlab-ce/config"
+
+    sed -i 's/sendmail/smtp/' \
+        "$ROOT""$CONFIG_PATH"/environments/production.rb
+
+    sed -f "$ROOT"/etc/gitlab-smtp-setup.sed \
+        <"$ROOT""$CONFIG_PATH"/initializers/smtp_settings.rb.sample \
+        >"$ROOT""$CONFIG_PATH"/initializers/smtp_settings.rb
+fi

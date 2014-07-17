@@ -15,3 +15,8 @@ chunks:
   ref: baserock/arm/tegra-3.10
   build-depends:
   - u-boot
+- name: bsp-support
+  repo: baserock:baserock/bsp-support
+  ref: 27888b46dd8938528a5783fae5cb0e05d8a1cbc1
+  unpetrify-ref: baserock/arm/tegra-3.10
+  build-depends: []

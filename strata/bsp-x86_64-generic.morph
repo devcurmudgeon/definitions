@@ -5,10 +5,11 @@ description: The set of platform specific components required for booting a 64-b
 build-depends:
 - morph: strata/core.morph
 chunks:
-- name: linux-x86-64-generic
+- name: linux-x86_64-generic
+  morph: chunks/linux-x86_64-generic.morph
   repo: upstream:linux
-  ref: d67a0e110187abd560a1de63fa172894a52839d5
-  unpetrify-ref: baserock/morph
+  ref: 1860e379875dfe7271c649058aeddffe5afd9d0d
+  unpetrify-ref: refs/tags/v3.15
   build-depends: []
 - name: nasm
   repo: upstream:nasm

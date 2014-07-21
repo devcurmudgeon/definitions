@@ -39,6 +39,7 @@ products:
   - eglibc-nss
 chunks:
 - name: stage1-binutils
+  morph: chunks/stage1-binutils.morph
   repo: upstream:binutils-redhat
   ref: 987eb543a034cddc4eeb103f08f566f24a5f964a
   unpetrify-ref: baserock/build-essential
@@ -46,6 +47,7 @@ chunks:
   build-mode: bootstrap
   prefix: /tools
 - name: stage1-gcc
+  morph: chunks/stage1-gcc.morph
   repo: upstream:gcc-tarball
   ref: 0a1a077d3466cd99a4ed5590db2146b3fec6fff1
   unpetrify-ref: baserock/build-essential
@@ -54,6 +56,7 @@ chunks:
   build-mode: bootstrap
   prefix: /tools
 - name: stage2-linux-api-headers
+  morph: chunks/stage2-linux-api-headers.morph
   repo: upstream:linux
   ref: eff825d6e284eb0fb04b434429a3e3b2e10cabf8
   unpetrify-ref: baserock/build-essential
@@ -63,6 +66,7 @@ chunks:
   build-mode: bootstrap
   prefix: /tools
 - name: stage2-eglibc
+  morph: chunks/stage2-eglibc.morph
   repo: upstream:eglibc2
   ref: 43ee5d250ad47d2bee8ec17954efb7f22d2b804c
   unpetrify-ref: baserock/2.15-build-essential
@@ -73,6 +77,7 @@ chunks:
   build-mode: bootstrap
   prefix: /tools
 - name: stage2-binutils
+  morph: chunks/stage2-binutils.morph
   repo: upstream:binutils-redhat
   ref: 987eb543a034cddc4eeb103f08f566f24a5f964a
   unpetrify-ref: baserock/build-essential
@@ -83,6 +88,7 @@ chunks:
   build-mode: bootstrap
   prefix: /tools
 - name: stage2-gcc-fixed-headers
+  morph: chunks/stage2-gcc-fixed-headers.morph
   repo: upstream:gcc-tarball
   ref: 0a1a077d3466cd99a4ed5590db2146b3fec6fff1
   unpetrify-ref: baserock/build-essential
@@ -93,6 +99,7 @@ chunks:
   build-mode: bootstrap
   prefix: /tools
 - name: stage2-gcc
+  morph: chunks/stage2-gcc.morph
   repo: upstream:gcc-tarball
   ref: 0a1a077d3466cd99a4ed5590db2146b3fec6fff1
   unpetrify-ref: baserock/build-essential
@@ -104,6 +111,7 @@ chunks:
   build-mode: bootstrap
   prefix: /tools
 - name: stage2-busybox
+  morph: chunks/stage2-busybox.morph
   repo: upstream:busybox
   ref: eeb9014f28e3aa00673a0fad127e7420da4392db
   unpetrify-ref: baserock/build-essential
@@ -114,6 +122,7 @@ chunks:
   build-mode: bootstrap
   prefix: /tools
 - name: stage2-fhs-dirs
+  morph: chunks/stage2-fhs-dirs.morph
   repo: baserock:baserock/fhs-dirs
   ref: 41bbb474cd4647ee715bc94c21c161d12a20deb4
   unpetrify-ref: master
@@ -121,6 +130,7 @@ chunks:
   build-mode: bootstrap
   prefix: /tools
 - name: stage2-gawk
+  morph: chunks/stage2-gawk.morph
   repo: upstream:gawk
   ref: 6a0eb04c3d2ac24d80d505b42a8f67799487d133
   unpetrify-ref: baserock/build-essential
@@ -131,6 +141,7 @@ chunks:
   build-mode: bootstrap
   prefix: /tools
 - name: stage2-make
+  morph: chunks/stage2-make.morph
   repo: upstream:make
   ref: 56968f58301e6e5157cf4c8b6deefbaff2955eba
   unpetrify-ref: baserock/build-essential
@@ -141,6 +152,7 @@ chunks:
   build-mode: bootstrap
   prefix: /tools
 - name: stage2-reset-specs
+  morph: chunks/stage2-reset-specs.morph
   repo: upstream:eglibc2
   ref: 43ee5d250ad47d2bee8ec17954efb7f22d2b804c
   unpetrify-ref: baserock/2.15-build-essential
@@ -152,6 +164,7 @@ chunks:
   build-mode: bootstrap
   prefix: /tools
 - name: fhs-dirs
+  morph: chunks/fhs-dirs.morph
   repo: baserock:baserock/fhs-dirs
   ref: 41bbb474cd4647ee715bc94c21c161d12a20deb4
   unpetrify-ref: master
@@ -168,6 +181,7 @@ chunks:
   build-mode: staging
   prefix: /usr
 - name: linux-api-headers
+  morph: chunks/linux-api-headers.morph
   repo: upstream:linux
   ref: eff825d6e284eb0fb04b434429a3e3b2e10cabf8
   unpetrify-ref: baserock/build-essential
@@ -184,6 +198,7 @@ chunks:
   build-mode: staging
   prefix: /usr
 - name: eglibc
+  morph: chunks/eglibc.morph
   repo: upstream:eglibc2
   ref: df0258044f321990eadd647e03095a48ad04c1a8
   unpetrify-ref: baserock/2.15-build-essential
@@ -205,6 +220,7 @@ chunks:
     eglibc-nss: build-essential-runtime
   prefix: /usr
 - name: zlib
+  morph: chunks/zlib.morph
   repo: upstream:zlib
   ref: db333af7e9b90a23fd7f9cd8dc128123b34bf698
   unpetrify-ref: baserock/build-essential
@@ -224,6 +240,7 @@ chunks:
     zlib-libs: build-essential-minimal
   prefix: /usr
 - name: binutils
+  morph: chunks/binutils.morph
   repo: upstream:binutils-redhat
   ref: 987eb543a034cddc4eeb103f08f566f24a5f964a
   unpetrify-ref: baserock/build-essential
@@ -242,6 +259,7 @@ chunks:
   build-mode: staging
   prefix: /usr
 - name: busybox
+  morph: chunks/busybox.morph
   repo: upstream:busybox
   ref: bf06394ab87ff22662084c82c1821847c25b7f21
   unpetrify-ref: baserock/build-essential
@@ -259,6 +277,7 @@ chunks:
   build-mode: staging
   prefix: /usr
 - name: gawk
+  morph: chunks/gawk.morph
   repo: upstream:gawk
   ref: 6a0eb04c3d2ac24d80d505b42a8f67799487d133
   unpetrify-ref: baserock/build-essential
@@ -276,6 +295,7 @@ chunks:
   build-mode: staging
   prefix: /usr
 - name: gcc
+  morph: chunks/gcc.morph
   repo: upstream:gcc-tarball
   ref: b0254026149b13782eae26d38435a4c62a002cf0
   unpetrify-ref: baserock/build-essential-4.7
@@ -296,6 +316,7 @@ chunks:
     gcc-libs: build-essential-minimal
   prefix: /usr
 - name: make
+  morph: chunks/make.morph
   repo: upstream:make
   ref: 56968f58301e6e5157cf4c8b6deefbaff2955eba
   unpetrify-ref: baserock/build-essential
@@ -313,6 +334,7 @@ chunks:
   build-mode: staging
   prefix: /usr
 - name: ccache
+  morph: chunks/ccache.morph
   repo: upstream:ccache
   ref: 567631456f0899cdf0c382f898d38aadc8901d32
   unpetrify-ref: baserock/build-essential

@@ -1,0 +1,11 @@
+name: ccache
+kind: chunk
+build-system: autotools
+install-commands:
+- make DESTDIR="$DESTDIR" install
+- mkdir -p "$DESTDIR/$PREFIX/lib/ccache"
+- |
+  for cc in gcc cc g++ c++; do
+      ln -sf "$PREFIX/bin/ccache" "$DESTDIR/$PREFIX/lib/ccache/$cc"
+      ln -sf "$PREFIX/bin/ccache" "$DESTDIR/$PREFIX/lib/ccache/$TARGET-$cc"
+  done

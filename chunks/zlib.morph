@@ -1,0 +1,12 @@
+name: zlib
+kind: chunk
+max-jobs: 1
+
+configure-commands:
+    -  ./configure --prefix="$PREFIX"
+
+build-commands:
+    - make
+
+install-commands:
+    - make DESTDIR="$DESTDIR" install

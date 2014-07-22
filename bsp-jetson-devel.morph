@@ -7,8 +7,7 @@ build-depends:
 chunks:
 - name: u-boot
   repo: upstream:u-boot
-  ref: fe57382d04b46c37f34cf8d3b3ad876554fd12bf
-  unpetrify-ref: baserock/morph
+  ref: baserock/james/tegra-uboot-btrfs
   build-depends: []
 - name: linux
   repo: upstream:linux

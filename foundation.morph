@@ -122,7 +122,6 @@ chunks:
   build-depends: []
 - name: tbdiff
   repo: baserock:baserock/tbdiff
-  ref: 6a361a1a174667e2998578e49acd64932eb2c8a1
-  unpetrify-ref: master
+  ref: baserock/james/jetson_update
   build-depends:
   - attr

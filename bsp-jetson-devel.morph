@@ -5,14 +5,18 @@ description: The platform dependent components required to boot an NVIDIA Jetson
 build-depends:
 - morph: core
 chunks:
+- name: device-tree-compiler
+  repo: upstream:device-tree-compiler
+  ref: baserock/morph
+  build-depends: []
 - name: u-boot
   repo: upstream:u-boot
   ref: baserock/james/tegra-uboot-btrfs
-  build-depends: []
+  build-depends:
+  - device-tree-compiler
 - name: linux
   repo: upstream:linux
-  ref: 1f12d2a9854d101f23cce77f6fe8e53814c8a896
-  unpetrify-ref: baserock/arm/tegra-3.10
+  ref: baserock/james/distbuild-tegra-r19
   build-depends:
   - u-boot
 - name: bsp-support

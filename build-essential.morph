@@ -40,7 +40,7 @@ products:
 chunks:
 - name: stage1-binutils
   repo: upstream:binutils-redhat
-  ref: 987eb543a034cddc4eeb103f08f566f24a5f964a
+  ref: 57c0d22a82635753111ebf0ceb32c0dca944ca98
   unpetrify-ref: baserock/build-essential
   build-depends: []
   build-mode: bootstrap
@@ -74,7 +74,7 @@ chunks:
   prefix: /tools
 - name: stage2-binutils
   repo: upstream:binutils-redhat
-  ref: 987eb543a034cddc4eeb103f08f566f24a5f964a
+  ref: 57c0d22a82635753111ebf0ceb32c0dca944ca98
   unpetrify-ref: baserock/build-essential
   build-depends:
   - stage1-binutils
@@ -225,7 +225,7 @@ chunks:
   prefix: /usr
 - name: binutils
   repo: upstream:binutils-redhat
-  ref: 987eb543a034cddc4eeb103f08f566f24a5f964a
+  ref: 57c0d22a82635753111ebf0ceb32c0dca944ca98
   unpetrify-ref: baserock/build-essential
   build-depends:
   - stage2-binutils

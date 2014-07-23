@@ -1,0 +1,9 @@
+arch: mips64
+description: A system that produces the minimum needed to build a devel system
+kind: system
+name: cross-bootstrap-system-mips64-generic
+strata:
+- morph: build-essential
+- morph: core
+- morph: cross-bootstrap
+

@@ -64,7 +64,7 @@ chunks:
   prefix: /tools
 - name: stage2-eglibc
   repo: upstream:eglibc2
-  ref: 43ee5d250ad47d2bee8ec17954efb7f22d2b804c
+  ref: 988a4dbb2490f5b6a86fbc2a131bbfe1dd0cb5ab
   unpetrify-ref: baserock/2.15-build-essential
   build-depends:
   - stage1-binutils
@@ -185,7 +185,7 @@ chunks:
   prefix: /usr
 - name: eglibc
   repo: upstream:eglibc2
-  ref: df0258044f321990eadd647e03095a48ad04c1a8
+  ref: 988a4dbb2490f5b6a86fbc2a131bbfe1dd0cb5ab
   unpetrify-ref: baserock/2.15-build-essential
   build-depends:
   - stage2-binutils

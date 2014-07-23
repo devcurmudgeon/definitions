@@ -55,7 +55,7 @@ chunks:
   prefix: /tools
 - name: stage2-linux-api-headers
   repo: upstream:linux
-  ref: eff825d6e284eb0fb04b434429a3e3b2e10cabf8
+  ref: 7aeafbee20844cc9de103a2b3ccc671ded600508
   unpetrify-ref: baserock/build-essential
   build-depends:
   - stage1-binutils
@@ -169,7 +169,7 @@ chunks:
   prefix: /usr
 - name: linux-api-headers
   repo: upstream:linux
-  ref: eff825d6e284eb0fb04b434429a3e3b2e10cabf8
+  ref: 7aeafbee20844cc9de103a2b3ccc671ded600508
   unpetrify-ref: baserock/build-essential
   build-depends:
   - stage2-binutils

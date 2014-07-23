@@ -47,7 +47,7 @@ chunks:
   prefix: /tools
 - name: stage1-gcc
   repo: upstream:gcc-tarball
-  ref: 0a1a077d3466cd99a4ed5590db2146b3fec6fff1
+  ref: d2ec69267316c32db0f03dde6efb8733526d0cec
   unpetrify-ref: baserock/build-essential
   build-depends:
   - stage1-binutils
@@ -84,7 +84,7 @@ chunks:
   prefix: /tools
 - name: stage2-gcc-fixed-headers
   repo: upstream:gcc-tarball
-  ref: 0a1a077d3466cd99a4ed5590db2146b3fec6fff1
+  ref: d2ec69267316c32db0f03dde6efb8733526d0cec
   unpetrify-ref: baserock/build-essential
   build-depends:
   - stage1-binutils
@@ -94,7 +94,7 @@ chunks:
   prefix: /tools
 - name: stage2-gcc
   repo: upstream:gcc-tarball
-  ref: 0a1a077d3466cd99a4ed5590db2146b3fec6fff1
+  ref: d2ec69267316c32db0f03dde6efb8733526d0cec
   unpetrify-ref: baserock/build-essential
   build-depends:
   - stage1-binutils
@@ -277,7 +277,7 @@ chunks:
   prefix: /usr
 - name: gcc
   repo: upstream:gcc-tarball
-  ref: b0254026149b13782eae26d38435a4c62a002cf0
+  ref: d2ec69267316c32db0f03dde6efb8733526d0cec
   unpetrify-ref: baserock/build-essential-4.7
   build-depends:
   - stage2-binutils

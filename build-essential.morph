@@ -277,7 +277,7 @@ chunks:
   prefix: /usr
 - name: gcc
   repo: upstream:gcc-tarball
-  ref: d2ec69267316c32db0f03dde6efb8733526d0cec
+  ref: 48511fad7057e9ccd0e15d87753b3728419dfd32
   unpetrify-ref: baserock/build-essential-4.7
   build-depends:
   - stage2-binutils

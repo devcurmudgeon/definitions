@@ -1,7 +1,7 @@
 kind: cluster
 name: gitlab-server-cluster
 systems:
-- morph: gitlab-server
+- morph: systems/gitlab-server.morph
   deploy-defaults:
       AUTOSTART: no
       DISK_SIZE: 6G

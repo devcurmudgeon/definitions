@@ -1,7 +1,7 @@
 kind: cluster
 name: gitlab-ci-runner-cluster
 systems:
-- morph: gitlab-ci-runner
+- morph: systems/gitlab-ci-runner.morph
   deploy-defaults:
       AUTOSTART: no
       DISK_SIZE: 6G

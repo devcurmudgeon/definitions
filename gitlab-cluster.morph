@@ -14,7 +14,7 @@ description: |
   need to define a GITLAB_EMAIL, that is the email that mail from your GitLab
   instance will appear to be from.
 systems:
-- morph: gitlab-server
+- morph: systems/gitlab-server.morph
   deploy-defaults:
       AUTOSTART: no
       DISK_SIZE: 10G
@@ -33,7 +33,7 @@ systems:
       CI_PORT: 81
       UNICORN_CI_PORT: 8081
       INSTALL_FILES: gitlab-server/manifest
-- morph: gitlab-ci-runner
+- morph: systems/gitlab-ci-runner.morph
   deploy-defaults:
       AUTOSTART: no
       DISK_SIZE: 10G

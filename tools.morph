@@ -130,8 +130,9 @@ chunks:
   unpetrify-ref: baserock/morph
   build-depends: []
 - name: screen
+  morph: strata/tools/screen.morph
   repo: upstream:screen
-  ref: 7dd4a9e5f385c96a77e8ee5c977a1dde4c0ff467
+  ref: bb1ef155222d2c5706f30b6b0fe078a501932dd5
   unpetrify-ref: baserock/morph
   build-depends: []
 - name: u-boot

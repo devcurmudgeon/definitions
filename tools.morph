@@ -127,8 +127,8 @@ chunks:
 - name: vim
   morph: strata/tools/vim.morph
   repo: upstream:vim
-  ref: 592b8c975bf83b4dcf608769bc664a80cb1daf9e
-  unpetrify-ref: baserock/morph
+  ref: 8084812cb7a13f87dac3a91c04b8dfd28361995b
+  unpetrify-ref: master
   build-depends: []
 - name: screen
   morph: strata/tools/screen.morph

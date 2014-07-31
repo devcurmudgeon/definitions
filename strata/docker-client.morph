@@ -1,0 +1,19 @@
+name: docker-client
+kind: stratum
+description: A stratum with the Docker client
+build-depends:
+- morph: tools
+chunks:
+- name: python-requests
+  repo: upstream:python-requests
+  ref: b891877ee6d76b0a3f8cbf2e7cd34cc4cbc40b6b
+  unpetrify-ref: baserock/morph
+  build-depends: []
+- name: websocket-client
+  repo: git://github.com/liris/websocket-client
+  ref: master
+  build-depends: []
+- name: docker-py
+  repo: git://github.com/dotcloud/docker-py
+  ref: master
+  build-depends: []

@@ -16,6 +16,9 @@ strata:
 - morph: core
   artifacts:
   - core-openssl
+- morph: foundation
+  artifacts:
+  - foundation-runtime
 - morph: ruby
   artifacts:
   - ruby-runtime

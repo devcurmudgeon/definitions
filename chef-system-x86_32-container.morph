@@ -19,6 +19,7 @@ strata:
 - morph: ruby
   artifacts:
   - ruby-runtime
-- morph: chef/chef.morph
+- name: chef
+  morph: chef/chef.morph
   artifacts:
   - chef-runtime

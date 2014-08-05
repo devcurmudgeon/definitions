@@ -51,9 +51,9 @@ def move_morphs(morphs, kind):
          subdir = os.path.join(definitions_repo, 'system')
          subprocess.call(['mkdir','-p', subdir])
          for morph in morphs:
-             print 'Initial: %s' % str(morph)
-	     sys.exit(0)
-	     morph['systems'][0]['morph'] = str( 'strata/' + morph['strata'][0]['morph'] + '.morph')
+             #print 'Initial: %s' % str(morph)
+	     for stratum in morph['strata']:
+	         stratum['morph'] = str('strata/' + stratum['morph'] + '.morph')
 	     new_morph = loader.parse_morphology_text(str(morph), morph.filename)
 	     loader.save_to_file(morph.filename,new_morph)
              new_location = os.path.join(subdir, morph.filename)
@@ -76,8 +76,8 @@ def move_morphs(morphs, kind):
     #                 'Move %s into subdirectory' % kind]m
 
 for key in morphologies.iterkeys():
-	if key == 'system'
-        move_morphs(morphologies[key], key)
+	if key in ['system', 'cluster'] :
+            move_morphs(morphologies[key], key)
 
 #move_morphs(chunks, 'chunks')
 #move_morphs(strata, 'strata')

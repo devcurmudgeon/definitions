@@ -64,6 +64,7 @@ def move_morphs(morphs, kind):
              # Add path to the build-depends morphologies
              for build_depends in morph['build-depends']:
                  build_depends['morph'] = 'strata/' + build_depends['morph'] + '.morph'
+	     # Add chunk path on the chunk's morph field per stratum
 	     subpath = 'strata/' + morph['name']
              subdir = os.path.join(definitions_repo, subpath)
              subprocess.call(['mkdir', '-p', subdir])
@@ -75,6 +76,9 @@ def move_morphs(morphs, kind):
              #morph.filename = new_location
              #subprocess.call(['git', 'commit', '--quiet', '-m',
              #                 'Move %s into subdirectory' %kind])
+
+	     # Download chunks morphologies defined on the stratum and
+	     # add them to the directory tree.
 	sys.exit(0)
 	 
     #for morph in morphs:
@@ -89,24 +93,6 @@ def move_morphs(morphs, kind):
         #morph.filename = new_location
     #subprocess.call(['git', 'commit', '--quiet', '-m',
     #                 'Move %s into subdirectory' % kind]m
-
-for key in morphologies.iterkeys():
-    print "Moving %s....\n" %key
-    if key == 'stratum': move_morphs(morphologies[key], key)
-
-#move_morphs(chunks, 'chunks')
-#move_morphs(strata, 'strata')
-#move_morphs(systems, 'systems')
-#move_morphs(clusters, 'clusters')
-sys.exit(0)
-
-# get a list of ALL the chunks
-chunk_map = {}
-for stratum in strata:
-    for spec in stratum['chunks']:
-        if spec['name'] not in chunk_map:
-            chunk_map[spec['name']] = (spec['repo'], spec['ref'])
-
 # look for a chunk morph in the repo
 # NOTE: The following reimplements part of morphlib's remote repo cache stuff
 def parse_repo_alias(repo):
@@ -130,13 +116,33 @@ def make_request(path):
 def quote(*args):
     return tuple(urllib.quote(string) for string in args)
 
+def cat_file(repo, ref, filename):
+    return make_request('files?repo=%s&ref=%s&filename=%s' %
+                        quote(repo, ref, filename))
+
+
+# Move the morphologies to it directory
+for key in morphologies.iterkeys():
+    print "Moving %s....\n" %key
+    if key == 'stratum': move_morphs(morphologies[key], key)
+
+#move_morphs(chunks, 'chunks')
+#move_morphs(strata, 'strata')
+#move_morphs(systems, 'systems')
+#move_morphs(clusters, 'clusters')
+sys.exit(0)
+
 def ls_tree(repo, ref):
     info = yaml.load(make_request('trees?repo=%s&ref=%s' % quote(repo, ref)))
     return info['tree'].keys()
 
-def cat_file(repo, ref, filename):
-    return make_request('files?repo=%s&ref=%s&filename=%s' %
-                        quote(repo, ref, filename))
+# get a list of ALL the chunks
+chunk_map = {}
+for stratum in strata:
+    for spec in stratum['chunks']:
+        if spec['name'] not in chunk_map:
+            chunk_map[spec['name']] = (spec['repo'], spec['ref'])
+
 
 new_chunks = []
 i = 0

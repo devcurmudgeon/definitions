@@ -108,7 +108,7 @@ def move_morphs(morphs, kind):
                     loader.save_to_file(chunk['morph'], new_chunk)
                     print "Downloading %s from %s and placing in %s" %(name, repo, chunk['morph'])
 	        except urllib2.HTTPError as err:
-		    # If there si no morphology in the repository we assume that the morphology
+		    # If there is no morphology in the repository we assume that the morphology
 		    # system will be autodetected, so we don't have to create a new one
 		    # unless we shut down the autodetecting system (fallback system).
 	    	    if err.code == 404:
@@ -116,15 +116,23 @@ def move_morphs(morphs, kind):
 		except morphlib.morphloader.InvalidFieldError as err:
                     print "ERROR: %s in chunk %s" % (err, chunk_morph)
 		    if "comments" in err:
-		        fixed_chunk = str(chunk_morph).replace("comments", "description")
+			# This error is caused because there are old morphologies which
+			# contain the field "comments" instead of "description".
+			# Replacing "comments" field by "description" will allow the morphology
+			# to pass parse_morphology_text check and ready to be written to a file.
+			fixed_chunk = str(chunk_morph).replace("comments: ", "description:")
 			m_fixed_chunk = loader.load_from_string(chunk['morph'],fixed_chunk)
 			loader.save_to_file(chunk['morph'], m_fixed_chunk)
                         print "Downloading %s from %s and placing in %s" %(name, repo, chunk['morph'])
 		except morphlib.morphloader.MorphologyNotYamlError as err:
                     print "ERROR: %s in chunk %s" % (err, chunk_morph)
-                    new_chunk = json.loads(chunk_morph)
-		    print "%s" % new_chunk
-		    sys.exit(0)
+		    # This error is caused because there are old morphologies written
+		    # in JSON which contain '\t' characters. When try to load this
+		    # kind of morphologies load_from_string fails when parse_morphology_text.
+		    # Removing this characters will make load_from_string to load the morphology
+		    # and translate it into a correct yaml format.
+		    fix_chunk = chunk_morph.replace('\t','')
+                    new_chunk = loader.load_from_string(fix_chunk)
                     loader.save_to_file(chunk['morph'], new_chunk)
                     print "Downloading %s from %s and placing in %s" %(name, repo, chunk['morph'])
 

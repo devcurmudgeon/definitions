@@ -98,103 +98,124 @@ def sanitise_morphology_path(morph_field, morph_kind, belongs_to='None'):
 
 # organise the definitions repo
 definitions_repo = sb.get_git_directory_name(sb.root_repository_url)
-def move_morphs(morphs, kind):
-    if kind == 'cluster':
-        print 'Moving %s into subdirectory' % kind
-        subdir = os.path.join(definitions_repo, 'clusters')
-        subprocess.call(['mkdir', '-p', subdir])
-        for morph in morphs:
-            for m in morph['systems']:
-                m['morph'] = sanitise_morphology_path(m['morph'], 'system')
-            loader.save_to_file(morph.filename, morph)
-            new_location = os.path.join(subdir, morph.filename)
-            #subprocess.call(['git', 'mv', morph.filename, new_location])
-            #morph.filename = new_location
-            #subprocess.call(['git', 'commit', '--quiet', '-m',
-            #                 'Move %s into subdirectory' %kind])
-    if kind == 'system':
-        print 'Moving %s into subdirectory' % kind
-        subdir = os.path.join(definitions_repo, 'systems')
-        subprocess.call(['mkdir', '-p', subdir])
-        for morph in morphs:
-            for stratum in morph['strata']:
-                stratum['morph'] = sanitise_morphology_path(stratum['morph'], 'stratum')
-            loader.save_to_file(morph.filename,morph)
-            new_location = os.path.join(subdir, morph.filename)
-            #subprocess.call(['git', 'mv', morph.filename, new_location])
-            #morph.filename = new_location
-            #subprocess.call(['git', 'commit', '--quiet', '-m',
-            #                 'Move %s into subdirectory' %kind])
-    if kind == 'stratum':
-        print 'Moving %s into subdirectory' % kind
-        for morph in morphs:
-            # Add chunk path on the chunk's morph field per stratum
-            stratum_path = 'strata/' + morph['name']
-            subdir = os.path.join(definitions_repo, stratum_path)
-            subprocess.call(['mkdir', '-p', subdir])
+def move_clusters(morphs):
+    subdir = os.path.join(definitions_repo, 'clusters')
+    subprocess.call(['mkdir', '-p', subdir])
+    for morph in morphs:
+        for m in morph['systems']:
+            m['morph'] = sanitise_morphology_path(m['morph'], 'system')
+        print 'Moving %s into clusters' % morph.filename
+        loader.save_to_file(morph.filename, morph)
+        new_location = os.path.join(subdir, morph.filename)
+        #subprocess.call(['git', 'mv', morph.filename, new_location])
+        #morph.filename = new_location
+        #subprocess.call(['git', 'commit', '--quiet', '-m',
+        #                 'Move %s into clusters' % morph.filename])
 
-            # Download chunks morphologies defined on the stratum and
-            # add them to the directory tree.
-            for chunk in morph['chunks']:
-                name = chunk['name'] + '.morph'
-                chunk['morph'] = sanitise_morphology_path(chunk['morph'],'chunk', morph['name'])
-                ref = chunk['ref']
-                repo = parse_repo_alias(chunk['repo'])
-                print "%s %s %s %s" %(name, ref, repo, chunk['morph'])
-                try:
-                    chunk_morph = cat_file(repo, ref, name)
-                    new_chunk = loader.load_from_string(chunk_morph)
-                    loader.save_to_file(chunk['morph'], new_chunk)
-                    print "Downloading %s from %s and placing in %s" %(name, repo, chunk['morph'])
-                except urllib2.HTTPError as err:
-                # If there is no morphology in the repository we assume that the morphology
-                # system will be autodetected, so we don't have to create a new one
-		        # unless we shut down the autodetecting system (fallback system).
-                    if err.code == 404:
-                        print "%s not found in %s" %(name, repo)
-                except morphlib.morphloader.InvalidFieldError as err:
-                    print "ERROR: %s in chunk \n%s" % (err, chunk_morph)
-                    if "comments" in str(err):
-                    # This error is caused because there are old morphologies which
-                    # contain the field "comments" instead of "description".
-                    # Replacing "comments" field by "description" will allow the morphology
-                    # to pass parse_morphology_text check and ready to be written to a file.
-                        fixed_chunk = loader.parse_morphology_text(chunk_morph, name)
-                        fixed_chunk['description'] = fixed_chunk.pop('comments')
-                        loader.save_to_file(chunk['morph'], fixed_chunk)
-                        print "Downloading %s from %s and placing in %s" %(name, repo, chunk['morph'])
-                    if "buildsystem" in str(err):
-                    # This error is caused because a typo in a morphology which
-			        # has a field "buildsystem" instead of "build-system".
-                        fixed_chunk = loader.parse_morphology_text(chunk_morph, name)
-                        fixed_chunk['build-system'] = fixed_chunk.pop('buildsystem')
-                        loader.save_to_file(chunk['morph'], fixed_chunk)
-                        print "Downloading %s from %s and placing in %s" %(name, repo, chunk['morph'])
-                except morphlib.morphloader.MorphologyNotYamlError as err:
-                    print "ERROR: %s in chunk \n%s" % (err, chunk_morph)
-                    # This error is caused because there are old morphologies written
-		            # in JSON which contain '\t' characters. When try to load this
-		            # kind of morphologies load_from_string fails when parse_morphology_text.
-		            # Removing this characters will make load_from_string to load the morphology
-		            # and translate it into a correct yaml format.
-                    fix_chunk = chunk_morph.replace('\t','')
-                    new_chunk = loader.load_from_string(fix_chunk)
-                    loader.save_to_file(chunk['morph'], new_chunk)
-                    print "Downloading %s from %s and placing in %s" %(name, repo, chunk['morph'])
+def move_systems(morphs):
+    subdir = os.path.join(definitions_repo, 'systems')
+    subprocess.call(['mkdir', '-p', subdir])
+    for morph in morphs:
+        for stratum in morph['strata']:
+            stratum['morph'] = sanitise_morphology_path(stratum['morph'], 'stratum')
+        print 'Moving %s into systems' % morph.filename
+        loader.save_to_file(morph.filename,morph)
+        new_location = os.path.join(subdir, morph.filename)
+        #subprocess.call(['git', 'mv', morph.filename, new_location])
+        #morph.filename = new_location
+        #subprocess.call(['git', 'commit', '--quiet', '-m',
+        #                 'Move %s into systems' % morph.filename])
 
-            # Add path to the build-depends morphologies
-            for build_depends in morph['build-depends']:
-                build_depends['morph'] = sanitise_morphology_path(build_depends['morph'], 'stratum')
-            loader.save_to_file(morph.filename,morph)
-            new_location = os.path.join(subdir, morph.filename)
-            #subprocess.call(['git', 'mv', morph.filename, new_location])
-            #morph.filename = new_location
-            #subprocess.call(['git', 'commit', '--quiet', '-m',
-            #                 'Move %s into subdirectory' %kind])
-	 
+def move_chunks(morphs):
+    # There are not spec for this yet
+    print "No spec defined"
+
+
+def move_strata(morphs):
+    for morph in morphs:
+        # Add chunk path on the chunk's morph field per stratum
+        stratum_path = 'strata/' + morph['name']
+        subdir = os.path.join(definitions_repo, stratum_path)
+        subprocess.call(['mkdir', '-p', subdir])
+
+        # Download chunks morphologies defined on the stratum and
+        # add them to the directory tree.
+        for chunk in morph['chunks']:
+            name = chunk['name'] + '.morph'
+            chunk['morph'] = sanitise_morphology_path(chunk['morph'],'chunk', morph['name'])
+            ref = chunk['ref']
+            repo = parse_repo_alias(chunk['repo'])
+            try:
+                chunk_morph = cat_file(repo, ref, name)
+                new_chunk = loader.load_from_string(chunk_morph)
+                loader.save_to_file(chunk['morph'], new_chunk)
+                print "Downloading %s from %s and placing in %s" %(name, repo, chunk['morph'])
+                subprocess.call(['git', 'add', '--quiet', chunk['morph'])
+                #subprocess.call(['git', 'commit', '--quiet', '-m',
+                #                 'Move %s into systems' % morph.filename])
+            except urllib2.HTTPError as err:
+            # If there is no morphology in the repository we assume that the morphology
+            # system will be autodetected, so we don't have to create a new one
+            # unless we shut down the autodetecting system (fallback system).
+                if err.code == 404:
+                    print "%s not found in %s" %(name, repo)
+            except morphlib.morphloader.InvalidFieldError as err:
+                print "ERROR: %s in chunk \n%s" % (err, chunk_morph)
+                if "comments" in str(err):
+                # This error is caused because there are old morphologies which
+                # contain the field "comments" instead of "description".
+                # Replacing "comments" field by "description" will allow the morphology
+                # to pass parse_morphology_text check and ready to be written to a file.
+                    fixed_chunk = loader.parse_morphology_text(chunk_morph, name)
+                    fixed_chunk['description'] = fixed_chunk.pop('comments')
+                    loader.save_to_file(chunk['morph'], fixed_chunk)
+                    print "Downloading %s from %s and placing in %s" %(name, repo, chunk['morph'])
+                    subprocess.call(['git', 'add', '--quiet', chunk['morph'])
+                    #subprocess.call(['git', 'commit', '--quiet', '-m',
+                    #                 'Move %s into systems' % morph.filename])
+                if "buildsystem" in str(err):
+                # This error is caused because a typo in a morphology which
+                # has a field "buildsystem" instead of "build-system".
+                    fixed_chunk = loader.parse_morphology_text(chunk_morph, name)
+                    fixed_chunk['build-system'] = fixed_chunk.pop('buildsystem')
+                    loader.save_to_file(chunk['morph'], fixed_chunk)
+                    print "Downloading %s from %s and placing in %s" %(name, repo, chunk['morph'])
+                    subprocess.call(['git', 'add', '--quiet', chunk['morph'])
+                    #subprocess.call(['git', 'commit', '--quiet', '-m',
+                    #                 'Move %s into systems' % morph.filename])
+            except morphlib.morphloader.MorphologyNotYamlError as err:
+                print "ERROR: %s in chunk \n%s" % (err, chunk_morph)
+                # This error is caused because there are old morphologies written
+                # in JSON which contain '\t' characters. When try to load this
+                # kind of morphologies load_from_string fails when parse_morphology_text.
+                # Removing this characters will make load_from_string to load the morphology
+                # and translate it into a correct yaml format.
+                fix_chunk = chunk_morph.replace('\t','')
+                new_chunk = loader.load_from_string(fix_chunk)
+                loader.save_to_file(chunk['morph'], new_chunk)
+                print "Downloading %s from %s and placing in %s" %(name, repo, chunk['morph'])
+                subprocess.call(['git', 'add', '--quiet', chunk['morph'])
+                #subprocess.call(['git', 'commit', '--quiet', '-m',
+                #                 'Move %s into systems' % morph.filename])
+
+        # Add path to the build-depends morphologies
+        for build_depends in morph['build-depends']:
+            build_depends['morph'] = sanitise_morphology_path(build_depends['morph'], 'stratum')
+        loader.save_to_file(morph.filename,morph)
+        new_location = os.path.join(subdir, morph.filename)
+        #subprocess.call(['git', 'mv', morph.filename, new_location])
+        #morph.filename = new_location
+        #subprocess.call(['git', 'commit', '--quiet', '-m',
+        #                 'Move %s into subdirectory' %kind])
+
 # Move the morphologies to it directory
 for key in morphologies.iterkeys():
     print "Moving %s....\n" %key
-    move_morphs(morphologies[key], key)
+    if key == 'cluster': move_clusters(morphologies[key])
+    elif key == 'system': move_systems(morphologies[key])
+    elif key == 'stratum': move_strata(morphologies[key])
+    elif key == 'chunk': move_chunks(morphologies[key])
+    else: print 'ERROR: Morphology not know %' % key
+    #move_morphs(morphologies[key], key)
 
 sys.exit(0)

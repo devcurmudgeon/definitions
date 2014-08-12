@@ -102,12 +102,14 @@ def move_morphologies(morphs, kind, directory, path):
         for submorph in morph[morph_dir[kind]]:
             submorph['morph'] = sanitise_morphology_path(submorph['morph'], kind)
         print 'Moving %s into %s' % (morph.filename, directory)
+        new_location = os.path.join(subdir, morph.filename)
+        subprocess.call(['git', 'mv', morph.filename, new_location])
+        morph.filename = new_location
         loader.save_to_file(morph.filename, morph)
-        #new_location = os.path.join(subdir, morph.filename)
-        #subprocess.call(['git', 'mv', morph.filename, new_location])
-        #morph.filename = new_location
-        #subprocess.call(['git', 'commit', '--quiet', '-m',
-        #                 'Move %s into %s' %(morph['name'] + '.morph', directory)])
+        subprocess.call(['git', 'add', morph.filename)
+        subprocess.call(['git', 'commit', '--quiet', '-m',
+                         'Move %s into %s' %(morph['name'] + '.morph', directory)])
+        sys.exit(0)
 
 def move_clusters(morphs):
     kind = 'system'
@@ -158,7 +160,7 @@ def download_chunks(morph):
                 fixed_chunk['description'] = fixed_chunk.pop('comments')
                 loader.save_to_file(chunk['morph'], fixed_chunk)
                 print "Downloading %s from %s and placing in %s" %(name, repo, chunk['morph'])
-                subprocess.call(['git', 'add', chunk['morph']])
+                #subprocess.call(['git', 'add', chunk['morph']])
                 #subprocess.call(['git', 'commit', '--quiet', '-m',
                 #                 'Add %s to definitions repository' % name])
             if "buildsystem" in str(err):

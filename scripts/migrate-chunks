@@ -54,92 +54,138 @@ def quote(*args):
 
 def cat_file(repo, ref, filename):
     return make_request('files?repo=%s&ref=%s&filename=%s' %
-                        quote(repo, ref, filename))
+                         quote(repo, ref, filename))
+
+def sanitise_morphology_path(morph_field, morph_kind, belongs_to='None'):
+    ''' This function pretends to replace the sanitise_morphology_path in
+    morphlib.utils.
+    This new funtion will receive the field kind to check/add the directory
+    tree.
+    Chunk morphologies should add the stratum which belongs to.
+    '''
+    # Dictionary which match morphology's kind and morphology's
+    # directory in definitions.git
+    morphology_path = { 'chunk': 'chunks', 'stratum': 'strata',
+                        'system':'systems', 'cluster': 'clusters'}
+    # For chunks morphologies we need to know to which stratums
+    # belongs this chunk.
+    if morph_kind == 'chunk':
+        if belongs_to == 'None':
+            raise morphlib.Error('Chunk morphologies need the stratum name'
+                                 'to create the path. Please add the stratum'
+                                 'which belongs this morphology')
+        # Get the name of the chunk which we assume is at the end
+        # of the morph file
+        if '/' in morph_field:
+            morph_field = morph_field.split('/')[-1]
+
+        # Add the stratum name to the chunk name
+        morph_field = belongs_to + '/' + morph_field
+
+        # Reset the kind to stratum because chunk contains stratum
+        # name in its path.
+        morph_kind = 'stratum'
+
+    # Add the morphology path to the morph field.
+    if morphology_path[morph_kind] not in morph_field:
+        morph_field = morphology_path[morph_kind] + '/' + morph_field
+
+    # Add the morphology suffix if the morphology.
+    if not morph_field.endswith('.morph'):
+        morph_field = morph_field + '.morph'
+
+    return morph_field
 
 # organise the definitions repo
 definitions_repo = sb.get_git_directory_name(sb.root_repository_url)
 def move_morphs(morphs, kind):
     if kind == 'cluster':
-         print 'Moving %s into subdirectory' % kind
-         subdir = os.path.join(definitions_repo, 'clusters')
-         subprocess.call(['mkdir', '-p', subdir])
-         for morph in morphs:
-             for m in morph['systems']:
-	         m['morph'] = 'systems/' + m['name'] + '.morph'
-	     loader.save_to_file(morph.filename, morph)
-             new_location = os.path.join(subdir, morph.filename)
-             #subprocess.call(['git', 'mv', morph.filename, new_location])
-             #morph.filename = new_location
-             #subprocess.call(['git', 'commit', '--quiet', '-m',
-             #                 'Move %s into subdirectory' %kind])
+        print 'Moving %s into subdirectory' % kind
+        subdir = os.path.join(definitions_repo, 'clusters')
+        subprocess.call(['mkdir', '-p', subdir])
+        for morph in morphs:
+            for m in morph['systems']:
+                m['morph'] = sanitise_morphology_path(m['morph'], 'system')
+            loader.save_to_file(morph.filename, morph)
+            new_location = os.path.join(subdir, morph.filename)
+            #subprocess.call(['git', 'mv', morph.filename, new_location])
+            #morph.filename = new_location
+            #subprocess.call(['git', 'commit', '--quiet', '-m',
+            #                 'Move %s into subdirectory' %kind])
     if kind == 'system':
-         print 'Moving %s into subdirectory' % kind
-         subdir = os.path.join(definitions_repo, 'systems')
-         subprocess.call(['mkdir', '-p', subdir])
-         for morph in morphs:
-	     for stratum in morph['strata']:
-	         stratum['morph'] = 'strata/' + stratum['name'] + '.morph'
-	     loader.save_to_file(morph.filename,morph)
-             new_location = os.path.join(subdir, morph.filename)
-             #subprocess.call(['git', 'mv', morph.filename, new_location])
-             #morph.filename = new_location
-             #subprocess.call(['git', 'commit', '--quiet', '-m',
-             #                 'Move %s into subdirectory' %kind])
+        print 'Moving %s into subdirectory' % kind
+        subdir = os.path.join(definitions_repo, 'systems')
+        subprocess.call(['mkdir', '-p', subdir])
+        for morph in morphs:
+            for stratum in morph['strata']:
+                stratum['morph'] = sanitise_morphology_path(stratum['morph'], 'stratum')
+            loader.save_to_file(morph.filename,morph)
+            new_location = os.path.join(subdir, morph.filename)
+            #subprocess.call(['git', 'mv', morph.filename, new_location])
+            #morph.filename = new_location
+            #subprocess.call(['git', 'commit', '--quiet', '-m',
+            #                 'Move %s into subdirectory' %kind])
     if kind == 'stratum':
         print 'Moving %s into subdirectory' % kind
         for morph in morphs:
-	    # Add chunk path on the chunk's morph field per stratum
-	    stratum_path = 'strata/' + morph['name']
+            # Add chunk path on the chunk's morph field per stratum
+            stratum_path = 'strata/' + morph['name']
             subdir = os.path.join(definitions_repo, stratum_path)
             subprocess.call(['mkdir', '-p', subdir])
 
-	    # Download chunks morphologies defined on the stratum and
-	    # add them to the directory tree.
+            # Download chunks morphologies defined on the stratum and
+            # add them to the directory tree.
             for chunk in morph['chunks']:
-                name = morphlib.util.sanitise_morphology_path(chunk['morph'])
-                chunk['morph'] = stratum_path + '/' \
-	    		     + morphlib.util.sanitise_morphology_path(chunk['morph'])
+                name = chunk['name'] + '.morph'
+                chunk['morph'] = sanitise_morphology_path(chunk['morph'],'chunk', morph['name'])
                 ref = chunk['ref']
                 repo = parse_repo_alias(chunk['repo'])
-                print "%s %s %s" %(name, ref, repo)
-	        try:
+                print "%s %s %s %s" %(name, ref, repo, chunk['morph'])
+                try:
                     chunk_morph = cat_file(repo, ref, name)
                     new_chunk = loader.load_from_string(chunk_morph)
                     loader.save_to_file(chunk['morph'], new_chunk)
                     print "Downloading %s from %s and placing in %s" %(name, repo, chunk['morph'])
-	        except urllib2.HTTPError as err:
-		    # If there is no morphology in the repository we assume that the morphology
-		    # system will be autodetected, so we don't have to create a new one
-		    # unless we shut down the autodetecting system (fallback system).
-	    	    if err.code == 404:
+                except urllib2.HTTPError as err:
+                # If there is no morphology in the repository we assume that the morphology
+                # system will be autodetected, so we don't have to create a new one
+		        # unless we shut down the autodetecting system (fallback system).
+                    if err.code == 404:
                         print "%s not found in %s" %(name, repo)
-		except morphlib.morphloader.InvalidFieldError as err:
-                    print "ERROR: %s in chunk %s" % (err, chunk_morph)
-		    if "comments" in err:
-			# This error is caused because there are old morphologies which
-			# contain the field "comments" instead of "description".
-			# Replacing "comments" field by "description" will allow the morphology
-			# to pass parse_morphology_text check and ready to be written to a file.
-			fixed_chunk = str(chunk_morph).replace("comments: ", "description:")
-			m_fixed_chunk = loader.load_from_string(chunk['morph'],fixed_chunk)
-			loader.save_to_file(chunk['morph'], m_fixed_chunk)
+                except morphlib.morphloader.InvalidFieldError as err:
+                    print "ERROR: %s in chunk \n%s" % (err, chunk_morph)
+                    if "comments" in str(err):
+                    # This error is caused because there are old morphologies which
+                    # contain the field "comments" instead of "description".
+                    # Replacing "comments" field by "description" will allow the morphology
+                    # to pass parse_morphology_text check and ready to be written to a file.
+                        fixed_chunk = loader.parse_morphology_text(chunk_morph, name)
+                        fixed_chunk['description'] = fixed_chunk.pop('comments')
+                        loader.save_to_file(chunk['morph'], fixed_chunk)
                         print "Downloading %s from %s and placing in %s" %(name, repo, chunk['morph'])
-		except morphlib.morphloader.MorphologyNotYamlError as err:
-                    print "ERROR: %s in chunk %s" % (err, chunk_morph)
-		    # This error is caused because there are old morphologies written
-		    # in JSON which contain '\t' characters. When try to load this
-		    # kind of morphologies load_from_string fails when parse_morphology_text.
-		    # Removing this characters will make load_from_string to load the morphology
-		    # and translate it into a correct yaml format.
-		    fix_chunk = chunk_morph.replace('\t','')
+                    if "buildsystem" in str(err):
+                    # This error is caused because a typo in a morphology which
+			        # has a field "buildsystem" instead of "build-system".
+                        fixed_chunk = loader.parse_morphology_text(chunk_morph, name)
+                        fixed_chunk['build-system'] = fixed_chunk.pop('buildsystem')
+                        loader.save_to_file(chunk['morph'], fixed_chunk)
+                        print "Downloading %s from %s and placing in %s" %(name, repo, chunk['morph'])
+                except morphlib.morphloader.MorphologyNotYamlError as err:
+                    print "ERROR: %s in chunk \n%s" % (err, chunk_morph)
+                    # This error is caused because there are old morphologies written
+		            # in JSON which contain '\t' characters. When try to load this
+		            # kind of morphologies load_from_string fails when parse_morphology_text.
+		            # Removing this characters will make load_from_string to load the morphology
+		            # and translate it into a correct yaml format.
+                    fix_chunk = chunk_morph.replace('\t','')
                     new_chunk = loader.load_from_string(fix_chunk)
                     loader.save_to_file(chunk['morph'], new_chunk)
                     print "Downloading %s from %s and placing in %s" %(name, repo, chunk['morph'])
 
             # Add path to the build-depends morphologies
             for build_depends in morph['build-depends']:
-                build_depends['morph'] = 'strata/' + build_depends['morph'] + '.morph'
-	    loader.save_to_file(morph.filename,morph)
+                build_depends['morph'] = sanitise_morphology_path(build_depends['morph'], 'stratum')
+            loader.save_to_file(morph.filename,morph)
             new_location = os.path.join(subdir, morph.filename)
             #subprocess.call(['git', 'mv', morph.filename, new_location])
             #morph.filename = new_location
@@ -149,65 +195,6 @@ def move_morphs(morphs, kind):
 # Move the morphologies to it directory
 for key in morphologies.iterkeys():
     print "Moving %s....\n" %key
-    if key == 'stratum': move_morphs(morphologies[key], key)
+    move_morphs(morphologies[key], key)
 
-#move_morphs(chunks, 'chunks')
-#move_morphs(strata, 'strata')
-#move_morphs(systems, 'systems')
-#move_morphs(clusters, 'clusters')
 sys.exit(0)
-
-#def ls_tree(repo, ref):
-#    info = yaml.load(make_request('trees?repo=%s&ref=%s' % quote(repo, ref)))
-#    return info['tree'].keys()
-#
-## get a list of ALL the chunks
-#chunk_map = {}
-#for stratum in strata:
-#    for spec in stratum['chunks']:
-#        if spec['name'] not in chunk_map:
-#            chunk_map[spec['name']] = (spec['repo'], spec['ref'])
-#
-#
-#new_chunks = []
-#i = 0
-#n = len(chunk_map)
-#for name, (repo, ref) in chunk_map.iteritems():
-#    i += 1
-#    if verbose:
-#        print '[%d/%d] Checking chunk: %s' % (i, n, name)
-#    repo = parse_repo_alias(repo)
-#    morph = morphlib.util.sanitise_morphology_path(name)
-#    if morph in ls_tree(repo, ref):
-#        print '[%d/%d] Getting chunk morph: %s' % (i, n, name)
-#        text = cat_file(repo, ref, morph)
-#        # convert the morphology to yaml, because we should be using yaml now
-#        try:
-#            morph_dict = json.loads(text)
-#        except ValueError:
-#            morph_dict = yaml.load(text)
-#        output = yaml.dump(morph_dict,
-#                           Dumper=morphlib.morphloader.OrderedDumper,
-#                           default_flow_style=False)
-#        path = os.path.join(definitions_repo, morph)
-#        with open(path, 'w') as f:
-#            f.write(output)
-#        new_chunks.append(name)
-#
-## move the new chunks
-#for chunk in new_chunks:
-#    morph = morphlib.util.sanitise_morphology_path(chunk)
-#    path = os.path.join(definitions_repo, os.path.join('chunks', morph))
-#    subprocess.call(['mv', morph, path])
-#    #subprocess.call(['git', 'add', path])
-##subprocess.call(['git', 'commit', '-m', 'Add chunk morphologies'])
-#
-## update the chunk specs in the strata
-#for stratum in strata:
-#    for spec in stratum['chunks']:
-#        if 'morph' in spec:
-#            del spec['morph']
-#        if spec['name'] in new_chunks:
-#            morph = morphlib.util.sanitise_morphology_path(spec['name'])
-#            spec['morph'] = os.path.join('chunks', morph)
-#    loader.save_to_file(stratum.filename, stratum)

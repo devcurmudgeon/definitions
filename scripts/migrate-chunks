@@ -139,8 +139,8 @@ def download_chunks(morph):
             # system will be autodetected, so we don't have to create a new one
             # unless we shut down the autodetecting system (fallback system).
             if err.code == 404:
-                print "WARNING: %s not found in %s. \
-                       Expected autodetection on builds\n" %(name, repo)
+                print 'WARNING: %s not found in %s.' \
+                      'Expected autodetection at build time\n' %(name, repo)
         except morphlib.morphloader.InvalidFieldError as err:
             print "ERROR: %s in chunk %s.\n" % (err, chunk_morph)
             if "comments" in str(err):

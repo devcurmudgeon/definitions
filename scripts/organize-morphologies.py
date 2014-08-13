@@ -1,4 +1,18 @@
-#!/usr/bin/env python
+# Copyright (C) 2014  Codethink Limited
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; version 2 of the License.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along
+# with this program; if not, write to the Free Software Foundation, Inc.,
+# 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
 
 import json
 import morphlib
@@ -10,6 +24,17 @@ import urllib2
 import urlparse
 import yaml
 import re
+
+''' organize-morphologies.py:
+Tool for organizing morphologies in definitions.
+This script will move:
+  - cluster morphologies into clusters directory
+  - system morphologies into systems directory
+  - stratum morphologies into strata directory
+This script will download the chunk morphologies for every stratum
+and placed into strata/stratum_which_the_chunk_belongs_to directory
+'''
+
 
 # NOTE: The following reimplements part of morphlib's remote repo cache stuff
 def parse_repo_alias(repo):
@@ -191,27 +216,29 @@ def move_strata(morphs):
         # Move stratum morphologies to strata
         move_file(morph, strata_dir, strata_path)
 
-# Load all morphologies in the definitions repo
-sb = morphlib.sysbranchdir.open_from_within('.')
-loader = morphlib.morphloader.MorphologyLoader()
-morphs = [m for m in sb.load_all_morphologies(loader)]
+def main():
+    # Load all morphologies in the definitions repo
+    sb = morphlib.sysbranchdir.open_from_within('.')
+    loader = morphlib.morphloader.MorphologyLoader()
+    morphs = [m for m in sb.load_all_morphologies(loader)]
 
+    # Clasify the morphologies regarding of their kind field
+    morphologies = { 'chunk': '', 'stratum': '', 'system' : '', 'cluster': '' }
 
-# Clasify the morphologies regarding of their kind field
-morphologies = { 'chunk': '', 'stratum': '', 'system' : '', 'cluster': '' }
+    for key in morphologies.iterkeys():
+        morphologies[key] = [m for m in morphs if m['kind'] == key]
+        print 'There are: %d %s.\n' %(len(morphologies[key]), key)
 
-for key in morphologies.iterkeys():
-    morphologies[key] = [m for m in morphs if m['kind'] == key]
-    print 'There are: %d %s.\n' %(len(morphologies[key]), key)
+    # Get the path from definitions repo
+    definitions_repo = sb.get_git_directory_name(sb.root_repository_url)
 
-# Get the path from definitions repo
-definitions_repo = sb.get_git_directory_name(sb.root_repository_url)
+    # Move the morphologies to its directories
+    for key in morphologies.iterkeys():
+        print "Moving %s....\n" %key
+        if key == 'cluster': move_clusters(morphologies[key])
+        elif key == 'system': move_systems(morphologies[key])
+        elif key == 'stratum': move_strata(morphologies[key])
+        elif key == 'chunk': move_chunks(morphologies[key])
+        else: print 'ERROR: Morphology unknown: %s.\n' % key
 
-# Move the morphologies to its directories
-for key in morphologies.iterkeys():
-    print "Moving %s....\n" %key
-    if key == 'cluster': move_clusters(morphologies[key])
-    elif key == 'system': move_systems(morphologies[key])
-    elif key == 'stratum': move_strata(morphologies[key])
-    elif key == 'chunk': move_chunks(morphologies[key])
-    else: print 'ERROR: Morphology unknown: %s.\n' % key
+main()

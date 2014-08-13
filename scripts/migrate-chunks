@@ -35,6 +35,7 @@ def cat_file(repo, ref, filename):
     return make_request('files?repo=%s&ref=%s&filename=%s' %
                          quote(repo, ref, filename))
 
+# NOTE: This function reimplement part of morphlib's loader
 def sanitise_morphology_path(morph_field, morph_kind, belongs_to='None'):
     '''This function receives the name or the morph field of one morphology
     and returns the path of the morphology depending on the name, kind and
@@ -92,8 +93,10 @@ def move_morphologies(morphs, kind, directory, path):
     # directory in definitions.git
     morph_dir = { 'chunk': 'chunks', 'stratum': 'strata',
                   'system':'systems', 'cluster': 'clusters'}
+    # Create the morphology's directory and move the morphologies to it
     full_path = create_directory(directory, path)
     for morph in morphs:
+        # Add the correct path to the morph fields in the morphology.
         for submorph in morph[morph_dir[kind]]:
             submorph['morph'] = sanitise_morphology_path(submorph['morph'], kind)
         move_file(morph, directory, full_path)
@@ -102,12 +105,16 @@ def move_clusters(morphs):
     kind = 'system'
     directory = 'clusters'
     path = definitions_repo
+    # Move cluster morphologies to clusters folder fixing their dependent
+    # morphologies which are systems.
     move_morphologies(morphs, kind, directory, path)
 
 def move_systems(morphs):
     kind = 'stratum'
     directory = 'systems'
     path = definitions_repo
+    # Move system morphologies to systems folder fixing their dependent
+    # morphologies which are strata.
     move_morphologies(morphs, kind, directory, path)
 
 def move_chunks(morphs):
@@ -175,9 +182,10 @@ def move_strata(morphs):
         # Download chunks which belongs to the stratum
         download_chunks(morph)
 
-        # Add path to the build-depends morphologies
+        # Add to build-depends the correct path to the dependent stratum morphologies.
         for build_depends in morph['build-depends']:
             build_depends['morph'] = sanitise_morphology_path(build_depends['morph'], 'stratum')
+        # Move stratum morphologies to strata
         move_file(morph, strata_dir, strata_path)
 
 # Load all morphologies in the definitions repo
@@ -191,7 +199,7 @@ morphologies = { 'chunk': '', 'stratum': '', 'system' : '', 'cluster': '' }
 
 for key in morphologies.iterkeys():
     morphologies[key] = [m for m in morphs if m['kind'] == key]
-    #print 'There are: %d %s' %(len(morphologies[key]), key)
+    print 'There are: %d %s' %(len(morphologies[key]), key)
 
 # Get the path from definitions repo
 definitions_repo = sb.get_git_directory_name(sb.root_repository_url)

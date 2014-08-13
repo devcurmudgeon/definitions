@@ -140,9 +140,9 @@ def download_chunks(morph):
             # unless we shut down the autodetecting system (fallback system).
             if err.code == 404:
                 print 'WARNING: %s not found in %s.' \
-                      'Expected autodetection at build time\n' %(name, repo)
+                      'Expected autodetection at build time' %(name, repo)
         except morphlib.morphloader.InvalidFieldError as err:
-            print "ERROR: %s in chunk %s.\n" % (err, chunk_morph)
+            print "ERROR: %s in chunk %s." % (err, chunk_morph)
             if "comments" in str(err):
                 # This error is caused because there are old morphologies which
                 # contain the field "comments" instead of "description".
@@ -160,7 +160,7 @@ def download_chunks(morph):
                 loader.save_to_file(chunk['morph'], fixed_chunk)
                 print "Fixing error in %s and moving into %s" %(name, chunk['morph'])
         except morphlib.morphloader.MorphologyNotYamlError as err:
-            print "ERROR: %s in chunk %s.\n" % (err, chunk_morph)
+            print "ERROR: %s in chunk %s." % (err, chunk_morph)
             # This error is caused because there are old morphologies written
             # in JSON which contain '\t' characters. When try to load this
             # kind of morphologies load_from_string fails when parse_morphology_text.

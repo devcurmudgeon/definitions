@@ -114,10 +114,11 @@ def move_chunks(morphs):
     # There are not spec for this yet
     print "No spec defined"
 
-def download_chunks(morph):
+def download_chunks(morph, strata_path):
     # Create stratum directory where downloading its chunks.
-    stratum_path = 'strata/' + morph['name']
+    stratum_path = strata_path + morph['name']
     subdir = create_directory(stratum_path, definitions_repo)
+
     # Download chunks morphologies defined on the stratum and
     # add them to the directory tree.
     for chunk in morph['chunks']:
@@ -168,16 +169,16 @@ def download_chunks(morph):
 
 def move_strata(morphs):
     # Create strata directory
-    stratum_path = 'strata/'
+    strata_path = 'strata/'
     subdir = create_directory(stratum_path, definitions_repo)
     for morph in morphs:
         # Download chunks which belongs to the stratum
-        download_chunks(morph)
+        download_chunks(morph, strata_path)
 
         # Add path to the build-depends morphologies
         for build_depends in morph['build-depends']:
             build_depends['morph'] = sanitise_morphology_path(build_depends['morph'], 'stratum')
-        move_file(morph, stratum_path, subdir)
+        move_file(morph, strata_path, subdir)
 
 # Load all morphologies in the definitions repo
 sb = morphlib.sysbranchdir.open_from_within('.')

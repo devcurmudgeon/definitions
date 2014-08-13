@@ -141,6 +141,8 @@ def download_chunks(morph):
             if err.code == 404:
                 print 'WARNING: %s not found in %s.' \
                       'Expected autodetection at build time' %(name, repo)
+                # Remove morph field from autodetected chunks
+                del chunk['morph']
         except morphlib.morphloader.InvalidFieldError as err:
             print "ERROR: %s in chunk %s." % (err, chunk_morph)
             if "comments" in str(err):

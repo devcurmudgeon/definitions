@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # Copyright (C) 2014  Codethink Limited
 #
 # This program is free software; you can redistribute it and/or modify
@@ -12,7 +13,6 @@
 # You should have received a copy of the GNU General Public License along
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
-
 
 import json
 import morphlib
@@ -126,23 +126,21 @@ def move_morphologies(morphs, kind, directory, path):
             submorph['morph'] = sanitise_morphology_path(submorph['morph'], kind)
         move_file(morph, directory, full_path)
 
-def move_clusters(morphs):
+def move_clusters(morphs, path):
     kind = 'system'
     directory = 'clusters'
-    path = definitions_repo
     # Move cluster morphologies to clusters folder fixing their dependent
     # morphologies which are systems.
     move_morphologies(morphs, kind, directory, path)
 
-def move_systems(morphs):
+def move_systems(morphs, path):
     kind = 'stratum'
     directory = 'systems'
-    path = definitions_repo
     # Move system morphologies to systems folder fixing their dependent
     # morphologies which are strata.
     move_morphologies(morphs, kind, directory, path)
 
-def move_chunks(morphs):
+def move_chunks(morphs, path):
     # There are not spec for this yet
     print "No spec defined\n"
 
@@ -198,14 +196,14 @@ def download_chunks(morph):
             loader.save_to_file(chunk['morph'], new_chunk)
             print "Fixing error in %s and moving into %s." %(name, chunk['morph'])
 
-def move_strata(morphs):
+def move_strata(morphs, path):
     # Create strata directory
     strata_dir = 'strata/'
-    strata_path = create_directory(strata_dir, definitions_repo)
+    strata_path = create_directory(strata_dir, path)
     for morph in morphs:
         # Create stratum directory where downloading its chunks.
         stratum_path = strata_path + morph['name']
-        stratum_dir = create_directory(stratum_path, definitions_repo)
+        stratum_dir = create_directory(stratum_path, path)
 
         # Download chunks which belongs to the stratum
         download_chunks(morph)
@@ -235,10 +233,10 @@ def main():
     # Move the morphologies to its directories
     for key in morphologies.iterkeys():
         print "Moving %s....\n" %key
-        if key == 'cluster': move_clusters(morphologies[key])
-        elif key == 'system': move_systems(morphologies[key])
-        elif key == 'stratum': move_strata(morphologies[key])
-        elif key == 'chunk': move_chunks(morphologies[key])
+        if key == 'cluster': move_clusters(morphologies[key], definitions_repo)
+        elif key == 'system': move_systems(morphologies[key], definitions_repo)
+        elif key == 'stratum': move_strata(morphologies[key], definitions_repo)
+        elif key == 'chunk': move_chunks(morphologies[key], definitions_repo)
         else: print 'ERROR: Morphology unknown: %s.\n' % key
 
 main()

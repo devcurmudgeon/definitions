@@ -27,12 +27,17 @@ import re
 
 ''' organize-morphologies.py:
 Tool for organizing morphologies in definitions.
+
 This script will move:
   - cluster morphologies into clusters directory
   - system morphologies into systems directory
   - stratum morphologies into strata directory
+
 This script will download the chunk morphologies for every stratum
-and placed into strata/stratum_which_the_chunk_belongs_to directory
+and placed into strata/stratum_which_the_chunk_belongs_to directory.
+
+It also modifies the morphologies fields which points to some morpholgy
+which has been moved.
 '''
 
 
@@ -104,7 +109,7 @@ def create_directory(name, path):
     subprocess.call(['mkdir','-p', directory])
     return directory
 
-def move_file(morph, directory, path):
+def move_file(morph, directory, path, loader):
     if not morph.filename.startswith(directory):
         filename = morph.filename.split('/')[-1]
         new_location = os.path.join(path, filename)
@@ -113,7 +118,7 @@ def move_file(morph, directory, path):
         morph.filename = new_location
         loader.save_to_file(morph.filename, morph)
 
-def move_morphologies(morphs, kind, directory, path):
+def move_morphologies(morphs, kind, directory, path, loader):
     # Dictionary which match morphology's kind and morphology's
     # directory in definitions.git
     morph_dir = { 'chunk': 'chunks', 'stratum': 'strata',
@@ -124,27 +129,27 @@ def move_morphologies(morphs, kind, directory, path):
         # Add the correct path to the morph fields in the morphology.
         for submorph in morph[morph_dir[kind]]:
             submorph['morph'] = sanitise_morphology_path(submorph['morph'], kind)
-        move_file(morph, directory, full_path)
+        move_file(morph, directory, full_path, loader)
 
-def move_clusters(morphs, path):
+def move_clusters(morphs, path, loader):
     kind = 'system'
     directory = 'clusters'
     # Move cluster morphologies to clusters folder fixing their dependent
     # morphologies which are systems.
-    move_morphologies(morphs, kind, directory, path)
+    move_morphologies(morphs, kind, directory, path, loader)
 
-def move_systems(morphs, path):
+def move_systems(morphs, path, loader):
     kind = 'stratum'
     directory = 'systems'
     # Move system morphologies to systems folder fixing their dependent
     # morphologies which are strata.
-    move_morphologies(morphs, kind, directory, path)
+    move_morphologies(morphs, kind, directory, path, loader)
 
-def move_chunks(morphs, path):
+def move_chunks(morphs, path, loader):
     # There are not spec for this yet
     print "No spec defined\n"
 
-def download_chunks(morph):
+def download_chunks(morph, loader):
     # Download chunks morphologies defined on the stratum and
     # add them to the directory tree.
     for chunk in morph['chunks']:
@@ -196,7 +201,7 @@ def download_chunks(morph):
             loader.save_to_file(chunk['morph'], new_chunk)
             print "Fixing error in %s and moving into %s." %(name, chunk['morph'])
 
-def move_strata(morphs, path):
+def move_strata(morphs, path, loader):
     # Create strata directory
     strata_dir = 'strata/'
     strata_path = create_directory(strata_dir, path)
@@ -206,13 +211,13 @@ def move_strata(morphs, path):
         stratum_dir = create_directory(stratum_path, path)
 
         # Download chunks which belongs to the stratum
-        download_chunks(morph)
+        download_chunks(morph, loader)
 
         # Add to build-depends the correct path to the dependent stratum morphologies.
         for build_depends in morph['build-depends']:
             build_depends['morph'] = sanitise_morphology_path(build_depends['morph'], 'stratum')
         # Move stratum morphologies to strata
-        move_file(morph, strata_dir, strata_path)
+        move_file(morph, strata_dir, strata_path, loader)
 
 def main():
     # Load all morphologies in the definitions repo
@@ -233,10 +238,10 @@ def main():
     # Move the morphologies to its directories
     for key in morphologies.iterkeys():
         print "Moving %s....\n" %key
-        if key == 'cluster': move_clusters(morphologies[key], definitions_repo)
-        elif key == 'system': move_systems(morphologies[key], definitions_repo)
-        elif key == 'stratum': move_strata(morphologies[key], definitions_repo)
-        elif key == 'chunk': move_chunks(morphologies[key], definitions_repo)
+        if key == 'cluster': move_clusters(morphologies[key], definitions_repo, loader)
+        elif key == 'system': move_systems(morphologies[key], definitions_repo, loader)
+        elif key == 'stratum': move_strata(morphologies[key], definitions_repo, loader)
+        elif key == 'chunk': move_chunks(morphologies[key], definitions_repo, loader)
         else: print 'ERROR: Morphology unknown: %s.\n' % key
 
 main()

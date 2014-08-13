@@ -83,7 +83,7 @@ def move_file(morph, directory, path):
     if not morph.filename.startswith(directory):
         filename = morph.filename.split('/')[-1]
         new_location = os.path.join(path, filename)
-        print 'Moving %s into %s' % (filename, new_location)
+        print 'Moving %s into %s\n' % (filename, new_location)
         subprocess.call(['git', 'mv', morph.filename, new_location])
         morph.filename = new_location
         loader.save_to_file(morph.filename, morph)
@@ -119,7 +119,7 @@ def move_systems(morphs):
 
 def move_chunks(morphs):
     # There are not spec for this yet
-    print "No spec defined"
+    print "No spec defined\n"
 
 def download_chunks(morph):
     # Download chunks morphologies defined on the stratum and
@@ -133,16 +133,16 @@ def download_chunks(morph):
             chunk_morph = cat_file(repo, ref, name)
             new_chunk = loader.load_from_string(chunk_morph)
             loader.save_to_file(chunk['morph'], new_chunk)
-            print "Downloading %s from %s into %s" %(name, repo, chunk['morph'])
+            print "Downloading %s from %s into %s\n" %(name, repo, chunk['morph'])
         except urllib2.HTTPError as err:
             # If there is no morphology in the repository we assume that the morphology
             # system will be autodetected, so we don't have to create a new one
             # unless we shut down the autodetecting system (fallback system).
             if err.code == 404:
                 print "WARNING: %s not found in %s. \
-                       \nExpected autodetection on builds" %(name, repo)
+                       Expected autodetection on builds\n" %(name, repo)
         except morphlib.morphloader.InvalidFieldError as err:
-            print "ERROR: %s in chunk \n%s" % (err, chunk_morph)
+            print "ERROR: %s in chunk %s.\n" % (err, chunk_morph)
             if "comments" in str(err):
                 # This error is caused because there are old morphologies which
                 # contain the field "comments" instead of "description".
@@ -151,16 +151,16 @@ def download_chunks(morph):
                 fixed_chunk = loader.parse_morphology_text(chunk_morph, name)
                 fixed_chunk['description'] = fixed_chunk.pop('comments')
                 loader.save_to_file(chunk['morph'], fixed_chunk)
-                print "Fixing error in %s and moving into %s" %(name, chunk['morph'])
+                print "Fixing error in %s and moving into %s.\n" %(name, chunk['morph'])
             if "buildsystem" in str(err):
                 # This error is caused because a typo in a morphology which
                 # has a field "buildsystem" instead of "build-system".
                 fixed_chunk = loader.parse_morphology_text(chunk_morph, name)
                 fixed_chunk['build-system'] = fixed_chunk.pop('buildsystem')
                 loader.save_to_file(chunk['morph'], fixed_chunk)
-                print "Fixing error in %s and moving into %s" %(name, chunk['morph'])
+                print "Fixing error in %s and moving into %s\n" %(name, chunk['morph'])
         except morphlib.morphloader.MorphologyNotYamlError as err:
-            print "ERROR: %s in chunk \n%s" % (err, chunk_morph)
+            print "ERROR: %s in chunk %s.\n" % (err, chunk_morph)
             # This error is caused because there are old morphologies written
             # in JSON which contain '\t' characters. When try to load this
             # kind of morphologies load_from_string fails when parse_morphology_text.
@@ -169,7 +169,7 @@ def download_chunks(morph):
             fix_chunk = chunk_morph.replace('\t','')
             new_chunk = loader.load_from_string(fix_chunk)
             loader.save_to_file(chunk['morph'], new_chunk)
-            print "Fixing error in %s and moving into %s" %(name, chunk['morph'])
+            print "Fixing error in %s and moving into %s.\n" %(name, chunk['morph'])
 
 def move_strata(morphs):
     # Create strata directory
@@ -200,7 +200,7 @@ morphologies = { 'chunk': '', 'stratum': '', 'system' : '', 'cluster': '' }
 
 for key in morphologies.iterkeys():
     morphologies[key] = [m for m in morphs if m['kind'] == key]
-    print 'There are: %d %s' %(len(morphologies[key]), key)
+    print 'There are: %d %s.\n' %(len(morphologies[key]), key)
 
 # Get the path from definitions repo
 definitions_repo = sb.get_git_directory_name(sb.root_repository_url)
@@ -212,4 +212,4 @@ for key in morphologies.iterkeys():
     elif key == 'system': move_systems(morphologies[key])
     elif key == 'stratum': move_strata(morphologies[key])
     elif key == 'chunk': move_chunks(morphologies[key])
-    else: print 'ERROR: Morphology not know %' % key
+    else: print 'ERROR: Morphology unknown: %s.\n' % key

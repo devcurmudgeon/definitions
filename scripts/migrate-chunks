@@ -130,10 +130,10 @@ def download_chunks(morph):
         ref = chunk['ref']
         repo = parse_repo_alias(chunk['repo'])
         try:
+            print "\nDownloading %s from %s into %s" %(name, repo, chunk['morph'])
             chunk_morph = cat_file(repo, ref, name)
             new_chunk = loader.load_from_string(chunk_morph)
             loader.save_to_file(chunk['morph'], new_chunk)
-            print "\nDownloading %s from %s into %s" %(name, repo, chunk['morph'])
         except urllib2.HTTPError as err:
             # If there is no morphology in the repository we assume that the morphology
             # system will be autodetected, so we don't have to create a new one

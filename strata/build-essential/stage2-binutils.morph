@@ -1,0 +1,34 @@
+name: stage2-binutils
+kind: chunk
+description: ''
+max-jobs: null
+products: []
+build-system: autotools
+pre-configure-commands: []
+configure-commands:
+- |
+  export STAGE2_SYSROOT="$(dirname $(pwd))"
+  export CPPFLAGS="--sysroot=$STAGE2_SYSROOT"
+  export CXX=false
+  export LDFLAGS="-Wl,--sysroot=$STAGE2_SYSROOT"
+  ./configure --prefix="$PREFIX" --disable-nls --disable-werror \
+    --build=$(sh config.guess) \
+    --host=$TARGET_STAGE1 \
+    --target=$TARGET_STAGE1
+post-configure-commands: []
+pre-build-commands: []
+build-commands:
+- |
+  export STAGE2_SYSROOT="$(dirname $(pwd))"
+  export CPPFLAGS="--sysroot=$STAGE2_SYSROOT"
+  export LDFLAGS="-Wl,--sysroot=$STAGE2_SYSROOT"
+  make
+post-build-commands: []
+pre-install-commands: []
+install-commands: []
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

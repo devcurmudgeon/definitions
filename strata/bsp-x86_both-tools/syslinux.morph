@@ -1,0 +1,24 @@
+name: syslinux
+kind: chunk
+description: ''
+max-jobs: null
+products: []
+build-system: manual
+pre-configure-commands: []
+configure-commands: []
+post-configure-commands: []
+pre-build-commands: []
+build-commands:
+- make clean
+- make
+- make installer
+post-build-commands: []
+pre-install-commands: []
+install-commands:
+- make INSTALLROOT="$DESTDIR" install
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

@@ -1,0 +1,29 @@
+name: openssl-new
+kind: chunk
+description: ''
+max-jobs: 1
+products: []
+build-system: manual
+pre-configure-commands: []
+configure-commands:
+- sed -i -e 's,^LIBNAMES=\\(.*\\) padlock \\(.*\\),LIBNAMES=\\1 \\2,g' engines/Makefile
+- |
+  if [ "$(uname -m)" = "ppc64" ]; then
+      sh ./Configure linux-ppc64 --openssldir=/etc/ssl --prefix="${PREFIX-/usr}" --libdir=lib shared
+  else
+      ./config --openssldir=/etc/ssl --prefix="${PREFIX-/usr}" --libdir=lib shared
+  fi
+post-configure-commands: []
+pre-build-commands: []
+build-commands:
+- make
+post-build-commands: []
+pre-install-commands: []
+install-commands:
+- make INSTALL_PREFIX="$DESTDIR" install_sw
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

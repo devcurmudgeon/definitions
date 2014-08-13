@@ -1,0 +1,24 @@
+name: dbus
+kind: chunk
+description: ''
+max-jobs: null
+products: []
+build-system: autotools
+pre-configure-commands: []
+configure-commands:
+- sh autogen.sh --no-configure
+- ./configure --prefix="$PREFIX" --localstatedir=/var --sysconfdir=/etc
+post-configure-commands: []
+pre-build-commands: []
+build-commands:
+- make XMLTO_OUTPUT=
+post-build-commands: []
+pre-install-commands: []
+install-commands:
+- make XMLTO_OUTPUT= DESTDIR="$DESTDIR" install
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

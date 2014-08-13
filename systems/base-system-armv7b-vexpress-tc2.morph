@@ -1,0 +1,15 @@
+name: base-system-armv7b-vexpress-tc2
+kind: system
+description: A small system for Versatile TC2 boards system.
+arch: armv7b
+strata:
+- morph: strata/build-essential.morph
+- morph: strata/core.morph
+- morph: strata/foundation.morph
+- morph: strata/bsp-armv7b-vexpress-tc2.morph
+configuration-extensions:
+- set-hostname
+- add-config-files
+- simple-network
+- nfsboot
+- install-files

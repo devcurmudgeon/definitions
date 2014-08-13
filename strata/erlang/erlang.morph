@@ -1,0 +1,24 @@
+name: erlang
+kind: chunk
+description: ''
+max-jobs: null
+products: []
+build-system: manual
+pre-configure-commands: []
+configure-commands:
+- ./otp_build autoconf
+- ./configure --prefix=$PREFIX
+post-configure-commands: []
+pre-build-commands: []
+build-commands:
+- make
+post-build-commands: []
+pre-install-commands: []
+install-commands:
+- make install
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

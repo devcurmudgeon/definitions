@@ -1,0 +1,25 @@
+name: vim
+kind: chunk
+description: ''
+max-jobs: null
+products: []
+build-system: autotools
+pre-configure-commands: []
+configure-commands:
+- echo '#define SYS_VIMRC_FILE "/etc/vimrc"' >>src/feature.h
+- ./configure --prefix="$PREFIX" --enable-multibyte
+post-configure-commands: []
+pre-build-commands: []
+build-commands: []
+post-build-commands: []
+pre-install-commands: []
+install-commands:
+- make DESTDIR="$DESTDIR" install
+- mkdir -p "$DESTDIR"/etc
+- install -m 644 runtime/vimrc_example.vim "$DESTDIR"/etc/vimrc
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

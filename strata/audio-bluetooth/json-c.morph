@@ -1,0 +1,22 @@
+name: json-c
+kind: chunk
+description: JSON C Library
+max-jobs: null
+products: []
+build-system: autotools
+pre-configure-commands: []
+configure-commands: []
+post-configure-commands: []
+pre-build-commands: []
+build-commands: []
+post-build-commands: []
+pre-install-commands: []
+install-commands:
+- make DESTDIR="$DESTDIR" install
+- install -m755 json_object_iterator.h "$DESTDIR/usr/include/json"
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

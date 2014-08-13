@@ -1,0 +1,24 @@
+name: stage2-gawk
+kind: chunk
+description: ''
+max-jobs: null
+products: []
+build-system: autotools
+pre-configure-commands: []
+configure-commands:
+- STAGE2_SYSROOT="$(dirname $(pwd))" CPPFLAGS="--sysroot=$STAGE2_SYSROOT" CXX=false
+  LDFLAGS="-Wl,--sysroot=$STAGE2_SYSROOT" ./configure --prefix="$PREFIX" --disable-nls
+  --build=$(sh config.guess)  --host=$TARGET_STAGE1
+post-configure-commands: []
+pre-build-commands: []
+build-commands:
+- STAGE2_SYSROOT="$(dirname $(pwd))" make
+post-build-commands: []
+pre-install-commands: []
+install-commands: []
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

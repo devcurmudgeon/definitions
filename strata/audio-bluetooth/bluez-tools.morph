@@ -1,0 +1,24 @@
+name: bluez-tools
+kind: chunk
+description: A set of tools to manage Bluetooth devices for Linux
+max-jobs: null
+products: []
+build-system: autotools
+pre-configure-commands: []
+configure-commands:
+- sed -i -e 's/-lreadline/-lreadline -lncurses/g' configure.ac
+- ./autogen.sh
+- ./configure --prefix="$PREFIX" --disable-obex
+post-configure-commands: []
+pre-build-commands: []
+build-commands:
+- LDFLAGS="$LDFLAGS -lncurses" make
+post-build-commands: []
+pre-install-commands: []
+install-commands: []
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

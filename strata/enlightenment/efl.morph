@@ -1,0 +1,25 @@
+name: efl
+kind: chunk
+description: ''
+max-jobs: null
+products: []
+build-system: manual
+pre-configure-commands: []
+configure-commands:
+- ./autogen.sh --prefix=/usr --with-tests=none --disable-fribidi --disable-image-loader-gif
+  --disable-image-loader-tiff  --disable-pulseaudio --disable-gstreamer --disable-audio
+  --disable-physics
+post-configure-commands: []
+pre-build-commands: []
+build-commands:
+- make VPATH=/usr/lib64
+post-build-commands: []
+pre-install-commands: []
+install-commands:
+- make DESTDIR="$DESTDIR" VPATH=/usr/lib64 install
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

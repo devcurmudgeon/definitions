@@ -1,0 +1,23 @@
+name: gitlab-ce
+kind: chunk
+description: ''
+max-jobs: null
+products: []
+build-system: manual
+pre-configure-commands: []
+configure-commands: null
+post-configure-commands: []
+pre-build-commands: []
+build-commands: null
+post-build-commands: []
+pre-install-commands: []
+install-commands:
+- mkdir -p "$DESTDIR/$PREFIX/share/gitlab-ce"
+- cp -R * "$DESTDIR/$PREFIX/share/gitlab-ce"
+- chmod -R a+rX,g+w "$DESTDIR/$PREFIX/share/gitlab-ce"
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

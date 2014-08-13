@@ -1,0 +1,24 @@
+name: googlemock
+kind: chunk
+description: ''
+max-jobs: null
+products: []
+build-system: autotools
+pre-configure-commands: []
+configure-commands:
+- mkdir -p gtest/m4
+- ln -s /usr/share/gtest/m4/acx_pthread.m4 gtest/m4/acx_pthread.m4
+- autoreconf -ivf
+- ./configure --prefix="$PREFIX"
+post-configure-commands: []
+pre-build-commands: []
+build-commands: []
+post-build-commands: []
+pre-install-commands: []
+install-commands: []
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

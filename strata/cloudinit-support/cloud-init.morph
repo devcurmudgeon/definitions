@@ -1,0 +1,22 @@
+name: cloud-init
+kind: chunk
+description: ''
+max-jobs: null
+products: []
+build-system: python-distutils
+pre-configure-commands: []
+configure-commands: []
+post-configure-commands: []
+pre-build-commands: []
+build-commands: []
+post-build-commands: []
+pre-install-commands: []
+install-commands: []
+post-install-commands:
+- mkdir -p "$DESTDIR"/lib/systemd/system
+- cp systemd/* "$DESTDIR"/lib/systemd/system/
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

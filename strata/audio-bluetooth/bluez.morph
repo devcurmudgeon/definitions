@@ -1,0 +1,26 @@
+name: bluez
+kind: chunk
+description: Bluetooth protocol stack for Linux
+max-jobs: null
+products: []
+build-system: autotools
+pre-configure-commands: []
+configure-commands:
+- autoreconf -ivf
+- ./configure --prefix="$PREFIX" --enable-tools --enable-test --enable-alsa --enable-library
+  --with-telephony=ofono --sysconfdir=/etc --localstatedir=/var --libexecdir=/lib
+post-configure-commands: []
+pre-build-commands: []
+build-commands: []
+post-build-commands: []
+pre-install-commands: []
+install-commands:
+- make install
+- mkdir -p "$DESTDIR/etc/systemd/system/bluetooth.target.wants"
+- ln -s /lib/systemd/system/bluetooth.service "$DESTDIR/etc/systemd/system/bluetooth.target.wants/bluetooth.service"
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

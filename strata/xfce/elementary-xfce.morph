@@ -1,0 +1,27 @@
+name: elementary-xfce
+kind: chunk
+description: ''
+max-jobs: null
+products: []
+build-system: manual
+pre-configure-commands: []
+configure-commands: []
+post-configure-commands: []
+pre-build-commands: []
+build-commands: []
+post-build-commands: []
+pre-install-commands: []
+install-commands:
+- mkdir -p $DESTDIR/usr/share/icons/
+- cp -R elementary-xfce $DESTDIR/usr/share/icons/
+- cp -R elementary-xfce-* $DESTDIR/usr/share/icons/
+- gtk-update-icon-cache -t -f $DESTDIR/usr/share/icons/elementary-xfce
+- gtk-update-icon-cache -t -f $DESTDIR/usr/share/icons/elementary-xfce-dark
+- gtk-update-icon-cache -t -f $DESTDIR/usr/share/icons/elementary-xfce-darker
+- gtk-update-icon-cache -t -f $DESTDIR/usr/share/icons/elementary-xfce-darkest
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

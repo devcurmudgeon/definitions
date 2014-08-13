@@ -1,0 +1,21 @@
+name: perl-dbi-tarball
+kind: chunk
+description: ''
+max-jobs: null
+products: []
+build-system: cpan
+pre-configure-commands: []
+configure-commands: []
+post-configure-commands: []
+pre-build-commands: []
+build-commands:
+- make -j1
+post-build-commands: []
+pre-install-commands: []
+install-commands: []
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

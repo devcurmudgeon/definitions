@@ -1,0 +1,9 @@
+name: cross-bootstrap-system-ppc64-generic
+kind: system
+description: A system that produces the minimum needed to build a devel system
+arch: ppc64
+strata:
+- morph: strata/build-essential.morph
+- morph: strata/core.morph
+- morph: strata/cross-bootstrap.morph
+configuration-extensions: []

@@ -1,0 +1,22 @@
+name: mercurial-tarball
+kind: chunk
+description: ''
+max-jobs: null
+products: []
+build-system: manual
+pre-configure-commands: []
+configure-commands: []
+post-configure-commands: []
+pre-build-commands: []
+build-commands:
+- make build PREFIX="$PREFIX"
+post-build-commands: []
+pre-install-commands: []
+install-commands:
+- make install-bin PREFIX="$PREFIX" DESTDIR="$DESTDIR"
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

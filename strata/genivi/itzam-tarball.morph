@@ -1,0 +1,25 @@
+name: itzam-tarball
+kind: chunk
+description: ''
+max-jobs: null
+products: []
+build-system: autotools
+pre-configure-commands:
+- sed -i 's/GENERIC_LIBRARY_NAME=libitzam/GENERIC_LIBRARY_NAME=itzam/g' configure.ac
+- mkdir m4
+- touch NEWS README AUTHORS ChangeLog
+- autoreconf -ivf
+configure-commands: []
+post-configure-commands: []
+pre-build-commands: []
+build-commands: []
+post-build-commands: []
+pre-install-commands: []
+install-commands: []
+post-install-commands:
+- install -D -m644 libitzam.pc "$DESTDIR$PREFIX/lib/pkgconfig/libitzam.pc"
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

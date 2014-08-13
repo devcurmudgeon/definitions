@@ -1,0 +1,23 @@
+name: boost
+kind: chunk
+description: ''
+max-jobs: null
+products: []
+build-system: manual
+pre-configure-commands: []
+configure-commands:
+- ./bootstrap.sh
+post-configure-commands: []
+pre-build-commands: []
+build-commands:
+- ./b2 || true
+post-build-commands: []
+pre-install-commands: []
+install-commands:
+- ./b2 install --prefix=$DESTDIR$PREFIX || true
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

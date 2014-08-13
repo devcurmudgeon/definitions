@@ -1,0 +1,26 @@
+name: subversion-tarball
+kind: chunk
+description: ''
+max-jobs: null
+products: []
+build-system: autotools
+pre-configure-commands: []
+configure-commands:
+- python gen-make.py build.conf
+- ./configure --prefix="$PREFIX" --without-berkeley-db
+post-configure-commands: []
+pre-build-commands: []
+build-commands:
+- make
+post-build-commands: []
+pre-install-commands: []
+install-commands:
+- make install DESTDIR="$DESTDIR"
+- make swig-pl
+- make install-swig-pl DESTDIR="$DESTDIR"
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

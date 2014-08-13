@@ -1,0 +1,29 @@
+name: e2fsprogs
+kind: chunk
+description: ''
+max-jobs: null
+products: []
+build-system: autotools
+pre-configure-commands: []
+configure-commands:
+- |
+  ./configure --prefix="$PREFIX" --sysconfdir=/etc \
+    --disable-libuuid --disable-uuidd --disable-fsck
+post-configure-commands: []
+pre-build-commands: []
+build-commands: []
+post-build-commands: []
+pre-install-commands: []
+install-commands:
+- |
+  td="$(mktemp -d)"
+  make DESTDIR="$td" install
+  find "$td" \( -name blkid -o -name findfs -o -name fsck \) -delete
+  find "$td" \( -name blkid.8 -o -name findfs.8 \) -delete
+  mv "$td"/* "$DESTDIR"
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

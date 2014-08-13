@@ -1,0 +1,25 @@
+name: gtk+
+kind: chunk
+description: ''
+max-jobs: null
+products: []
+build-system: autotools
+pre-configure-commands: []
+configure-commands:
+- gdk-pixbuf-query-loaders > loader.cache
+- NOCONFIGURE=1 ./autogen.sh
+- ./configure --prefix="$PREFIX"
+post-configure-commands: []
+pre-build-commands: []
+build-commands:
+- GDK_PIXBUF_MODULE_FILE="$(pwd)/loader.cache" make
+post-build-commands: []
+pre-install-commands: []
+install-commands:
+- GDK_PIXBUF_MODULE_FILE="$(pwd)/loader.cache" make install DESTDIR="$DESTDIR"
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

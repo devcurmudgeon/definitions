@@ -1,0 +1,26 @@
+name: lua
+kind: chunk
+description: ''
+max-jobs: null
+products: []
+build-system: manual
+pre-configure-commands: []
+configure-commands:
+- sed -e 's/defined(LUA_USE_READLINE)/0/g' src/luaconf.h.orig >src/luaconf.h
+- sed -i -e '/^linux:/{n;s/-lreadline//g;s/-lhistory//g;s/-lncurses//g}' src/Makefile
+post-configure-commands: []
+pre-build-commands: []
+build-commands:
+- make debian_linux INSTALL_TOP="$PREFIX" RPATH="$PREFIX/lib"
+post-build-commands: []
+pre-install-commands: []
+install-commands:
+- make INSTALL_TOP="$DESTDIR/$PREFIX" debian_install
+- mkdir -p $DESTDIR/$PREFIX/lib/pkgconfig
+- cp lua5.1.pc $DESTDIR/$PREFIX/lib/pkgconfig/
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

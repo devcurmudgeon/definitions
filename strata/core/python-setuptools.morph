@@ -1,0 +1,22 @@
+name: python-setuptools
+kind: chunk
+description: ''
+max-jobs: null
+products: []
+build-system: manual
+pre-configure-commands: []
+configure-commands: []
+post-configure-commands: []
+pre-build-commands: []
+build-commands:
+- python setup.py build
+post-build-commands: []
+pre-install-commands: []
+install-commands:
+- python setup.py install --prefix=/usr --root "$DESTDIR"
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

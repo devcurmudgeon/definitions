@@ -1,0 +1,22 @@
+name: libosinfo
+kind: chunk
+description: ''
+max-jobs: null
+products: []
+build-system: autotools
+pre-configure-commands: []
+configure-commands:
+- ./autogen.sh --prefix="$PREFIX" --disable-gtk-doc --disable-tests --disable-vala
+  --with-usb-ids-path=usb.ids --with-pci-ids-path=pci.ids
+post-configure-commands: []
+pre-build-commands: []
+build-commands: []
+post-build-commands: []
+pre-install-commands: []
+install-commands: []
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

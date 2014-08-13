@@ -1,0 +1,26 @@
+name: xfce-system
+kind: system
+description: A GENIVI devel with XFCE
+arch: x86_64
+strata:
+- morph: strata/build-essential.morph
+- morph: strata/core.morph
+- morph: strata/foundation.morph
+- morph: strata/genivi-foundation.morph
+- morph: strata/bsp-x86_64-generic.morph
+- morph: strata/connectivity.morph
+- morph: strata/audio-bluetooth.morph
+- morph: strata/x-common.morph
+- morph: strata/x-generic.morph
+- morph: strata/multimedia.morph
+- morph: strata/genivi.morph
+- morph: strata/genivi-x-generic.morph
+- morph: strata/gtk2.morph
+- morph: strata/tools.morph
+- morph: strata/xfce.morph
+configuration-extensions:
+- set-hostname
+- add-config-files
+- simple-network
+- nfsboot
+- install-files

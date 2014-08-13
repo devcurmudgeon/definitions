@@ -1,0 +1,18 @@
+name: devel-system-armv7-highbank
+kind: system
+description: A system that is able to build other systems based on the ARM highbank
+  architecture.
+arch: armv7l
+strata:
+- morph: strata/build-essential.morph
+- morph: strata/core.morph
+- morph: strata/foundation.morph
+- morph: strata/bsp-armv7-highbank.morph
+- morph: strata/tools.morph
+- morph: strata/openstack-clients.morph
+configuration-extensions:
+- set-hostname
+- add-config-files
+- simple-network
+- nfsboot
+- install-files

@@ -1,0 +1,22 @@
+name: lace
+kind: chunk
+description: Lua Access Control Engine.
+max-jobs: null
+products: []
+build-system: manual
+pre-configure-commands: []
+configure-commands: []
+post-configure-commands: []
+pre-build-commands: []
+build-commands:
+- make
+post-build-commands: []
+pre-install-commands: []
+install-commands:
+- make INST_BASE="$PREFIX" DESTDIR="$DESTDIR" install
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

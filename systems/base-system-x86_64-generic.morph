@@ -1,0 +1,18 @@
+name: base-system-x86_64-generic
+kind: system
+description: The set of strata required to have a minimal system for a 64-bit x86
+  system.
+arch: x86_64
+strata:
+- morph: strata/build-essential.morph
+- morph: strata/core.morph
+- morph: strata/foundation.morph
+- morph: strata/bsp-x86_64-generic.morph
+- morph: strata/cloudinit-support.morph
+configuration-extensions:
+- set-hostname
+- add-config-files
+- simple-network
+- nfsboot
+- install-files
+- cloud-init

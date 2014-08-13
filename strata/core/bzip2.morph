@@ -1,0 +1,25 @@
+name: bzip2
+kind: chunk
+description: ''
+max-jobs: null
+products: []
+build-system: manual
+pre-configure-commands: []
+configure-commands:
+- sed -i -rf bzip2.morph-makefix.sed Makefile
+post-configure-commands: []
+pre-build-commands: []
+build-commands:
+- make -f Makefile-libbz2_so
+- make
+post-build-commands: []
+pre-install-commands: []
+install-commands:
+- make DESTDIR="$DESTDIR" PREFIX="$PREFIX" install
+- install libbz2.so* "$DESTDIR$PREFIX/lib"
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

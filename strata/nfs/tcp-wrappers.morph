@@ -1,0 +1,25 @@
+name: tcp-wrappers
+kind: chunk
+description: ''
+max-jobs: null
+products: []
+build-system: manual
+pre-configure-commands: []
+configure-commands: []
+post-configure-commands: []
+pre-build-commands: []
+build-commands:
+- make MAJOR=0 MINOR=7 REL=6 linux
+post-build-commands: []
+pre-install-commands: []
+install-commands:
+- mkdir -p "$DESTDIR"/"$PREFIX"/include
+- install -p -m644 tcpd.h "$DESTDIR"/"$PREFIX"/include
+- mkdir -p "$DESTDIR"/"$PREFIX"/lib
+- cp -a libwrap.so* "$DESTDIR"/"$PREFIX"/lib
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

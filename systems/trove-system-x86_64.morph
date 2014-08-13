@@ -1,0 +1,22 @@
+name: trove-system-x86_64
+kind: system
+description: Trove server
+arch: x86_64
+strata:
+- morph: strata/build-essential.morph
+- morph: strata/bsp-x86_64-generic.morph
+- morph: strata/foundation.morph
+- morph: strata/core.morph
+- morph: strata/tools.morph
+- morph: strata/trove.morph
+- morph: strata/nfs.morph
+- morph: strata/ansible.morph
+- morph: strata/cloudinit-support.morph
+configuration-extensions:
+- set-hostname
+- trove
+- nfsboot-server
+- fstab
+- simple-network
+- install-files
+- cloud-init

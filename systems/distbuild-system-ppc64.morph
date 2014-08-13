@@ -1,0 +1,20 @@
+name: distbuild-system-ppc64
+kind: system
+description: Morph distributed build node for ppc64
+arch: ppc64
+strata:
+- morph: strata/build-essential.morph
+- morph: strata/core.morph
+- morph: strata/foundation.morph
+- morph: strata/bsp-ppc64-generic.morph
+- morph: strata/tools.morph
+- morph: strata/nfs.morph
+- morph: strata/distbuild.morph
+configuration-extensions:
+- set-hostname
+- add-config-files
+- simple-network
+- nfsboot
+- install-files
+- distbuild
+- fstab

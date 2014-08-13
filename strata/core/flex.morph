@@ -1,0 +1,27 @@
+name: flex
+kind: chunk
+description: ''
+max-jobs: null
+products: []
+build-system: manual
+pre-configure-commands: []
+configure-commands:
+- ./configure --prefix="$PREFIX"
+post-configure-commands: []
+pre-build-commands: []
+build-commands:
+- make dist_doc_DATA=
+post-build-commands: []
+pre-install-commands: []
+install-commands:
+- make dist_doc_DATA= DESTDIR="$DESTDIR" install
+- ln -s libfl.a "$DESTDIR$PREFIX/lib/libl.a"
+- echo "#!$PREFIX/bin/sh" >"$DESTDIR$PREFIX/bin/lex"
+- echo 'exec '"$PREFIX"'/bin/flex -l "$@"' >>"$DESTDIR$PREFIX/bin/lex"
+- chmod 755 "$DESTDIR$PREFIX/bin/lex"
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

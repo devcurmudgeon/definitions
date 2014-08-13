@@ -1,0 +1,24 @@
+name: genivi-baseline-system-armv7lhf-versatile
+kind: system
+description: A GENIVI baseline system for an ARMv7 system.
+arch: armv7lhf
+strata:
+- morph: strata/build-essential.morph
+- morph: strata/core.morph
+- morph: strata/foundation.morph
+- morph: strata/genivi-foundation.morph
+- morph: strata/bsp-armv7-versatile.morph
+- morph: strata/connectivity.morph
+- morph: strata/audio-bluetooth.morph
+- morph: strata/x-common.morph
+- morph: strata/multimedia.morph
+- morph: strata/genivi.morph
+- morph: strata/wayland-armv7-versatile.morph
+configuration-extensions:
+- set-hostname
+- add-config-files
+- simple-network
+- nfsboot
+- install-files
+- strip-gplv3
+- fstab

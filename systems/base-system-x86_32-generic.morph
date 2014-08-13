@@ -1,0 +1,17 @@
+name: base-system-x86_32-generic
+kind: system
+description: The set of strata required to have a basic system for a 32-bit x86 system.
+arch: x86_32
+strata:
+- morph: strata/build-essential.morph
+- morph: strata/core.morph
+- morph: strata/foundation.morph
+- morph: strata/bsp-x86_32-generic.morph
+- morph: strata/cloudinit-support.morph
+configuration-extensions:
+- set-hostname
+- add-config-files
+- simple-network
+- nfsboot
+- install-files
+- cloud-init

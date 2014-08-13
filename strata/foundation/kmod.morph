@@ -1,0 +1,34 @@
+name: kmod
+kind: chunk
+description: ''
+max-jobs: null
+products: []
+build-system: manual
+pre-configure-commands: []
+configure-commands:
+- rm -rf libkmod/docs
+- sed -i -e'/SUBDIRS/{s/\S*doc\S*//;s/\S*man\S*//}' Makefile.am
+- sed -i -e'/AC_CONFIG_FILES(\[/,/])/{/docs/d}' configure.ac
+- autoreconf -fiv
+- ./configure --prefix=/usr --bindir=/bin --libdir=/lib --sysconfdir=/etc --without-xz
+  --with-zlib --disable-manpages
+post-configure-commands: []
+pre-build-commands: []
+build-commands:
+- make
+post-build-commands: []
+pre-install-commands: []
+install-commands:
+- make DESTDIR="$DESTDIR" pkgconfigdir=/usr/lib/pkgconfig install
+- ln -s kmod "$DESTDIR"/bin/modprobe
+- ln -s kmod "$DESTDIR"/bin/lsmod
+- ln -s kmod "$DESTDIR"/bin/rmmod
+- ln -s kmod "$DESTDIR"/bin/insmod
+- ln -s kmod "$DESTDIR"/bin/modinfo
+- ln -s kmod "$DESTDIR"/bin/depmod
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

@@ -1,0 +1,24 @@
+name: libffi
+kind: chunk
+description: ''
+max-jobs: null
+products: []
+build-system: autotools
+pre-configure-commands: []
+configure-commands: []
+post-configure-commands: []
+pre-build-commands: []
+build-commands: []
+post-build-commands: []
+pre-install-commands: []
+install-commands:
+- make DESTDIR="$DESTDIR"/ install
+- mkdir -p "$DESTDIR"/usr/include
+- cp "$TARGET"/include/ffi.h "$DESTDIR"/usr/include/
+- cp "$TARGET"/include/ffitarget.h "$DESTDIR"/usr/include/
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

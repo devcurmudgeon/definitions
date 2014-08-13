@@ -1,0 +1,23 @@
+name: wpa_supplicant
+kind: chunk
+description: ''
+max-jobs: null
+products: []
+build-system: manual
+pre-configure-commands: []
+configure-commands:
+- sed -i 's/^CONFIG_READLINE=y$//' wpa_supplicant/.config
+post-configure-commands: []
+pre-build-commands: []
+build-commands:
+- make -C wpa_supplicant
+post-build-commands: []
+pre-install-commands: []
+install-commands:
+- make -C wpa_supplicant DESTDIR="$DESTDIR" install
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

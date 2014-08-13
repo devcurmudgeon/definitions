@@ -1,0 +1,27 @@
+name: ccache
+kind: chunk
+description: ''
+max-jobs: null
+products: []
+build-system: autotools
+pre-configure-commands: []
+configure-commands:
+- ./configure --prefix="$PREFIX"
+post-configure-commands: []
+pre-build-commands: []
+build-commands: []
+post-build-commands: []
+pre-install-commands: []
+install-commands:
+- make DESTDIR="$DESTDIR" install
+- mkdir -p "$DESTDIR/$PREFIX/lib/ccache"
+- for cc in gcc cc g++ c++; do ln -sf "$PREFIX/bin/ccache" "$DESTDIR/$PREFIX/lib/ccache/$cc";
+  done
+- for cc in gcc cc g++ c++; do ln -sf "$PREFIX/bin/ccache" "$DESTDIR/$PREFIX/lib/ccache/$TARGET-$cc";
+  done
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

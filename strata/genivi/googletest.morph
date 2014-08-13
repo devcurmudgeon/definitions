@@ -1,0 +1,23 @@
+name: googletest
+kind: chunk
+description: ''
+max-jobs: null
+products: []
+build-system: autotools
+pre-configure-commands: []
+configure-commands: []
+post-configure-commands: []
+pre-build-commands: []
+build-commands: []
+post-build-commands: []
+pre-install-commands: []
+install-commands:
+- make DESTDIR="$DESTDIR" install
+- mkdir -p $DESTDIR/usr/share/gtest/m4
+- install -m 644 m4/acx_pthread.m4 $DESTDIR/usr/share/gtest/m4
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

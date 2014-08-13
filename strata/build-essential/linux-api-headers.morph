@@ -1,0 +1,24 @@
+name: linux-api-headers
+kind: chunk
+description: ''
+max-jobs: null
+products: []
+build-system: manual
+pre-configure-commands: []
+configure-commands: []
+post-configure-commands: []
+pre-build-commands: []
+build-commands: []
+post-build-commands: []
+pre-install-commands: []
+install-commands:
+- make mrproper
+- ARCH=$(./morph-arch) make INSTALL_HDR_PATH=dest headers_install
+- install -d "$DESTDIR${PREFIX-/usr}/include"
+- cp -r dest/include/* "$DESTDIR/${PREFIX-/usr}/include"
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

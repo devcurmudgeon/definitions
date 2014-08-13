@@ -1,0 +1,27 @@
+name: pulseaudio
+kind: chunk
+description: PulseAudio System
+max-jobs: null
+products: []
+build-system: autotools
+pre-configure-commands: []
+configure-commands:
+- ./autogen.sh
+- ./configure --prefix="$PREFIX" --localstatedir=/var --sysconfdir=/etc --with-database=simple
+post-configure-commands: []
+pre-build-commands: []
+build-commands: []
+post-build-commands: []
+pre-install-commands: []
+install-commands:
+- make DESTDIR="$DESTDIR" install
+- mkdir -p "$DESTDIR/lib/systemd/system"
+- install -m755 pulseaudio.service "$DESTDIR/lib/systemd/system"
+- mkdir -p "$DESTDIR/etc/systemd/system/multi-user.target.wants"
+- ln -s /lib/systemd/system/pulseaudio.service "$DESTDIR/etc/systemd/system/multi-user.target.wants/pulseaudio.service"
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

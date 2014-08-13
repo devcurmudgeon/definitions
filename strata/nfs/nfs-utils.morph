@@ -1,0 +1,27 @@
+name: nfs-utils
+kind: chunk
+description: ''
+max-jobs: null
+products: []
+build-system: autotools
+pre-configure-commands: []
+configure-commands:
+- NOCONFIGURE=1 ./autogen.sh
+- ./configure --prefix="$PREFIX" --disable-nfsv4 --disable-nfsv41 --disable-gss --with-rpcgen=internal
+post-configure-commands: []
+pre-build-commands: []
+build-commands: []
+post-build-commands: []
+pre-install-commands: []
+install-commands:
+- make DESTDIR="$DESTDIR" install
+- mkdir -p "$DESTDIR"/lib/systemd/system
+- install -m644 proc-fs-nfsd.mount "$DESTDIR"/lib/systemd/system
+- install -m644 nfs-mountd.service "$DESTDIR"/lib/systemd/system
+- install -m644 nfs-server.service "$DESTDIR"/lib/systemd/system
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

@@ -1,0 +1,23 @@
+name: gitlab-server
+kind: system
+description: system which hosts a gitlab server
+arch: x86_64
+strata:
+- morph: strata/build-essential.morph
+- morph: strata/bsp-x86_64-generic.morph
+- morph: strata/foundation.morph
+- morph: strata/core.morph
+- morph: strata/tools.morph
+- morph: strata/nfs.morph
+- morph: strata/databases.morph
+- morph: strata/webtools.morph
+- morph: strata/ruby.morph
+- morph: strata/gitlab.morph
+configuration-extensions:
+- set-hostname
+- add-config-files
+- simple-network
+- nfsboot
+- install-files
+- gitlab
+- fstab

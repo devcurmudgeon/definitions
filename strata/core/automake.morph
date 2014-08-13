@@ -1,0 +1,23 @@
+name: automake
+kind: chunk
+description: ''
+max-jobs: null
+products: []
+build-system: autotools
+pre-configure-commands: []
+configure-commands:
+- ./bootstrap
+- ./configure --prefix="$PREFIX"
+post-configure-commands: []
+pre-build-commands: []
+build-commands:
+- unset DESTDIR; make
+post-build-commands: []
+pre-install-commands: []
+install-commands: []
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

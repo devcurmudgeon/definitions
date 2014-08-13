@@ -1,0 +1,25 @@
+name: groff
+kind: chunk
+description: ''
+max-jobs: 1
+products: []
+build-system: manual
+pre-configure-commands: []
+configure-commands:
+- PAGE=A4 ./configure --prefix="$PREFIX"
+post-configure-commands: []
+pre-build-commands: []
+build-commands:
+- make
+post-build-commands: []
+pre-install-commands: []
+install-commands:
+- make DESTDIR="$DESTDIR" install
+- ln -s eqn "$DESTDIR$PREFIX/bin/geqn"
+- ln -s tbl "$DESTDIR$PREFIX/bin/gtbl"
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

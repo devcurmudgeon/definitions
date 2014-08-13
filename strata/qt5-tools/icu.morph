@@ -1,0 +1,23 @@
+name: icu
+kind: chunk
+description: ''
+max-jobs: null
+products: []
+build-system: manual
+pre-configure-commands: []
+configure-commands:
+- cd source; ./runConfigureICU Linux --prefix=/usr
+post-configure-commands: []
+pre-build-commands: []
+build-commands:
+- cd source; unset TARGET ; make
+post-build-commands: []
+pre-install-commands: []
+install-commands:
+- cd source; unset TARGET ; make DESTDIR="$DESTDIR" install
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

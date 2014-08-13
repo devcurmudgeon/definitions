@@ -1,0 +1,27 @@
+name: u-boot
+kind: chunk
+description: ''
+max-jobs: null
+products: []
+build-system: manual
+pre-configure-commands: []
+configure-commands: []
+post-configure-commands: []
+pre-build-commands: []
+build-commands:
+- make tools
+post-build-commands: []
+pre-install-commands: []
+install-commands:
+- mkdir -p "$DESTDIR$PREFIX/bin"
+- install -m 755 tools/img2brec.sh "$DESTDIR$PREFIX/bin/."
+- install -m 755 tools/jtagconsole "$DESTDIR$PREFIX/bin/."
+- install -m 755 tools/netconsole "$DESTDIR$PREFIX/bin/."
+- install -m 755 tools/mkenvimage "$DESTDIR$PREFIX/bin/."
+- install -m 755 tools/mkimage "$DESTDIR$PREFIX/bin/."
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

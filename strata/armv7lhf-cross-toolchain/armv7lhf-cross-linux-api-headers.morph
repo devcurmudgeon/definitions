@@ -1,0 +1,28 @@
+name: armv7lhf-cross-linux-api-headers
+kind: chunk
+description: ''
+max-jobs: null
+products: []
+build-system: manual
+pre-configure-commands: []
+configure-commands: []
+post-configure-commands: []
+pre-build-commands: []
+build-commands: []
+post-build-commands: []
+pre-install-commands: []
+install-commands:
+- make mrproper
+- ARCH=arm make INSTALL_HDR_PATH=dest headers_install
+- |
+  # Copy headers to the sysroot where the eglibc build will find them,
+  # and install its own headers and libraries.
+  export TARGET=armv7lhf-baserock-linux-gnueabi
+  install -d "$DESTDIR$PREFIX/$TARGET/sys-root/$PREFIX/include"
+  cp -r dest/include/* "$DESTDIR/$PREFIX/$TARGET/sys-root/$PREFIX/include"
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

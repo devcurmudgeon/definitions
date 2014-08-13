@@ -1,0 +1,27 @@
+name: lsof
+kind: chunk
+description: ''
+max-jobs: null
+products: []
+build-system: manual
+pre-configure-commands: []
+configure-commands:
+- tar xf lsof_*_src.tar
+- cd lsof_*_src/ && ./Configure -n linux
+post-configure-commands: []
+pre-build-commands: []
+build-commands:
+- cd lsof_*_src/ && make
+post-build-commands: []
+pre-install-commands: []
+install-commands:
+- mkdir -p "$DESTDIR$PREFIX"/bin
+- mv lsof_*_src/lsof "$DESTDIR$PREFIX"/bin/lsof
+- mkdir -p "$DESTDIR$PREFIX"/man/man8
+- mv lsof_*_src/lsof.8 "$DESTDIR$PREFIX"/man/man8
+post-install-commands: []
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

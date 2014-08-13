@@ -1,0 +1,26 @@
+name: lorry-controller
+kind: chunk
+description: ''
+max-jobs: null
+products: []
+build-system: python-distutils
+pre-configure-commands: []
+configure-commands: []
+post-configure-commands: []
+pre-build-commands: []
+build-commands: []
+post-build-commands: []
+pre-install-commands: []
+install-commands: []
+post-install-commands:
+- install -d 0755 "$DESTDIR/etc/lighttpd"
+- install -m 0644 -D etc/lighttpd/*.conf "$DESTDIR/etc/lighttpd/."
+- |
+  TGT="$DESTDIR/usr/lib/systemd/system"
+  install -d "$TGT/multi-user.target.wants"
+  install -m 0644 units/*.service units/*.timer "$TGT/."
+devices: []
+post-test-commands: []
+pre-test-commands: []
+system-integration: []
+test-commands: []

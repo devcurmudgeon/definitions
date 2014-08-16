@@ -1,0 +1,24 @@
+name: go-docker
+kind: stratum
+build-depends:
+- morph: tools
+chunks:
+- name: go
+  repo: upstream:go
+  ref: baserock/go1.2.2
+  build-depends: []
+- name: docker
+  repo: upstream:docker
+  ref: baserock/v1.0.1
+  build-depends:
+  - go
+- name: wheezy-certs
+  repo: git://github.com/devcurmudgeon/wheezy-certs.git
+  ref: c8eadf5edb318cfd39211d4845c1f615e4c880b3 
+  unpetrify-ref: master
+  build-depends: []
+- name: iptables
+  repo: upstream:iptables
+  ref: 3e6fa55d5e28c93f417afeae7a7d4f349ddffcf4
+  unpetrify-ref: baserock/morph
+  build-depends: []

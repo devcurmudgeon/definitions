@@ -1,0 +1,16 @@
+name: open-stack-gerrit
+kind: cluster
+description: |
+  Deploy gerrit morphology into openstack
+systems:
+- morph: systems/gerrit-x86_64.morph
+  deploy:
+      openstack-image:
+          type: openstack
+          location: http://vroomfondel.ducie.codethink.co.uk:5000/v2.0/
+          DISK_SIZE: 10G
+          OPENSTACK_USER: franciscomarchena
+          OPENSTACK_TENANT: baserock
+          OPENSTACK_IMAGENAME: gerrit-profc-concept
+          CLOUD_INIT: yes
+          KERNEL_ARGS: console=tty0 console=ttyS0

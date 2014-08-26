@@ -1,6 +1,6 @@
-name: web-system-x86_64-generic
+name: gerrit-x86_64
 kind: system
-description: system with web tools
+description: system to install gerrit on it
 arch: x86_64
 strata:
 - name: build-essential

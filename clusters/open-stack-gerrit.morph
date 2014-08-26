@@ -11,6 +11,6 @@ systems:
           DISK_SIZE: 10G
           OPENSTACK_USER: franciscomarchena
           OPENSTACK_TENANT: baserock
-          OPENSTACK_IMAGENAME: gerrit-profc-concept
+          OPENSTACK_IMAGENAME: gerrit-nss-installed
           CLOUD_INIT: yes
           KERNEL_ARGS: console=tty0 console=ttyS0

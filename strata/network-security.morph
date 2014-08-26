@@ -1,6 +1,7 @@
 name: network-security
 kind: stratum
-build-depends: []
+build-depends:
+- morph: strata/core.morph
 chunks:
 - name: nspr
   morph: strata/network-security/nspr.morph

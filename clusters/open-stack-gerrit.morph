@@ -8,9 +8,9 @@ systems:
       openstack-image:
           type: openstack
           location: http://vroomfondel.ducie.codethink.co.uk:5000/v2.0/
-          DISK_SIZE: 10G
+          DISK_SIZE: 4G
           OPENSTACK_USER: franciscomarchena
           OPENSTACK_TENANT: baserock
-          OPENSTACK_IMAGENAME: gerrit-nss-installed
+          OPENSTACK_IMAGENAME: gerrit-nss-cloud-init-installed
           CLOUD_INIT: yes
           KERNEL_ARGS: console=tty0 console=ttyS0

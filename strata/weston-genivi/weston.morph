@@ -10,7 +10,7 @@ configure-commands:
 
   --disable-drm-compositor  --disable-x11-compositor \
 
-  --disable-wayland-compositor  --disable-weston-launch --enable-egl \
+  --disable-wayland-compositor  --enable-egl \
 
   --enable-clients --enable-demo-clients-install --enable-fbdev-compositor
 

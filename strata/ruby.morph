@@ -18,7 +18,7 @@ chunks:
 - name: ruby
   morph: strata/ruby/ruby.morph
   repo: upstream:ruby
-  ref: ct-mcr-1/sam/chef
+  ref: baserock/liw/sam/chef
   unpetrify-ref: 05604af5a6da635b8bca51269db8b433972e82c0
   build-depends:
   - ruby-1.8

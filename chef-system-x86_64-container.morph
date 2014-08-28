@@ -1,0 +1,28 @@
+name: chef-system-x86_64-container
+kind: system
+arch: x86_64
+description: Minimal chef system suitable for running in a container
+configuration-extensions:
+- set-hostname
+- simple-network
+- nfsboot
+- install-files
+- busybox-init
+- remove-gcc
+strata:
+- morph: build-essential
+  artifacts:
+  - build-essential-minimal
+- morph: core
+  artifacts:
+  - core-openssl
+- morph: foundation
+  artifacts:
+  - foundation-runtime
+- morph: ruby
+  artifacts:
+  - ruby-runtime
+- name: chef
+  morph: chef/chef.morph
+  artifacts:
+  - chef-runtime

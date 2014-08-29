@@ -1,0 +1,19 @@
+name: gerrit-installation-binaries
+kind: chunk
+configure-commands:
+- ar vx openjdk-7-jre-headless_7u65-2.5.1-5_amd64.deb
+- tar Jxf data.tar.xz -C "$DESTDIR"/
+- mkdir -p "$DESTDIR"/usr/local/share
+- mkdir -p "$DESTDIR"/usr/bin
+- unzip UnlimitedJCEPolicyJDK7.zip -d "$DESTDIR"/usr/local/share
+- tar zxf jdk-8u20-solaris-x64.tar.gz -C "$DESTDIR"/usr/local/share
+build-commands: []
+install-commands:
+- mkdir -p -m 755 "$DESTDIR"/etc/.java/.systemPrefs
+- touch "$DESTDIR"/etc/.java/.systemPrefs/.system.lock
+- touch "$DESTDIR"/etc/.java/.systemPrefs/.systemRootModFile
+- chmod 644 "$DESTDIR"/etc/.java/.systemPrefs/.systemRootModFile
+- ln -sfn /usr/lib/jvm/java-7-openjdk-amd64/bin/java "$DESTDIR"/usr/bin/
+- cp -f "$DESTDIR"/usr/local/share/UnlimitedJCEPolicy/US_export_policy.jar "$DESTDIR"/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/security/
+- cp -f "$DESTDIR"/usr/local/share/UnlimitedJCEPolicy/local_policy.jar "$DESTDIR"/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/security/
+- ln -sfn /usr/local/share/jdk1.8.0_20/jre/lib/security/cacerts "$DESTDIR"/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/security

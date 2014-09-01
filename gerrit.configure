@@ -27,4 +27,4 @@ ROOT="$1"
 set -e
 
 # Set bash as default shell
-ln -sfn "$1/bin/bash" "$1/bin/sh"
+ln -sfn "/bin/bash" "$1/bin/sh"

@@ -1,6 +1,6 @@
-name: chef-system-x86_32-container
+name: chef-system-x86_64-container
 kind: system
-arch: x86_32
+arch: x86_64
 description: Minimal chef system suitable for running in a container
 configuration-extensions:
 - set-hostname
@@ -10,19 +10,19 @@ configuration-extensions:
 - busybox-init
 - remove-gcc
 strata:
-- morph: build-essential
+- morph: strata/build-essential.morph
   artifacts:
   - build-essential-minimal
-- morph: core
+- morph: strata/core.morph
   artifacts:
   - core-openssl
-- morph: foundation
+- morph: strata/foundation.morph
   artifacts:
   - foundation-runtime
-- morph: ruby
+- morph: strata/ruby.morph
   artifacts:
   - ruby-runtime
 - name: chef
-  morph: chef/chef.morph
+  morph: strata/chef.morph
   artifacts:
   - chef-runtime

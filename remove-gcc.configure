@@ -1,0 +1,8 @@
+#!/bin/sh
+# This configure extension is a total hack to work around the fact that
+# the GCC chunk isn't split properly. I'll leave fixing that to Richard
+# Maw for now. This removes about 200MB from the resulting system.
+
+if [ "$REMOVE_GCC" = "yes" ]; then
+    rm -Rf "$1"/usr/libexec/gcc/
+fi

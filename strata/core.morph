@@ -4,6 +4,10 @@ description: Core components of a Baserock base system that are build tools requ
   for the BSP and Foundation strata, but a step above build-essential
 build-depends:
 - morph: strata/build-essential.morph
+products:
+- artifact: core-openssl
+  include:
+  - openssl-new-libs
 chunks:
 - name: sqlite3
   repo: upstream:sqlite3

@@ -8,10 +8,10 @@ products:
   include:
   - usr/lib/ruby/gems/2.0.0/doc/.*
 build-commands:
-- gem build plist.gemspec
+- rake gem
 install-commands:
 - mkdir -p "$DESTDIR/$PREFIX/lib/ruby/gems/2.0.0"
 - gem install --install-dir "$DESTDIR/$PREFIX/lib/ruby/gems/2.0.0" --bindir "$DESTDIR/$PREFIX/bin"
-  --ignore-dependencies --local ./plist-master.gem
+  --ignore-dependencies --local ./pkg/plist-3.1.0.gem
 x-build-dependencies-rubygem: {}
 x-runtime-dependencies-rubygem: {}

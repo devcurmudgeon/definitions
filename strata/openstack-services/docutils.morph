@@ -1,0 +1,6 @@
+name: docutils
+kind: chunk
+build-commands:
+- cd docutils && python setup.py build
+install-commands:
+- cd docutils && python setup.py install --prefix "$PREFIX" --root "$DESTDIR"

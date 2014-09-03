@@ -1,0 +1,36 @@
+name: devel-system-x86_64-openstack
+kind: system
+description: A system that is able to build other systems based on the 64-bit x86
+  architecture.
+arch: x86_64
+strata:
+- name: build-essential
+  morph: strata/build-essential.morph
+- name: core
+  morph: strata/core.morph
+- name: foundation
+  morph: strata/foundation.morph
+- name: bsp-x86_64-generic
+  morph: strata/bsp-x86_64-generic.morph
+- name: tools
+  morph: strata/tools.morph
+- name: cloudinit-support
+  morph: strata/cloudinit-support.morph
+- name: virtualization
+  morph: strata/virtualization.morph
+- name: connectivity
+  morph: strata/connectivity.morph
+- name: erlang
+  morph: strata/erlang.morph
+- name: openstack-services
+  morph: strata/openstack-services.morph
+configuration-extensions:
+- set-hostname
+- add-config-files
+- simple-network
+- nfsboot
+- install-files
+- cloud-init
+- openstack-keystone
+- openstack-glance
+- openstack-nova

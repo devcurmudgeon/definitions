@@ -1,0 +1,6 @@
+name: decorator
+kind: chunk
+build-commands:
+- cd decorator && python setup.py build
+install-commands:
+- cd decorator && python setup.py install --prefix "$PREFIX" --root "$DESTDIR"

@@ -1,0 +1,56 @@
+#!/bin/sh
+#
+# Copyright (C) 2014 Codethink Limited
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; version 2 of the License.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along
+# with this program; if not, write to the Free Software Foundation, Inc.,
+# 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+set -e
+
+# Create required system users and groups
+
+getent group keystone >/dev/null || groupadd -r --gid 163 keystone
+getent passwd keystone >/dev/null || \
+	useradd --uid 163 -r -g keystone -d /var/lib/keystone -s /sbin/nologin \
+	-c "OpenStack Keystone Daemons" keystone
+
+# Setup the keystone database
+
+if [ ! -e /var/lib/keystone/keystone.sqlite ]; then
+    chown keystone:keystone /var/lib/keystone
+    sudo -u keystone keystone-manage db_sync
+fi
+
+systemctl start openstack-keystone
+
+export OS_SERVICE_TOKEN=##KEYSTONE_TEMPORARY_ADMIN_TOKEN##
+export OS_SERVICE_ENDPOINT='http://localhost:35357/v2.0'
+
+# This script creates a TEMPORARY admin user, with a password that may
+# float arount on the system. Please delete this user once you have set up
+# the real admin user with a real secure password.
+
+keystone tenant-create --name admin --description "Admin Tenant"
+keystone role-create --name admin
+
+keystone user-create --name temporary_admin --pass ##KEYSTONE_TEMPORARY_ADMIN_PASSWORD##
+keystone user-role-add --tenant admin --user temporary_admin --role admin
+
+keystone tenant-create --name service --description "Service Tenant"
+
+rm /etc/systemd/system/multi-user.target.wants/openstack-keystone-setup.service
+
+ln -s "/etc/systemd/system/openstack-keystone.service" \
+    "/etc/systemd/system/multi-user.target.wants/openstack-keystone.service"
+
+exit 0

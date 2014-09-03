@@ -1,0 +1,12 @@
+[Unit]
+Description=Run openstack-glance-setup (once)
+Requires=local-fs.target
+After=local-fs.target openstack-keystone-setup.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/share/openstack/openstack-glance-setup
+Restart=no
+
+[Install]
+WantedBy=multi-user.target

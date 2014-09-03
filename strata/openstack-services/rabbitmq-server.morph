@@ -1,0 +1,7 @@
+name: rabbitmq-server
+kind: chunk
+configure-commands:
+build-commands:
+- make
+install-commands:
+- make install_bin TARGET_DIR="$DESTDIR" SBIN_DIR="$DESTDIR"/sbin MAN_DIR=/usr/share/man DOC_INSTALL_DIR=/usr/share

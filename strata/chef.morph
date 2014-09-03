@@ -116,7 +116,7 @@ chunks:
   ref: 231c3abd052e606820297a97e4bc32bdab656a02
   unpetrify-ref: v2.2
   build-depends: []
-- name: coderay-1.1.0.rc1
+- name: coderay-1.1.0
   morph: strata/chef/coderay-1.1.0.morph
   repo: http://github.com/rubychan/coderay
   ref: a48037b85a12228431b32103786456f36beb355f

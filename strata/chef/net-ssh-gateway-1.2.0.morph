@@ -6,9 +6,17 @@ products:
   include:
   - usr/lib/ruby/gems/2.0.0/doc/.*
 configure-commands:
-- ruby ./setup.rb config --prefix="$PREFIX"
+# FIXME: this is a very simplistic way of disabling signing, the gemspec
+# is arbitrary Ruby code and these regexps are certainly inadequate, although
+# they tend to work. Better to fix `gem` so that it will build an unsigned
+# Gem.
+- sed -e '/signing_key =/ d' -e '/cert_chain =/ d' -i net-ssh-gateway.gemspec
+build-commands:
+- gem build net-ssh-gateway.gemspec
 install-commands:
-- ruby ./setup.rb install --prefix="$DESTDIR"
+- mkdir -p "$DESTDIR/$PREFIX/lib/ruby/gems/2.0.0"
+- gem install --install-dir "$DESTDIR/$PREFIX/lib/ruby/gems/2.0.0" --bindir "$DESTDIR/$PREFIX/bin"
+  --ignore-dependencies --local ./net-ssh-gateway-1.2.0.gem
 x-build-dependencies-rubygem: {}
 x-runtime-dependencies-rubygem:
   net-ssh: 2.9.1

@@ -5,12 +5,10 @@ products:
 - artifact: net-ssh-gateway-1.2.0-doc
   include:
   - usr/lib/ruby/gems/2.0.0/doc/.*
-build-commands:
-- gem build net-ssh-gateway.gemspec
+configure-commands:
+- ruby ./setup.rb config --prefix="$PREFIX"
 install-commands:
-- mkdir -p "$DESTDIR/$PREFIX/lib/ruby/gems/2.0.0"
-- gem install --install-dir "$DESTDIR/$PREFIX/lib/ruby/gems/2.0.0" --bindir "$DESTDIR/$PREFIX/bin"
-  --ignore-dependencies --local ./net-ssh-gateway-1.2.0.gem
+- ruby ./setup.rb install --prefix="$DESTDIR"
 x-build-dependencies-rubygem: {}
 x-runtime-dependencies-rubygem:
   net-ssh: 2.9.1

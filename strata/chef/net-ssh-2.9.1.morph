@@ -5,6 +5,12 @@ products:
 - artifact: net-ssh-2.9.1-doc
   include:
   - usr/lib/ruby/gems/2.0.0/doc/.*
+configure-commands:
+# FIXME: this is a very simplistic way of disabling signing, the gemspec
+# is arbitrary Ruby code and these regexps are certainly inadequate, although
+# they tend to work. Better to fix `gem` so that it will build an unsigned
+# Gem.
+- sed -e '/signing_key =/ d' -e '/cert_chain =/ d' -i net-ssh.gemspec
 build-commands:
 - gem build net-ssh.gemspec
 install-commands:

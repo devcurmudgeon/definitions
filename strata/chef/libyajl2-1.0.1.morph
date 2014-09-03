@@ -9,7 +9,9 @@ build-commands:
 - gem build libyajl2.gemspec
 install-commands:
 - mkdir -p "$DESTDIR/$PREFIX/lib/ruby/gems/2.0.0"
-- gem install --install-dir "$DESTDIR/$PREFIX/lib/ruby/gems/2.0.0" --bindir "$DESTDIR/$PREFIX/bin"
-  --ignore-dependencies --local ./libyajl2-1.0.1.gem
+- USE_SYSTEM_LIBYAJL2=yes gem install
+    --install-dir "$DESTDIR/$PREFIX/lib/ruby/gems/2.0.0"
+    --bindir "$DESTDIR/$PREFIX/bin"
+    --ignore-dependencies --local ./libyajl2-1.0.1.gem
 x-build-dependencies-rubygem: {}
 x-runtime-dependencies-rubygem: {}

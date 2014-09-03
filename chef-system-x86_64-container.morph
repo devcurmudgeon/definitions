@@ -10,16 +10,20 @@ configuration-extensions:
 - busybox-init
 - remove-gcc
 strata:
-- morph: strata/build-essential.morph
+- name: build-essential
+  morph: strata/build-essential.morph
   artifacts:
   - build-essential-minimal
-- morph: strata/core.morph
+- name: core
+  morph: strata/core.morph
   artifacts:
   - core-openssl
-- morph: strata/foundation.morph
+- name: foundation
+  morph: strata/foundation.morph
   artifacts:
   - foundation-runtime
-- morph: strata/ruby.morph
+- name: ruby
+  morph: strata/ruby.morph
   artifacts:
   - ruby-runtime
 - name: chef

@@ -3,7 +3,7 @@ kind: cluster
 description: |
   Deploy a demo Chef system.
 systems:
-- morph: chef-system-x86_32-container
+- morph: chef-system-x86_64-container.morph
   deploy:
     chef-demo:
       type: tar

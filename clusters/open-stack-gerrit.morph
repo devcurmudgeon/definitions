@@ -11,6 +11,6 @@ systems:
           DISK_SIZE: 4G
           OPENSTACK_USER: franciscomarchena
           OPENSTACK_TENANT: baserock
-          OPENSTACK_IMAGENAME: gerrit-nss-cloud-init-installed
+          OPENSTACK_IMAGENAME: Gerrit
           CLOUD_INIT: yes
           KERNEL_ARGS: console=tty0 console=ttyS0

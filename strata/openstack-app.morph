@@ -5,7 +5,7 @@ build-depends:
 chunks:
 - name: gerrit-installation-binaries
   morph: strata/openstack-app/gerrit-installation-binaries.morph
-  repo: git://github.com/franred/gerrit-install-binaries.git
+  repo: git://github.com/franred/gerrit-installation-binaries.git
   ref: master
   unpetrify-ref: master
   build-depends: []

@@ -27,4 +27,68 @@ ROOT="$1"
 set -e
 
 # Set bash as default shell
-ln -sfn "/bin/bash" "$1/bin/sh"
+ln -sfn "/bin/bash" "$ROOT/bin/sh"
+
+###############################################################################
+echo "Creating gerrit setup script"
+
+cat << EOF > "$ROOT"/usr/local/share/gerrit/gerrit-setup
+#!/bin/sh
+
+# Add Admin Gerrit User
+adduser -D -h /home/gerrit2 -g "Gerrit Administrator" -s /bin/sh gerrit2
+
+# Copy Gerrit folder to the Gerrit Admin User Home
+cp -r /usr/local/share/gerrit /home/gerrit2
+chown -R "gerrit2:gerrit2" /home/gerrit2/gerrit
+
+# Script to initialize Gerrit Code Review directory
+# This will not start the Gerrit daemon.
+su - gerrit2 -c "java -jar /home/gerrit2/gerrit/gerrit-2.9.war init --batch -d /home/gerrit2/gerrit/.gerrit_controller --no-auto-start"
+EOF
+chmod 0744 "$ROOT"/usr/local/share/gerrit/gerrit-setup
+
+###############################################################################
+echo "Creating gerrit-setup unit file"
+
+cat << EOF > "$ROOT"/etc/systemd/system/gerrit-setup.service
+[Unit]
+Description=Setup Gerrit Code Review
+
+ConditionPathExists=!/home/gerrit2/gerrit/.gerrit_controller
+
+[Service]
+User=root
+Type=oneshot
+Restart=no
+ExecStart=/usr/local/share/gerrit/gerrit-setup
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+ln -sfn "/etc/systemd/system/gerrit-setup.service" \
+  "$ROOT/etc/systemd/system/multi-user.target.wants/gerrit-setup.service"
+
+###############################################################################
+echo "Creating gerrit-daemon unit file"
+
+cat << EOF > "$ROOT"/etc/systemd/system/gerrit-daemon.service
+[Unit]
+Description=Gerrit Code Review Server Service
+Requires=gerrit-setup.service
+After=gerrit-setup.service
+
+ConditionPathExists=/home/gerrit2/gerrit/.gerrit_controller
+
+[Service]
+User=gerrit2
+Group=gerrit2
+Environment="PATH=/usr/bin:/bin"
+ExecStart=/home/gerrit2/gerrit/.gerrit_controller/bin/gerrit.sh start
+
+[Install]
+WantedBy=multi-user.target
+EOF
+ln -sfn "/etc/systemd/system/gerrit-daemon.service" \
+  "$ROOT/etc/systemd/system/multi-user.target.wants/gerrit-daemon.service"

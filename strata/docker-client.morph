@@ -2,7 +2,7 @@ name: docker-client
 kind: stratum
 description: A stratum with the Docker client
 build-depends:
-- morph: tools
+- morph: strata/tools.morph
 chunks:
 - name: paramiko
   repo: upstream:paramiko

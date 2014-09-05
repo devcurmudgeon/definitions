@@ -7,6 +7,7 @@ configure-commands:
 - scripts/config -d BTRFS_FS_CHECK_INTEGRITY
 - scripts/config -e DEVTMPFS
 - scripts/config -e DEVTMPFS_MOUNT
+- scripts/config -e DEVPTS_MULTIPLE_INSTANCES
 - scripts/config -e CONFIG_FHANDLE
 - scripts/config -e CGROUPS
 - scripts/config -e CGROUPS_DEVICE

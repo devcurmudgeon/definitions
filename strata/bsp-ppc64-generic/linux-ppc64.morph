@@ -10,6 +10,7 @@ configure-commands:
 - scripts/config -d BLK_DEV_IDE_SATA
 - scripts/config -e BTRFS_FS
 - scripts/config -e BTRFS_FS_POSIX_ACL
+- scripts/config -e DEVPTS_MULTIPLE_INSTANCES
 - scripts/config -e DEVTMPFS
 - scripts/config -e DEVTMPFS_MOUNT
 - scripts/config -e CONFIG_FHANDLE

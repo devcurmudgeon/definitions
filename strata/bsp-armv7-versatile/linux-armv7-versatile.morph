@@ -9,6 +9,7 @@ configure-commands:
 - scripts/config -e DEVTMPFS_MOUNT
 - scripts/config -e CONFIG_FHANDLE
 - scripts/config -e CGROUPS
+- scripts/config -e CGROUPS_DEVICE
 - scripts/config -e AUTOFS4_FS
 - scripts/config -e BLK_DEV_LOOP
 - scripts/config --set-str UEVENT_HELPER_PATH ''

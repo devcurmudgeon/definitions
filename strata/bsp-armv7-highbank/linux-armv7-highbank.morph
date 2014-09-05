@@ -5,6 +5,7 @@ configure-commands:
 - scripts/config -e AUTOFS4_FS
 - scripts/config -e BLK_DEV_LOOP
 - scripts/config -e CGROUPS
+- scripts/config -e CGROUPS_DEVICE
 - scripts/config -e CONFIG_POSIX_MQUEUE
 - scripts/config -e CPU_IDLE
 - scripts/config -e EXT4_FS

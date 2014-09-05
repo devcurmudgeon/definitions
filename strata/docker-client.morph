@@ -9,6 +9,7 @@ chunks:
   ref: python-ecdsa-0.11
   build-depends: []
 - name: pycrypto
+  morph: strata/docker-client/pycrypto.morph
   repo: https://github.com/dlitz/pycrypto
   ref: v2.6.1
   build-depends: []

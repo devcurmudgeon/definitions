@@ -11,7 +11,7 @@ chunks:
 - name: docker
   morph: strata/go-docker/docker.morph
   repo: upstream:docker
-  ref: baserock/ps/add-go-docker
+  ref: baserock/v1.1.2
   build-depends:
   - go
 - name: iptables

@@ -22,6 +22,7 @@ configure-commands:
 - scripts/config -e VETH
 - scripts/config -e MACVLAN
 - scripts/config -e NF_NAT
+- scripts/config -e NF_NAT_NEEDED
 - yes '' | make oldconfig
 build-commands:
 - make ARCH=arm zImage $MAKEFLAGS

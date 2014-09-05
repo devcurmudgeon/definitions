@@ -49,6 +49,7 @@ configure-commands:
 - scripts/config -e VETH
 - scripts/config -e MACVLAN
 - scripts/config -e NF_NAT
+- scripts/config -e NF_NAT_NEEDED
 - yes '' | make oldconfig
 build-commands:
 - make $MAKEFLAGS ARCH=arm LOADADDR=0x10800000 uImage dtbs

@@ -1,0 +1,3 @@
+name: pycrypto
+kind: cluster
+build-system: python-distutils

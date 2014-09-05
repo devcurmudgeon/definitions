@@ -43,6 +43,7 @@ configure-commands:
 - scripts/config -e VHOST_NET
 - scripts/config -e VETH
 - scripts/config -e MACVLAN
+- scripts/config -e NF_NAT
 - yes '' | make oldconfig
 build-commands:
 - make zImage vexpress-v2p-ca15_a7.dtb

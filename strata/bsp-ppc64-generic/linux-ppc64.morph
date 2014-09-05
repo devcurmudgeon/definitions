@@ -49,6 +49,9 @@ configure-commands:
 - scripts/config -e ROOT_NFS
 - scripts/config -e PCI
 - scripts/config -e TIGON3
+- scripts/config -e VHOST_NET
+- scripts/config -e VETH
+- scripts/config -e MACVLAN
 - yes '' | make oldconfig
 build-commands:
 - make $MAKEFLAGS ARCH=powerpc zImage

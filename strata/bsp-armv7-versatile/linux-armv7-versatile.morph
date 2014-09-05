@@ -18,6 +18,9 @@ configure-commands:
 - scripts/config -e SECCOMP
 - scripts/config -d DEBUG_STACK_TRACE
 - scripts/config -e FB_VESA
+- scripts/config -e VHOST_NET
+- scripts/config -e VETH
+- scripts/config -e MACVLAN
 - yes '' | make oldconfig
 build-commands:
 - make ARCH=arm zImage $MAKEFLAGS

@@ -40,6 +40,9 @@ configure-commands:
 - scripts/config -e EXT4_USE_FOR_EXT23
 - scripts/config -e MSDOS_FS
 - scripts/config -e VFAT_FS
+- scripts/config -e VHOST_NET
+- scripts/config -e VETH
+- scripts/config -e MACVLAN
 - yes '' | make oldconfig
 build-commands:
 - make zImage vexpress-v2p-ca15_a7.dtb

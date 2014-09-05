@@ -22,9 +22,7 @@ set -e
 
 ROOT="$1"
 
-##########################################################################
-
-set -e
+###############################################################################
 
 # Set bash as default shell
 ln -sfn "/bin/bash" "$ROOT/bin/sh"
@@ -34,6 +32,8 @@ echo "Creating gerrit setup script"
 
 cat << EOF > "$ROOT"/usr/local/share/gerrit/gerrit-setup
 #!/bin/sh
+
+set -e
 
 # Add Admin Gerrit User
 adduser -D -h /home/gerrit2 -g "Gerrit Administrator" -s /bin/sh gerrit2
@@ -85,6 +85,8 @@ ConditionPathExists=/home/gerrit2/gerrit/.gerrit_controller
 User=gerrit2
 Group=gerrit2
 Environment="PATH=/usr/bin:/bin"
+Type=forking
+PIDFile=/home/gerrit2/gerrit/.gerrit_controller.pid
 ExecStart=/home/gerrit2/gerrit/.gerrit_controller/bin/gerrit.sh start
 
 [Install]

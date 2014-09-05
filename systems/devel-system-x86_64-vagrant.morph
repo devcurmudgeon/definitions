@@ -33,6 +33,8 @@ strata:
   morph: strata/tools.morph
 - name: virtualization
   morph: strata/virtualization.morph
+- name: docker-client
+  morph: strata/docker-client.morph
 - name: openstack-clients
   morph: strata/openstack-clients.morph
 - name: virtualbox-guest-x86_64

@@ -1,13 +1,15 @@
 name: go-docker
 kind: stratum
 build-depends:
-- morph: tools
+- morph: strata/tools.morph
 chunks:
 - name: go
+  morph: strata/go-docker/go.morph
   repo: upstream:go
   ref: baserock/go1.2.2
   build-depends: []
 - name: docker
+  morph: strata/go-docker/docker.morph
   repo: upstream:docker
   ref: baserock/ps/add-go-docker
   build-depends:

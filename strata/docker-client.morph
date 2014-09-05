@@ -4,6 +4,14 @@ description: A stratum with the Docker client
 build-depends:
 - morph: strata/tools.morph
 chunks:
+- name: python-ecdsa
+  repo: https://github.com/warner/python-ecdsa
+  ref: python-ecdsa-0.11
+  build-depends: []
+- name: pycrypto
+  repo: https://github.com/dlitz/pycrypto
+  ref: v2.6.1
+  build-depends: []
 - name: paramiko
   repo: upstream:paramiko
   ref: 951faed80b017e553a27c4cb98f210df44341f8f

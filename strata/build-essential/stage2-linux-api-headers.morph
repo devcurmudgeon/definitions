@@ -3,7 +3,25 @@ kind: chunk
 install-commands:
 - make mrproper
 - |
-  export ARCH=$(./morph-arch)
+  if [ -z "$MORPH_ARCH" ]; then
+      echo "Error: MORPH_ARCH is not set" >&2
+      exit 1
+  fi
+
+  case "$MORPH_ARCH" in
+      armv7b|armv7l|armv7lhf|armv6lhf)
+          export ARCH=arm ;;
+      x86_32)
+          export ARCH=i386 ;;
+      x86_64)
+          export ARCH=86_64 ;;
+      ppc64)
+          export ARCH=powerpc ;;
+      *)
+          echo "Error: unsupported Morph architecture: $MORPH_ARCH" >&2
+          exit 1
+  esac
+
   make INSTALL_HDR_PATH=dest headers_install
 - install -d "$DESTDIR${PREFIX-/usr}/include"
 - cp -r dest/include/* "$DESTDIR/${PREFIX-/usr}/include"

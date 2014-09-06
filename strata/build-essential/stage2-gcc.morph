@@ -3,11 +3,27 @@ kind: chunk
 configure-commands:
 - mkdir o
 - |
+  case "$MORPH_ARCH" in
+      armv7lhf)
+          ARCH_FLAGS="--with-arch=armv7-a \
+                      --with-cpu=cortex-a9 \
+                      --with-tune=cortex-a9 \
+                      --with-fpu=vfpv3-d16 \
+                      --with-float=hard" ;;
+      armv7*)
+          ARCH_FLAGS="--with-arch=armv7-a" ;;
+      armv6lhf)
+          ARCH_FLAGS="--with-arch=armv6zk \
+                      --with-cpu=arm1176jzf-s \
+                      --with-float=hard \
+                      --with-fpu=vfp" ;;
+  esac
+
   export STAGE2_SYSROOT="$(dirname $(pwd))"
   export CC="$TARGET_STAGE1-gcc --sysroot=$STAGE2_SYSROOT"
   export LDFLAGS="-Wl,--sysroot=$STAGE2_SYSROOT"
   cd o && ../configure \
-    $(../morph-arch-config) \
+    $ARCH_FLAGS \
     `# [1]` --build=$(sh ../config.guess) \
             --host=$TARGET_STAGE1 \
             --target=$TARGET_STAGE1 \

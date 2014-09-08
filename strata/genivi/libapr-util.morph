@@ -1,0 +1,10 @@
+name: libapr-util
+kind: chunk
+build-system: autotools
+configure-commands:
+- ./buildconf
+- ./configure --prefix "$PREFIX"
+build-commands:
+- make
+install-commands:
+- make install

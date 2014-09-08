@@ -1,0 +1,9 @@
+name: log4cxx
+kind: chunk
+configure-commands:
+- ./autogen.sh 
+- ./configure --prefix="$PREFIX" --with-apr=/usr/lib/apr-2
+build-commands:
+- make
+install-commands:
+- make install

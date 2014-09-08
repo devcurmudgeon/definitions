@@ -1,0 +1,9 @@
+name: libapr
+kind: chunk
+configure-commands:
+- ./buildconf --verbose
+- ./configure --prefix "$PREFIX"
+build-commands:
+- make
+install-commands:
+- make install

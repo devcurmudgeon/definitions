@@ -1,0 +1,18 @@
+name: smartdevicelink
+kind: chunk
+
+configure-commands:
+    - cd SDL_Core && cmake .
+build-commands:
+    - cd SDL_Core && make
+install-commands:
+    - cd SDL_Core && make install DESTDIR=/
+    - mkdir -p $DESTDIR/opt/smartlink/include
+    - mkdir -p $DESTDIR/opt/smartlink/bin
+    - mkdir -p $DESTDIR/opt/smartlink/lib
+    - mkdir -p $DESTDIR/opt/smartlink/HMI
+    - cp -r SDL_Core/bin/* $DESTDIR/opt/smartlink/bin
+    - cp -r SDL_Core/include/* $DESTDIR/opt/smartlink/include
+    - cp -r SDL_Core/lib/* $DESTDIR/opt/smartlink/lib
+    - cp -r SDL_Core/src/components/HMI/* $DESTDIR/opt/smartlink/HMI
+    - echo "/opt/smartlink/HMI/index.html" > $DESTDIR/opt/smartlink/bin/hmi_link 

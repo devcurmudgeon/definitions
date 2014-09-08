@@ -3,6 +3,7 @@ kind: stratum
 description: Software components designed by genivi, for genivi.
 build-depends:
 - morph: strata/genivi-foundation.morph
+- morph: strata/audio-bluetooth.morph
 chunks:
 - name: DLT-daemon
   repo: upstream:DLT-daemon
@@ -70,3 +71,32 @@ chunks:
   build-depends:
   - DLT-daemon
   - persistence-client-library
+- name: libapr
+  repo: upstream:libapr
+  morph: strata/genivi/libapr.morph
+  ref: 1.5.1 
+  build-depends: []
+- name: libapr-tarball
+  repo: upstream:libapr-tarball
+  ref: dea1efeb7f60fc6848e1e72b3fc973d0057565db
+  unpetrify-ref: baserock/morph
+  build-depends: []
+- name: libapr-util-tarball
+  morph: strata/trove/libapr-util-tarball.morph
+  repo: upstream:libapr-util-tarball
+  ref: daba269ee5a262cc23621b3ee37ed368d2a2b69b
+  unpetrify-ref: baserock/morph
+  build-depends:
+  - libapr-tarball
+- name: log4cxx                
+  repo: upstream:log4cxx
+  ref: master 
+  build-depends:  
+  - libapr-tarball                     
+  - libapr-util-tarball    
+- name: smartdevicelink                        
+  repo: upstream:smartdevicelink
+  morph: strata/genivi/smartdevicelink.morph
+  ref: 8504605b01177da2e55bee6abe4c3f20c82da379
+  build-depends:                       
+  - log4cxx                

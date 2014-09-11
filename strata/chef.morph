@@ -10,6 +10,13 @@ chunks:
   ref: a0ecdde0c042b9256170f2f8890dd9451a4240aa
   unpetrify-ref: 2.1.0
   build-depends: []
+- name: libyajl2-1.0.1
+  morph: strata/chef/libyajl2-1.0.1.morph
+  repo: https://github.com/lamont-granquist/libyajl2-gem
+  ref: 98aef032f536d13775bc7b3b69a25ebac9bdee0a
+  unpetrify-ref: 1.0.1
+  build-depends:
+    - yajl
 - name: chef-12.0.0.alpha.0
   morph: strata/chef/chef-master.morph
   repo: http://github.com/opscode/chef/
@@ -45,7 +52,8 @@ chunks:
   repo: http://github.com/opscode/ffi-yajl
   ref: 3a4bc4259fd67af0ff4a8c1d3d71cfbaed9c112f
   unpetrify-ref: master
-  build-depends: []
+  build-depends:
+    - libyajl2-1.0.1
 - name: hashie-2.1.2
   morph: strata/chef/hashie-2.1.2.morph
   repo: https://github.com/intridea/hashie
@@ -83,13 +91,6 @@ chunks:
   ref: 92a96dea2b24b9c68856004d69491f46aedd0925
   unpetrify-ref: v1.8.1
   build-depends: []
-- name: libyajl2-1.0.1
-  morph: strata/chef/libyajl2-1.0.1.morph
-  repo: https://github.com/lamont-granquist/libyajl2-gem
-  ref: 98aef032f536d13775bc7b3b69a25ebac9bdee0a
-  unpetrify-ref: 1.0.1
-  build-depends:
-    - yajl
 - name: method_source-0.8.1
   morph: strata/chef/method_source-0.8.2.morph
   repo: https://github.com/banister/method_source

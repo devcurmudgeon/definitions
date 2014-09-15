@@ -47,7 +47,7 @@ fi
 ##########################################################################
 
 shellescape() {
-    echo "'$(echo "$1" | sed -e "s/'/'\\''/g")'"
+    echo "'$(echo "$1" | sed -e "s/'/'\\\''/g")'"
 }
 
 
@@ -61,6 +61,7 @@ echo "Creating $MASON_CONFIG"
 cat >>"$MASON_CONFIG" <<EOF
 #################### START OF DEPLOY TIME CONFIGURATION #######################
 
+TEST_INFRA="$TEST_INFRA"
 ARTIFACT_CACHE_SERVER=$(shellescape "$ARTIFACT_CACHE_SERVER")
 UPSTREAM_TROVE_ADDRESS=$(shellescape "$TROVE_HOST")
 DEFINITIONS_REF=$(shellescape "$MASON_DEFINITIONS_REF")
@@ -69,6 +70,7 @@ DISTBUILD_CONTROLLER_ADDRESS=$(shellescape "$CONTROLLERHOST")
 TROVE_ID=$(shellescape "$TROVE_ID")
 BUILD_CLUSTER_MORPHOLOGY=$(shellescape "$MASON_CLUSTER_MORPHOLOGY")
 TEST_VM_HOST_SSH_URL=$(shellescape "$MASON_TEST_HOST")
+OPENSTACK_NET_ID="$OPENSTACK_NET_ID"
 
 ##################### END OF DEPLOY TIME CONFIGURATION ########################
 EOF

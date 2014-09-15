@@ -170,3 +170,7 @@ chunks:
   ref: a4769dc7999b53260325fb89945bef85714fb338
   unpetrify-ref: baserock/morph
   build-depends: []
+- name: scratchbox2
+  repo: git://gitorious.org/scratchbox2/scratchbox2.git
+  ref: 173e4b7081bb5f5965ca90bee037231ab4e88c64
+  build-depends: []

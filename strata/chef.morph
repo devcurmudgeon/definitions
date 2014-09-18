@@ -79,11 +79,11 @@ chunks:
   unpetrify-ref: v1.2.5
   build-depends:
   - hoe-master
-- name: ipaddress-0.8.0
-  morph: strata/chef/ipaddress-0.8.0.morph
+- name: ipaddress-master
+  morph: strata/chef/ipaddress-master.morph
   repo: http://github.com/bluemonk/ipaddress
-  ref: 0ddaebf373d263f9f42e9ce51890a48025e5fc7f
-  unpetrify-ref: v0.8.0
+  ref: dae93ad0e4fb9a5d547a15dae0c3f2417078c845
+  unpetrify-ref: master
   build-depends: []
 - name: json-1.8.1
   morph: strata/chef/json-1.8.1.morph

@@ -198,8 +198,8 @@ chunks:
 - name: trove-setup
   morph: strata/trove/trove-setup.morph
   repo: baserock:baserock/trove-setup
-  ref: e594df7ed432d74cc56eaa5e29a1bfed7b22aae5
-  unpetrify-ref: master
+  ref: baserock/richardipsum/default-upstream-proto-http
+  unpetrify-ref: e594df7ed432d74cc56eaa5e29a1bfed7b22aae5
   build-depends: []
 - name: lorry-controller
   morph: strata/trove/lorry-controller.morph

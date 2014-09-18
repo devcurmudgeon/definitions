@@ -1,0 +1,37 @@
+name: genivi-demo-platform
+kind: stratum
+description: Components which make up the GENIVI demo platform.
+build-depends:
+- morph: strata/gtk2.morph
+- morph: strata/qt5-tools-jetson.morph
+- morph: strata/enlightenment.morph
+chunks:
+- name: mm-common
+  morph: strata/genivi-demo-platform/mm-common.morph
+  repo: file:///src/genivi/baseline-test/master/baserock/baserock/mm-common
+  ref: baserock/genivi-demo-platform
+  unpetrify-ref: master
+  build-depends: []
+- name: sigc++
+  morph: strata/genivi-demo-platform/sigc++.morph
+  repo: git://git.gnome.org/libsigc++2
+  ref: d3f8647ee43f875915ddedbaaf719cc2a3d98c52
+  unpetrify-ref: master
+  build-depends:
+    - mm-common
+- name: dbus-c++
+  morph: strata/genivi-demo-platform/dbus-c++.morph
+  repo: file:///src/mainline
+  ref: master
+  unpetrify-ref: master
+  build-depends: []
+- name: libxslt
+  repo: upstream:libxslt
+  ref: master
+  build-depends: []
+- name: browser-poc
+  morph: strata/genivi-demo-platform/browser-poc.morph
+  repo: upstream:genivi/browser-poc
+  ref: baserock/genivi-demo-platform
+  unpetrify-ref: master
+  build-depends: []

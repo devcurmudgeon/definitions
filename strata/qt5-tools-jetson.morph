@@ -1,0 +1,128 @@
+name: qt5-tools-jetson
+kind: stratum
+description: Qt5 Development Libraries and Tools for nvidia Jetson tk1
+build-depends:
+- morph: strata/tools.morph
+- morph: strata/wayland-x86_64-generic.morph
+- morph: strata/multimedia-gstreamer-0.10.morph
+chunks:
+- name: icu
+  repo: upstream:icu
+  ref: ba023548a3bff7277cbea4acade3042ce9d8949e
+  unpetrify-ref: baserock/morph
+  build-depends: []
+- name: ruby-1.8
+  repo: upstream:ruby
+  ref: 7a24f1710028d568ad61d0aa49d5178260178d77
+  unpetrify-ref: baserock/morph/ruby_1_8_7
+  build-depends: []
+- name: ruby-1.9
+  repo: upstream:ruby
+  ref: cb3ea602294b5038b5f7ac21d3875a2b52342956
+  unpetrify-ref: baserock/morph/ruby_1_9_3
+  build-depends:
+  - ruby-1.8
+- name: qtbase
+  repo: upstream:qt5/qtbase
+  ref: baserock/v5.3.0
+  build-depends:
+  - icu
+- name: qtsvg
+  repo: upstream:qt5/qtsvg
+  ref: baserock/v5.3.0
+  build-depends:
+  - qtbase
+- name: qtscript
+  repo: upstream:qt5/qtscript
+  ref: baserock/v5.3.0
+  build-depends:
+  - qtbase
+- name: qtdeclarative
+  repo: upstream:qt5/qtdeclarative
+  ref: baserock/v5.3.0
+  build-depends:
+  - qtbase
+  - qtscript
+- name: qtmultimedia
+  repo: upstream:qt5/qtmultimedia
+  ref: baserock/v5.3.0
+  build-depends:
+  - qtbase
+  - qtdeclarative
+- name: qtquick1
+  repo: upstream:qt5/qtquick1
+  ref: baserock/v5.3.0
+  build-depends:
+  - qtbase
+  - qtscript
+- name: qtquickcontrols
+  repo: upstream:qt5/qtquickcontrols
+  ref: baserock/v5.3.0
+  build-depends:
+  - qtbase
+  - qtdeclarative
+- name: qtsensors
+  repo: upstream:qt5/qtsensors
+  ref: baserock/v5.3.0
+  build-depends:
+  - qtbase
+- name: qtserialport
+  repo: upstream:qt5/qtserialport
+  ref: baserock/v5.3.0
+  build-depends:
+  - qtbase
+- name: qtwebkit
+  repo: upstream:qt5/qtwebkit
+  ref: baserock/v5.3.0
+  build-depends:
+  - qtbase
+  - icu
+  - ruby-1.9
+  - qtdeclarative
+- name: qtxmlpatterns
+  repo: upstream:qt5/qtxmlpatterns
+  ref: baserock/v5.3.0
+  build-depends:
+  - qtbase
+- name: qtwebkit-examples
+  repo: upstream:qt5/qtwebkit-examples
+  ref: baserock/v5.3.0
+  build-depends:
+  - qtbase
+  - qtdeclarative
+  - qtwebkit
+  - qtxmlpatterns
+- name: qtdoc
+  repo: upstream:qt5/qtdoc
+  ref: baserock/v5.3.0
+  build-depends:
+  - qtbase
+- name: qtgraphicaleffects
+  repo: upstream:qt5/qtgraphicaleffects
+  ref: baserock/v5.3.0
+  build-depends:
+  - qtbase
+  - qtdeclarative
+- name: qtimageformats
+  repo: upstream:qt5/qtimageformats
+  ref: baserock/v5.3.0
+  build-depends:
+  - qtbase
+- name: qttools
+  repo: upstream:qt5/qttools
+  ref: baserock/v5.3.0
+  build-depends:
+  - qtbase
+  - qtdeclarative
+  - qtwebkit
+- name: qtwayland
+  repo: upstream:qt5/qtwayland
+  ref: baserock/v5.3.0
+  build-depends:
+  - qtbase
+- name: qttranslations
+  repo: upstream:qt5/qttranslations
+  ref: baserock/v5.3.0
+  build-depends:
+  - qtbase
+  - qttools

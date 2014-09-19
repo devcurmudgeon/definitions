@@ -19,6 +19,14 @@ chunks:
   unpetrify-ref: master
   build-depends:
     - mm-common
+- name: glibmm
+  morph: strata/genivi-demo-platform/glibmm.morph
+  repo: git://git.gnome.org/glibmm
+  ref: e289d513b1565d7f829d62d54bff6b629d760379
+  unpetrify-ref: glibmm-2-40
+  build-depends:
+    - mm-common
+    - sigc++
 - name: dbus-c++
   morph: strata/genivi-demo-platform/dbus-c++.morph
   repo: file:///src/mainline

@@ -1,0 +1,10 @@
+name: genivi-deploy
+kind: cluster
+systems:
+- morph: systems/genivi-demo-platform-x86_64-generic.morph
+  deploy:
+    genivi-demo-platform:
+      type: kvm
+      location: kvm+ssh://adam@socktop.dyn.ducie.codethink.co.uk/genivi-demo-platform-v7/home/adam/vms/demo-platform-v7.img
+      DISK_SIZE: 8G
+      KERNEL_ARGS: vga=794

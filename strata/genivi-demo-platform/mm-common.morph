@@ -1,0 +1,7 @@
+name: mm-common
+kind: chunk
+description: Common build files of the GNOME C++ bindings.
+build-system: autotools
+install-commands:
+- make install
+- install util/mm-common-prepare "$DESTDIR$PREFIX/bin/mm-common-prepare"

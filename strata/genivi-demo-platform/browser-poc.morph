@@ -1,0 +1,7 @@
+name: browser-poc
+kind: chunk
+description: The GENIVI browser proof-of-concept for the GENIVI Demo Platform.
+configure-commands:
+- qmake -r browser-poc.pro
+build-commands:
+- make

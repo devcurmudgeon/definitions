@@ -4,9 +4,16 @@ build-depends:
 - morph: strata/x-common.morph
 - morph: strata/wayland-generic.morph
 chunks:
+- name: llvm
+  morph: strata/mesa-common/llvm.morph
+  repo: upstream:llvm
+  ref: 60aa15443579a9542a1e8818f3c5dd901edb03d9
+  unpetrify-ref: baserock/morph
+  build-depends: []
 - name: mesa
   morph: strata/mesa-common/mesa.morph
   repo: upstream:mesa
   ref: 1b12af300dfa77c24088780e88200703653293d3
   unpetrify-ref: mesa-10.3
-  build-depends: []
+  build-depends:
+  - llvm

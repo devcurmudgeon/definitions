@@ -1,0 +1,5 @@
+name: mariadb-git
+kind: chunk
+build-system: cmake
+build-commands:
+- export DESTDIR=''; make

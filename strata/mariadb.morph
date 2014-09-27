@@ -1,0 +1,12 @@
+name: mariadb
+kind: stratum
+description: some popular databases
+build-depends:
+- morph: strata/tools.morph
+- morph: strata/nfs.morph
+chunks:
+- name: mariadb-git
+  morph: strata/mariadb/mariadb-git.morph
+  repo: upstream:mariadb-git
+  ref: mariadb-10.1.0
+  build-depends: []

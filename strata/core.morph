@@ -86,8 +86,8 @@ chunks:
 - name: bash
   morph: strata/core/bash.morph
   repo: upstream:bash
-  ref: 783c677f45354b0d6df70e552217ecad8481804f
-  unpetrify-ref: baserock/morph
+  ref: ac50fbac377e32b98d2de396f016ea81e8ee9961
+  unpetrify-ref: baserock/bash-4.3-patch-26
   build-depends: []
 - name: error-perl-tarball
   repo: upstream:error-perl-tarball

@@ -21,8 +21,8 @@ chunks:
 - name: linux-jetson-tk1
   morph: strata/bsp-jetson-devel/linux-jetson-tk1.morph
   repo: upstream:linux
-  ref: de3664efca390a8d2fe525a583d17772deee8500
-  unpetrify-ref: baserock/arm/tegra-3.10
+  ref: 1e3827bf8aebe29af2d6e49b89d85dfae4d0154f
+  unpetrify-ref: master
   build-depends:
   - u-boot
 - name: bsp-support

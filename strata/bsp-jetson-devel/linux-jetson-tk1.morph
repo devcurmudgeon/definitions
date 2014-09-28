@@ -1,7 +1,7 @@
 name: linux-jetson-tk1
 kind: chunk
 configure-commands:
-- make ARCH=arm tegra12_defconfig
+- make ARCH=arm tegra_defconfig
 - scripts/config -d KERNEL_LZO
 - scripts/config -e KERNEL_GZIP
 - scripts/config -e NAMESPACES
@@ -50,4 +50,4 @@ build-commands:
 install-commands:
 - mkdir -p "$DESTDIR"/boot
 - cp arch/arm/boot/zImage "$DESTDIR"/boot/zImage
-- cp arch/arm/boot/dts/tegra124-pm375.dtb "$DESTDIR"/boot/.
+- cp arch/arm/boot/dts/tegra124-jetson-tk1.dtb "$DESTDIR"/boot/.

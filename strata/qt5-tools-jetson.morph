@@ -55,6 +55,13 @@ chunks:
   build-depends:
   - qtbase
   - qtscript
+- name: qt3d
+  repo: upstream:qt5/qt3d
+  ref: bdb98baf8253c69949a8c259369203da9ffb269c
+  build-depends:
+    - qtbase
+    - qtscript
+    - qtdeclarative
 - name: qtquickcontrols
   repo: upstream:qt5/qtquickcontrols
   ref: baserock/v5.3.0

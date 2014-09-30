@@ -1,0 +1,10 @@
+name: drm-module
+kind: chunk
+build-commands:
+ - cd drm && make M=$(pwd) -C /usr/src/linux/ modules
+install-commands:
+ - cd drm && make M="$(pwd)" -C /usr/src/linux/ INSTALL_MOD_PATH="$DESTDIR" modules_install
+system-integration:
+   drm-module-misc:
+       00-earlyconf:
+          - depmod -a

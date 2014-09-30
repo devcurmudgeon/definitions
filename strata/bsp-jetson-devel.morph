@@ -31,8 +31,8 @@ chunks:
   ref: 19bc31ce3198a3c19cdd96d392bde34cb34ed525
   unpetrify-ref: baserock/arm/tegra-3.10
   build-depends: []
-- name: drm-module
-  morph: strata/bsp-jetson-devel/drm-module.morph
+- name: nouveau-drm
+  morph: strata/bsp-jetson-devel/nouveau-drm.morph
   repo: github:Gnurou/nouveau
   ref: gk20a
   build-depends:

@@ -1,0 +1,10 @@
+name: docker
+kind: chunk
+build-commands:
+- export AUTO_GOPATH=1 && export DOCKER_BUILDTAGS='exclude_graphdriver_devicemapper' && export TMPDIR=/tmp && ./hack/make.sh binary
+#- export DOCKER_CLIENTONLY=1
+#- ./hack/make.sh dynbinary
+install-commands:
+- mkdir -p "$DESTDIR$PREFIX/bin"
+- cp ./bundles/*/binary/docker "$DESTDIR$PREFIX/bin/docker"
+- cp ./contrib/check-config.sh "$DESTDIR$PREFIX/bin"

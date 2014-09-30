@@ -78,6 +78,17 @@ configure-commands:
 - scripts/config -e FB_VESA
 - scripts/config -e HOTPLUG_PCI
 - scripts/config -e HOTPLUG_PCI_ACPI
+- scripts/config -e DEVPTS_MULTIPLE_INSTANCES
+- scripts/config -e VETH
+- scripts/config -e CGROUP_DEVICE
+- scripts/config -e MACVLAN
+- scripts/config -e NF_NAT_NEEDED
+- scripts/config -e NETFILTER_ADVANCED
+- scripts/config -e NETFILTER_XT_MATCH_ADDRTYPE
+- scripts/config -e NETFILTER_XT_MATCH_CONNTRACK
+- scripts/config -e MEMCG_SWAP
+- scripts/config -e AUFS_FS
+- scripts/config -e DM_THIN_PROVISIONING
 - yes '' | make oldconfig
 build-commands:
 - make $MAKEFLAGS

@@ -14,15 +14,15 @@ chunks:
 - name: u-boot
   morph: strata/bsp-jetson-devel/u-boot.morph
   repo: upstream:u-boot
-  ref: b15ae44ab9f085140039b09a00232d5aed6596a9
-  unpetrify-ref: baserock/arm/tegra-uboot-btrfs
+  ref: baserock/violetamenendez/fix-uboot
+  unpetrify-ref: b15ae44ab9f085140039b09a00232d5aed6596a9
   build-depends:
   - device-tree-compiler
 - name: linux-jetson-tk1
   morph: strata/bsp-jetson-devel/linux-jetson-tk1.morph
   repo: upstream:linux
-  ref: de3664efca390a8d2fe525a583d17772deee8500
-  unpetrify-ref: baserock/arm/tegra-3.10
+  ref: baserock/violetamenendez/nouveau-jetson
+  unpetrify-ref: de3664efca390a8d2fe525a583d17772deee8500
   build-depends:
   - u-boot
 - name: bsp-support
@@ -31,3 +31,9 @@ chunks:
   ref: 19bc31ce3198a3c19cdd96d392bde34cb34ed525
   unpetrify-ref: baserock/arm/tegra-3.10
   build-depends: []
+- name: nouveau-drm
+  morph: strata/bsp-jetson-devel/nouveau-drm.morph
+  repo: github:Gnurou/nouveau
+  ref: gk20a
+  build-depends:
+  - linux-jetson-tk1

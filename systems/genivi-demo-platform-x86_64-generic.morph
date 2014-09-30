@@ -37,6 +37,8 @@ strata:
   morph: strata/enlightenment.morph
 - name: genivi-demo-platform
   morph: strata/genivi-demo-platform.morph
+- name: tools
+  morph: strata/tools.morph
 configuration-extensions:
 - set-hostname
 - add-config-files

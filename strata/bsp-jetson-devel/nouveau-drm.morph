@@ -7,4 +7,4 @@ install-commands:
 system-integration:
    nouveau-drm-misc:
        00-earlyconf:
-          - depmod -a
+          - (cd /lib/modules && for version in *; do depmod -a "$version"; done)

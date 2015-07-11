@@ -1,0 +1,20 @@
+name: lava 
+kind: stratum
+build-depends:
+- morph: strata/tools.morph
+chunks:
+- name: lava-server 
+  repo: https://git.linaro.org/lava/lava-server.git
+  ref: master
+- name: lava-pdu
+  repo: https://git.linaro.org/lava/lavapdu.git
+  ref: master
+- name: lava-dispatcher
+  repo: https://git.linaro.org/lava/lava-dispatcher.git
+  ref: master
+- name: lava-coordinator
+  repo: https://git.linaro.org/lava/lava-coordinator.git
+  ref: master
+- name: lava-tool
+  repo: https://git.linaro.org/lava/lava-tool.git
+  ref: master

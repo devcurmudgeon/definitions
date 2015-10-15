@@ -5,6 +5,15 @@ build-system: autotools
 configure-commands:
 - autoreconf -ivf
 - |
+  cpu=$(echo $TARGET | cut -d '-' -f 1)
+  case "$cpu" in
+  armv7lhf)
+    export WESTON_NATIVE_BACKEND=drm-backend.so
+    ;;
+  *)
+    export WESTON_NATIVE_BACKEND=fbdev-backend.so
+    ;;
+  esac
   LDFLAGS='-L/lib64 -lrt' \
   ./configure --prefix=$PREFIX --disable-xwayland \
   --disable-x11-compositor \

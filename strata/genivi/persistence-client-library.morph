@@ -2,5 +2,6 @@ name: persistence-client-library
 kind: chunk
 build-system: autotools
 configure-commands:
+- sed -i 's/libpers_common.so.1/libpers_common.so/' config/pclCustomLibConfigFile.cfg
 - autoreconf -ivf
 - ./configure --prefix="$PREFIX" --disable-werror

@@ -1,0 +1,42 @@
+name: weston-gdp
+kind: chunk
+description: weston compositor
+build-system: autotools
+configure-commands:
+- autoreconf -ivf
+- |
+  cpu=$(echo $TARGET | cut -d '-' -f 1)
+  case "$cpu" in
+  armv7lhf)
+    export WESTON_NATIVE_BACKEND=drm-backend.so
+    ;;
+  *)
+    export WESTON_NATIVE_BACKEND=fbdev-backend.so
+    ;;
+  esac
+  LDFLAGS='-L/lib64 -lrt' \
+  ./configure --prefix=$PREFIX --disable-xwayland \
+  --disable-x11-compositor \
+  --disable-wayland-compositor  --enable-egl \
+  --enable-clients --enable-demo-clients-install --enable-fbdev-compositor
+post-install-commands:
+- install -d "$DESTDIR/usr/share/weston"
+- install -m 0644 data/*.png "$DESTDIR/usr/share/weston/"
+- sed -i 's/hmi-controller.so/ivi-controller.so/' ivi-shell/weston.ini
+- install -d "$DESTDIR/etc/xdg/weston"
+- install -m 0644 ivi-shell/weston.ini "$DESTDIR/etc/xdg/weston/weston.ini"
+- mkdir -p "$DESTDIR/lib/systemd/system/multi-user.target.wants/"
+- |
+  cat > "$DESTDIR/lib/systemd/system/weston.service" <<EOF
+  [Unit]
+  Description=Weston reference Wayland compositor
+  After=dbus.service
+
+  [Service]
+  ExecStart=/usr/bin/weston-launch -u root -- --log=/tmp/weston.log
+  ExecStop=/usr/bin/killall -s KILL weston
+
+  [Install]
+  WantedBy=multi-user.target
+  EOF
+- cd "$DESTDIR/lib/systemd/system/multi-user.target.wants/" && ln -s ../weston.service .

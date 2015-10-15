@@ -1,0 +1,6 @@
+name: sigc++
+kind: chunk
+build-system: autotools
+configure-commands:
+- ./autogen.sh
+- ./configure --disable-documentation --prefix="$PREFIX"

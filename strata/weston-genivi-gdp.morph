@@ -1,4 +1,4 @@
-name: weston-genivi
+name: weston-genivi-gdp
 kind: stratum
 build-depends:
 - morph: strata/graphics-common.morph
@@ -7,8 +7,8 @@ build-depends:
 - morph: strata/libdrm-common.morph
 - morph: strata/wayland-generic.morph
 chunks:
-- name: weston
-  morph: strata/weston-genivi/weston.morph
+- name: weston-gdp
+  morph: strata/weston-genivi/weston-gdp.morph
   repo: upstream:weston
   ref: 1a43127064349577d1d41a910d8ed1a39caf2867
   unpetrify-ref: baserock/genivi/genivi-demo-platform
@@ -18,4 +18,4 @@ chunks:
   ref: bac7fc24bb94e37e33f447b58ec74240bb248841
   unpetrify-ref: 1.3.91
   build-depends:
-  - weston
+  - weston-gdp

@@ -135,3 +135,9 @@ chunks:
   unpetrify-ref: v5.4.0
   build-depends:
   - qtbase
+- name: qtwayland
+  repo: upstream:qt5/qtwayland
+  ref: baserock/genivi-5.4.0-wip
+  build-system: qmake
+  build-depends:
+  - qtbase

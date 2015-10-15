@@ -1,0 +1,36 @@
+name: input-genivi
+kind: stratum
+build-depends:
+- morph: strata/foundation.morph
+- morph: strata/xorg-util-macros-common.morph
+chunks:
+- name: mtdev
+  repo: upstream:mtdev-git
+  ref: 4381b78fea54de0e775bf54952b2f95e5a06c57d
+  unpetrify-ref: v1.1.5
+  build-system: autotools
+- name: xkeyboard-config
+  morph: strata/input-common/xkeyboard-config.morph
+  repo: upstream:xkeyboard-config
+  ref: 73aa90ce32967747c84a1b5fe32cee329bc3bbcf
+  unpetrify-ref: xkeyboard-config-2.13
+- name: libevdev
+  repo: upstream:libevdev
+  ref: 7ac00d7e920c56bb8617403699030a5300bfae1c
+  unpetrify-ref: libevdev-1.3.2
+  build-system: autotools
+- name: libinput@genivi
+  repo: upstream:libinput
+  ref: 06e2f522a4ab5ea0a1de68cce1b5f9fff568ed4f
+  unpetrify-ref: 0.7.0
+  build-system: autotools
+  build-depends:
+  - mtdev
+  - libevdev
+- name: libxkbcommon-no-x11
+  repo: upstream:xorg-lib-libxkbcommon
+  ref: c43c3c866eb9d52cd8f61e75cbef1c30d07f3a28
+  morph: strata/input-common/libxkbcommon-no-x11.morph
+  unpetrify-ref: xkbcommon-0.5.0
+  build-depends:
+  - xkeyboard-config

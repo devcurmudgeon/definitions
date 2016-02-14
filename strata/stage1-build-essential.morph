@@ -1,0 +1,31 @@
+name: stage1-build-essential
+kind: stratum
+description: |
+  Toolchain stratum
+
+  Stage 1: build a minimal cross compiler with the host's tools.
+
+  Starting with a cross compiler ensures that (a) nothing from the host
+  can leak into the build-essential artifacts, and (b) cross-compiling
+  build-essential is fully tested and supported, since we always use the
+  cross code paths.
+
+chunks:
+- name: stage1-binutils
+  morph: strata/build-essential/stage1-binutils.morph
+  repo: upstream:binutils-tarball
+  ref: 5500a97a2ad1735db5b35bc51cfb825c1f4c38df
+  unpetrify-ref: binutils-2.25
+  build-mode: bootstrap
+  prefix: /tools
+
+- name: stage1-gcc
+  morph: strata/build-essential/stage1-gcc.morph
+  repo: upstream:gcc-tarball
+  ref: b3c9b176c1f10ebeff5700eb3760e9511f23fa06
+  unpetrify-ref: baserock/build-essential
+  build-depends:
+  - stage1-binutils
+  build-mode: bootstrap
+  prefix: /tools
+

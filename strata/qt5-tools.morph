@@ -33,6 +33,9 @@ chunks:
   build-depends:
   - qtbase
   - qtscript
+  submodules:
+    tests/manual/v4/test262:
+      url: git://github.com/tronical/test262.git
 - name: qtquick1
   morph: strata/qt5-tools/qtquick1.morph
   repo: upstream:qt5/qtquick1

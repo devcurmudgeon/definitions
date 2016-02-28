@@ -43,6 +43,11 @@ chunks:
   unpetrify-ref: baserock/v1.6.1
   build-depends:
   - py-amqp
+  submodules:
+    rabbitmq-codegen:
+      url: upstream:rabbitmq-codegen.git
+    rabbitmq-c:
+      url: upstream:python-packages/rabbitmq-c-github-ask.git
 - name: anyjson
   repo: upstream:python-packages/anyjson
   ref: 016506078e94718e1fe750eb5083ab5ba07498c8
@@ -125,6 +130,9 @@ chunks:
   ref: cce3ebd658f28aeb7dd54561554dedf5259303dc
   unpetrify-ref: baserock/v0.5.4
   build-system: python-distutils
+  submodules:
+    ext/spec:
+      url: upstream:mustache-spec
 - name: pies
   repo: upstream:python-packages/pies.git
   ref: 593dcce07fdb3e8d0053a863a7aba7f2ce8a6c9c
@@ -215,6 +223,11 @@ chunks:
   build-system: python-distutils
   build-depends:
   - sphinx
+  submodules:
+    doc/sphinxext:
+      url: upstream:numpydoc.git
+    doc/scipy-sphinx-theme:
+      url: upstream:scipy-sphinx-theme.git
 - name: websockify
   repo: upstream:python-packages/websockify
   ref: 2f025741f86419d4ad5702dabf5903db3dbfe77c
@@ -222,6 +235,9 @@ chunks:
   build-system: python-distutils
   build-depends:
   - numpy
+  submodules:
+    include/web-socket-js-project:
+      url: upstream:web-socket-js.git
 - name: httplib2
   repo: upstream:python-packages/httplib2
   ref: f9f797223d075874b0031aea832152688ec23fef
@@ -666,6 +682,7 @@ chunks:
   ref: 8675c3e3e620df5ba9fd7e570c554b773429bd78
   unpetrify-ref: v0.9.3
   build-system: python-distutils
+  submodules: {}
 - name: werkzeug
   repo: upstream:python-packages/werkzeug
   ref: 96e49709d627a7766077cff4c98ebf3cad868ceb
@@ -730,6 +747,9 @@ chunks:
   repo: upstream:novnc
   ref: 97be997f62d59c028fc45323b00e3b93fafe4eb4
   unpetrify-ref: baserock/v0.5.1
+  submodules:
+    include/web-socket-js-project:
+      url: upstream:web-socket-js
 - name: pyserial
   repo: upstream:python-packages/pyserial
   ref: bcfc1ec2fdb9a8c9c867481d7673e85fe512e667

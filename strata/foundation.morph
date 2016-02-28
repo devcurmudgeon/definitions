@@ -68,6 +68,9 @@ chunks:
   build-system: autotools
   build-depends:
   - libusb
+  submodules:
+    usbhid-dump:
+      url: upstream:usbhid-dump
 - name: lzo
   morph: strata/foundation/lzo.morph
   repo: upstream:lzo

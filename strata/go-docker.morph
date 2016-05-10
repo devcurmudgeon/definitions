@@ -1,0 +1,23 @@
+name: go-docker
+kind: stratum
+build-depends:
+- morph: strata/tools.morph
+chunks:
+- name: go
+  repo: upstream:go
+  morph: strata/go-docker/go.morph
+  ref: 536a6e6905993f1270f7a8b742352ce832cbf144
+  unpetrify-ref: go1.3.3
+  build-depends: []
+- name: docker
+  repo: upstream:docker
+  morph: strata/go-docker/docker.morph
+  ref: c78088fe3d1b90640c637d8c3457de3caa0c7a24
+  unpetrify-ref: v1.3.0
+  build-depends:
+  - go
+- name: iptables
+  repo: upstream:iptables
+  ref: 3e6fa55d5e28c93f417afeae7a7d4f349ddffcf4
+  unpetrify-ref: baserock/morph
+  build-depends: []

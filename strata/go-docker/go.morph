@@ -1,0 +1,16 @@
+name: go
+kind: chunk
+build-commands:
+- |
+  export GOROOT_FINAL="$PREFIX/lib/go"
+  export TMPDIR=/tmp
+  cd src && bash ./make.bash
+install-commands:
+- mkdir -p "$DESTDIR$PREFIX/lib/go"
+- cp -r bin "$DESTDIR$PREFIX/lib/go"
+- cp -r lib "$DESTDIR$PREFIX/lib/go"
+- cp -r src "$DESTDIR$PREFIX/lib/go"
+- cp -r pkg "$DESTDIR$PREFIX/lib/go"
+- mkdir -p "$DESTDIR$PREFIX/bin"
+- ln -s "$PREFIX/lib/go/bin/go" "$DESTDIR$PREFIX/bin/go"
+

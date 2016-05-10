@@ -30,6 +30,7 @@ configure-commands:
 - scripts/config -e ATL1
 - scripts/config -e ATL1C
 - scripts/config -e ATL1E
+- scripts/config -e AUFS_FS
 - scripts/config -e AUTOFS4_FS
 - scripts/config -e BLK_DEV_LOOP
 - scripts/config -e BLK_DEV_NBD
@@ -42,6 +43,7 @@ configure-commands:
 - scripts/config -e BTRFS_FS_POSIX_ACL
 - scripts/config -e CEPH_FS
 - scripts/config -e CGROUPS
+- scripts/config -e CGROUP_DEVICE
 - scripts/config -e CONFIGFS_FS
 - scripts/config -e CONFIG_FHANDLE
 - scripts/config -e CONFIG_OPENVSWITCH_GRE
@@ -52,6 +54,7 @@ configure-commands:
 - scripts/config -e DEVTMPFS
 - scripts/config -e DEVTMPFS_MOUNT
 - scripts/config -e DM_SNAPSHOT
+- scripts/config -e DM_THIN_PROVISIONING
 - scripts/config -e E100
 - scripts/config -e E1000
 - scripts/config -e E1000E
@@ -117,6 +120,8 @@ configure-commands:
 - scripts/config -e LIBCRC32C
 - scripts/config -e LIBFC
 - scripts/config -e LOOPBACK_TARGET
+- scripts/config -e MACVLAN
+- scripts/config -e MEMCG_SWAP
 - scripts/config -e NETFILTER
 - scripts/config -e NETFILTER_ADVANCED
 - scripts/config -e NETFILTER_NETLINK_ACCT
@@ -131,6 +136,7 @@ configure-commands:
 - scripts/config -e NETFILTER_XT_MATCH_CONNBYTES
 - scripts/config -e NETFILTER_XT_MATCH_CONNLABEL
 - scripts/config -e NETFILTER_XT_MATCH_CONNLIMIT
+- scripts/config -e NETFILTER_XT_MATCH_CONNTRACK
 - scripts/config -e NETFILTER_XT_MATCH_CPU
 - scripts/config -e NETFILTER_XT_MATCH_DCCP
 - scripts/config -e NETFILTER_XT_MATCH_DEVGROUP
@@ -224,6 +230,8 @@ configure-commands:
 - scripts/config -e NF_LOG_COMMON
 - scripts/config -e NF_NAT
 - scripts/config -e NF_NAT_AMANDA
+- scripts/config -e NF_NAT_IPV4
+- scripts/config -e NF_NAT_NEEDED
 - scripts/config -e NF_NAT_PROTO_DCCP
 - scripts/config -e NF_NAT_PROTO_SCTP
 - scripts/config -e NF_NAT_PROTO_UDPLITE
